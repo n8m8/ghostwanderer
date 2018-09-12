@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : MonoBehaviour {
+public class Wall : TwoPhasedOBJ
+{
 
 	// Use this for initialization
 	void Start () {

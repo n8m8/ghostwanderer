@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Just for test pruposes, will not cosider any structure purposes;
 public class Player : MonoBehaviour {
 
     const string indi_text1 = "No Collider";
@@ -11,15 +12,17 @@ public class Player : MonoBehaviour {
     public float topSpeed = 6.0f;
     public Text IndicateText1;
 
+    private LevelController LC_script;
+    private GameObject otherGO;
+
     private Vector3 movement;
     private Rigidbody playerRB;
-
     private bool can_use_trigger = false;
-    private GameObject otherGO;
 
     // Use this for initialization
     void Start () {
         playerRB = GetComponent<Rigidbody>();
+        LC_script = GameObject.Find("LevelController").GetComponent<LevelController>();
 	}
 	
 	// Update is called once per frame
@@ -50,6 +53,12 @@ public class Player : MonoBehaviour {
         else
         {
             IndicateText1.text = indi_text1;
+        }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            LC_script.toggle_phase();
+            
         }
 
     }
