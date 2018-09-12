@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4107732147212958}
   - component: {fileID: 114304321738120160}
   - component: {fileID: 95237537166138560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwitchGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4015065222643398}
   - component: {fileID: 33108896905075100}
   - component: {fileID: 23264718855688384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwitchCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4838401165801948}
   - component: {fileID: 65764640766280316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwitchTrigger
   m_TagString: InteractableOBJ
   m_Icon: {fileID: 0}

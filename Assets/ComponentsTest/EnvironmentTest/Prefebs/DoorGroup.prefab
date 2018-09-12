@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33817328398916664}
   - component: {fileID: 23138737119022948}
   - component: {fileID: 65962480295045498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DoorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4909062981929948}
   - component: {fileID: 65032326760103324}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DoorTrigger
   m_TagString: InteractableOBJ
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4897445723084244}
   - component: {fileID: 95190758082506714}
   - component: {fileID: 114858899169598812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DoorGroup
   m_TagString: InteractableOBJ
   m_Icon: {fileID: 0}
