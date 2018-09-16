@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour {
-
+    //Number of the level the room is in
     public int level;
+    //True if the room has been entered
     public bool isDiscovered;
+    //Array list of environment objects in the room
     public ArrayList envObjects;
+    //Array list of interactable objects in the room 
     public ArrayList interactableObjects;
 
 	// Use this for initialization

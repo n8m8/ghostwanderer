@@ -6,7 +6,7 @@ public class EnvironmentObjects : MonoBehaviour {
 
     //NEEDS A COLLIDER
     //NEEDS MOVABLE
-
+    //True if the object is locked
     public bool isLocked;
 
 	// Use this for initialization

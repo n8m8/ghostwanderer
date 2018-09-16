@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-
-    public bool melee = 0;
+    //True if a melee weapon
+    public bool melee = false;
+    //weapon damage
     public int damage = 0;
+    //weapon range
     public int range = 0;
+    //Rate of fire of weapon
     public int rate = 0;
+    //Last time the weapon was fired
     public int lastFired = 0;
 
 	// Use this for initialization
