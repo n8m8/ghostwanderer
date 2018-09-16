@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour {
+public class PlayerTemp : MonoBehaviour {
 
     const string indi_text1 = "No Collider";
 
