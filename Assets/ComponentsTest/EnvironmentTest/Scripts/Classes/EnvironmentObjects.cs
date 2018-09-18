@@ -7,11 +7,10 @@ public class EnvironmentObjects : MonoBehaviour {
     //NEEDS A COLLIDER
     //NEEDS MOVABLE
     //True if the object is locked
-    public bool isLocked;
+    [SerializeField] public bool isLocked;
 
 	// Use this for initialization
-	void Start (bool isLocked) {
-        this.isLocked = isLocked;
+	void Start () {
 	}
 	
 	// Update is called once per frame

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour {
     //The trigger for this object
-    public int trigger;
+    [SerializeField] public int trigger;
     //The response when triggered
-    public string act;
+    [SerializeField] public string act;
 
     //TODO change the above to usable classes
 
