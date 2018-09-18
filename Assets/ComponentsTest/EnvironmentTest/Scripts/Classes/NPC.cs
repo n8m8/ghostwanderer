@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour {
     //True if the enemy is a ghost
-    public bool isGhost = false;
+    [SerializeField] public bool isGhost = false;
     //True if the enemy is visible in the real world
-    public bool seenInRealWorld = false;
+    [SerializeField] public bool seenInRealWorld = false;
     //true if the enemy is visible in the spirit world
-    public bool seenInSpiritWorld = false;
+    [SerializeField] public bool seenInSpiritWorld = false;
     //boolean for if the enemy is invulnerable
-    public bool isInvulnerable = false;
+    [SerializeField] public bool isInvulnerable = false;
     //Weapon the enemy is holding/using
-    public Weapon weapon;
+    [SerializeField] public Weapon weapon;
     //Enemy health out of 100
-    public int health;
+    [SerializeField] public int health;
 
     //public PatrolAI patralAI;
     //How far away a speaking dialogue can be seen
-    public int currentSpeakingVolume;
+    [SerializeField] public int currentSpeakingVolume;
 
 
 	// Use this for initialization

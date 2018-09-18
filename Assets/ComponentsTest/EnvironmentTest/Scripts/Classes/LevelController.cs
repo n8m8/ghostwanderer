@@ -5,20 +5,16 @@ using UnityEngine;
 public class LevelController : MonoBehaviour {
 
     //Arraylist of the rooms in the level
-    public ArrayList rooms;
+    [SerializeField] public ArrayList rooms;
     //ArrayList of the enemies in the level
-    public ArrayList enemies;
+    [SerializeField] public ArrayList enemies;
     //bool if the conditions are met to load the next level
-    public bool levelComplete;
+    [SerializeField] public bool levelComplete;
     //True if the player is a ghost, false otherwise
-    public bool playerIsGhost;
+    [SerializeField] public bool playerIsGhost;
 
 	// Use this for initialization
-	void Start (ArrayList rooms, ArrayList enemies, bool levelComplete, bool playerIsGhost) {
-        this.rooms = rooms;
-        this.enemies = enemies;
-        this.levelComplete = levelComplete;
-        this.playerIsGhost = playerIsGhost;
+	void Start () {
 		
 	}
 	
