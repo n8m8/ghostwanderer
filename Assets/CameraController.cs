@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     [SerializeField] private Vector3 initPosition;
-    [SerializeField] private Transform target;
+    [SerializeField] private GameObject target;
     [SerializeField] private float cameraSize;
     [SerializeField] private float verticalOffset;
     [SerializeField] private float lookAheadDstX;
@@ -13,14 +13,15 @@ public class CameraController : MonoBehaviour {
     [SerializeField] private float verticalSmoothTime;
 
     private Vector3 FIXED_ROTATION = new Vector3(30, 45, 0);
-    private float SMOOTHING_MULTIPLIER = 1f;
-    private float X_THRESHOLD = 0.5f;
-    private float Y_THRESHOLD = 0.5f;
+    private float SMOOTHING_MULTIPLIER = 0.07f;
+    private float X_THRESHOLD = 0.4f;
+    private float Y_THRESHOLD = 0.4f;
 
     private Camera currentCamera;
     private FocusArea focusArea;
     private Collider targetCollider;
     private Bounds targetBounds2D;
+    private Rigidbody targetRigidbody;
 
     private float lookAheadDirX;
     private float currentLookAheadX;
@@ -28,12 +29,16 @@ public class CameraController : MonoBehaviour {
     private float smoothLookVelocityX;
     private float smoothVelocityY;
 
+    private bool lookAheadStopped;
+
     // Use this for initialization
     void Start () {
         currentCamera = GetComponent<Camera>();
         currentCamera.orthographicSize = cameraSize;
         this.transform.position = initPosition;
         this.transform.eulerAngles = FIXED_ROTATION;
+
+        targetRigidbody = target.GetComponent<Rigidbody>();
         targetCollider = target.GetComponent<Collider>();
         Vector3 targetBoundsCenter = currentCamera.WorldToScreenPoint(targetCollider.bounds.center);
         Vector3 targetBoundsSize = currentCamera.WorldToScreenPoint(targetCollider.bounds.center + targetCollider.bounds.size);
@@ -45,21 +50,41 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 targetPosition = currentCamera.WorldToScreenPoint(target.position);
-        Debug.Log(targetPosition);
-        Debug.Log(new Vector2(currentCamera.pixelWidth, currentCamera.pixelHeight));
+        // Vector2 targetPosition = currentCamera.WorldToScreenPoint(target.transform.position);
+        // Debug.Log(targetPosition);
+        // Debug.Log(new Vector2(currentCamera.pixelWidth, currentCamera.pixelHeight));
 	}
 
     void LateUpdate()
     {
-        focusArea.Update(targetBounds2D);
+        Vector2 targetPosition = currentCamera.WorldToScreenPoint(target.transform.position);
+        if (targetPosition.x > currentCamera.pixelWidth / 2 * (1 + X_THRESHOLD))
+        {
+            this.transform.localPosition += new Vector3(1, 0, -1) * SMOOTHING_MULTIPLIER;
+        }
+        if (targetPosition.x < currentCamera.pixelWidth * (1 - X_THRESHOLD) / 2)
+        {
+            this.transform.localPosition += new Vector3(-1, 0, 1) * SMOOTHING_MULTIPLIER;
+        }
+        if (targetPosition.y > currentCamera.pixelHeight / 2 * (1 + Y_THRESHOLD))
+        {
+            this.transform.position += new Vector3(1, 0, 1) * SMOOTHING_MULTIPLIER;
+        }
+        if (targetPosition.y < currentCamera.pixelHeight * (1 - Y_THRESHOLD) / 2)
+        {
+            this.transform.position += new Vector3(-1, 0, -1) * SMOOTHING_MULTIPLIER;
+        }
 
-        //Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffset;
+
+        //focusArea.Update(targetBounds2D);
+
+        //Vector2 targetVelocity2D = currentCamera.WorldToScreenPoint(targetRigidbody.velocity);
+        //Vector2 focusPosition = focusArea.center + Vector2.up * verticalOffset;
 
         //if (focusArea.velocity.x != 0)
         //{
         //    lookAheadDirX = Mathf.Sign(focusArea.velocity.x);
-        //    if (Mathf.Sign(target.playerStatus.currentVelocity.x) == Mathf.Sign(focusArea.velocity.x) && target.playerStatus.currentVelocity.x != 0)
+        //    if (Mathf.Sign(targetVelocity2D.x) == Mathf.Sign(focusArea.velocity.x) && targetVelocity2D.x != 0)
         //    {
         //        lookAheadStopped = false;
         //        targetLookAheadX = lookAheadDirX * lookAheadDstX;
@@ -84,7 +109,7 @@ public class CameraController : MonoBehaviour {
 
     struct FocusArea
     {
-        public Vector2 centre;
+        public Vector2 center;
         public Vector2 velocity;
         float left, right;
         float top, bottom;
@@ -98,7 +123,7 @@ public class CameraController : MonoBehaviour {
             top = targetBounds.min.y + size.y;
 
             velocity = Vector2.zero;
-            centre = new Vector2((left + right) / 2, (top + bottom) / 2);
+            center = new Vector2((left + right) / 2, (top + bottom) / 2);
         }
 
         public void Update(Bounds targetBounds)
@@ -126,7 +151,7 @@ public class CameraController : MonoBehaviour {
             }
             top += shiftY;
             bottom += shiftY;
-            centre = new Vector2((left + right) / 2, (top + bottom) / 2);
+            center = new Vector2((left + right) / 2, (top + bottom) / 2);
             velocity = new Vector2(shiftX, shiftY);
         }
     }
