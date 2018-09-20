@@ -21,15 +21,16 @@ public class PlayerTemp : MonoBehaviour {
     void Start () {
         playerRB = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //Debug.Log(canbetriggered + " " + OtherGO);
 
         if (can_use_trigger)
         {
-            if(otherGO.GetComponent<InteractableOBJ>().trigger1enable)
+            if (otherGO.GetComponent<InteractableOBJ>().trigger1enable)
             {
                 IndicateText1.text = "Press E";
                 if (Input.GetKeyDown(KeyCode.E))
@@ -51,7 +52,13 @@ public class PlayerTemp : MonoBehaviour {
         {
             IndicateText1.text = indi_text1;
         }
+        //Jump prototype
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
 
+            playerRB.AddForce(0, 50, 0, ForceMode.Impulse);
+
+        }
     }
 
     //private void LateUpdate()
