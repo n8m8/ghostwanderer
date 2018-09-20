@@ -7,15 +7,16 @@ public class PlayerTemp : MonoBehaviour {
 
     const string indi_text1 = "No Collider";
 
-    public float force = 60f;
-    public float topSpeed = 6.0f;
-    public Text IndicateText1;
+    [SerializeField] private float force = 60f;
+    [SerializeField] private float topSpeed = 6.0f;
+    [SerializeField] private Text IndicateText1;
 
     private Vector3 movement;
     private Rigidbody playerRB;
 
     private bool can_use_trigger = false;
     private GameObject otherGO;
+    private bool isJumping = false;
 
     // Use this for initialization
     void Start () {
@@ -52,7 +53,7 @@ public class PlayerTemp : MonoBehaviour {
         {
             IndicateText1.text = indi_text1;
         }
-        //Jump prototype
+        //Jump prototype + TODO: Add a isJumping mechanic so that the player cannot jump multiple times
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
