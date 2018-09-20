@@ -25,8 +25,5 @@ public class patrolingAI : MonoBehaviour {
 	void Update () {
         if (!agent.pathPending && agent.remainingDistance < 8.0f)
             GotoNextPoint();
-        
-
-		
 	}
 }
