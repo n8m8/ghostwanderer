@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class shootingAI : MonoBehaviour
+public class ShootingAI : MonoBehaviour
 {
     public Rigidbody bullet;
     public Transform[] points;
@@ -32,6 +32,7 @@ public class shootingAI : MonoBehaviour
     {
         if (isPlayerdiscovered)
         {
+
             //here i need to run a special script which will start the chase mechanisim
         }
         else
@@ -47,7 +48,6 @@ public class shootingAI : MonoBehaviour
         //audio.PlayOneShot(shotS);
         Rigidbody something = Instantiate(bullet, transform.position, transform.rotation);
         something.velocity = transform.TransformDirection(new Vector3(0, 0, bulletspeed));
-
         Destroy(something.gameObject, 0.5f);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class patrolingAI : MonoBehaviour {
+public class PatrolingAI : MonoBehaviour {
     public Transform[] points;
     private int desPoint = 0;
     private NavMeshAgent agent;

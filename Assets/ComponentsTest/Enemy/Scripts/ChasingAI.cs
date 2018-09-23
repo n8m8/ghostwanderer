@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 using System.Collections;
 
-public class chasingAI : MonoBehaviour {
+public class ChasingAI : MonoBehaviour {
 	private GameObject playerObject;
 
 	NavMeshAgent agent;
