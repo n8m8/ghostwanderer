@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 1558415066}
   - component: {fileID: 1558415065}
   m_Layer: 0
-  m_Name: TextMeshPro Text
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1558415066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1831216038}
+        m_MethodName: NextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1558415066
@@ -621,6 +632,7 @@ MonoBehaviour:
   - scoop de poop
   - woop de scoop de poop
   typingSpeed: 0.02
+  continueButton: {fileID: 1558415063}
 --- !u!4 &1831216039
 Transform:
   m_ObjectHideFlags: 0
@@ -645,7 +657,7 @@ GameObject:
   - component: {fileID: 1839292087}
   - component: {fileID: 1839292086}
   m_Layer: 0
-  m_Name: TextMeshPro Text
+  m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
