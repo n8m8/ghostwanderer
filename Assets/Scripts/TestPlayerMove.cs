@@ -53,7 +53,7 @@ public class TestPlayerMove : MonoBehaviour {
         if (playerRB.velocity.magnitude > topSpeed)
             playerRB.velocity = playerRB.velocity.normalized * topSpeed;
 
-        Debug.Log("playerRB.velocity " + playerRB.velocity);
+        //Debug.Log("playerRB.velocity " + playerRB.velocity);
 
     }
 }
