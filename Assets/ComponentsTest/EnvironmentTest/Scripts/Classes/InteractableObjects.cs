@@ -18,6 +18,22 @@ public class InteractableObjects : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+    }
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    {
+        var hit = collision.gameObject;
+        //If kill is set as an input value kill the player
+        if (hit.name.Contains("TestPlayer") && act.Equals("Kill"))
+        {
+            Destroy(gameObject);
+            yield return new WaitForSeconds(2);
+        }
+        //If disappear is set as an input value destroy this object
+        else if (hit.name.Contains("TestPlayer") && act.Equals("Disappear"))
+        {
+            Destroy(hit);
+            yield return new WaitForSeconds(1);
+        }
+    }
 }

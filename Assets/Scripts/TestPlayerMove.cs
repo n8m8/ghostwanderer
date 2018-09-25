@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlayerMove : MonoBehaviour {
+public class TestPlayerMove : MonoBehaviour
+{
 
     //public float ySpeed = 10.0f;
     //public float xSpeed = 10.0f;
@@ -15,12 +16,14 @@ public class TestPlayerMove : MonoBehaviour {
     private Rigidbody2D playerRB;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         playerRB = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //float x = Input.GetAxis("Horizontal") * Time.deltaTime * xSpeed;
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
 
@@ -55,5 +58,20 @@ public class TestPlayerMove : MonoBehaviour {
 
         //Debug.Log("playerRB.velocity " + playerRB.velocity);
 
+    }
+
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    {
+        var hit = collision.gameObject; 
+        if (hit.name.Contains("Chair"))
+        {
+            Destroy(gameObject);
+            yield return new WaitForSeconds(2);
+        }
+        else if (hit.name.Contains("Chair"))
+        {
+            Destroy(gameObject);
+            yield return new WaitForSeconds(2);
+        }
     }
 }
