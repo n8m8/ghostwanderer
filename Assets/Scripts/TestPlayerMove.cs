@@ -42,6 +42,15 @@ public class TestPlayerMove : MonoBehaviour
 
     private void Move(float h, float v)
     {
+        //Modifies movement to match the angles of the tile map.
+        if(h == v)
+        {
+            h = h * 2;
+        }
+        else if (h == v * -1)
+        {
+            h = h * 2;
+        }
         movement.Set(h, v);
         movement = movement.normalized * force * Time.deltaTime;
 
