@@ -17,4 +17,19 @@ public class EnvironmentObjects : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    {
+        var hit = collision.gameObject;
+        if (hit.name.Contains("Chair"))
+        {
+            Destroy(gameObject);
+            yield return new WaitForSeconds(2);
+        }
+        else if (hit.name.Contains("Chair"))
+        {
+            Destroy(gameObject);
+            yield return new WaitForSeconds(2);
+        }
+    }
 }
