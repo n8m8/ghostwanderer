@@ -12,6 +12,8 @@ public class Dialogue : MonoBehaviour {
 	private int index;
 	public float typingSpeed;
 	public GameObject continueButton;
+	public string name; 
+	public GameObject image;
 
 	void Start(){
 		// for testing purposes
@@ -28,13 +30,15 @@ public class Dialogue : MonoBehaviour {
 		// 	NextSentence();
 		// }
 
-		if (textDisplay.text == sentences[index]){
+		if (textDisplay.text == (name + sentences[index])){
 			continueButton.SetActive(true);
 		}
 	}
 
 	IEnumerator Type(){
+		image.SetActive(true);
 		//check for animation type here and execute it maybe enums?? 
+		textDisplay.text += name;
 		foreach(char letter in sentences[index].ToCharArray()){
 			textDisplay.text += letter;
 			yield return new WaitForSeconds(typingSpeed);
@@ -50,6 +54,7 @@ public class Dialogue : MonoBehaviour {
 			continueButton.SetActive(false);
 		}
 		else{
+			image.SetActive(false);
 			textDisplay.text = "";
 			continueButton.SetActive(false);
 		}
