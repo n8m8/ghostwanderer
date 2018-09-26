@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour {
     private Vector3 INIT_POSITION = new Vector3(0, 0, -10);
     private Vector3 FIXED_ROTATION = Vector3.zero;
     private float SMOOTHING_MULTIPLIER = 0.07f;
-    private float X_THRESHOLD = 0.4f;
+    private float X_THRESHOLD = 0.5f;
     private float Y_THRESHOLD = 0.4f;
 
     // Use this for initialization
