@@ -21,7 +21,7 @@ public class UpdateSorting : MonoBehaviour {
         //transform.position =
         //    new Vector3(transform.position.x, transform.position.y, stand_pos.y);
 
-        spriteRenderer.sortingOrder = (int)(-1 * sorting_scale * stand_pos.z);
+        spriteRenderer.sortingOrder = (int)(-1 * sorting_scale * stand_pos.y);
     }
 	
 	// Update is called once per frame

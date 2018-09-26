@@ -23,7 +23,7 @@ public class UpdateSortingConstant : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         stand_pos = StandIndicator.transform.position;
-        spriteRenderer.sortingOrder = (int)(-1 * sorting_scale * stand_pos.z);
+        spriteRenderer.sortingOrder = (int)(-1 * sorting_scale * stand_pos.y);
     }
 
     private void OnDrawGizmos()
