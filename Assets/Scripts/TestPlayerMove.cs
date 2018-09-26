@@ -12,13 +12,13 @@ public class TestPlayerMove : MonoBehaviour
     public float topSpeed = 6.0f;
     public float friction = -10.0f;
 
-    private Vector2 movement;
-    private Rigidbody2D playerRB;
+    private Vector3 movement;
+    private Rigidbody playerRB;
 
     // Use this for initialization
     void Start()
     {
-        playerRB = GetComponent<Rigidbody2D>();
+        playerRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class TestPlayerMove : MonoBehaviour
         {
             h = h * 2;
         }
-        movement.Set(h, v);
+        movement.Set(h, 0.0f , v);
         movement = movement.normalized * force * Time.deltaTime;
 
         //Debug.Log("movement " + movement);
