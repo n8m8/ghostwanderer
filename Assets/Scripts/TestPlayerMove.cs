@@ -76,11 +76,13 @@ public class TestPlayerMove : MonoBehaviour
         {
             Destroy(gameObject);
             yield return new WaitForSeconds(2);
+            
         }
-        else if (hit.name.Contains("Chair"))
+        else if (hit.name.Contains("table"))
         {
-            Destroy(gameObject);
-            yield return new WaitForSeconds(2);
+            //Destroy(gameObject);
+            yield return new WaitForSeconds(1);
+            gameObject.GetComponent<Renderer>().enabled = true;
         }
     }
 }
