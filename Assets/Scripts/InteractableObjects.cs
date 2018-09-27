@@ -10,13 +10,15 @@ public class InteractableObjects : MonoBehaviour {
 
     [SerializeField]
     private Dialogue dialogue;
+    //the LevelController
+    public LevelController levelController;
     
     //TODO change the above to usable classes
 
 
 	// Use this for initialization
 	void Start () {
-		
+		levelController = FindObjectOfType<LevelController>();
 	}
 	
 	// Update is called once per frame
@@ -29,8 +31,7 @@ public class InteractableObjects : MonoBehaviour {
         //If kill is set as an input value kill the player
         if (hit.name.Contains("Player") && act.Equals("Kill"))
         {
-            Destroy(hit);
-            yield return new WaitForSeconds(2);
+            levelController.respawnPlayer();
         }
         //If disappear is set as an input value destroy this object
         else if (hit.name.Contains("Player") && act.Equals("Disappear"))

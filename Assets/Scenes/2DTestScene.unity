@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520ce0dc41d366048a304b4df373e50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 0}
+  levelController: {fileID: 1850365681}
 --- !u!1 &626642315
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520ce0dc41d366048a304b4df373e50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 0}
+  levelController: {fileID: 1850365681}
 --- !u!1 &661617629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +1011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: 0
   act: Kill
+  dialogue: {fileID: 0}
   levelController: {fileID: 0}
 --- !u!4 &1397027431
 Transform:
@@ -1197,6 +1198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: 0
   act: Door
+  dialogue: {fileID: 0}
   levelController: {fileID: 0}
 --- !u!1 &1656179852
 GameObject:
@@ -1602,7 +1604,7 @@ MonoBehaviour:
   playerIsGhost: 0
   levelComplete: 0
   nextLevel: 
-  currentCheckpoint: {fileID: 0}
+  currentCheckpoint: {fileID: 650981853}
 --- !u!4 &1850365682
 Transform:
   m_ObjectHideFlags: 0

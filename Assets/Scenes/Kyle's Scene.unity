@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -212,6 +212,7 @@ MonoBehaviour:
   trigger: 0
   act: Kill
   dialogue: {fileID: 0}
+  levelController: {fileID: 0}
 --- !u!212 &248690268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -267,7 +268,7 @@ PolygonCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -556,6 +557,7 @@ MonoBehaviour:
   trigger: 0
   act: Disappear
   dialogue: {fileID: 0}
+  levelController: {fileID: 0}
 --- !u!212 &319833787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -964,6 +966,7 @@ MonoBehaviour:
   trigger: 0
   act: Door
   dialogue: {fileID: 0}
+  levelController: {fileID: 0}
 --- !u!212 &341822231
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1099,6 +1102,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   weapon: {fileID: 0}
+--- !u!1 &1724835030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724835032}
+  - component: {fileID: 1724835031}
+  m_Layer: 0
+  m_Name: Checkpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1724835031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724835030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520ce0dc41d366048a304b4df373e50b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelController: {fileID: 0}
+--- !u!4 &1724835032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1724835030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093185527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1403,7 @@ MonoBehaviour:
   playerIsGhost: 0
   levelComplete: 0
   nextLevel: 
+  currentCheckpoint: {fileID: 0}
 --- !u!4 &2142142847
 Transform:
   m_ObjectHideFlags: 0
