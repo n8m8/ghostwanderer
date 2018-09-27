@@ -52,20 +52,20 @@ public class TestPlayerMove : MonoBehaviour
         //    playerRB.velocity = playerRB.velocity.normalized * topSpeed;
     }
 
-    IEnumerator OnCollisionEnter2D(Collision2D collision)
-    {
-        var hit = collision.gameObject; 
-        if (hit.name.Contains("Chair"))
-        {
-            Destroy(gameObject);
-            yield return new WaitForSeconds(2);
+    // IEnumerator OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     var hit = collision.gameObject; 
+    //     if (hit.name.Contains("Chair"))
+    //     {
+    //         Destroy(gameObject);
+    //         yield return new WaitForSeconds(2);
             
-        }
-        else if (hit.name.Contains("table"))
-        {
-            //Destroy(gameObject);
-            yield return new WaitForSeconds(1);
-            gameObject.GetComponent<Renderer>().enabled = true;
-        }
-    }
+    //     }
+    //     else if (hit.name.Contains("table"))
+    //     {
+    //         //Destroy(gameObject);
+    //         yield return new WaitForSeconds(1);
+    //         gameObject.GetComponent<Renderer>().enabled = true;
+    //     }
+    // }
 }
