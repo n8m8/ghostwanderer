@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd78a46e5b17f7c4fa9b0e77146e18fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelController: {fileID: 0}
+  levelController: {fileID: 2142142846}
 --- !u!114 &2093185530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,6 @@ MonoBehaviour:
   abs_force: 1000
   topSpeed: 6
   friction: -5
-  playerController: {fileID: 0}
 --- !u!212 &2093185531
 SpriteRenderer:
   m_ObjectHideFlags: 0

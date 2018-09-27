@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Kyle
 public class LevelController : MonoBehaviour {
 
     //True if the player is a ghost, false otherwise
