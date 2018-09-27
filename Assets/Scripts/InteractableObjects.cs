@@ -7,6 +7,9 @@ public class InteractableObjects : MonoBehaviour {
     [SerializeField] private int trigger;
     //The response when triggered
     [SerializeField] private string act;
+
+    [SerializeField]
+    private Dialogue dialogue;
     
     //TODO change the above to usable classes
 
@@ -24,33 +27,65 @@ public class InteractableObjects : MonoBehaviour {
     {
         var hit = collision.gameObject;
         //If kill is set as an input value kill the player
-        if (hit.name.Contains("TestPlayer") && act.Equals("Kill"))
+        if (hit.name.Contains("Player") && act.Equals("Kill"))
         {
-            Destroy(gameObject);
+            Destroy(hit);
             yield return new WaitForSeconds(2);
         }
         //If disappear is set as an input value destroy this object
-        else if (hit.name.Contains("TestPlayer") && act.Equals("Disappear"))
+        else if (hit.name.Contains("Player") && act.Equals("Disappear"))
         {
-            Destroy(hit);
+            Destroy(gameObject);
             yield return new WaitForSeconds(1);
         }
 
         //If disappear is set as an input value destroy this object
-        else if (hit.name.Contains("TestPlayer") && act.Equals("Door"))
+        else if (hit.name.Contains("Player") && act.Equals("Door"))
         {
-            //Collider2D PC = gameObject.GetComponent<Collider2D>();
-           // PC.isTrigger = true;
+            EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
+            PC.isTrigger = true;
             gameObject.GetComponent<Renderer>().enabled = false;
             yield return new WaitForSeconds(1);
             gameObject.GetComponent<Renderer>().enabled = true;
+            PC.isTrigger = false;
 
         }
+        else if (hit.name.Contains("Player") && act.Equals("Damage"))
+        {
+            //Possible section if we want objects to be damage-able...
+            //This could refer to player health or perhaps the integrity of something like a lock in the game
+
+        }
+
+        else if(hit.name.Contains("Player") && act.Equals("Dialogue"))
+        {
+            //This section should be for dialogue spawning objects
+            //Essentially any objects that will display text for the player
+            //dialogue.StartCoroutine(Type());
+        }
     }
+    //Leave this for testing please
     IEnumerator OnCollisionExit2D(Collision2D other)
     {
         
         gameObject.GetComponent<Renderer>().enabled = true;
+        EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
+        PC.isTrigger = false;
+        Renderer rend = GetComponent<Renderer>();
+
+        //Set the main Color of the Material to green
+        rend.material.shader = Shader.Find("Test Player");
+        rend.material.SetColor("Test Player", Color.blue);
+        yield return new WaitForSeconds(1);
+
+    }
+
+    IEnumerator OnTriggerExit2D(Collision2D other)
+    {
+
+        gameObject.GetComponent<Renderer>().enabled = true;
+        EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
+        PC.isTrigger = false;
         yield return new WaitForSeconds(1);
 
     }
