@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour {
 
-	public LevelController levelController;
+	[SerializeField] private LevelController levelController;
 
 	// Use this for initialization
 	void Start () {

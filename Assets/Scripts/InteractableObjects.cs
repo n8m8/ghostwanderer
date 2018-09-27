@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InteractableObjects : MonoBehaviour {
@@ -7,11 +6,10 @@ public class InteractableObjects : MonoBehaviour {
     [SerializeField] private int trigger;
     //The response when triggered
     [SerializeField] private string act;
-
-    [SerializeField]
-    private Dialogue dialogue;
+    //Dialogue
+    [SerializeField] private Dialogue dialogue;
     //the LevelController
-    public LevelController levelController;
+    [SerializeField] private LevelController levelController;
     
     //TODO change the above to usable classes
 
@@ -20,18 +18,14 @@ public class InteractableObjects : MonoBehaviour {
 	void Start () {
 		levelController = FindObjectOfType<LevelController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-    }
-    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
         var hit = collision.gameObject;
         //If kill is set as an input value kill the player
         if (hit.name.Contains("Player") && act.Equals("Kill"))
         {
-            levelController.respawnPlayer();
+            levelController.RespawnPlayer();
         }
         //If disappear is set as an input value destroy this object
         else if (hit.name.Contains("Player") && act.Equals("Disappear"))
@@ -67,8 +61,7 @@ public class InteractableObjects : MonoBehaviour {
     }
     //Leave this for testing please
     IEnumerator OnCollisionExit2D(Collision2D other)
-    {
-        
+    {  
         gameObject.GetComponent<Renderer>().enabled = true;
         EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
         PC.isTrigger = false;
@@ -78,16 +71,14 @@ public class InteractableObjects : MonoBehaviour {
         rend.material.shader = Shader.Find("Test Player");
         rend.material.SetColor("Test Player", Color.blue);
         yield return new WaitForSeconds(1);
-
     }
 
     IEnumerator OnTriggerExit2D(Collision2D other)
     {
-
         gameObject.GetComponent<Renderer>().enabled = true;
         EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
         PC.isTrigger = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
 
     }
 

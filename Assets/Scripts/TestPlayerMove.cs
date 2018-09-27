@@ -10,6 +10,7 @@ public class TestPlayerMove : MonoBehaviour
 
     private Vector2 movement;
     private Rigidbody2D playerRB;
+    private PlayerController.PlayerStatus playerStatus;
 
     private readonly float TAN27 = 1.96261050551f;
 
@@ -17,6 +18,7 @@ public class TestPlayerMove : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        playerStatus = this.GetComponent<PlayerController>().playerStatus;
     }
 
     // Update is called once per frame
@@ -30,12 +32,17 @@ public class TestPlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-
-        Move(h, v);
-
-        playerRB.AddForce(playerRB.velocity * friction);
+        if (playerStatus.moveAllowed)
+        {
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
+            Move(h, v);
+            playerRB.AddForce(playerRB.velocity * friction);
+        }
+        else
+        {
+            Debug.Log("move allowed not working");
+        }
     }
 
     private void Move(float h, float v)

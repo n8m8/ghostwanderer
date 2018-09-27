@@ -17,12 +17,19 @@ public class LevelController : MonoBehaviour {
     [SerializeField] private bool levelComplete = false;
     //The next level
     [SerializeField] private string nextLevel;
+    //The camera to reset position
+    [SerializeField] private CameraController cameraController;
+    // The player controller
+    [SerializeField] private GameObject player;
+
     //The current checkpoint
     public GameObject currentCheckpoint;
 
+    private PlayerController.PlayerStatus playerStatus;
 
     // Use this for initialization
     void Start () {
+        playerStatus = player.GetComponent<PlayerController>().playerStatus;
 	}
 	
 	// Update is called once per frame
@@ -78,8 +85,18 @@ public class LevelController : MonoBehaviour {
     }
 
     // Respawns Player at current Checkpoint
-    public void respawnPlayer(){
-		GameObject.Find("TestPlayer").transform.position = currentCheckpoint.transform.position;
+    public void RespawnPlayer(){
+        StartCoroutine(RespawnAnimation());
 	}
+
+    // Animation for respawning the player
+    private IEnumerator RespawnAnimation()
+    {
+        player.GetComponent<PlayerController>().playerStatus.moveAllowed = false;
+        GameObject.Find("Test Player").transform.position = currentCheckpoint.transform.position;
+        cameraController.ResetCameraPosition();
+        yield return new WaitForSeconds(3f);
+        player.GetComponent<PlayerController>().playerStatus.moveAllowed = true;
+    }
 
 }

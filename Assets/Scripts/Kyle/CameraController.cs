@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour {
     private Bounds targetBounds;
     private Rigidbody2D targetRigidbody;
 
+    private bool resetPosition;
+
     private Vector3 INIT_POSITION = new Vector3(0, 0, -10);
     private Vector3 FIXED_ROTATION = Vector3.zero;
     private float SMOOTHING_MULTIPLIER = 0.07f;
@@ -36,23 +38,46 @@ public class CameraController : MonoBehaviour {
 
     void LateUpdate()
     {
-        Vector2 targetPosition = currentCamera.WorldToScreenPoint(target.transform.position);
-        if (targetPosition.x > currentCamera.pixelWidth / 2 * (1 + X_THRESHOLD))
+        if (resetPosition)
         {
-            this.transform.localPosition += Vector3.right * targetRigidbody.velocity.x * Time.fixedDeltaTime;
+            GameObject player = target;
+            player.GetComponent<PlayerController>().playerStatus.moveAllowed = false;
+            Vector3 currentPos = transform.position;
+            Vector3 newPos = target.transform.position + Vector3.back * 10;
+            transform.position = Vector3.Lerp(currentPos, newPos, Time.deltaTime);
+            Debug.Log("This?");
+            if (Vector3.Magnitude(newPos - currentPos) < 1)
+            {
+                Debug.Log("Does the threshold work?");
+                resetPosition = false;
+                player.GetComponent<PlayerController>().playerStatus.moveAllowed = true;
+            }
         }
-        if (targetPosition.x < currentCamera.pixelWidth * (1 - X_THRESHOLD) / 2)
+        else
         {
-            this.transform.localPosition += Vector3.right * targetRigidbody.velocity.x * Time.fixedDeltaTime;
+            Vector2 targetPosition = currentCamera.WorldToScreenPoint(target.transform.position);
+            if (targetPosition.x > currentCamera.pixelWidth / 2 * (1 + X_THRESHOLD))
+            {
+                this.transform.localPosition += Vector3.right * targetRigidbody.velocity.x * Time.fixedDeltaTime;
+            }
+            if (targetPosition.x < currentCamera.pixelWidth * (1 - X_THRESHOLD) / 2)
+            {
+                this.transform.localPosition += Vector3.right * targetRigidbody.velocity.x * Time.fixedDeltaTime;
+            }
+            if (targetPosition.y > currentCamera.pixelHeight / 2 * (1 + Y_THRESHOLD))
+            {
+                this.transform.localPosition += Vector3.up * targetRigidbody.velocity.y * Time.fixedDeltaTime;
+            }
+            if (targetPosition.y < currentCamera.pixelHeight * (1 - Y_THRESHOLD) / 2)
+            {
+                this.transform.localPosition += Vector3.up * targetRigidbody.velocity.y * Time.fixedDeltaTime;
+            }
         }
-        if (targetPosition.y > currentCamera.pixelHeight / 2 * (1 + Y_THRESHOLD))
-        {
-            this.transform.localPosition += Vector3.up * targetRigidbody.velocity.y * Time.fixedDeltaTime;
-        }
-        if (targetPosition.y < currentCamera.pixelHeight * (1 - Y_THRESHOLD) / 2)
-        {
-            this.transform.localPosition += Vector3.up * targetRigidbody.velocity.y * Time.fixedDeltaTime;
-        }
+    }
+
+    public void ResetCameraPosition()
+    {
+        resetPosition = true;
     }
 
 
