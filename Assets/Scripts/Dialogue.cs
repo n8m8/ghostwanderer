@@ -16,8 +16,10 @@ public class Dialogue : MonoBehaviour {
 	public GameObject image;
 
 	void Start(){
-		// for testing purposes
-		StartCoroutine(Type());
+		// // for testing purposes
+		// StartCoroutine(Type());
+		continueButton.SetActive(false);
+		image.SetActive(false);
 	}
 
 	void Update(){
@@ -33,7 +35,11 @@ public class Dialogue : MonoBehaviour {
 		if (textDisplay.text == (name + sentences[index])){
 			continueButton.SetActive(true);
 		}
+		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (name + sentences[index])){
+			NextSentence();
+		}
 	}
+
 
 	IEnumerator Type(){
 		image.SetActive(true);
@@ -61,12 +67,19 @@ public class Dialogue : MonoBehaviour {
 	}
 
 
-// have to freeze character on entrance and mayb animate to turn towards, zoom in screen?
-// 	void OnTriggerEnter2D(Collider2D collider){
-// 		if (collider.tag == "Player" && Input.GetButtonDown("Talk")){
-			// StartCoroutine(Type());
-// 		}
-// 	}
+//have to freeze character on entrance and mayb animate to turn towards, zoom in screen?
+	//Input.GetKeyDown(KeyCode.Space)
+	void OnTriggerEnter2D(Collider2D collider){
+		if (collider.name == "TestPlayer"){
+			//Freeze the character xd
+			StartCoroutine(Type());
+		}
+	}
+
+	// //reset everyhing
+	// void OnTriggerExit2D(Collider2D collider){
+	
+	// }
 
 
 
