@@ -12,10 +12,14 @@ public class Dialogue : MonoBehaviour {
 	private int index;
 	public float typingSpeed;
 	public GameObject continueButton;
+	public string name; 
+	public GameObject image;
 
 	void Start(){
-		// for testing purposes
-		StartCoroutine(Type());
+		// // for testing purposes
+		// StartCoroutine(Type());
+		continueButton.SetActive(false);
+		image.SetActive(false);
 	}
 
 	void Update(){
@@ -28,13 +32,19 @@ public class Dialogue : MonoBehaviour {
 		// 	NextSentence();
 		// }
 
-		if (textDisplay.text == sentences[index]){
+		if (textDisplay.text == (name + sentences[index])){
 			continueButton.SetActive(true);
+		}
+		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (name + sentences[index])){
+			NextSentence();
 		}
 	}
 
+
 	IEnumerator Type(){
+		image.SetActive(true);
 		//check for animation type here and execute it maybe enums?? 
+		textDisplay.text += name;
 		foreach(char letter in sentences[index].ToCharArray()){
 			textDisplay.text += letter;
 			yield return new WaitForSeconds(typingSpeed);
@@ -50,18 +60,26 @@ public class Dialogue : MonoBehaviour {
 			continueButton.SetActive(false);
 		}
 		else{
+			image.SetActive(false);
 			textDisplay.text = "";
 			continueButton.SetActive(false);
 		}
 	}
 
 
-// have to freeze character on entrance and mayb animate to turn towards, zoom in screen?
-// 	void OnTriggerEnter2D(Collider2D collider){
-// 		if (collider.tag == "Player" && Input.GetButtonDown("Talk")){
-			// StartCoroutine(Type());
-// 		}
-// 	}
+//have to freeze character on entrance and mayb animate to turn towards, zoom in screen?
+	//Input.GetKeyDown(KeyCode.Space)
+	void OnTriggerEnter2D(Collider2D collider){
+		if (collider.name == "TestPlayer"){
+			//Freeze the character xd
+			StartCoroutine(Type());
+		}
+	}
+
+	// //reset everyhing
+	// void OnTriggerExit2D(Collider2D collider){
+	
+	// }
 
 
 

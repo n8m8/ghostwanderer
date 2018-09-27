@@ -17,10 +17,12 @@ public class LevelController : MonoBehaviour {
     [SerializeField] private bool levelComplete = false;
     //The next level
     [SerializeField] private string nextLevel;
+    //The current checkpoint
+    public GameObject currentCheckpoint;
+
 
     // Use this for initialization
     void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -74,5 +76,10 @@ public class LevelController : MonoBehaviour {
         playerIsGhost = false;
         yield return new WaitForSeconds(0.5f);
     }
+
+    // Respawns Player at current Checkpoint
+    public void respawnPlayer(){
+		GameObject.Find("TestPlayer").transform.position = currentCheckpoint.transform.position;
+	}
 
 }
