@@ -26,10 +26,10 @@ public class UpdateSortingConstant : MonoBehaviour {
         spriteRenderer.sortingOrder = (int)(-1 * sorting_scale * stand_pos.y);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawLine(stand_pos - (Vector3.left * sprite_width / 2.0f),
-                            stand_pos + (Vector3.left * sprite_width / 2.0f));
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.magenta;
+    //    Gizmos.DrawLine(stand_pos - (Vector3.left * sprite_width / 2.0f),
+    //                        stand_pos + (Vector3.left * sprite_width / 2.0f));
+    //}
 }
