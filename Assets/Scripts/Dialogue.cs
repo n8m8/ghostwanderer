@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour {
 	public GameObject continueButton;
 	public string name; 
 	public GameObject image;
+	private boolean flagcheck;
 
 	void Start(){
 		// // for testing purposes
@@ -35,7 +36,7 @@ public class Dialogue : MonoBehaviour {
 		if (textDisplay.text == (name + sentences[index])){
 			continueButton.SetActive(true);
 		}
-		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (name + sentences[index])){
+		if (Input.GetKeyDown(KeyCode.E) && textDisplay.text == (name + sentences[index])){
 			NextSentence();
 		}
 	}
@@ -72,7 +73,9 @@ public class Dialogue : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
 			//Freeze the character xd
+			checkflag = true;
 			StartCoroutine(Type());
+			//GetComponent<Rigidbody2D>().isKinematic = false;
 		}
 	}
 

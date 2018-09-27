@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PatrolingAI : MonoBehaviour {
     public Transform[] points;
     private int desPoint = 0;
-    private NavMeshAgent agent;
+    private AIDestinationSetter agent;
+    private Transform target;
 	// Use this for initialization
 	void Start () {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<AIDestinationSetter>();
+        target = agent.target;
         GotoNextPoint();
 	}
 
@@ -17,13 +20,13 @@ public class PatrolingAI : MonoBehaviour {
         if (points.Length == 0)
             return;
 
-        agent.destination = points[desPoint].position;
+        target.transform.position = points[desPoint].position;
         desPoint = (desPoint + 1) % points.Length;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!agent.pathPending && agent.remainingDistance < 8.0f)
+        if (Vector2.Distance(this.gameObject.transform.position, target.transform.position) < 0.5f)
             GotoNextPoint();
 	}
 }
