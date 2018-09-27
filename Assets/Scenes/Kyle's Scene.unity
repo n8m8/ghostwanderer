@@ -1936,7 +1936,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f130c9c81c46473498a69fb63224bc95, type: 3}
   m_Color: {r: 0.6886792, g: 0.19821881, b: 0, a: 1}
   m_FlipX: 0
@@ -3379,7 +3379,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e55d2a115377a1248889899e51279a7d, type: 3}
   m_Color: {r: 1, g: 0.5896226, b: 0.5896226, a: 1}
   m_FlipX: 0
@@ -4404,7 +4404,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e55d2a115377a1248889899e51279a7d, type: 3}
   m_Color: {r: 1, g: 0.5896226, b: 0.5896226, a: 1}
   m_FlipX: 0
@@ -6037,7 +6037,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: e55d2a115377a1248889899e51279a7d, type: 3}
   m_Color: {r: 1, g: 0.5896226, b: 0.5896226, a: 1}
   m_FlipX: 0
@@ -7295,7 +7295,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e55d2a115377a1248889899e51279a7d, type: 3}
   m_Color: {r: 1, g: 0.5896226, b: 0.5896226, a: 1}
   m_FlipX: 0
@@ -7752,6 +7752,11 @@ Prefab:
     - target: {fileID: 1615368056049126, guid: ce14fefad5ec9c84cad53eb1bb33bbd3, type: 2}
       propertyPath: m_Name
       value: Small Wall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212304289186556500, guid: ce14fefad5ec9c84cad53eb1bb33bbd3,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce14fefad5ec9c84cad53eb1bb33bbd3, type: 2}
