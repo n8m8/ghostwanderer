@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     [SerializeField] public Weapon weapon;
     // Use this for initialization
     void Start () {
-
+        health = 100;
 	}
 
 	
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
             Destroy(gameObject);
             yield return new WaitForSeconds(2);
         }
-        else if (hit.name.Contains("Chair"))
+        else if (hit.name.Contains("Table"))
         {
             Destroy(gameObject);
             yield return new WaitForSeconds(2);
