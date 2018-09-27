@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2093185527}
-  cameraSize: 3
+  cameraSize: 4
 --- !u!1 &319833784
 GameObject:
   m_ObjectHideFlags: 0
