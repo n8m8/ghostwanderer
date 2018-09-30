@@ -19,14 +19,17 @@ public class PatrolingAI : MonoBehaviour {
     void GotoNextPoint(){
         if (points.Length == 0)
             return;
-
-        target.transform.position = points[desPoint].position;
         desPoint = (desPoint + 1) % points.Length;
+        target = points[desPoint];
+        agent.target = target;
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (Vector2.Distance(this.gameObject.transform.position, target.transform.position) < 0.5f)
+        {
+            print(target.transform.position);
             GotoNextPoint();
+        }
 	}
 }
