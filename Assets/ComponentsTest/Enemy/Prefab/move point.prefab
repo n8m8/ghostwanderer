@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4212341021102034}
   m_Layer: 0
-  m_Name: move point
+  m_Name: target1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

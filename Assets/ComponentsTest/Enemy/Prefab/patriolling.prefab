@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114463609806775506}
   - component: {fileID: 114583531269163862}
   m_Layer: 1
-  m_Name: patriolling
+  m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
