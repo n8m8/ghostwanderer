@@ -73,6 +73,7 @@ public class InteractableObjects : MonoBehaviour {
         yield return new WaitForSeconds(1);
     }
 
+<<<<<<< HEAD
     IEnumerator OnTriggerExit2D(Collision2D other)
     {
         gameObject.GetComponent<Renderer>().enabled = true;
@@ -81,5 +82,8 @@ public class InteractableObjects : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
     }
+=======
+
+>>>>>>> level-one
 
 }
