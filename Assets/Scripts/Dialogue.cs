@@ -32,7 +32,7 @@ public class Dialogue : MonoBehaviour {
 		// if (Input.GetButtonDown("K")){
 		// 	NextSentence();
 		// }
-		if (checkflag && Input.GetKeyDown(KeyCode.E)){
+		if (Input.GetKeyDown(KeyCode.E)){
 			//freeze player 
 			StartCoroutine(Type());
 		}
