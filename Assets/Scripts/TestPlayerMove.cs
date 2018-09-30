@@ -17,6 +17,8 @@ public class TestPlayerMove : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
+        ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+        system.Stop();
     }
 
     // Update is called once per frame
@@ -26,6 +28,13 @@ public class TestPlayerMove : MonoBehaviour
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
 
         //transform.Translate(x, y, 0.0f);
+        if (Input.GetKeyDown("e"))
+        {
+            toggleGhostMode();
+        }
+
+
+
     }
 
     private void FixedUpdate()
@@ -51,7 +60,38 @@ public class TestPlayerMove : MonoBehaviour
         //if (playerRB.velocity.magnitude > topSpeed)
         //    playerRB.velocity = playerRB.velocity.normalized * topSpeed;
     }
+    public bool isGhost = false;
+    public void toggleGhostMode()
+    {
+        BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
+        PC.isTrigger = true;
+        if (isGhost)
+        {
+            isGhost = false;
+            PC.isTrigger = false;
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Stop();
 
+        }
+        else
+        {
+            PC.isTrigger = true;
+            isGhost = true;
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Play();
+        }
+    }
+
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isGhost)
+        {
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
+        }
+
+                 yield return new WaitForSeconds(0);
+
+    }
     // IEnumerator OnCollisionEnter2D(Collision2D collision)
     // {
     //     var hit = collision.gameObject; 
@@ -59,7 +99,7 @@ public class TestPlayerMove : MonoBehaviour
     //     {
     //         Destroy(gameObject);
     //         yield return new WaitForSeconds(2);
-            
+
     //     }
     //     else if (hit.name.Contains("table"))
     //     {
