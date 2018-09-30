@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour {
     [SerializeField] private GameObject target;
     // The orthographic size of the camera
     [SerializeField] private float cameraSize;
+    // The initial position of the camera at the start of the game
+    [SerializeField] private Vector3 INIT_POSITION;
 
     // The Camera componnent
     private Camera currentCamera;
@@ -23,17 +25,14 @@ public class CameraController : MonoBehaviour {
 
     // Whether the camera should reset position
     private bool resetPosition;
-
-    // The initial position of the camera at the start of the game
-    private Vector3 INIT_POSITION = new Vector3(0, 0, -10);
     // The initial rotation of the camera at the start of the game
     private Vector3 FIXED_ROTATION = Vector3.zero;
     // The smoothing multiplier for shifting the camera, not using right now
     private float SMOOTHING_MULTIPLIER = 0.07f;
     // The x threshold ratio of the focus area size
-    private float X_THRESHOLD = 0.5f;
+    private float X_THRESHOLD = 0.3f;
     // The y threshold ratio of the focus area size
-    private float Y_THRESHOLD = 0.4f;
+    private float Y_THRESHOLD = 0.3f;
 
     // Use this for initialization
     void Start () {

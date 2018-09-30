@@ -6,40 +6,79 @@ public class LayerController : MonoBehaviour {
 
     [SerializeField] private int numberOfRayHorizontal;
     [SerializeField] private int numberOfRayVertical;
-    [SerializeField] private Rigidbody2D targetRB;
 
     public LayerMask collisionMask;
     public Bounds colliderBounds;
     public TouchInfo touchInfo;
 
+    private Rigidbody2D characterRB;
     private Collider2D coll;
     private RaycastOrigins raycastOrigins;
     private float raySpacingHorizontal;
     private float raySpacingVertical;
     private Vector2 targetVelocity;
+    private SpriteRenderer characterSpriteRenderer;
+    private int originalSortingOrder;
 
     private float SKIN_WIDTH = 0.2f;
 
     private void Awake()
     {
         coll = GetComponent<Collider2D>();
+        characterRB = GetComponent<Rigidbody2D>();
+        characterSpriteRenderer = GetComponent<SpriteRenderer>();
+        originalSortingOrder = characterSpriteRenderer.sortingOrder;
+        Debug.Log(originalSortingOrder);
+
         CalculateBounds();
         CalculateRaySpacing();
     }
 
     private void FixedUpdate()
     {
-        UpdateSorting();
+        targetVelocity = characterRB.velocity;
+        RaycastTouchVertical(ref targetVelocity);
     }
 
     public void UpdateSorting()
     {
-        targetVelocity = targetRB.velocity;
-        RaycastTouchVertical(ref targetVelocity);
-
         if (touchInfo.touchTop)
         {
+            characterSpriteRenderer.sortingOrder = touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder;
+            touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
+            Debug.Log("Touch Top!!!");
+        }
+        else if (touchInfo.topObject != null)
+        {
+            touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder += 1;
+            characterSpriteRenderer.sortingOrder = originalSortingOrder;
+            Debug.Log(originalSortingOrder);
+            touchInfo.Reset();
+        }
+        else
+        {
+            characterSpriteRenderer.sortingOrder = originalSortingOrder;
+            Debug.Log(originalSortingOrder);
+            touchInfo.Reset();
+        }
 
+        if (touchInfo.touchBottom)
+        {
+            characterSpriteRenderer.sortingOrder = touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder;
+            touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder += 1;
+            Debug.Log("Touch Bottom!!!");
+        }
+        else if (touchInfo.bottomObject != null)
+        {
+            touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
+            characterSpriteRenderer.sortingOrder = originalSortingOrder;
+            touchInfo.Reset();
+        }
+        else
+        {
+            characterSpriteRenderer.sortingOrder = originalSortingOrder;
+            Debug.Log(originalSortingOrder);
+            touchInfo.Reset();
         }
     }
 
@@ -84,28 +123,25 @@ public class LayerController : MonoBehaviour {
 
             foreach (RaycastHit2D hit in hitsLeft)
             {
-                if (hit.collider.isTrigger)
-                {
-                    hit.collider.SendMessage("OnTriggerEnter2D", coll);
-                }
-                else
-                {
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+                { 
                     if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
                     {
                         velocity.x = (hit.distance - SKIN_WIDTH) * -1;
                     }
                     touchInfo.touchLeft = true;
                     touchInfo.leftObject = hit.transform.gameObject;
+                    UpdateSorting();
+                }
+                else
+                {
+                    touchInfo.Reset();
                 }
             }
 
             foreach (RaycastHit2D hit in hitsRight)
             {
-                if (hit.collider.isTrigger)
-                {
-                    hit.collider.SendMessage("OnTriggerEnter2D", coll);
-                }
-                else
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
                 {
                     if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
                     {
@@ -113,6 +149,11 @@ public class LayerController : MonoBehaviour {
                     }
                     touchInfo.touchRight = true;
                     touchInfo.rightObject = hit.transform.gameObject;
+                    UpdateSorting();
+                }
+                else
+                {
+                    touchInfo.Reset();
                 }
             }
         }
@@ -139,11 +180,7 @@ public class LayerController : MonoBehaviour {
 
             foreach (RaycastHit2D hit in hitsBottom)
             {
-                if (hit.collider.isTrigger)
-                {
-                    hit.collider.SendMessage("OnTriggerEnter2D", coll);
-                }
-                else
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
                 {
                     if (Mathf.Abs(velocity.y) > Mathf.Abs(hit.distance - SKIN_WIDTH))
                     {
@@ -151,16 +188,17 @@ public class LayerController : MonoBehaviour {
                     }
                     touchInfo.touchBottom = true;
                     touchInfo.bottomObject = hit.transform.gameObject;
+                    UpdateSorting();
+                }
+                else
+                {
+                    touchInfo.Reset();
                 }
             }
 
             foreach (RaycastHit2D hit in hitsTop)
             {
-                if (hit.collider.isTrigger)
-                {
-                    hit.collider.SendMessage("OnTriggerEnter2D", coll);
-                }
-                else
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
                 {
                     if (Mathf.Abs(velocity.y) > Mathf.Abs(hit.distance - SKIN_WIDTH))
                     {
@@ -168,6 +206,11 @@ public class LayerController : MonoBehaviour {
                     }
                     touchInfo.touchTop = true;
                     touchInfo.topObject = hit.transform.gameObject;
+                    UpdateSorting();
+                }
+                else
+                {
+                    touchInfo.Reset();
                 }
             }
         }

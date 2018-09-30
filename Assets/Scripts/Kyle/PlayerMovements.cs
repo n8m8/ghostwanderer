@@ -63,6 +63,37 @@ public class PlayerMovements : MonoBehaviour
         playerRB.AddForce(playerRB.velocity * friction);
     }
 
+    public bool isGhost = false;
+    public void toggleGhostMode()
+    {
+        BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
+        PC.isTrigger = true;
+        if (isGhost)
+        {
+            isGhost = false;
+            PC.isTrigger = false;
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Stop();
+
+        }
+        else
+        {
+            PC.isTrigger = true;
+            isGhost = true;
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Play();
+        }
+    }
+
+    IEnumerator OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isGhost)
+        {
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
+        }
+        yield return new WaitForSeconds(0);
+    }
+
     // IEnumerator OnCollisionEnter2D(Collision2D collision)
     // {
     //     var hit = collision.gameObject; 
@@ -70,7 +101,7 @@ public class PlayerMovements : MonoBehaviour
     //     {
     //         Destroy(gameObject);
     //         yield return new WaitForSeconds(2);
-            
+
     //     }
     //     else if (hit.name.Contains("table"))
     //     {

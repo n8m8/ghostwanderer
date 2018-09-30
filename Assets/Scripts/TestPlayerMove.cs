@@ -96,9 +96,7 @@ public class TestPlayerMove : MonoBehaviour
         {
             Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
         }
-
-                 yield return new WaitForSeconds(0);
-
+        yield return new WaitForSeconds(0);
     }
     // IEnumerator OnCollisionEnter2D(Collision2D collision)
     // {
