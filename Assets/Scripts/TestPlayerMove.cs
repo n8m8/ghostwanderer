@@ -19,12 +19,9 @@ public class TestPlayerMove : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
-        playerStatus = this.GetComponent<PlayerController>().playerStatus;
-=======
+        //playerStatus = this.GetComponent<PlayerController>().playerStatus;
         ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
         system.Stop();
->>>>>>> level-one
     }
 
     // Update is called once per frame
@@ -45,17 +42,17 @@ public class TestPlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (playerStatus.moveAllowed)
-        {
+        //if (playerStatus.moveAllowed)
+        //{
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
             Move(h, v);
             playerRB.AddForce(playerRB.velocity * friction);
-        }
-        else
-        {
-            Debug.Log("move allowed not working");
-        }
+        //}
+        //else
+        //{
+         //   Debug.Log("move allowed not working");
+        //}
     }
 
     private void Move(float h, float v)

@@ -6,13 +6,31 @@ using UnityEngine.AI;
 
 public class PatrolingAI : MonoBehaviour {
     public Transform[] points;
+    public float fieldOfViewAngle = 30f;
+    public Transform playerPosition;
+    private bool isChasing;
+    private bool isPatrolling;
+    private bool isFacing;
     private int desPoint = 0;
     private AIDestinationSetter agent;
     private Transform target;
-	// Use this for initialization
-	void Start () {
+    private Transform temp;
+    private Vector3 last;
+    private Vector3 now;
+    private Vector3 currentDirection;
+   
+
+
+
+
+    // Use this for initialization
+    void Start () {
+        isChasing = false;
+        isFacing = false;
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
+        temp = Instantiate(new GameObject()).transform;
+
         GotoNextPoint();
 	}
 
@@ -26,10 +44,47 @@ public class PatrolingAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector2.Distance(this.gameObject.transform.position, target.transform.position) < 0.5f)
-        {
-            print(target.transform.position);
-            GotoNextPoint();
+        now = transform.position;
+        if (now != last){
+            currentDirection = (now - last)/Time.deltaTime;
         }
-	}
+        last = transform.position;
+
+        print(Vector3.Angle(playerPosition.position - transform.position, currentDirection));
+
+        if (!isChasing)
+        {
+            if (Vector2.Distance(this.gameObject.transform.position, target.transform.position) < 0.5f)
+            {
+                GotoNextPoint();
+            }
+            if (Vector3.Angle(playerPosition.position - transform.position,currentDirection) < fieldOfViewAngle)
+            {
+                isChasing = true;
+                agent.target = playerPosition;
+            }
+        }
+        else
+        {
+            if (Vector3.Angle(playerPosition.position - transform.position, currentDirection) >= fieldOfViewAngle)
+            {
+                isChasing = false;
+                temp.transform.position = playerPosition.position;
+                agent.target = temp;
+                GotoNextPoint();
+            }
+        }
+    }
+
+    IEnumerator wait()
+    {       
+        yield return new WaitForSeconds(1.5f);
+    }
+
+
+
+
+
+
+
 }
