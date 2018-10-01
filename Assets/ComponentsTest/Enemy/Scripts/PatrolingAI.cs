@@ -81,9 +81,11 @@ public class PatrolingAI : MonoBehaviour {
                 agent.target = temp;
             }
             else{
+                Debug.Log("find player");
                 isChasing = true;
                 isSearching = false;
                 isPatrolling = false;
+                agent.target = playerPosition;
             }
         }
         else if(isSearching && !isChasing && !isPatrolling){
@@ -98,12 +100,14 @@ public class PatrolingAI : MonoBehaviour {
             }
             else
             {
+                Debug.Log("stop chasing");
                 isChasing = false;
                 isSearching = false;
                 isPatrolling = true;
             }
         }
         else{
+            Debug.Log("conflict, back to chasing");
             isChasing = false;
             isSearching = false;
             isPatrolling = true;
