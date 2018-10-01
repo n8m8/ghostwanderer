@@ -158,7 +158,7 @@ public class LayerController : MonoBehaviour {
                         touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
                     }
                     characterSpriteRenderer.sortingOrder = originalSortingOrder;
-                    touchInfo.ResetBottom();
+                    touchInfo.Reset();
                 }
             }
 
@@ -186,7 +186,7 @@ public class LayerController : MonoBehaviour {
                         touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
                     }
                     characterSpriteRenderer.sortingOrder = originalSortingOrder;
-                    touchInfo.ResetTop();
+                    touchInfo.Reset();
                 }
             }
         }
