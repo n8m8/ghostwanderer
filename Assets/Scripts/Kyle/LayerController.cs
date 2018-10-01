@@ -52,13 +52,11 @@ public class LayerController : MonoBehaviour {
         {
             touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder += 1;
             characterSpriteRenderer.sortingOrder = originalSortingOrder;
-            Debug.Log(originalSortingOrder);
             touchInfo.Reset();
         }
         else
         {
             characterSpriteRenderer.sortingOrder = originalSortingOrder;
-            Debug.Log(originalSortingOrder);
             touchInfo.Reset();
         }
 
@@ -77,7 +75,6 @@ public class LayerController : MonoBehaviour {
         else
         {
             characterSpriteRenderer.sortingOrder = originalSortingOrder;
-            Debug.Log(originalSortingOrder);
             touchInfo.Reset();
         }
     }
@@ -227,10 +224,12 @@ public struct TouchInfo
 {
     public bool touchLeft, touchRight, touchBottom, touchTop;
     public GameObject leftObject, rightObject, bottomObject, topObject;
+    public GameObject lastLeftObject, lastRightObject, lastBottomObject, lastTopObject;
 
     public void Reset()
     {
         touchBottom = touchTop = touchLeft = touchRight = false;
         leftObject = rightObject = bottomObject = topObject = null;
+        lastLeftObject = lastRightObject = lastBottomObject = lastTopObject = null;
     }
 }
