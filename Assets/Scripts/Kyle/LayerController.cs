@@ -100,62 +100,6 @@ public class LayerController : MonoBehaviour {
         raySpacingHorizontal = (colliderBounds.extents.y * 2) / (numberOfRayVertical - 1);
     }
 
-    public void RaycastTouchHorizontal(ref Vector2 velocity)
-    {
-        Vector2 raycastBaseLeft = raycastOrigins.bottomLeft;
-        Vector2 raycastBaseRight = raycastOrigins.bottomRight;
-        //Debug.Log(direction);
-        for (int i = 0; i < numberOfRayHorizontal; i++)
-        {
-            float distance = Mathf.Abs(velocity.x);
-            Vector2 raycastOriginLeft = raycastBaseLeft + raySpacingHorizontal * i * Vector2.up;
-            Vector2 raycastOriginRight = raycastBaseRight + raySpacingHorizontal * i * Vector2.up;
-
-            RaycastHit2D[] hitsLeft =
-                Physics2D.RaycastAll(raycastOriginLeft, new Vector2(-1, 0), distance + SKIN_WIDTH, collisionMask);
-            RaycastHit2D[] hitsRight =
-                Physics2D.RaycastAll(raycastOriginRight, new Vector2(1, 0), distance + SKIN_WIDTH, collisionMask);
-            Debug.DrawRay(raycastOriginLeft, new Vector2(velocity.x, 0), Color.red, Time.fixedDeltaTime, false);
-            Debug.DrawRay(raycastOriginRight, new Vector2(velocity.x, 0), Color.red, Time.fixedDeltaTime, false);
-
-            foreach (RaycastHit2D hit in hitsLeft)
-            {
-                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
-                { 
-                    if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
-                    {
-                        velocity.x = (hit.distance - SKIN_WIDTH) * -1;
-                    }
-                    touchInfo.touchLeft = true;
-                    touchInfo.leftObject = hit.transform.gameObject;
-                    UpdateSorting();
-                }
-                else
-                {
-                    touchInfo.Reset();
-                }
-            }
-
-            foreach (RaycastHit2D hit in hitsRight)
-            {
-                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
-                {
-                    if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
-                    {
-                        velocity.x = (hit.distance - SKIN_WIDTH) * 1;
-                    }
-                    touchInfo.touchRight = true;
-                    touchInfo.rightObject = hit.transform.gameObject;
-                    UpdateSorting();
-                }
-                else
-                {
-                    touchInfo.Reset();
-                }
-            }
-        }
-    }
-
     public void RaycastTouchVertical(ref Vector2 velocity)
     {
 
@@ -186,6 +130,7 @@ public class LayerController : MonoBehaviour {
                     touchInfo.touchBottom = true;
                     touchInfo.bottomObject = hit.transform.gameObject;
                     UpdateSorting();
+                    touchInfo.lastBottomObject = hit.transform.gameObject;
                 }
                 else
                 {
@@ -204,6 +149,7 @@ public class LayerController : MonoBehaviour {
                     touchInfo.touchTop = true;
                     touchInfo.topObject = hit.transform.gameObject;
                     UpdateSorting();
+                    touchInfo.lastTopObject = hit.transform.gameObject;
                 }
                 else
                 {
@@ -212,6 +158,63 @@ public class LayerController : MonoBehaviour {
             }
         }
     }
+
+    //public void RaycastTouchHorizontal(ref Vector2 velocity)
+    //{
+    //    Vector2 raycastBaseLeft = raycastOrigins.bottomLeft;
+    //    Vector2 raycastBaseRight = raycastOrigins.bottomRight;
+    //    //Debug.Log(direction);
+    //    for (int i = 0; i < numberOfRayHorizontal; i++)
+    //    {
+    //        float distance = Mathf.Abs(velocity.x);
+    //        Vector2 raycastOriginLeft = raycastBaseLeft + raySpacingHorizontal * i * Vector2.up;
+    //        Vector2 raycastOriginRight = raycastBaseRight + raySpacingHorizontal * i * Vector2.up;
+
+    //        RaycastHit2D[] hitsLeft =
+    //            Physics2D.RaycastAll(raycastOriginLeft, new Vector2(-1, 0), distance + SKIN_WIDTH, collisionMask);
+    //        RaycastHit2D[] hitsRight =
+    //            Physics2D.RaycastAll(raycastOriginRight, new Vector2(1, 0), distance + SKIN_WIDTH, collisionMask);
+    //        Debug.DrawRay(raycastOriginLeft, new Vector2(velocity.x, 0), Color.red, Time.fixedDeltaTime, false);
+    //        Debug.DrawRay(raycastOriginRight, new Vector2(velocity.x, 0), Color.red, Time.fixedDeltaTime, false);
+
+    //        foreach (RaycastHit2D hit in hitsLeft)
+    //        {
+    //            if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+    //            {
+    //                if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
+    //                {
+    //                    velocity.x = (hit.distance - SKIN_WIDTH) * -1;
+    //                }
+    //                touchInfo.touchLeft = true;
+    //                touchInfo.leftObject = hit.transform.gameObject;
+    //                UpdateSorting();
+    //            }
+    //            else
+    //            {
+    //                touchInfo.Reset();
+    //            }
+    //        }
+
+    //        foreach (RaycastHit2D hit in hitsRight)
+    //        {
+    //            if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+    //            {
+    //                if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
+    //                {
+    //                    velocity.x = (hit.distance - SKIN_WIDTH) * 1;
+    //                }
+    //                touchInfo.touchRight = true;
+    //                touchInfo.rightObject = hit.transform.gameObject;
+    //                UpdateSorting();
+    //            }
+    //            else
+    //            {
+    //                touchInfo.Reset();
+    //            }
+    //        }
+    //    }
+    //}
+
 }
 
 public struct RaycastOrigins
