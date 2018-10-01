@@ -7,9 +7,14 @@ public class Room : MonoBehaviour {
     public int RoomNumber;
     public int Level;
     public int Floor;
+    public bool isDiscovered;
+
+    public WallParent WallParent1;
+    public WallParent WallParent2;
+    public WallParent WallParent3;
+    public WallParent WallParent4;
 
     //True if the room has been entered
-    [SerializeField] public bool isDiscovered;
     ////Array list of environment objects in the room
     //[SerializeField] public ArrayList envObjects;
     ////Array list of interactable objects in the room 
@@ -17,12 +22,28 @@ public class Room : MonoBehaviour {
 
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void turn_off_walls()
+    {
+        WallParent1.turn_off_cwalls();
+        WallParent2.turn_off_cwalls();
+        WallParent3.turn_off_cwalls();
+        WallParent4.turn_off_cwalls();
+    }
+
+    public void turn_on_walls()
+    {
+        WallParent1.turn_on_cwalls();
+        WallParent2.turn_on_cwalls();
+        WallParent3.turn_on_cwalls();
+        WallParent4.turn_on_cwalls();
+    }
 }
