@@ -45,21 +45,26 @@ public class PatrolingAI : MonoBehaviour {
         target = points[desPoint];
         agent.target = target;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         checkLOS();
         now = transform.position;
-        if (now != last){
-            currentDirection = (now - last)/Time.deltaTime;
+        if (now != last)
+        {
+            currentDirection = (now - last) / Time.deltaTime;
         }
         last = transform.position;
 
-        if (isPatrolling && !isChasing &&!isSearching)
+        if (isPatrolling && !isChasing && !isSearching)
         {
             Debug.Log("is patrolling");
-            GotoNextPoint();
-            if (Vector3.Angle(player.transform.position - transform.position,currentDirection) < fieldOfViewAngle && seePlayer)
+            if (Vector2.Distance(transform.position, target.position) < 0.025f)
+            {
+                GotoNextPoint();
+            }
+            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
             {
                 Debug.Log("start chasing");
                 isChasing = true;
@@ -68,10 +73,10 @@ public class PatrolingAI : MonoBehaviour {
                 agent.target = playerPosition;
             }
         }
-        else if(isChasing && !isPatrolling && !isSearching)
+        else if (isChasing && !isPatrolling && !isSearching)
         {
             Debug.Log("is Chasing");
-            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle && !seePlayer)
+            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle || !seePlayer)
             {
                 Debug.Log("lose player");
                 isChasing = false;
