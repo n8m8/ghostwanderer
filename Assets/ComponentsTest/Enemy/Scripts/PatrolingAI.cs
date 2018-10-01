@@ -36,8 +36,6 @@ public class PatrolingAI : MonoBehaviour {
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
         temp = Instantiate(new GameObject()).transform;
-
-        GotoNextPoint();
 	}
 
     void GotoNextPoint(){
@@ -57,17 +55,10 @@ public class PatrolingAI : MonoBehaviour {
         }
         last = transform.position;
 
-        if (isPatrolling)
+        if (isPatrolling && !isChasing &&!isSearching)
         {
-            Debug.Log("patrolling");
-            if (Vector2.Distance(this.gameObject.transform.position, target.transform.position) < 0.5f)
-            {
-                Debug.Log("is patrolling");
-                isChasing = false;
-                isSearching = false;
-                isPatrolling = true;
-                GotoNextPoint();
-            }
+            Debug.Log("is patrolling");
+            GotoNextPoint();
             if (Vector3.Angle(player.transform.position - transform.position,currentDirection) < fieldOfViewAngle && seePlayer)
             {
                 Debug.Log("start chasing");
@@ -77,7 +68,7 @@ public class PatrolingAI : MonoBehaviour {
                 agent.target = playerPosition;
             }
         }
-        else if(isChasing)
+        else if(isChasing && !isPatrolling && !isSearching)
         {
             Debug.Log("is Chasing");
             if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle && !seePlayer)
@@ -90,10 +81,12 @@ public class PatrolingAI : MonoBehaviour {
                 agent.target = temp;
             }
             else{
-                agent.target = playerPosition;
+                isChasing = true;
+                isSearching = false;
+                isPatrolling = false;
             }
         }
-        else if(isSearching){
+        else if(isSearching && !isChasing && !isPatrolling){
             Debug.Log("search player");
             if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
             {
@@ -103,21 +96,17 @@ public class PatrolingAI : MonoBehaviour {
                 isPatrolling = false;
                 agent.target = playerPosition;
             }
-
-            if (Vector2.Distance(this.gameObject.transform.position, temp.transform.position) < 0.5f && !seePlayer)
+            else
             {
-                Debug.Log("stop chasing");
                 isChasing = false;
                 isSearching = false;
                 isPatrolling = true;
-                GotoNextPoint();
-            }
-            else{
-                agent.target = temp;
             }
         }
         else{
-
+            isChasing = false;
+            isSearching = false;
+            isPatrolling = true;
         }
     }
 
