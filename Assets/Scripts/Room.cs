@@ -13,6 +13,7 @@ public class Room : MonoBehaviour {
     public WallParent WallParent2;
     public WallParent WallParent3;
     public WallParent WallParent4;
+    public ObjectParent ObjectParent1;
 
     //True if the room has been entered
     ////Array list of environment objects in the room
@@ -37,6 +38,7 @@ public class Room : MonoBehaviour {
         WallParent2.turn_off_cwalls();
         WallParent3.turn_off_cwalls();
         WallParent4.turn_off_cwalls();
+        ObjectParent1.turn_off_cobjs();
     }
 
     public void turn_on_walls()
@@ -45,5 +47,6 @@ public class Room : MonoBehaviour {
         WallParent2.turn_on_cwalls();
         WallParent3.turn_on_cwalls();
         WallParent4.turn_on_cwalls();
+        ObjectParent1.turn_on_cobjs();
     }
 }
