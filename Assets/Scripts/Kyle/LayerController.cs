@@ -44,9 +44,12 @@ public class LayerController : MonoBehaviour {
     {
         if (touchInfo.touchTop)
         {
-            characterSpriteRenderer.sortingOrder = touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder;
-            touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
-            Debug.Log("Touch Top!!!");
+            if (touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder + 1 != characterSpriteRenderer.sortingOrder)
+            {
+                touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
+                characterSpriteRenderer.sortingOrder = touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder + 1;
+            }
+            Debug.Log("Touch Top???");
         }
         else if (touchInfo.topObject != null)
         {
@@ -58,13 +61,17 @@ public class LayerController : MonoBehaviour {
         {
             characterSpriteRenderer.sortingOrder = originalSortingOrder;
             touchInfo.Reset();
+            Debug.Log("Reset");
         }
 
         if (touchInfo.touchBottom)
         {
-            characterSpriteRenderer.sortingOrder = touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder;
-            touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder += 1;
-            Debug.Log("Touch Bottom!!!");
+            if (touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder - 1 != characterSpriteRenderer.sortingOrder)
+            {
+                touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder += 1;
+                characterSpriteRenderer.sortingOrder = touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder - 1;
+            }
+            Debug.Log("Touch Bottom???");
         }
         else if (touchInfo.bottomObject != null)
         {
@@ -76,6 +83,7 @@ public class LayerController : MonoBehaviour {
         {
             characterSpriteRenderer.sortingOrder = originalSortingOrder;
             touchInfo.Reset();
+            Debug.Log("Reset");
         }
     }
 
@@ -108,7 +116,7 @@ public class LayerController : MonoBehaviour {
         //Debug.Log(direction);
         for (int i = 0; i < numberOfRayVertical; i++)
         {
-            float distance = Mathf.Abs(velocity.y);
+            float distance = Mathf.Abs(velocity.y) * 0.1f;
             Vector2 raycastOriginTop = raycastBaseTop + raySpacingVertical * i * Vector2.right;
             Vector2 raycastOriginBottom = raycastBaseBottom + raySpacingHorizontal * i * Vector2.right;
 
@@ -121,7 +129,8 @@ public class LayerController : MonoBehaviour {
 
             foreach (RaycastHit2D hit in hitsBottom)
             {
-                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null 
+                    && (hit.transform.gameObject.Equals(touchInfo.bottomObject) || touchInfo.bottomObject == null))
                 {
                     if (Mathf.Abs(velocity.y) > Mathf.Abs(hit.distance - SKIN_WIDTH))
                     {
@@ -130,17 +139,22 @@ public class LayerController : MonoBehaviour {
                     touchInfo.touchBottom = true;
                     touchInfo.bottomObject = hit.transform.gameObject;
                     UpdateSorting();
-                    touchInfo.lastBottomObject = hit.transform.gameObject;
                 }
                 else
                 {
+                    if (touchInfo.bottomObject != null)
+                    {
+                        touchInfo.bottomObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
+                    }
+                    characterSpriteRenderer.sortingOrder = originalSortingOrder;
                     touchInfo.Reset();
                 }
             }
 
             foreach (RaycastHit2D hit in hitsTop)
             {
-                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null
+                    && (hit.transform.gameObject.Equals(touchInfo.topObject) || touchInfo.topObject == null))
                 {
                     if (Mathf.Abs(velocity.y) > Mathf.Abs(hit.distance - SKIN_WIDTH))
                     {
@@ -149,10 +163,14 @@ public class LayerController : MonoBehaviour {
                     touchInfo.touchTop = true;
                     touchInfo.topObject = hit.transform.gameObject;
                     UpdateSorting();
-                    touchInfo.lastTopObject = hit.transform.gameObject;
                 }
                 else
                 {
+                    if (touchInfo.topObject != null)
+                    {
+                        touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder -= 1;
+                    }
+                    characterSpriteRenderer.sortingOrder = originalSortingOrder;
                     touchInfo.Reset();
                 }
             }
@@ -227,12 +245,10 @@ public struct TouchInfo
 {
     public bool touchLeft, touchRight, touchBottom, touchTop;
     public GameObject leftObject, rightObject, bottomObject, topObject;
-    public GameObject lastLeftObject, lastRightObject, lastBottomObject, lastTopObject;
 
     public void Reset()
     {
         touchBottom = touchTop = touchLeft = touchRight = false;
         leftObject = rightObject = bottomObject = topObject = null;
-        lastLeftObject = lastRightObject = lastBottomObject = lastTopObject = null;
     }
 }
