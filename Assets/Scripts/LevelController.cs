@@ -95,7 +95,6 @@ public class LevelController : MonoBehaviour {
     {
         player.GetComponent<PlayerController>().playerStatus.moveAllowed = false;
         GameObject.Find("Test Player").transform.position = currentCheckpoint.transform.position;
-        cameraController.ResetCameraPosition();
         yield return new WaitForSeconds(3f);
         player.GetComponent<PlayerController>().playerStatus.moveAllowed = true;
     }

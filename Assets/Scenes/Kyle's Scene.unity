@@ -1596,8 +1596,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2093185527}
-  cameraSize: 3
-  INIT_POSITION: {x: -3, y: 0.5, z: -10}
+  cameraSpeed: 6
+  focusAreaWidth: 2
+  focusAreaHeight: 1.3
 --- !u!1001 &321709437
 Prefab:
   m_ObjectHideFlags: 0
