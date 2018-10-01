@@ -25,6 +25,8 @@ public class PlayerMovements : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerStatus = this.GetComponent<PlayerController>().playerStatus;
         playerStatus.moveAllowed = true;
+        ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+        system.Stop();
     }
 
     // Update is called once per frame
@@ -32,10 +34,27 @@ public class PlayerMovements : MonoBehaviour
     {
         //float x = Input.GetAxis("Horizontal") * Time.deltaTime * xSpeed;
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
-
+        if (Input.GetKeyDown("q") && canGhost)
+        {
+            toggleGhostMode();
+        }
         //transform.Translate(x, y, 0.0f);
+
     }
 
+    bool canGhost = false;
+     void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.tag == "Ghost Portal")
+        {
+                canGhost = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canGhost = false;
+    }
     private void FixedUpdate()
     {
         if (playerStatus.moveAllowed)
