@@ -59,14 +59,13 @@ public class PatrolingAI : MonoBehaviour {
 
         if (isPatrolling && !isChasing && !isSearching)
         {
-            Debug.Log("is patrolling");
-            if (Vector2.Distance(transform.position, target.position) < 0.025f)
+            if (Vector2.Distance(transform.position, target.position) < 0.5f)
             {
                 GotoNextPoint();
             }
             if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
             {
-                Debug.Log("start chasing");
+              
                 isChasing = true;
                 isSearching = false;
                 isPatrolling = false;
@@ -75,10 +74,10 @@ public class PatrolingAI : MonoBehaviour {
         }
         else if (isChasing && !isPatrolling && !isSearching)
         {
-            Debug.Log("is Chasing");
-            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle || !seePlayer)
+           
+            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle && !seePlayer)
             {
-                Debug.Log("lose player");
+               
                 isChasing = false;
                 isSearching = true;
                 isPatrolling = false;
@@ -86,7 +85,7 @@ public class PatrolingAI : MonoBehaviour {
                 agent.target = temp;
             }
             else{
-                Debug.Log("find player");
+               
                 isChasing = true;
                 isSearching = false;
                 isPatrolling = false;
@@ -94,10 +93,9 @@ public class PatrolingAI : MonoBehaviour {
             }
         }
         else if(isSearching && !isChasing && !isPatrolling){
-            Debug.Log("search player");
+           
             if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
             {
-                Debug.Log("keep chasing");
                 isChasing = true;
                 isSearching = false;
                 isPatrolling = false;
@@ -105,17 +103,18 @@ public class PatrolingAI : MonoBehaviour {
             }
             else
             {
-                Debug.Log("stop chasing");
                 isChasing = false;
                 isSearching = false;
                 isPatrolling = true;
+                GotoNextPoint();
             }
         }
         else{
-            Debug.Log("conflict, back to chasing");
+           
             isChasing = false;
             isSearching = false;
             isPatrolling = true;
+            GotoNextPoint();
         }
     }
 
