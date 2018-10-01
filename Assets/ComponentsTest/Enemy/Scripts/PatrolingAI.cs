@@ -70,6 +70,7 @@ public class PatrolingAI : MonoBehaviour {
                 isSearching = false;
                 isPatrolling = false;
                 agent.target = playerPosition;
+                return;
             }
         }
         else if (isChasing && !isPatrolling && !isSearching)
@@ -77,12 +78,12 @@ public class PatrolingAI : MonoBehaviour {
            
             if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle && !seePlayer)
             {
-               
                 isChasing = false;
                 isSearching = true;
                 isPatrolling = false;
                 temp.transform.position = player.transform.position;
                 agent.target = temp;
+                return;
             }
             else{
                
@@ -90,6 +91,7 @@ public class PatrolingAI : MonoBehaviour {
                 isSearching = false;
                 isPatrolling = false;
                 agent.target = playerPosition;
+                return;
             }
         }
         else if(isSearching && !isChasing && !isPatrolling){
@@ -100,6 +102,7 @@ public class PatrolingAI : MonoBehaviour {
                 isSearching = false;
                 isPatrolling = false;
                 agent.target = playerPosition;
+                return;
             }
             else
             {
@@ -107,14 +110,15 @@ public class PatrolingAI : MonoBehaviour {
                 isSearching = false;
                 isPatrolling = true;
                 GotoNextPoint();
+                return;
             }
         }
         else{
-           
             isChasing = false;
             isSearching = false;
             isPatrolling = true;
             GotoNextPoint();
+            return;
         }
     }
 
