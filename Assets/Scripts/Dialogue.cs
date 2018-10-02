@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour {
 	public GameObject continueButton;
 	public string name; 
 	public GameObject image;
+	private bool checkflag = false;
 
 	void Start(){
 		// // for testing purposes
@@ -31,6 +32,12 @@ public class Dialogue : MonoBehaviour {
 		// if (Input.GetButtonDown("K")){
 		// 	NextSentence();
 		// }
+
+		if (Input.GetKeyDown(KeyCode.E) && checkflag){
+			StartCoroutine(Type());
+			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+			checkflag = false;
+		}
 
 		if (textDisplay.text == (name + sentences[index])){
 			continueButton.SetActive(true);
@@ -63,6 +70,9 @@ public class Dialogue : MonoBehaviour {
 			image.SetActive(false);
 			textDisplay.text = "";
 			continueButton.SetActive(false);
+			index = 0;
+			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+			checkflag = true;
 		}
 	}
 
@@ -72,14 +82,14 @@ public class Dialogue : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
 			//Freeze the character xd
-			StartCoroutine(Type());
+			checkflag = true;
 		}
 	}
 
-	// //reset everyhing
-	// void OnTriggerExit2D(Collider2D collider){
-	
-	// }
+	//reset everyhing
+	void OnTriggerExit2D(Collider2D collider){
+		checkflag = false;
+	}
 
 
 
