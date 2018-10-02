@@ -5,8 +5,6 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour {
 
-	//NAMES, ARTWORK PIXEL CHARACTER BOXES??
-
 	public TextMeshProUGUI textDisplay;
 	public string[] sentences;
 	private int index;
@@ -17,8 +15,6 @@ public class Dialogue : MonoBehaviour {
 	private bool checkflag = false;
 
 	void Start(){
-		// // for testing purposes
-		// StartCoroutine(Type());
 		continueButton.SetActive(false);
 		image.SetActive(false);
 	}
@@ -77,8 +73,6 @@ public class Dialogue : MonoBehaviour {
 	}
 
 
-//have to freeze character on entrance and mayb animate to turn towards, zoom in screen?
-	//Input.GetKeyDown(KeyCode.Space)
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
 			//Freeze the character xd
