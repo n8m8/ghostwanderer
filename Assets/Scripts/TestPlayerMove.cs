@@ -31,7 +31,7 @@ public class TestPlayerMove : MonoBehaviour
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
 
         //transform.Translate(x, y, 0.0f);
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("q") && canGhost)
         {
             toggleGhostMode();
         }
@@ -55,6 +55,19 @@ public class TestPlayerMove : MonoBehaviour
         //}
     }
 
+    bool canGhost = false;
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Ghost Portal")
+        {
+            canGhost = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        canGhost = false;
+    }
     private void Move(float h, float v)
     {
         //Modifies movement to match the angles of the tile map.
