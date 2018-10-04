@@ -1593,9 +1593,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114243863480551568, guid: 0d9426683b7bf4e58828cdb004d8c4b8,
         type: 2}
-      propertyPath: data.dataString
-      value: UEsDBBQAAAgIAACYn+tyYFbLQwIAAM8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMmSmzAQ/RVK5zgFHjxkcku8JQePXcOkcuEiQ2NUFhIlifFW/ve0BBiGnGheb69fN9wIE7qC1Ei1VizbyAzId49Ym3zxCHW+N2qYRDhAhGlZglEs/SEO3Mb6CNaC5VKVy+wAc6mNRjinXAO6lDQ2WyB088gZH5MXm3JBaxpZ64rWi+/d0UxBGFB96FMbOAnbuCasFimnZQVZzK4wiH7UbcIEDtNG+F+nM1tfcs50y4aYS+WGjasCFNhxM0ZxOMcgaDIKYIfC4Hs4TN/muQbTDq/oZcEUytTUJT+lKWyxkupjQ+6D8tp2mjpaTcnNf96GdK5k+atrGvi2gSlYenyjl5RqM1B2CC8GxJ1AJ8qPdM/hbwHiVa6VrEU2yK01TBf4blQNw8HmBaTHHm+ojsC66iXvFO/2OAm8+93Nfp5zVu6d9GEDxFw6vd36QeFyfiNjdxy6LYGoZfFHwzs9DK+odayY0gZd7ZjC0tvLWtlQskLD6p7WZi6VAIe2nCsQlJvLDquY8f5GvkHXkWdF7WfS9m593VcwSnFwH+/7I9dOnh7L0oU8bUAX29pwJqAnbR2vKNNcCtGc11CSLi2uVU7TQdqhZtnnyyIv/jPMouApymk4jdJgMptFeTANohCy4PlbEBJ3e0zgnJTvGqKtPLg00RcXeGfdD8JbK1q5U88UPa3ZtZQDyZnIZZwqALH9VEGDwh74WWbLjKE+MRjDhNs2uSWEy/QIWfKIT9ygy7NRNOmnT0jFPqSxSELm7q+RkDu5/wNQSwMEFAAACAgAAJif6+hrERFtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPUMzTTUVBKL0osyCgGihiCOKWZKSB2tJKlgVmqqbmhsXlaoomRebKhrqmpeZqhkaG5SWqKoZmFoYlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJif63JgVstDAgAAzwQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJif6+hrERFtAAAAeAAAAAkAJAAAAAAAAAAAAAAAkAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABIAwAAAAA=
+      propertyPath: data.cacheStartup
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114243863480551568, guid: 0d9426683b7bf4e58828cdb004d8c4b8,
+        type: 2}
+      propertyPath: data.file_cachedStartup
+      value: 
+      objectReference: {fileID: 4900000, guid: 9981659cd5d454446a240b2516601d61, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d9426683b7bf4e58828cdb004d8c4b8, type: 2}
   m_IsPrefabAsset: 0
@@ -1851,6 +1856,56 @@ Prefab:
         type: 2}
       propertyPath: whenCloseToDestination
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114463609806775506, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: constrainInsideGraph
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: graphMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: startEndModifier.exactStartPoint
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: startEndModifier.exactEndPoint
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: startEndModifier.addPoints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114463609806775506, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: pickNextWaypointDist
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: startEndModifier.useGraphRaycasting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: startEndModifier.useRaycasting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: startEndModifier.mask.m_Bits
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114463609806775506, guid: 29f228a453a88438b95af75808032abb,
+        type: 2}
+      propertyPath: alwaysDrawGizmos
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29f228a453a88438b95af75808032abb, type: 2}
