@@ -52,8 +52,10 @@ public class LayerController : MonoBehaviour {
                 characterSpriteRenderer.sortingOrder = touchInfo.topObject.GetComponent<SpriteRenderer>().sortingOrder + 1;
             }
             else
-                Debug.Log("Stop decrement");
-            Debug.Log("Touch Top???");
+            {
+                //Debug.Log("Stop decrement");
+                //Debug.Log("Touch Top???");
+            }
         }
         else if (touchInfo.topObject != null)
         {
