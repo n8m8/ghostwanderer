@@ -69,7 +69,6 @@ public class PatrolingAI : MonoBehaviour {
 
 
     void checkLOS(){
-        Debug.Log(Vector3.Angle(player.transform.position - transform.position, currentDirection));
         RaycastHit2D hit = Physics2D.Raycast(transform.position,player.transform.position - transform.position,500f,1<<LayerMask.NameToLayer("TransparentFX"));
         if (hit)
         {
