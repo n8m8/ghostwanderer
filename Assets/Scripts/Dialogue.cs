@@ -5,8 +5,6 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour {
 
-	//NAMES, ARTWORK PIXEL CHARACTER BOXES??
-
 	public TextMeshProUGUI textDisplay;
 	public string[] sentences;
 	private int index;
@@ -14,11 +12,9 @@ public class Dialogue : MonoBehaviour {
 	public GameObject continueButton;
 	public string name; 
 	public GameObject image;
-	//private Boolean flagcheck;
+	private bool checkflag = false;
 
 	void Start(){
-		// // for testing purposes
-		// StartCoroutine(Type());
 		continueButton.SetActive(false);
 		image.SetActive(false);
 	}
@@ -32,14 +28,17 @@ public class Dialogue : MonoBehaviour {
 		// if (Input.GetButtonDown("K")){
 		// 	NextSentence();
 		// }
-		if (Input.GetKeyDown(KeyCode.E)){
-			//freeze player 
+
+		if (Input.GetKeyDown(KeyCode.E) && checkflag){
 			StartCoroutine(Type());
+			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+			checkflag = false;
 		}
+
 		if (textDisplay.text == (name + sentences[index])){
 			continueButton.SetActive(true);
 		}
-		if (Input.GetKeyDown(KeyCode.E) && textDisplay.text == (name + sentences[index])){
+		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (name + sentences[index])){
 			NextSentence();
 		}
 	}
@@ -67,25 +66,23 @@ public class Dialogue : MonoBehaviour {
 			image.SetActive(false);
 			textDisplay.text = "";
 			continueButton.SetActive(false);
-			//unfreeze player
+			index = 0;
+			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+			checkflag = true;
 		}
 	}
 
 
-//have to freeze character on entrance and mayb animate to turn towards, zoom in screen?
-	//Input.GetKeyDown(KeyCode.Space)
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
-			//Freeze the character xd
-			//checkflag = true;
-			//GetComponent<Rigidbody2D>().isKinematic = false;
+			checkflag = true;
 		}
 	}
 
-	// //reset everyhing
-	// void OnTriggerExit2D(Collider2D collider){
-			//set checkflag to false
-	// }
+	//reset everyhing
+	void OnTriggerExit2D(Collider2D collider){
+		checkflag = false;
+	}
 
 
 

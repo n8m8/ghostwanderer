@@ -12,9 +12,9 @@ public class TestPlayerMove : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
+    private Vector3 ghostPosition;
 
     private readonly float TAN27 = 1.96261050551f;
-
     // Use this for initialization
     void Start()
     {
@@ -31,7 +31,7 @@ public class TestPlayerMove : MonoBehaviour
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
 
         //transform.Translate(x, y, 0.0f);
-        if (Input.GetKeyDown("q") && canGhost)
+        if (Input.GetKeyDown("q") && (canGhost || isGhost))
         {
             toggleGhostMode();
         }
@@ -92,10 +92,12 @@ public class TestPlayerMove : MonoBehaviour
             PC.isTrigger = false;
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
             system.Stop();
+            gameObject.transform.position = ghostPosition;
 
         }
         else
         {
+            ghostPosition = gameObject.transform.position;
             PC.isTrigger = true;
             isGhost = true;
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();

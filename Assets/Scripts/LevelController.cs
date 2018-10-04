@@ -35,7 +35,12 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (levelComplete)
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
+        if (levelComplete)
         {
             LoadNextLevel();
         }
@@ -95,7 +100,6 @@ public class LevelController : MonoBehaviour {
     {
         player.GetComponent<PlayerController>().playerStatus.moveAllowed = false;
         GameObject.Find("Test Player").transform.position = currentCheckpoint.transform.position;
-        cameraController.ResetCameraPosition();
         yield return new WaitForSeconds(3f);
         player.GetComponent<PlayerController>().playerStatus.moveAllowed = true;
     }
