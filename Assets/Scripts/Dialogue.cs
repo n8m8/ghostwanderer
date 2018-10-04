@@ -75,7 +75,6 @@ public class Dialogue : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
-			//Freeze the character xd
 			checkflag = true;
 		}
 	}
