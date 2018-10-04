@@ -35,7 +35,12 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (levelComplete)
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
+        if (levelComplete)
         {
             LoadNextLevel();
         }
