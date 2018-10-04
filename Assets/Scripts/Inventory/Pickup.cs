@@ -20,7 +20,7 @@ public class Pickup : MonoBehaviour {
 				if (inventory.isFull[i] == false){
 					name = gameObject.name;
 					inventory.isFull[i] = true;
-					inventory.slots[i] = Object.Instantiate(gameObject);
+					inventory.slots[i] = name;
 					textDisplay.text = (name + " has been picked up");
 					yield return new WaitForSeconds(3);
 					textDisplay.text = "";
