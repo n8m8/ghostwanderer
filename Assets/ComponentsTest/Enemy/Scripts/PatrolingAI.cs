@@ -10,9 +10,6 @@ public class PatrolingAI : MonoBehaviour {
     public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
     private GameObject player;
-    private bool isChasing;
-    private bool isPatrolling;
-    private bool isSearching;
     private bool seePlayer;
     private int desPoint = 0;
     private AIDestinationSetter agent;
@@ -21,18 +18,19 @@ public class PatrolingAI : MonoBehaviour {
     private Vector3 last;
     private Vector3 now;
     private Vector3 currentDirection;
-   
+    private AIState state;
 
-
-
+    enum AIState{
+        chasing,
+        confusing,
+        patrolling
+    }
 
     // Use this for initialization
     void Start () {
+        state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
-        isChasing = false;
         seePlayer = false;
-        isPatrolling = true;
-        isSearching = false;
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
         temp = Instantiate(new GameObject()).transform;
@@ -49,7 +47,6 @@ public class PatrolingAI : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        checkLOS();
         now = transform.position;
         if (now != last)
         {
@@ -57,75 +54,19 @@ public class PatrolingAI : MonoBehaviour {
         }
         last = transform.position;
 
-        if (isPatrolling && !isChasing && !isSearching)
-        {
-            if (Vector2.Distance(transform.position, target.position) < 0.5f)
-            {
-                GotoNextPoint();
-            }
-            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
-            {
-              
-                isChasing = true;
-                isSearching = false;
-                isPatrolling = false;
-                agent.target = playerPosition;
-                return;
-            }
-        }
-        else if (isChasing && !isPatrolling && !isSearching)
-        {
-           
-            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) >= fieldOfViewAngle && !seePlayer)
-            {
-                isChasing = false;
-                isSearching = true;
-                isPatrolling = false;
-                temp.transform.position = player.transform.position;
-                agent.target = temp;
-                return;
-            }
-            else{
-               
-                isChasing = true;
-                isSearching = false;
-                isPatrolling = false;
-                agent.target = playerPosition;
-                return;
-            }
-        }
-        else if(isSearching && !isChasing && !isPatrolling){
-           
-            if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
-            {
-                isChasing = true;
-                isSearching = false;
-                isPatrolling = false;
-                agent.target = playerPosition;
-                return;
-            }
-            else
-            {
-                isChasing = false;
-                isSearching = false;
-                isPatrolling = true;
-                GotoNextPoint();
-                return;
-            }
-        }
-        else{
-            isChasing = false;
-            isSearching = false;
-            isPatrolling = true;
-            GotoNextPoint();
-            return;
+        switch(state){
+            case AIState.patrolling:
+                patrolling();
+                break;
+            case AIState.chasing:
+                chasing();
+                break;
+            case AIState.confusing:
+                StartCoroutine(confusing());
+                break;
         }
     }
 
-    IEnumerator wait()
-    {       
-        yield return new WaitForSeconds(1.5f);
-    }
 
     void checkLOS(){
         RaycastHit2D hit = Physics2D.Raycast(transform.position,player.transform.position - transform.position,500f,1<<LayerMask.NameToLayer("TransparentFX"));
@@ -145,6 +86,39 @@ public class PatrolingAI : MonoBehaviour {
         }
     }
 
+    void patrolling(){
+        if (Vector2.Distance(transform.position, target.position) < 0.5f)
+        {
+            GotoNextPoint();
+            return;
+        }
+        checkLOS();
+        if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
+        {
+            state = AIState.chasing;
+            agent.target = playerPosition;
+        }
+    }
+
+    void chasing(){
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+        checkLOS();
+        if(Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && !seePlayer && distance > 5.0f)
+        {
+            state = AIState.confusing;
+            temp.position = transform.position;
+            agent.target = target;
+        }
+    }
+
+    IEnumerator confusing(){
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+        temp.position = transform.position;
+        agent.target = temp;
+        yield return new WaitForSeconds(2.0f);
+        state = AIState.patrolling;
+        GotoNextPoint();
+    }
 
 
 
