@@ -8,7 +8,7 @@ public class Checkpoint : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print(gameObject.name);
+		// print(gameObject.name);
 	}
 	
 	// Update is called once per frame
@@ -19,7 +19,7 @@ public class Checkpoint : MonoBehaviour {
 	//Checkpoint system
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.name == "TestPlayer"){
-			Debug.Log("Jake vent");
+			// Debug.Log("Jake vent");
 			levelController.currentCheckpoint = gameObject;
 		}
 	}
