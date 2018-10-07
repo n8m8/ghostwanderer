@@ -14,6 +14,9 @@ public class TestPlayerMove : MonoBehaviour
     private PlayerController.PlayerStatus playerStatus;
     private Vector3 ghostPosition;
 
+    public Sprite ghostSprite;
+    public Sprite humanSprite;
+
     private readonly float TAN27 = 1.96261050551f;
     // Use this for initialization
     void Start()
@@ -21,6 +24,7 @@ public class TestPlayerMove : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         //playerStatus = this.GetComponent<PlayerController>().playerStatus;
         ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
         system.Stop();
     }
 
@@ -88,6 +92,7 @@ public class TestPlayerMove : MonoBehaviour
         PC.isTrigger = true;
         if (isGhost)
         {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
             isGhost = false;
             PC.isTrigger = false;
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
@@ -97,6 +102,7 @@ public class TestPlayerMove : MonoBehaviour
         }
         else
         {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
             ghostPosition = gameObject.transform.position;
             PC.isTrigger = true;
             isGhost = true;

@@ -16307,6 +16307,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelController: {fileID: 2142142846}
+  ghostSprite: {fileID: 21300000, guid: 737c5dfcef11f5c4aa2f118aaea0e946, type: 3}
+  humanSprite: {fileID: 21300000, guid: 1dda7ae13297d1148a16da5b0e8cbc41, type: 3}
 --- !u!114 &2093185536
 MonoBehaviour:
   m_ObjectHideFlags: 0
