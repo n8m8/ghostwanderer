@@ -74,7 +74,7 @@ public class InteractableObjects : MonoBehaviour {
     }
 
 
-    IEnumerator OnTriggerExit2D(Collision2D other)
+    IEnumerator OnTriggerExit2D(Collider2D other)
     {
         gameObject.GetComponent<Renderer>().enabled = true;
         EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();

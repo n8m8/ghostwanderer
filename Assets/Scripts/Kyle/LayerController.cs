@@ -4,7 +4,7 @@ using UnityEngine;
 // Kyle, for Main Character and NPCs
 public class LayerController : MonoBehaviour {
 
-    [SerializeField] private int numberOfRayHorizontal;
+    // [SerializeField] private int numberOfRayHorizontal;
     [SerializeField] private int numberOfRayVertical;
 
     public LayerMask collisionMask;
@@ -44,7 +44,7 @@ public class LayerController : MonoBehaviour {
         RaycastTouchVertical(ref targetVelocity);
     }
 
-    public void UpdateSorting(int rayIndex)
+    public void UpdateSortingSingle(int rayIndex)
     {
         if (touchInfo.touchTop[rayIndex])
         {
@@ -53,10 +53,6 @@ public class LayerController : MonoBehaviour {
                 characterSpriteRenderer.sortingOrder -= 1;
             }
             Debug.Log("Touch Top???");
-        }
-        else if (touchInfo.topObject[rayIndex] != null)
-        {
-            touchInfo.ResetTop(rayIndex);
         }
         else
         {
@@ -71,24 +67,21 @@ public class LayerController : MonoBehaviour {
             }
             Debug.Log("Touch Bottom???");
         }
-        else if (touchInfo.bottomObject[rayIndex] != null)
-        {
-            touchInfo.ResetBottom(rayIndex);
-        }
         else
         {
             touchInfo.ResetBottom(rayIndex);
-        }
-
-        if (!touchInfo.touchTop[rayIndex] && !touchInfo.touchBottom[rayIndex])
-        {
-            characterSpriteRenderer.sortingOrder = originalSortingOrder;
         }
     }
 
     public void CheckDontTouch()
     {
-
+        for (int rayIndex = 0; rayIndex < numberOfRayVertical; rayIndex++)
+        {
+            if (touchInfo.touchTop[rayIndex] || touchInfo.touchBottom[rayIndex])
+                return;
+        }
+        characterSpriteRenderer.sortingOrder = originalSortingOrder;
+        touchInfo.ResetAll();
     }
 
     public void CalculateBounds()
@@ -107,10 +100,10 @@ public class LayerController : MonoBehaviour {
 
     private void CalculateRaySpacing()
     {
-        numberOfRayHorizontal = numberOfRayHorizontal < 2 ? 2 : numberOfRayHorizontal;
+        // numberOfRayHorizontal = numberOfRayHorizontal < 2 ? 2 : numberOfRayHorizontal;
         numberOfRayVertical = numberOfRayVertical < 2 ? 2 : numberOfRayVertical;
 
-        raySpacingVertical = (colliderBounds.extents.x * 2) / (numberOfRayHorizontal - 1);
+        // raySpacingVertical = (colliderBounds.extents.x * 2) / (numberOfRayHorizontal - 1);
         raySpacingHorizontal = (colliderBounds.extents.y * 2) / (numberOfRayVertical - 1);
     }
 
@@ -135,13 +128,9 @@ public class LayerController : MonoBehaviour {
                 if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null 
                     && (hit.transform.gameObject.Equals(touchInfo.bottomObject[rayIndex]) || touchInfo.bottomObject[rayIndex] == null))
                 {
-                    //if (Mathf.Abs(velocity.y) > Mathf.Abs(hit.distance - SKIN_WIDTH))
-                    //{
-                    //    velocity.y = (hit.distance - SKIN_WIDTH) * -1;
-                    //}
                     touchInfo.touchBottom[rayIndex] = true;
                     touchInfo.bottomObject[rayIndex] = hit.transform.gameObject;
-                    UpdateSorting(rayIndex);
+                    UpdateSortingSingle(rayIndex);
                 }
                 else
                 {
@@ -165,13 +154,9 @@ public class LayerController : MonoBehaviour {
                 if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null
                     && (hit.transform.gameObject.Equals(touchInfo.topObject[rayIndex]) || touchInfo.topObject[rayIndex] == null))
                 {
-                    //if (Mathf.Abs(velocity.y) > Mathf.Abs(hit.distance - SKIN_WIDTH))
-                    //{
-                    //    velocity.y = (hit.distance - SKIN_WIDTH) * 1;
-                    //}
                     touchInfo.touchTop[rayIndex] = true;
                     touchInfo.topObject[rayIndex] = hit.transform.gameObject;
-                    UpdateSorting(rayIndex);
+                    UpdateSortingSingle(rayIndex);
                 }
                 else
                 {
@@ -184,64 +169,9 @@ public class LayerController : MonoBehaviour {
                 }
             }
         }
+
+        CheckDontTouch();
     }
-
-    //public void RaycastTouchHorizontal(ref Vector2 velocity)
-    //{
-    //    Vector2 raycastBaseLeft = raycastOrigins.bottomLeft;
-    //    Vector2 raycastBaseRight = raycastOrigins.bottomRight;
-    //    //Debug.Log(direction);
-    //    for (int i = 0; i < numberOfRayHorizontal; i++)
-    //    {
-    //        float distance = Mathf.Abs(velocity.x);
-    //        Vector2 raycastOriginLeft = raycastBaseLeft + raySpacingHorizontal * i * Vector2.up;
-    //        Vector2 raycastOriginRight = raycastBaseRight + raySpacingHorizontal * i * Vector2.up;
-
-    //        RaycastHit2D[] hitsLeft =
-    //            Physics2D.RaycastAll(raycastOriginLeft, new Vector2(-1, 0), distance + SKIN_WIDTH, collisionMask);
-    //        RaycastHit2D[] hitsRight =
-    //            Physics2D.RaycastAll(raycastOriginRight, new Vector2(1, 0), distance + SKIN_WIDTH, collisionMask);
-    //        Debug.DrawRay(raycastOriginLeft, new Vector2(velocity.x, 0), Color.red, Time.fixedDeltaTime, false);
-    //        Debug.DrawRay(raycastOriginRight, new Vector2(velocity.x, 0), Color.red, Time.fixedDeltaTime, false);
-
-    //        foreach (RaycastHit2D hit in hitsLeft)
-    //        {
-    //            if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
-    //            {
-    //                if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
-    //                {
-    //                    velocity.x = (hit.distance - SKIN_WIDTH) * -1;
-    //                }
-    //                touchInfo.touchLeft = true;
-    //                touchInfo.leftObject = hit.transform.gameObject;
-    //                UpdateSorting();
-    //            }
-    //            else
-    //            {
-    //                touchInfo.Reset();
-    //            }
-    //        }
-
-    //        foreach (RaycastHit2D hit in hitsRight)
-    //        {
-    //            if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
-    //            {
-    //                if (Mathf.Abs(velocity.x) > Mathf.Abs(hit.distance - SKIN_WIDTH))
-    //                {
-    //                    velocity.x = (hit.distance - SKIN_WIDTH) * 1;
-    //                }
-    //                touchInfo.touchRight = true;
-    //                touchInfo.rightObject = hit.transform.gameObject;
-    //                UpdateSorting();
-    //            }
-    //            else
-    //            {
-    //                touchInfo.Reset();
-    //            }
-    //        }
-    //    }
-    //}
-
 }
 
 public struct RaycastOrigins
