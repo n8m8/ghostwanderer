@@ -16193,8 +16193,8 @@ MonoBehaviour:
   abs_force: 1000
   topSpeed: 6
   friction: -5
-  ghostSprite: {fileID: 0}
-  humanSprite: {fileID: 0}
+  ghostSprite: {fileID: 21300000, guid: 737c5dfcef11f5c4aa2f118aaea0e946, type: 3}
+  humanSprite: {fileID: 21300000, guid: 1dda7ae13297d1148a16da5b0e8cbc41, type: 3}
   isGhost: 0
 --- !u!212 &2093185531
 SpriteRenderer:
