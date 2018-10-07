@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
 
     private InputManager inputManager;
     public PlayerStatus playerStatus;
+    public Sprite ghostSprite;
+    public Sprite humanSprite;
     
 
     private void Awake()
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour {
         inputManager.OnSwitchButtonPressed += OnSwitchButtonPressed;
         inputManager.OnShootButtonPressed += OnShootButtonPressed;
         inputManager.OnInteractButtonPressed += OnInteractButtonPressed;
-
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
         playerStatus.isSpirit = false;
         playerStatus.moveAllowed = true;
     }
@@ -26,12 +28,14 @@ public class PlayerController : MonoBehaviour {
     private void OnSwitchButtonPressed()
     {
         if (playerStatus.isSpirit)
-        {
+        {   
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
             levelController.SwitchToRealWorld();
             playerStatus.isSpirit = false;
         }
         else
         {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
             levelController.SwitchToSpiritWorld();
             playerStatus.isSpirit = true;
         }
