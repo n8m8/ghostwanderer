@@ -6,6 +6,7 @@ public class LayerController : MonoBehaviour {
 
     // [SerializeField] private int numberOfRayHorizontal;
     [SerializeField] private int numberOfRayVertical;
+    [SerializeField] private int originalSortingOrder;
 
     public LayerMask collisionMask;
     public TouchInfo touchInfo;
@@ -17,17 +18,18 @@ public class LayerController : MonoBehaviour {
     private float raySpacingVertical;
     private Vector2 targetVelocity;
     private SpriteRenderer characterSpriteRenderer;
-    private int originalSortingOrder;
     private Bounds colliderBounds;
 
-    private float SKIN_WIDTH = 0.01f;
+    private float SKIN_WIDTH = 0.03f;
 
     private void Awake()
     {
         coll = GetComponent<Collider2D>();
         characterRB = GetComponent<Rigidbody2D>();
         characterSpriteRenderer = GetComponent<SpriteRenderer>();
-        originalSortingOrder = characterSpriteRenderer.sortingOrder;
+
+        if (originalSortingOrder == 0)
+            originalSortingOrder = characterSpriteRenderer.sortingOrder;
 
         CalculateBounds();
         CalculateRaySpacing();
@@ -44,28 +46,31 @@ public class LayerController : MonoBehaviour {
         RaycastTouchVertical(ref targetVelocity);
     }
 
-    public void UpdateSortingSingle(int rayIndex)
+    public void UpdateSortingTop(int rayIndex)
     {
-        if (touchInfo.touchTop[rayIndex])
+        if (touchInfo.touchTop[rayIndex] && touchInfo.topObject[rayIndex] != null)
         {
-            while (touchInfo.topObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder >= characterSpriteRenderer.sortingOrder)
+            if (touchInfo.topObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder >= characterSpriteRenderer.sortingOrder)
             {
-                characterSpriteRenderer.sortingOrder -= 1;
+                characterSpriteRenderer.sortingOrder = touchInfo.topObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder + 1;
             }
-            Debug.Log("Touch Top???");
+            //Debug.Log("Touch Top???");
         }
         else
         {
             touchInfo.ResetTop(rayIndex);
         }
+    }
 
-        if (touchInfo.touchBottom[rayIndex])
+    public void UpdateSortingBottom(int rayIndex)
+    {
+        if (touchInfo.touchBottom[rayIndex] && touchInfo.bottomObject[rayIndex] != null)
         {
-            while (touchInfo.bottomObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder <= characterSpriteRenderer.sortingOrder)
+            if (touchInfo.bottomObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder <= characterSpriteRenderer.sortingOrder)
             {
-                characterSpriteRenderer.sortingOrder += 1;
+                characterSpriteRenderer.sortingOrder = touchInfo.bottomObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder - 1;
             }
-            Debug.Log("Touch Bottom???");
+            //Debug.Log("Touch Bottom???");
         }
         else
         {
@@ -73,15 +78,17 @@ public class LayerController : MonoBehaviour {
         }
     }
 
-    public void CheckDontTouch()
+        public void CheckDontTouch()
     {
         for (int rayIndex = 0; rayIndex < numberOfRayVertical; rayIndex++)
         {
             if (touchInfo.touchTop[rayIndex] || touchInfo.touchBottom[rayIndex])
+                //Debug.Log("Still touch");
                 return;
         }
         characterSpriteRenderer.sortingOrder = originalSortingOrder;
         touchInfo.ResetAll();
+        //Debug.Log("Reset All");
     }
 
     public void CalculateBounds()
@@ -103,74 +110,75 @@ public class LayerController : MonoBehaviour {
         // numberOfRayHorizontal = numberOfRayHorizontal < 2 ? 2 : numberOfRayHorizontal;
         numberOfRayVertical = numberOfRayVertical < 2 ? 2 : numberOfRayVertical;
 
-        // raySpacingVertical = (colliderBounds.extents.x * 2) / (numberOfRayHorizontal - 1);
-        raySpacingHorizontal = (colliderBounds.extents.y * 2) / (numberOfRayVertical - 1);
+        raySpacingVertical = (colliderBounds.extents.x * 2) / (numberOfRayVertical - 1);
+        // raySpacingHorizontal = (colliderBounds.extents.y * 2) / (numberOfRayHorizontal - 1);
     }
 
     public void RaycastTouchVertical(ref Vector2 velocity)
     {
+        touchInfo.ResetAll();
+
         Vector2 raycastBaseTop = raycastOrigins.topLeft;
         Vector2 raycastBaseBottom = raycastOrigins.bottomLeft;
 
         for (int rayIndex = 0; rayIndex < numberOfRayVertical; rayIndex++)
         {
-            float distance = 0.12f;
-            Vector2 raycastOriginTop = raycastBaseTop + raySpacingVertical * rayIndex * Vector2.right;
+            float distance = 0.40f;
+
             Vector2 raycastOriginBottom = raycastBaseBottom + raySpacingVertical * rayIndex * Vector2.right;
 
             RaycastHit2D[] hitsBottom =
-                Physics2D.RaycastAll(raycastOriginBottom, new Vector2(0, -1), - (distance + SKIN_WIDTH), collisionMask);
-            Debug.DrawRay(raycastOriginBottom, new Vector2(0, -distance), Color.red, Time.fixedDeltaTime, false);
+                Physics2D.RaycastAll(raycastOriginBottom, new Vector2(0, -1), distance + SKIN_WIDTH, collisionMask);
+            Debug.DrawRay(raycastOriginBottom, new Vector2(0, -distance - SKIN_WIDTH), Color.red, Time.fixedDeltaTime, false);
 
 
             foreach (RaycastHit2D hit in hitsBottom)
             {
-                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null 
-                    && (hit.transform.gameObject.Equals(touchInfo.bottomObject[rayIndex]) || touchInfo.bottomObject[rayIndex] == null))
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+                    //&& (hit.transform.gameObject.Equals(touchInfo.bottomObject[rayIndex]) || touchInfo.bottomObject[rayIndex] == null))
                 {
                     touchInfo.touchBottom[rayIndex] = true;
                     touchInfo.bottomObject[rayIndex] = hit.transform.gameObject;
-                    UpdateSortingSingle(rayIndex);
-                }
-                else
-                {
-                    if (touchInfo.bottomObject[rayIndex] != null)
-                    {
-                        touchInfo.bottomObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder -= 1;
-                    }
-                    characterSpriteRenderer.sortingOrder = originalSortingOrder;
-                    touchInfo.ResetBottom(rayIndex);
+                    UpdateSortingBottom(rayIndex);
+                    break;
                 }
             }
+            if (touchInfo.touchBottom[rayIndex] == false)
+            {
+                touchInfo.ResetBottom(rayIndex);
+                //Debug.Log("Reset Bottom");
+            }
 
-            distance = 0.60f;
+
+            distance = 0.70f;
+
+            Vector2 raycastOriginTop = raycastBaseTop + raySpacingVertical * rayIndex * Vector2.right + Vector2.up * 0.05f;
 
             RaycastHit2D[] hitsTop =
                 Physics2D.RaycastAll(raycastOriginTop, new Vector2(0, 1), distance + SKIN_WIDTH, collisionMask);
-            Debug.DrawRay(raycastOriginTop, new Vector2(0, distance), Color.red, Time.fixedDeltaTime, false);
+            Debug.DrawRay(raycastOriginTop, new Vector2(0, distance + SKIN_WIDTH), Color.red, Time.fixedDeltaTime, false);
 
             foreach (RaycastHit2D hit in hitsTop)
             {
                 if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null
-                    && (hit.transform.gameObject.Equals(touchInfo.topObject[rayIndex]) || touchInfo.topObject[rayIndex] == null))
+                    && hit.transform.gameObject != touchInfo.bottomObject[rayIndex])
+                    //&& (hit.transform.gameObject.Equals(touchInfo.topObject[rayIndex]) || touchInfo.topObject[rayIndex] == null))
                 {
                     touchInfo.touchTop[rayIndex] = true;
                     touchInfo.topObject[rayIndex] = hit.transform.gameObject;
-                    UpdateSortingSingle(rayIndex);
+                    UpdateSortingTop(rayIndex);
+                    break;
                 }
-                else
-                {
-                    if (touchInfo.topObject[rayIndex] != null)
-                    {
-                        touchInfo.topObject[rayIndex].GetComponent<SpriteRenderer>().sortingOrder -= 1;
-                    }
-                    characterSpriteRenderer.sortingOrder = originalSortingOrder;
-                    touchInfo.ResetTop(rayIndex);
-                }
+            }
+            if (touchInfo.touchTop[rayIndex] == false)
+            {
+                touchInfo.ResetTop(rayIndex);
+                //Debug.Log("Reset Top");
             }
         }
 
         CheckDontTouch();
+        //Debug.Log("Reach end of method");
     }
 }
 
