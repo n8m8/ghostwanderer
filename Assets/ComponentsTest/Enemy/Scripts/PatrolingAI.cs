@@ -72,7 +72,7 @@ public class PatrolingAI : MonoBehaviour {
     void checkLOS(){
         int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));
 
-            if (hit == 0)
+            if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle)
             {
                 seePlayer = true;
             }
@@ -90,7 +90,7 @@ public class PatrolingAI : MonoBehaviour {
             return;
         }
         checkLOS();
-        if (Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && seePlayer)
+        if (seePlayer)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
@@ -100,7 +100,7 @@ public class PatrolingAI : MonoBehaviour {
     void chasing(){
         float distance = Vector2.Distance(player.transform.position, transform.position);
         checkLOS();
-        if(Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && !seePlayer && distance > 5.0f)
+        if(!seePlayer && distance > 5.0f)
         {
             state = AIState.confusing;
             temp.position = transform.position;
