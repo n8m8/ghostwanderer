@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1601,6 +1601,11 @@ Prefab:
       propertyPath: data.file_cachedStartup
       value: 
       objectReference: {fileID: 4900000, guid: 9981659cd5d454446a240b2516601d61, type: 3}
+    - target: {fileID: 114243863480551568, guid: 0d9426683b7bf4e58828cdb004d8c4b8,
+        type: 2}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAACYn+v6nOlqRgIAAM8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtzmzAQ/isenesMEByS3lr8aA+OPXE6vXCRYTEaC4mRRPwa//euBARCTyzfvr79duFGmNAVpEaqlWLZWmZAvk+Itcm3CaHO90YNkwj7iDAtSzCKpT/EgdtYD8FasFyqcpEdIJbaaIRzyjWgS0ljswVCtwk542P6YlMuaAWRta5ovXiTO5opCAOqD31sA6dhG9eE1SLltKwg27ErDKK7cP/ZhQkcpo3wHvyZrS85Z7plQ8ylcsPuqgIU2HEzRnE4x8B/CGxGAexQGHwPh+mbPNdg2uEVvcyZQpmauuSnNIUtVlJ9bMh9UF7bToGj1ZRc/+dtZsuVLH91TX3PNjAFS49v9JJSbQbKDuH5gLgT6ET5ke45/C1AvMqVkrXIBrm1hmCO70bVMBwsLiA99nhDdQTWVS95t8luj1N/cr+72c8xZ+XeSR82wI5Lp7dbPyhczm9k7I5DtyUQtSz+aHinh+EVtY4lU9qgqx1TWHp7WSsbSpZoWN3T2sRSCXBoy7kCQbm5bLGKGe9v5Bt0HXmW1H4mbe/W130FoxQH9/GeN3Jt5elzWbqQpzXoYlMbzgT0pK3jFWWKpRDNeQ0l6dJ2tcppOkg71Cz7elnkxXuCWeQ/RjkNgyj1p7NZlPuBH4WQ+U/Pfkjc7TGBc1K+bYi28uDSRF9c4J11P4jJStHKnXqm6GnFrqUcSM5ELnepAhCbLxU0KOyBn2W2yBjqswNjmHDbJreEcJkeIUs+4xM36OJsFE366RNSsQ9pLJKQ2P01EnIn939QSwMEFAAACAgAAJif6+hrERFtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPUMzTTUVBKL0osyCgGihiCOKWZKSB2tJKlgVmqqbmhsXlaoomRebKhrqmpeZqhkaG5SWqKoZmFoYlSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJif6/qc6WpGAgAAzwQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJif6+hrERFtAAAAeAAAAAkAJAAAAAAAAAAAAAAAkwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABLAwAAAAA=
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d9426683b7bf4e58828cdb004d8c4b8, type: 2}
   m_IsPrefabAsset: 0
@@ -1860,7 +1865,7 @@ Prefab:
     - target: {fileID: 114463609806775506, guid: 29f228a453a88438b95af75808032abb,
         type: 2}
       propertyPath: constrainInsideGraph
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
         type: 2}
@@ -1885,7 +1890,7 @@ Prefab:
     - target: {fileID: 114463609806775506, guid: 29f228a453a88438b95af75808032abb,
         type: 2}
       propertyPath: pickNextWaypointDist
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114583531269163862, guid: 29f228a453a88438b95af75808032abb,
         type: 2}
@@ -16188,6 +16193,8 @@ MonoBehaviour:
   abs_force: 1000
   topSpeed: 6
   friction: -5
+  ghostSprite: {fileID: 0}
+  humanSprite: {fileID: 0}
   isGhost: 0
 --- !u!212 &2093185531
 SpriteRenderer:
@@ -16307,8 +16314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelController: {fileID: 2142142846}
-  ghostSprite: {fileID: 21300000, guid: 737c5dfcef11f5c4aa2f118aaea0e946, type: 3}
-  humanSprite: {fileID: 21300000, guid: 1dda7ae13297d1148a16da5b0e8cbc41, type: 3}
 --- !u!114 &2093185536
 MonoBehaviour:
   m_ObjectHideFlags: 0

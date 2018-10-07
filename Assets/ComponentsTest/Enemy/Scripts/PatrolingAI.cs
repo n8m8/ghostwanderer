@@ -19,6 +19,7 @@ public class PatrolingAI : MonoBehaviour {
     private Vector3 now;
     private Vector3 currentDirection;
     private AIState state;
+    private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
 
     enum AIState{
         chasing,
@@ -69,10 +70,9 @@ public class PatrolingAI : MonoBehaviour {
 
 
     void checkLOS(){
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,player.transform.position - transform.position,500f,1<<LayerMask.NameToLayer("TransparentFX"));
-        if (hit)
-        {
-            if (hit.transform == player.transform)
+        int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));
+
+            if (hit == 0)
             {
                 seePlayer = true;
             }
@@ -80,10 +80,7 @@ public class PatrolingAI : MonoBehaviour {
             {
                 seePlayer = false;
             }
-        }
-        else{
-            Debug.Log("Nothing hit");
-        }
+
     }
 
     void patrolling(){
@@ -107,7 +104,7 @@ public class PatrolingAI : MonoBehaviour {
         {
             state = AIState.confusing;
             temp.position = transform.position;
-            agent.target = target;
+            agent.target = null;
         }
     }
 
