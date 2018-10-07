@@ -4,7 +4,6 @@ using UnityEngine;
 // Kyle, for Main Character and NPCs
 public class LayerController : MonoBehaviour {
 
-    // [SerializeField] private int numberOfRayHorizontal;
     [SerializeField] private int numberOfRayVertical;
     [SerializeField] private int originalSortingOrder;
 
@@ -107,11 +106,8 @@ public class LayerController : MonoBehaviour {
 
     private void CalculateRaySpacing()
     {
-        // numberOfRayHorizontal = numberOfRayHorizontal < 2 ? 2 : numberOfRayHorizontal;
         numberOfRayVertical = numberOfRayVertical < 2 ? 2 : numberOfRayVertical;
-
         raySpacingVertical = (colliderBounds.extents.x * 2) / (numberOfRayVertical - 1);
-        // raySpacingHorizontal = (colliderBounds.extents.y * 2) / (numberOfRayHorizontal - 1);
     }
 
     public void RaycastTouchVertical(ref Vector2 velocity)
@@ -135,7 +131,6 @@ public class LayerController : MonoBehaviour {
             foreach (RaycastHit2D hit in hitsBottom)
             {
                 if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
-                    //&& (hit.transform.gameObject.Equals(touchInfo.bottomObject[rayIndex]) || touchInfo.bottomObject[rayIndex] == null))
                 {
                     touchInfo.touchBottom[rayIndex] = true;
                     touchInfo.bottomObject[rayIndex] = hit.transform.gameObject;
@@ -162,7 +157,6 @@ public class LayerController : MonoBehaviour {
             {
                 if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null
                     && hit.transform.gameObject != touchInfo.bottomObject[rayIndex])
-                    //&& (hit.transform.gameObject.Equals(touchInfo.topObject[rayIndex]) || touchInfo.topObject[rayIndex] == null))
                 {
                     touchInfo.touchTop[rayIndex] = true;
                     touchInfo.topObject[rayIndex] = hit.transform.gameObject;
