@@ -13,6 +13,7 @@ public class TestPlayerMove : MonoBehaviour
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
     private Vector3 ghostPosition;
+    private Vector3 spawnPosition;
 
     public Sprite ghostSprite;
     public Sprite humanSprite;
@@ -26,6 +27,8 @@ public class TestPlayerMove : MonoBehaviour
         ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
         system.Stop();
+        spawnPosition = gameObject.transform.position;
+
     }
 
     // Update is called once per frame
@@ -128,22 +131,12 @@ public class TestPlayerMove : MonoBehaviour
         {
             //Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
         }
+
+        if(collision.gameObject.tag == "Enemy")
+        {
+             gameObject.transform.position = spawnPosition;
+        }
         yield return new WaitForSeconds(0);
     }
-    // IEnumerator OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     var hit = collision.gameObject; 
-    //     if (hit.name.Contains("Chair"))
-    //     {
-    //         Destroy(gameObject);
-    //         yield return new WaitForSeconds(2);
 
-    //     }
-    //     else if (hit.name.Contains("table"))
-    //     {
-    //         //Destroy(gameObject);
-    //         yield return new WaitForSeconds(1);
-    //         gameObject.GetComponent<Renderer>().enabled = true;
-    //     }
-    // }
 }

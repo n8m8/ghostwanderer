@@ -9,6 +9,7 @@ TagManager:
   - Room
   - Ghost Portal
   - Map Trigger
+  - Enemy
   layers:
   - Default
   - TransparentFX
