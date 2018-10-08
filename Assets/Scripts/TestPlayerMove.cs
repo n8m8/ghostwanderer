@@ -62,26 +62,15 @@ public class TestPlayerMove : MonoBehaviour
     bool canGhost = false;
     void OnTriggerStay2D(Collider2D other)
     {
-        BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
         if (other.tag == "Ghost Portal")
         {
             canGhost = true;
-        }
-        if(other.tag == "Map Trigger")
-        {
-            PC.isTrigger = false;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         canGhost = false;
-        BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
-
-        if (collision.tag == "Map Trigger")
-        {
-            PC.isTrigger = true;
-        }
     }
     private void Move(float h, float v)
     {
@@ -106,8 +95,8 @@ public class TestPlayerMove : MonoBehaviour
             this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
             isGhost = false;
             PC.isTrigger = false;
-            //ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
-            //system.Stop();
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Stop();
             gameObject.transform.position = ghostPosition;
 
         }
@@ -117,8 +106,8 @@ public class TestPlayerMove : MonoBehaviour
             ghostPosition = gameObject.transform.position;
             PC.isTrigger = true;
             isGhost = true;
-           // ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
-            //system.Play();
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Play();
         }
     }
 
@@ -126,9 +115,8 @@ public class TestPlayerMove : MonoBehaviour
     {
         if (isGhost)
         {
-            //Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
         }
-
         yield return new WaitForSeconds(0);
     }
     // IEnumerator OnCollisionEnter2D(Collision2D collision)
