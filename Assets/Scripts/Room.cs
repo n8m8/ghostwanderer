@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Room : MonoBehaviour {
+
+    public string Room_stringtag { get; set; }    //combine all the information in a single string;
+
     //Number of the level and floor the room is in
     public int RoomNumber;
     public int Level;
@@ -13,7 +16,8 @@ public class Room : MonoBehaviour {
     public WallParent WallParent2;
     public WallParent WallParent3;
     public WallParent WallParent4;
-    public ObjectParent ObjectParent1;
+    //public ObjectParent ObjectParent1;
+    public CoverParent CoverParent1;
 
     //True if the room has been entered
     ////Array list of environment objects in the room
@@ -25,6 +29,7 @@ public class Room : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        this.Room_stringtag = Level.ToString() + Floor.ToString() + RoomNumber.ToString();
 	}
 	
 	// Update is called once per frame
@@ -38,7 +43,7 @@ public class Room : MonoBehaviour {
         WallParent2.turn_off_cwalls();
         WallParent3.turn_off_cwalls();
         WallParent4.turn_off_cwalls();
-        ObjectParent1.turn_off_cobjs();
+        //ObjectParent1.turn_off_cobjs();
     }
 
     public void turn_on_walls()
@@ -47,6 +52,16 @@ public class Room : MonoBehaviour {
         WallParent2.turn_on_cwalls();
         WallParent3.turn_on_cwalls();
         WallParent4.turn_on_cwalls();
-        ObjectParent1.turn_on_cobjs();
+        //ObjectParent1.turn_on_cobjs();
+    }
+
+    public void turn_on_cover()
+    {
+        CoverParent1.turn_on_ccover();
+    }
+
+    public void turn_off_cover()
+    {
+        CoverParent1.turn_off_ccover();
     }
 }
