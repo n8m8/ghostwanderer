@@ -8,6 +8,7 @@ TagManager:
   - InteractableOBJ
   - Room
   - Ghost Portal
+  - Map Trigger
   layers:
   - Default
   - TransparentFX
