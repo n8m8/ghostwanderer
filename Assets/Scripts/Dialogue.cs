@@ -39,7 +39,7 @@ public class Dialogue : MonoBehaviour {
 		}
 
 		//skip the dialogue after keypress 
-		if (Input.GetKeyDown(KeyCode.Escape) && !checkflag){
+		if (Input.GetKeyDown(KeyCode.Escape) && textDisplay.text == (name + sentences[index]) && !checkflag){
 			resetDialogue();
 		}
 	}
