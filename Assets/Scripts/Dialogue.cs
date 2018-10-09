@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour {
 	void Update(){
 
 		//start the dialogue
-		if (Input.GetKeyDown(KeyCode.Space) && checkflag){
+		if (Input.GetKeyDown(KeyCode.E) && checkflag){
 			StartCoroutine(Type());
 			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 			checkflag = false;
