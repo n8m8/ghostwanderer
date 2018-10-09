@@ -94,7 +94,7 @@ public class PatrolingAI : MonoBehaviour {
             return;
         }
         checkLOS();
-        if (seePlayer && playerControl.isGhost == !enabled)
+        if (seePlayer && playerControl.isGhost == false)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
@@ -124,7 +124,7 @@ public class PatrolingAI : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Do something you want if you need to use checkpointetc
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == false)
         {
             player.transform.position = startPosPlayer;
         }
