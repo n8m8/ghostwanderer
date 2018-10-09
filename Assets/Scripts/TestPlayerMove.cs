@@ -125,18 +125,4 @@ public class TestPlayerMove : MonoBehaviour
         }
     }
 
-    IEnumerator OnCollisionEnter2D(Collision2D collision)
-    {
-        if (isGhost)
-        {
-            //Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>(), true);
-        }
-
-        if(collision.gameObject.tag == "Enemy")
-        {
-             gameObject.transform.position = spawnPosition;
-        }
-        yield return new WaitForSeconds(0);
-    }
-
 }
