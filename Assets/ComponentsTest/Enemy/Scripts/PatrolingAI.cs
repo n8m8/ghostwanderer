@@ -21,6 +21,7 @@ public class PatrolingAI : MonoBehaviour {
     private Vector3 startPosPlayer;
     private AIState state;
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
+    private TestPlayerMove playerControl;
 
     enum AIState{
         chasing,
@@ -32,6 +33,7 @@ public class PatrolingAI : MonoBehaviour {
     void Start () {
         state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
+        playerControl = player.GetComponent<TestPlayerMove>();
         startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
@@ -92,7 +94,7 @@ public class PatrolingAI : MonoBehaviour {
             return;
         }
         checkLOS();
-        if (seePlayer)
+        if (seePlayer && playerControl.isGhost == !enabled)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
