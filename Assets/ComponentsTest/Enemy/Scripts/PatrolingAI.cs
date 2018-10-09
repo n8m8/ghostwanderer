@@ -22,6 +22,7 @@ public class PatrolingAI : MonoBehaviour {
     private AIState state;
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
     private TestPlayerMove playerControl;
+    private AIPath setting;
 
     enum AIState{
         chasing,
@@ -34,6 +35,7 @@ public class PatrolingAI : MonoBehaviour {
         state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
+        setting = this.GetComponent<AIPath>();
         startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
@@ -88,6 +90,7 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     void patrolling(){
+        setting.maxSpeed = 1.0f;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
             GotoNextPoint();
@@ -102,6 +105,7 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     void chasing(){
+        setting.maxSpeed = 10.0f;
         float distance = Vector2.Distance(player.transform.position, transform.position);
         checkLOS();
         if(!seePlayer && distance > 5.0f)
@@ -113,6 +117,7 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     IEnumerator confusing(){
+        setting.maxSpeed = 3.0f;
         float distance = Vector2.Distance(player.transform.position, transform.position);
         temp.position = transform.position;
         agent.target = temp;
