@@ -18,6 +18,7 @@ public class Pickup : MonoBehaviour {
 		if (other.CompareTag("Player")){
 			for (int i = 0; i < inventory.slots.Length; i++){
 				if (inventory.isFull[i] == false){
+					gameObject.GetComponent<SpriteRenderer>().enabled = false;
 					name = gameObject.name;
 					inventory.isFull[i] = true;
 					inventory.slots[i] = name;

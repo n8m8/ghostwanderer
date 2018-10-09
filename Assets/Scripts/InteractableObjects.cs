@@ -10,6 +10,8 @@ public class InteractableObjects : MonoBehaviour {
     [SerializeField] private Dialogue dialogue;
     //the LevelController
     [SerializeField] private LevelController levelController;
+    //the Inventory
+    [SerializeField] private Inventory inventory;
     
     //TODO change the above to usable classes
 
@@ -17,6 +19,7 @@ public class InteractableObjects : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		levelController = FindObjectOfType<LevelController>();
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 	}
 
     private IEnumerator OnCollisionEnter2D(Collision2D collision)
@@ -37,12 +40,16 @@ public class InteractableObjects : MonoBehaviour {
         //If disappear is set as an input value destroy this object
         else if (hit.name.Contains("Player") && act.Equals("Door"))
         {
-            EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
-            PC.isTrigger = true;
-            gameObject.GetComponent<Renderer>().enabled = false;
-            yield return new WaitForSeconds(1);
-            gameObject.GetComponent<Renderer>().enabled = true;
-            PC.isTrigger = false;
+            for (int i = 0; i < inventory.slots.Length; i++){
+                if (inventory.slots[i] == "key"){
+                    EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
+                    PC.isTrigger = true;
+                    gameObject.GetComponent<Renderer>().enabled = false;
+                    yield return new WaitForSeconds(1);
+                    gameObject.GetComponent<Renderer>().enabled = true;
+                    PC.isTrigger = false;
+                }
+            }
 
         }
         else if (hit.name.Contains("Player") && act.Equals("Damage"))
