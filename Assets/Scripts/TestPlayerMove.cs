@@ -8,12 +8,15 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private float abs_force = 50.0f;
     [SerializeField] private float topSpeed = 6.0f;
     [SerializeField] private float friction = -10.0f;
+    [SerializeField] private LevelController levelController;
 
     private Vector2 movement;
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
     private Vector3 ghostPosition;
     private Vector3 spawnPosition;
+    private bool canMoveObject = false;
+    private bool enemyInRange = false;
 
     public Sprite ghostSprite;
     public Sprite humanSprite;
@@ -42,6 +45,8 @@ public class TestPlayerMove : MonoBehaviour
         {
             toggleGhostMode();
         }
+
+        
 
 
 
@@ -73,6 +78,21 @@ public class TestPlayerMove : MonoBehaviour
         if (other.tag == "Map Trigger")
         {
             PC.isTrigger = false;
+        }
+        if(other.name == "Vase Trigger")
+        {
+            canMoveObject = true;
+        }
+
+
+        if (Input.GetKeyDown("f") && canMoveObject && enemyInRange)
+        {
+            
+            levelController.Vase.GetComponent<Renderer>().enabled = false;
+            //Destroy(levelController.Vase);
+            //Destroy(levelController.VaseObject);
+            
+            
         }
     }
 

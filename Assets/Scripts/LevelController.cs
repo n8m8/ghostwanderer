@@ -23,6 +23,9 @@ public class LevelController : MonoBehaviour {
     // The player controller
     [SerializeField] private GameObject player;
 
+    [SerializeField] public GameObject Vase;
+
+    public GameObject VaseObject;
     //The current checkpoint
     public GameObject currentCheckpoint;
 
@@ -30,6 +33,7 @@ public class LevelController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        VaseObject = Vase;
         playerStatus = player.GetComponent<PlayerController>().playerStatus;
 	}
 	
