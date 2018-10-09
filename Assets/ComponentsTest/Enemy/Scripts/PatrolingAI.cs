@@ -18,6 +18,7 @@ public class PatrolingAI : MonoBehaviour {
     private Vector3 last;
     private Vector3 now;
     private Vector3 currentDirection;
+    private Vector3 startPosPlayer;
     private AIState state;
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
 
@@ -31,6 +32,7 @@ public class PatrolingAI : MonoBehaviour {
     void Start () {
         state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
+        startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
@@ -115,6 +117,15 @@ public class PatrolingAI : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         state = AIState.patrolling;
         GotoNextPoint();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Do something you want if you need to use checkpointetc
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player.transform.position = startPosPlayer;
+        }
     }
 
 
