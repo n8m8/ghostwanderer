@@ -38,7 +38,7 @@ public class PushController : MonoBehaviour {
             PushableObject.GetComponent<Renderer>().enabled = false;
             //Destroy(levelController.Vase);
             //Destroy(levelController.VaseObject);
-
+            Destroy(Enemy);
         }
         enemyInRange = false;
 
