@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5679,7 +5679,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.040596716}
@@ -19013,6 +19013,7 @@ GameObject:
   - component: {fileID: 1124596595}
   - component: {fileID: 1124596597}
   - component: {fileID: 1124596596}
+  - component: {fileID: 1124596598}
   m_Layer: 1
   m_Name: Vase Trigger
   m_TagString: Untagged
@@ -19028,7 +19029,7 @@ Transform:
   m_GameObject: {fileID: 1124596594}
   m_LocalRotation: {x: -0.013957071, y: -0.06707081, z: 0.29430044, w: 0.95325446}
   m_LocalPosition: {x: -4.55, y: -2.64, z: 0}
-  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
+  m_LocalScale: {x: 0.42632997, y: 0.29999998, z: 1}
   m_Children: []
   m_Father: {fileID: 1801652686}
   m_RootOrder: 1
@@ -19104,6 +19105,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1124596598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124596594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d887ed9fc2209498999d036499aa65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PushableObject: {fileID: 1952739800}
+  Protag: {fileID: 2093185527}
+  Enemy: {fileID: 435480423}
+  canMoveObject: 0
+  enemyInRange: 0
 --- !u!4 &1126962622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4716290658923726, guid: e573e231e9f4af141990d04a8f472d5e,
