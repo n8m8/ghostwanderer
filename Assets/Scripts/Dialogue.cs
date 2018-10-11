@@ -24,6 +24,7 @@ public class Dialogue : MonoBehaviour {
 		//start the dialogue
 		if (Input.GetKeyDown(KeyCode.E) && checkflag){
 			StartCoroutine(Type());
+			//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = false;
 			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 			checkflag = false;
 		}
@@ -89,6 +90,7 @@ public class Dialogue : MonoBehaviour {
 		continueButton.SetActive(false);
 		index = 0;
 		GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+		//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = true;
 		checkflag = true;
 	}
 
