@@ -6,11 +6,12 @@ public class LayerController : MonoBehaviour {
 
     [SerializeField] private int numberOfRayVertical;
     [SerializeField] private int originalSortingOrder;
+    [SerializeField] private float height;
 
     public LayerMask collisionMask;
     public TouchInfo touchInfo;
 
-    private Rigidbody2D characterRB;
+    //private Rigidbody2D characterRB;
     private Collider2D coll;
     private RaycastOrigins raycastOrigins;
     private float raySpacingHorizontal;
@@ -24,7 +25,7 @@ public class LayerController : MonoBehaviour {
     private void Awake()
     {
         coll = GetComponent<Collider2D>();
-        characterRB = GetComponent<Rigidbody2D>();
+        //characterRB = GetComponent<Rigidbody2D>();
         characterSpriteRenderer = GetComponent<SpriteRenderer>();
 
         if (originalSortingOrder == 0)
@@ -41,8 +42,8 @@ public class LayerController : MonoBehaviour {
     {
         CalculateBounds();
         CalculateRaySpacing();
-        targetVelocity = characterRB.velocity;
-        RaycastTouchVertical(ref targetVelocity);
+        //targetVelocity = characterRB.velocity;
+        RaycastTouchVertical();
     }
 
     public void UpdateSortingTop(int rayIndex)
@@ -110,7 +111,7 @@ public class LayerController : MonoBehaviour {
         raySpacingVertical = (colliderBounds.extents.x * 2) / (numberOfRayVertical - 1);
     }
 
-    public void RaycastTouchVertical(ref Vector2 velocity)
+    public void RaycastTouchVertical()
     {
         touchInfo.ResetAll();
 
@@ -145,7 +146,7 @@ public class LayerController : MonoBehaviour {
             }
 
 
-            distance = 0.70f;
+            distance = 0.40f + height;
 
             Vector2 raycastOriginTop = raycastBaseTop + raySpacingVertical * rayIndex * Vector2.right + Vector2.up * 0.05f;
 
