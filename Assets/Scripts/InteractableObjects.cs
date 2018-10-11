@@ -42,6 +42,7 @@ public class InteractableObjects : MonoBehaviour {
         {
             for (int i = 0; i < inventory.slots.Length; i++){
                 if (inventory.slots[i] == "key"){
+                    inventory.isFull[i] = false;
                     EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
                     PC.isTrigger = true;
                     gameObject.GetComponent<Renderer>().enabled = false;
