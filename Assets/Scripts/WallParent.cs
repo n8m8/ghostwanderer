@@ -19,6 +19,7 @@ public class WallParent : MonoBehaviour {
         foreach(Transform child in transform)
         {
             child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            child.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
     }
 
@@ -26,6 +27,7 @@ public class WallParent : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
+            child.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }

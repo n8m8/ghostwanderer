@@ -10,6 +10,10 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private float friction = -10.0f;
     [SerializeField] private LevelController levelController;
 
+    public Vector3 centerPt;
+    //adjust for alter
+    public float radius = 5f;
+
     private Vector2 movement;
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
@@ -17,6 +21,7 @@ public class TestPlayerMove : MonoBehaviour
     private Vector3 spawnPosition;
     private bool canMoveObject = false;
     private bool enemyInRange = false;
+
 
     public Sprite ghostSprite;
     public Sprite humanSprite;
@@ -60,6 +65,12 @@ public class TestPlayerMove : MonoBehaviour
             float v = Input.GetAxisRaw("Vertical");
             Move(h, v);
             playerRB.AddForce(playerRB.velocity * friction);
+            Vector3 newPos = transform.position; 
+        
+        if (isGhost){
+            Vector3 offset = newPos - centerPt;
+            transform.position = centerPt + Vector3.ClampMagnitude(offset, radius);
+        }
         //}
         //else
         //{
@@ -136,6 +147,7 @@ public class TestPlayerMove : MonoBehaviour
         }
         else
         {
+            centerPt = transform.position;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
             ghostPosition = gameObject.transform.position;
             PC.isTrigger = true;

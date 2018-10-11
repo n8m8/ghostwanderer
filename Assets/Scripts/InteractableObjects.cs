@@ -42,12 +42,12 @@ public class InteractableObjects : MonoBehaviour {
         {
             for (int i = 0; i < inventory.slots.Length; i++){
                 if (inventory.slots[i] == "key"){
+                    inventory.removeItem(i);
                     EdgeCollider2D PC = gameObject.GetComponent<EdgeCollider2D>();
-                    PC.isTrigger = true;
+                    PC.enabled = false;
                     gameObject.GetComponent<Renderer>().enabled = false;
-                    yield return new WaitForSeconds(1);
-                    gameObject.GetComponent<Renderer>().enabled = true;
-                    PC.isTrigger = false;
+                    // yield return new WaitForSeconds(1);
+                    // gameObject.GetComponent<Renderer>().enabled = true;
                 }
             }
 
