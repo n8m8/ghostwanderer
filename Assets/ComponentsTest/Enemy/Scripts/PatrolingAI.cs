@@ -91,6 +91,7 @@ public class PatrolingAI : MonoBehaviour {
 
     void patrolling(){
         setting.maxSpeed = 1.0f;
+        setting.constrainInsideGraph = false;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
             GotoNextPoint();
@@ -105,7 +106,9 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     void chasing(){
-        setting.maxSpeed = 10.0f;
+        setting.maxSpeed = 8.0f;
+        setting.slowdownDistance = 3.0f;
+        setting.constrainInsideGraph = true;
         float distance = Vector2.Distance(player.transform.position, transform.position);
         checkLOS();
         if(!seePlayer && distance > 5.0f)
@@ -118,6 +121,7 @@ public class PatrolingAI : MonoBehaviour {
 
     IEnumerator confusing(){
         setting.maxSpeed = 3.0f;
+        setting.constrainInsideGraph = true;
         float distance = Vector2.Distance(player.transform.position, transform.position);
         temp.position = transform.position;
         agent.target = temp;
@@ -126,7 +130,7 @@ public class PatrolingAI : MonoBehaviour {
         GotoNextPoint();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == false)
@@ -134,7 +138,6 @@ public class PatrolingAI : MonoBehaviour {
             player.transform.position = startPosPlayer;
         }
     }
-
 
 
 
