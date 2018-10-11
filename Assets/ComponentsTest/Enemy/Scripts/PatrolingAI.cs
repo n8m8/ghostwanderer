@@ -60,6 +60,8 @@ public class PatrolingAI : MonoBehaviour {
             currentDirection = (now - last) / Time.deltaTime;
         }
         last = transform.position;
+        now.z = 0;
+        transform.position = now;
 
         switch(state){
             case AIState.patrolling:
