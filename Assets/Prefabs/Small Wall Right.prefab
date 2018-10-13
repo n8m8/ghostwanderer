@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4086028439907570}
   - component: {fileID: 212304289186556500}
   - component: {fileID: 60550468263565458}
+  - component: {fileID: 114600847799742372}
   m_Layer: 0
   m_Name: Small Wall Right
   m_TagString: Untagged
@@ -69,6 +70,19 @@ PolygonCollider2D:
       - {x: -0.8531395, y: -0.45863485}
       - {x: 0.7818279, y: 0.37630272}
       - {x: 0.86428, y: 0.31927347}
+--- !u!114 &114600847799742372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1615368056049126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortingOffset: 1000
+  SortingScale: 10
 --- !u!212 &212304289186556500
 SpriteRenderer:
   m_ObjectHideFlags: 1

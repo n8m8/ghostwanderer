@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4360329152824456}
   - component: {fileID: 212378798685203558}
   - component: {fileID: 60595466523992360}
+  - component: {fileID: 114628718140431278}
   m_Layer: 0
   m_Name: Wall_left_3x3
   m_TagString: Untagged
@@ -69,6 +70,19 @@ PolygonCollider2D:
       - {x: 0.7612028, y: -0.35421395}
       - {x: -0.8844452, y: -1.2030308}
       - {x: -0.78828406, y: -1.2560554}
+--- !u!114 &114628718140431278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073718334197060}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortingOffset: -1000
+  SortingScale: 10
 --- !u!212 &212378798685203558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,7 +115,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1967666115
+  m_SortingLayerID: -1574648179
   m_SortingLayer: -1
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e5fbb5d60b2c0bf458769d7476c7c2e7, type: 3}
