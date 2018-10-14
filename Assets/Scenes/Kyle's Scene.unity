@@ -12239,8 +12239,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1345187643294630, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
       propertyPath: m_Name
-      value: patriolling (1)
+      value: sofaguy
       objectReference: {fileID: 0}
+    - target: {fileID: 61488696708820072, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 5.633607
+      objectReference: {fileID: 0}
+    - target: {fileID: 61488696708820072, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 8.09301
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427217885049438, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: points.Array.data[0]
+      value: 
+      objectReference: {fileID: 702895646}
+    - target: {fileID: 114427217885049438, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 1348623218}
+    - target: {fileID: 114427217885049438, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 402328124}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
   m_IsPrefabAsset: 0
@@ -13285,6 +13310,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &702895646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac,
+    type: 2}
+  m_PrefabInternal: {fileID: 702895645}
 --- !u!4 &713642377
 Transform:
   m_ObjectHideFlags: 0
@@ -21966,6 +21996,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &1348623218 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac,
+    type: 2}
+  m_PrefabInternal: {fileID: 1348623217}
 --- !u!1001 &1349470620
 Prefab:
   m_ObjectHideFlags: 0

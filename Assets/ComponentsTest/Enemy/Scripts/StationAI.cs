@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using Pathfinding;
 using UnityEngine;
-public class PatrolingAI : MonoBehaviour {
-    
+public class StationAI : MonoBehaviour
+{
+
     public Transform[] points;
     public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
     public GameObject enemyTrigger;
 
     private GameObject player;
-    private bool seePlayer;
     private int desPoint = 0;
     private AIDestinationSetter agent;
     private Transform target;
@@ -24,32 +24,25 @@ public class PatrolingAI : MonoBehaviour {
     private AIPath setting;
     private Alarm alarm;
 
-    enum AIState{
+    enum AIState
+    {
         chasing,
         confusing,
-        patrolling
+        sitting
     }
 
     // Use this for initialization
-    void Start () {
-        state = AIState.patrolling;
+    void Start()
+    {
+        state = AIState.sitting;
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
         setting = this.GetComponent<AIPath>();
         alarm = enemyTrigger.GetComponent<Alarm>();
         startPosPlayer = player.transform.position;
-        seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
         temp = Instantiate(new GameObject()).transform;
-	}
-
-    void GotoNextPoint(){
-        if (points.Length == 0)
-            return;
-        desPoint = (desPoint + 1) % points.Length;
-        target = points[desPoint];
-        agent.target = target;
     }
 
     // Update is called once per frame
@@ -66,70 +59,34 @@ public class PatrolingAI : MonoBehaviour {
         now.z = 0;
         transform.position = now;
 
-        switch(state){
-            case AIState.patrolling:
-                patrolling(distance);
+        switch (state)
+        {
+            case AIState.sitting:
+                sitting();
                 break;
             case AIState.chasing:
                 chasing(distance);
                 break;
-            case AIState.confusing:
-                StartCoroutine(confusing());
-                break;
         }
     }
 
-
-    void checkLOS(){
-        int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));
-
-            if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle)
-            {
-                seePlayer = true;
-            }
-            else
-            {
-                seePlayer = false;
-            }
-
-    }
-
-    void patrolling(float distance){
-        setting.maxSpeed = 1.0f;
-        if (Vector2.Distance(transform.position, target.position) < 0.5f)
-        {
-            GotoNextPoint();
-            return;
-        }
-        checkLOS();
-        if ((seePlayer || alarm.isOn)&& playerControl.isGhost == false)
-        {
+    void sitting(){
+        setting.maxSpeed = 2.0f;
+        if(alarm.isOn){
             state = AIState.chasing;
-            agent.target = playerPosition;
+            target = playerPosition;
         }
     }
 
-    void chasing(float distance){
+    void chasing(float distance)
+    {
         setting.maxSpeed = 15.0f;
-        checkLOS();
         setting.constrainInsideGraph = true;
-        if (!seePlayer && distance > 5.0f && alarm.isOn == false)
+        if (alarm.isOn == false)
         {
-            state = AIState.confusing;
-            temp.position = transform.position;
-            agent.target = null;
+            state = AIState.sitting;
+            agent.target = points[0];
         }
-    }
-
-    IEnumerator confusing(){
-        setting.maxSpeed = 3.0f;
-        setting.constrainInsideGraph = false;
-        float distance = Vector2.Distance(player.transform.position, transform.position);
-        temp.position = transform.position;
-        agent.target = temp;
-        yield return new WaitForSeconds(2.0f);
-        state = AIState.patrolling;
-        GotoNextPoint();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
