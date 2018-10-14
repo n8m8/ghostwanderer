@@ -13713,7 +13713,7 @@ GameObject:
   - component: {fileID: 729132832}
   - component: {fileID: 729132834}
   - component: {fileID: 729132833}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: prop-couch-transp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
