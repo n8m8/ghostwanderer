@@ -2556,6 +2556,16 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: -3.9247837
       objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: RoomNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
   m_IsPrefabAsset: 0
@@ -4133,6 +4143,11 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: -8.322177
       objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
   m_IsPrefabAsset: 0
@@ -5162,6 +5177,16 @@ Prefab:
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
       value: -2.7940102
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: RoomNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
@@ -6496,6 +6521,16 @@ Prefab:
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: -10.672438
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: RoomNumber
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
@@ -12404,6 +12439,16 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -4.539481
       objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: RoomNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
   m_IsPrefabAsset: 0
@@ -16883,6 +16928,16 @@ Prefab:
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
       value: -2.1439953
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: RoomNumber
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
@@ -27551,6 +27606,16 @@ Prefab:
     - target: {fileID: 4950304566031926, guid: 7e24456a7f965414ba465bee36868884, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: RoomNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114201514004424674, guid: 7e24456a7f965414ba465bee36868884,
+        type: 2}
+      propertyPath: Floor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e24456a7f965414ba465bee36868884, type: 2}
