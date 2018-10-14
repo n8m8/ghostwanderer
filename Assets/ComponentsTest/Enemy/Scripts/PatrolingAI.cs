@@ -1,14 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
-using UnityEngine.AI;
-
 public class PatrolingAI : MonoBehaviour {
     
     public Transform[] points;
     public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
+    public GameObject enemyTrigger;
+
     private GameObject player;
     private bool seePlayer;
     private int desPoint = 0;
@@ -23,6 +22,7 @@ public class PatrolingAI : MonoBehaviour {
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
     private TestPlayerMove playerControl;
     private AIPath setting;
+    private Alarm alarm;
 
     enum AIState{
         chasing,
@@ -36,6 +36,7 @@ public class PatrolingAI : MonoBehaviour {
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
         setting = this.GetComponent<AIPath>();
+        alarm = enemyTrigger.GetComponent<Alarm>();
         startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
@@ -54,7 +55,9 @@ public class PatrolingAI : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        float distance = Vector2.Distance(player.transform.position, transform.position);
         now = transform.position;
+        Debug.Log(alarm.isOn);
         if (now != last)
         {
             currentDirection = (now - last) / Time.deltaTime;
@@ -65,10 +68,10 @@ public class PatrolingAI : MonoBehaviour {
 
         switch(state){
             case AIState.patrolling:
-                patrolling();
+                patrolling(distance);
                 break;
             case AIState.chasing:
-                chasing();
+                chasing(distance);
                 break;
             case AIState.confusing:
                 StartCoroutine(confusing());
@@ -91,29 +94,27 @@ public class PatrolingAI : MonoBehaviour {
 
     }
 
-    void patrolling(){
+    void patrolling(float distance){
         setting.maxSpeed = 1.0f;
-        setting.constrainInsideGraph = false;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
             GotoNextPoint();
             return;
         }
         checkLOS();
-        if (seePlayer && playerControl.isGhost == false)
+        if ((seePlayer || alarm.isOn)&& playerControl.isGhost == false)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
         }
     }
 
-    void chasing(){
-        setting.maxSpeed = 8.0f;
+    void chasing(float distance){
+        setting.maxSpeed = 15.0f;
         setting.slowdownDistance = 3.0f;
-        setting.constrainInsideGraph = true;
-        float distance = Vector2.Distance(player.transform.position, transform.position);
         checkLOS();
-        if(!seePlayer && distance > 5.0f)
+        setting.constrainInsideGraph = true;
+        if (!seePlayer && distance > 5.0f && alarm.isOn == false)
         {
             state = AIState.confusing;
             temp.position = transform.position;
@@ -123,7 +124,7 @@ public class PatrolingAI : MonoBehaviour {
 
     IEnumerator confusing(){
         setting.maxSpeed = 3.0f;
-        setting.constrainInsideGraph = true;
+        setting.constrainInsideGraph = false;
         float distance = Vector2.Distance(player.transform.position, transform.position);
         temp.position = transform.position;
         agent.target = temp;
@@ -138,6 +139,10 @@ public class PatrolingAI : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == false)
         {
             player.transform.position = startPosPlayer;
+            state = AIState.confusing;
+            temp.position = transform.position;
+            alarm.isOn = false;
+            agent.target = null;
         }
     }
 
