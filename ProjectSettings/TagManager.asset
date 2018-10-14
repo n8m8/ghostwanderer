@@ -10,6 +10,7 @@ TagManager:
   - Ghost Portal
   - Map Trigger
   - Enemy
+  - Stairs
   layers:
   - Default
   - TransparentFX
