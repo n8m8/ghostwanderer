@@ -57,7 +57,6 @@ public class PatrolingAI : MonoBehaviour {
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
         now = transform.position;
-        Debug.Log(alarm.isOn);
         if (now != last)
         {
             currentDirection = (now - last) / Time.deltaTime;
