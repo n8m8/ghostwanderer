@@ -13,7 +13,7 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private Vector3 centerPt;
     [SerializeField] private float radius = 5f;
 
-
+	[SerializeField] private GameObject musicObject;
 
     [SerializeField] private Sprite ghostSprite;
     [SerializeField] private Sprite humanSprite;
@@ -25,6 +25,7 @@ public class TestPlayerMove : MonoBehaviour
     private PlayerController.PlayerStatus playerStatus;
     private Vector3 ghostPosition;
     private Vector3 spawnPosition;
+	private MusicController musicController;
     private bool canMoveObject = false;
     private bool enemyInRange = false;
 
@@ -43,6 +44,7 @@ public class TestPlayerMove : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
         system.Stop();
         spawnPosition = gameObject.transform.position;
+		musicController = musicObject.GetComponent<MusicController> ();
 
     }
 
@@ -164,6 +166,7 @@ public class TestPlayerMove : MonoBehaviour
             //ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
             //system.Play();
         }
+		musicController.isGhost = isGhost;
     }
 
     public void EnableGhostMode()
