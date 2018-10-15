@@ -112,7 +112,7 @@ public class PatrolingAI : MonoBehaviour {
         setting.maxSpeed = 12.0f;
         checkLOS();
         setting.constrainInsideGraph = true;
-        if (!seePlayer && distance > 10.0f && alarm.isOn == false)
+        if (!seePlayer && distance > 5.0f && alarm.isOn == false)
         {
             state = AIState.confusing;
             temp.position = transform.position;
