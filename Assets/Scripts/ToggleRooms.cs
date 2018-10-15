@@ -30,16 +30,13 @@ public class ToggleRooms : MonoBehaviour {
         foreach (GameObject room_GO in room_GOs)
         {
             Room room_script = room_GO.GetComponent<Room>();
-            if (room_script.Floor == floor)
+            if (room_script.Floor == floor && room_script.RoomNumber == room_number)
             {
-                if (room_script.RoomNumber == room_number)
-                {
-                    room_script.turn_on_walls();
-                }
-                else
-                {
-                    room_script.turn_off_walls();
-                }
+                room_script.turn_on_walls();
+            }
+            else
+            {
+                room_script.turn_off_walls();
             }
         }
     }
@@ -49,16 +46,13 @@ public class ToggleRooms : MonoBehaviour {
         foreach (GameObject room_GO in room_GOs)
         {
             Room room_script = room_GO.GetComponent<Room>();
-            if (room_script.Floor == floor)
+            if (room_script.Floor == floor && room_script.RoomNumber == room_number)
             {
-                if (room_script.RoomNumber == room_number)
-                {
-                    room_script.turn_on_cover();
-                }
-                else
-                {
-                    room_script.turn_off_cover();
-                }
+                room_script.turn_on_cover();
+            }
+            else
+            {
+                room_script.turn_off_cover();
             }
         }
     }
