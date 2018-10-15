@@ -29,8 +29,8 @@ public class TestPlayerMove : MonoBehaviour
     private bool canMoveObject = false;
     private bool enemyInRange = false;
 
-    private bool ghostAvailable = false;
-    private bool bodyAvailable = false;
+    public bool ghostAvailable = false;
+    public bool bodyAvailable = false;
 
     private readonly float TAN27 = 1.96261050551f;
 
