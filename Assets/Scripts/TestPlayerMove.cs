@@ -53,7 +53,7 @@ public class TestPlayerMove : MonoBehaviour
     {
         //float x = Input.GetAxis("Horizontal") * Time.deltaTime * xSpeed;
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
-
+        transform.rotation = Quaternion.Euler(0,0,0);
         //transform.Translate(x, y, 0.0f);
         if (Input.GetKeyDown("q") && ghostAvailable && (canGhost || isGhost))
         {
