@@ -12,7 +12,6 @@ public class StationAI : MonoBehaviour
 
     private GameObject player;
     private AIDestinationSetter agent;
-    private Transform target;
     private Vector3 last;
     private Vector3 now;
     private Vector3 currentDirection;
@@ -22,6 +21,7 @@ public class StationAI : MonoBehaviour
     private TestPlayerMove playerControl;
     private AIPath setting;
     private Alarm alarm;
+    private bool isChecking;
 
     enum AIState
     {
@@ -39,7 +39,7 @@ public class StationAI : MonoBehaviour
         alarm = enemyTrigger.GetComponent<Alarm>();
         startPosPlayer = player.transform.position;
         agent = GetComponent<AIDestinationSetter>();
-        target = agent.target;
+        isChecking = false;
     }
 
     // Update is called once per frame
@@ -58,22 +58,24 @@ public class StationAI : MonoBehaviour
         if (state != AIState.chasing && triggerObject.GetComponent<InteractingObject>().isOn)
         {
             StartCoroutine(checking());
-            return;
         }
-        switch (state)
+        else
         {
-            case AIState.sitting:
-                sitting();
-                break;
-            case AIState.chasing:
-                chasing(distance);
-                break;
+            switch (state)
+            {
+                case AIState.sitting:
+                    sitting();
+                    break;
+                case AIState.chasing:
+                    chasing(distance);
+                    break;
+            }
         }
     }
 
     void sitting(){
         setting.maxSpeed = 2.0f;
-        target = points[0];
+        agent.target = points[0];
         if(alarm.isOn){
             state = AIState.chasing;
             agent.target = playerPosition;
@@ -82,12 +84,11 @@ public class StationAI : MonoBehaviour
 
     IEnumerator checking(){
         setting.maxSpeed = 3.0f;
-        target = points[1];
-        yield return new WaitForSeconds(15.0f);
-        alarm.isOn = false;
-        triggerObject.GetComponent<InteractingObject>().isOn = false;
+        agent.target = points[1];
+        yield return new WaitForSeconds(10.0f);
         state = AIState.sitting;
-        target = points[0];
+        agent.target = points[0];
+        triggerObject.GetComponent<InteractingObject>().isOn = false;
     }
 
     void chasing(float distance)
@@ -98,6 +99,9 @@ public class StationAI : MonoBehaviour
         {
             state = AIState.sitting;
             agent.target = points[0];
+        }
+        else{
+            agent.target = playerPosition;
         }
     }
 
