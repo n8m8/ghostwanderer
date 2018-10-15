@@ -5,11 +5,13 @@ using UnityEngine;
 public class MusicController : MonoBehaviour {
 	[SerializeField] private GameObject humanMusic;
 	[SerializeField] private GameObject spiritMusic;
+	[SerializeField] private GameObject switchSoundFX;
 	private AudioSource humanAudioSource;
 	private AudioSource spiritAudioSource;
+	private AudioSource switchSource;
 
-	public bool isGhost;
-	private bool wasGhost;
+	public bool isGhost = false;
+	private bool wasGhost = false;
 	private bool isCrossfading;
 
 	[SerializeField] private float crossfadeTime;
@@ -17,13 +19,17 @@ public class MusicController : MonoBehaviour {
 	void Start () {
 		humanAudioSource = humanMusic.GetComponent<AudioSource> ();
 		spiritAudioSource = spiritMusic.GetComponent<AudioSource> ();
+		switchSource = switchSoundFX.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (isGhost != wasGhost)
+		if (isGhost != wasGhost) {
 			isCrossfading = true;
-		
+			switchSource.time = 0.3f;
+			switchSource.Play ();
+		}
+
 		if (isCrossfading) {
 			if (isGhost) {
 				if (spiritAudioSource.volume >= 1.0f - Time.deltaTime) {
