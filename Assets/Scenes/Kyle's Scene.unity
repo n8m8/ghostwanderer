@@ -29003,6 +29003,11 @@ Prefab:
       propertyPath: triggerObject
       value: 
       objectReference: {fileID: 1656127243}
+    - target: {fileID: 114916835950604520, guid: e035dd350745b452a9cf9fe22555f6c4,
+        type: 2}
+      propertyPath: maxAcceleration
+      value: -2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e035dd350745b452a9cf9fe22555f6c4, type: 2}
   m_IsPrefabAsset: 0
