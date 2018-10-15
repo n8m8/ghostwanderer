@@ -139,9 +139,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5d9e03cfc78821446ae41bbc74a2dae2, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0
+  m_audioClip: {fileID: 8300000, guid: fe8e4fd00c6aa6b4f98410af4fce13ec, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -428,5 +428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanMusic: {fileID: 1308194928878600}
   spiritMusic: {fileID: 1249861228725290}
+  switchSoundFX: {fileID: 1595366637930534}
   isGhost: 0
   crossfadeTime: 1
