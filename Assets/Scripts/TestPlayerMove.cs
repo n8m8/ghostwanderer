@@ -137,6 +137,7 @@ public class TestPlayerMove : MonoBehaviour
         PC.isTrigger = true;
         if (isGhost)
         {
+            Destroy(GameObject.Find("TestPlayer(Clone)"));
             this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
             isGhost = false;
             PC.isTrigger = false;
@@ -147,6 +148,8 @@ public class TestPlayerMove : MonoBehaviour
         }
         else
         {
+            GameObject copy = (GameObject) Instantiate(gameObject);
+            copy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             centerPt = transform.position;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
             ghostPosition = gameObject.transform.position;
