@@ -10,9 +10,15 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private float friction = -10.0f;
     [SerializeField] private LevelController levelController;
 
-    public Vector3 centerPt;
-    //adjust for alter
-    public float radius = 5f;
+    [SerializeField] private Vector3 centerPt;
+    [SerializeField] private float radius = 5f;
+
+
+
+    [SerializeField] private Sprite ghostSprite;
+    [SerializeField] private Sprite humanSprite;
+
+    public bool isGhost = false;
 
     private Vector2 movement;
     private Rigidbody2D playerRB;
@@ -22,11 +28,12 @@ public class TestPlayerMove : MonoBehaviour
     private bool canMoveObject = false;
     private bool enemyInRange = false;
 
-
-    public Sprite ghostSprite;
-    public Sprite humanSprite;
+    private bool ghostAvailable = false;
+    private bool bodyAvailable = false;
 
     private readonly float TAN27 = 1.96261050551f;
+
+
     // Use this for initialization
     void Start()
     {
@@ -46,39 +53,37 @@ public class TestPlayerMove : MonoBehaviour
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
 
         //transform.Translate(x, y, 0.0f);
-        if (Input.GetKeyDown("q") && (canGhost || isGhost))
+        if (Input.GetKeyDown("q") && ghostAvailable && (canGhost || isGhost))
         {
             toggleGhostMode();
         }
-
-        
-
-
-
     }
+
 
     private void FixedUpdate()
     {
         //if (playerStatus.moveAllowed)
         //{
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-            Move(h, v);
-            playerRB.AddForce(playerRB.velocity * friction);
-            Vector3 newPos = transform.position; 
-        
-        if (isGhost){
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        Move(h, v);
+        playerRB.AddForce(playerRB.velocity * friction);
+        Vector3 newPos = transform.position;
+
+        if (isGhost) {
             Vector3 offset = newPos - centerPt;
             transform.position = centerPt + Vector3.ClampMagnitude(offset, radius);
         }
         //}
         //else
         //{
-         //   Debug.Log("move allowed not working");
+        //   Debug.Log("move allowed not working");
         //}
     }
 
     bool canGhost = false;
+
+
     void OnTriggerStay2D(Collider2D other)
     {
         BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
@@ -90,7 +95,7 @@ public class TestPlayerMove : MonoBehaviour
         {
             PC.isTrigger = false;
         }
-        if(other.name == "Vase Trigger")
+        if (other.name == "Vase Trigger")
         {
             canMoveObject = true;
         }
@@ -98,14 +103,12 @@ public class TestPlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown("f") && canMoveObject && enemyInRange)
         {
-            
             levelController.Vase.GetComponent<Renderer>().enabled = false;
             //Destroy(levelController.Vase);
-            //Destroy(levelController.VaseObject);
-            
-            
+            //Destroy(levelController.VaseObject);   
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -117,6 +120,8 @@ public class TestPlayerMove : MonoBehaviour
             PC.isTrigger = true;
         }
     }
+
+
     private void Move(float h, float v)
     {
         //Modifies movement to match the angles of the tile map.
@@ -130,12 +135,13 @@ public class TestPlayerMove : MonoBehaviour
         //if (playerRB.velocity.magnitude > topSpeed)
         //    playerRB.velocity = playerRB.velocity.normalized * topSpeed;
     }
-    public bool isGhost = false;
+
+
     public void toggleGhostMode()
     {
         BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
         PC.isTrigger = true;
-        if (isGhost)
+        if (isGhost && bodyAvailable)
         {
             Destroy(GameObject.Find("TestPlayer(Clone)"));
             this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
@@ -146,9 +152,9 @@ public class TestPlayerMove : MonoBehaviour
             gameObject.transform.position = ghostPosition;
 
         }
-        else
+        else if (!isGhost)
         {
-            GameObject copy = (GameObject) Instantiate(gameObject);
+            GameObject copy = (GameObject)Instantiate(gameObject);
             copy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             centerPt = transform.position;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
@@ -160,4 +166,35 @@ public class TestPlayerMove : MonoBehaviour
         }
     }
 
+    public void EnableGhostMode()
+    {
+        ghostAvailable = true;
+        toggleGhostMode();
+    }
+
+    public void FindBody()
+    {
+        bodyAvailable = true;
+        StartCoroutine(FindBodyAnimation()); 
+    }
+
+    private IEnumerator FindBodyAnimation()
+    {
+        Debug.Log("Body Found!!!");
+        yield return new WaitForSeconds(1f);
+        ReturnToHuman();
+    }
+
+    public bool GetBodyAvailable()
+    {
+        return bodyAvailable;
+    }
+
+    private void ReturnToHuman()
+    {
+        BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
+        isGhost = false;
+        PC.isTrigger = false;
+    }
 }

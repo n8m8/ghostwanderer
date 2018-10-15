@@ -39,4 +39,10 @@ public class CameraController : MonoBehaviour {
 		return (Mathf.Abs(playerOffsetX) < focusAreaWidth) && (Mathf.Abs(playerOffsetY) < focusAreaHeight);
 	}
 
+    public void SwitchFocusArea(Vector3 newPosition)
+    {
+        float currentZPosition = this.transform.position.z;
+        this.transform.position = new Vector3(newPosition.x, newPosition.y, currentZPosition);
+    }
+
 }

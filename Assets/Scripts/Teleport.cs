@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Teleport : MonoBehaviour {
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject destination;
-    [SerializeField]
-    private Camera camera;
+    [SerializeField] private CameraController cameraController;
 
     private TestPlayerMove ghostScript;
 
@@ -26,7 +23,8 @@ public class Teleport : MonoBehaviour {
         if(collision.tag == player.tag && !ghostScript.isGhost)
         {
             player.transform.position = destination.transform.position;
-            Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
+            cameraController.SwitchFocusArea(destination.transform.position);
+            //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
         }
     }
 
