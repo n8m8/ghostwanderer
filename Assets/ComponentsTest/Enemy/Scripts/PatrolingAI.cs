@@ -57,7 +57,6 @@ public class PatrolingAI : MonoBehaviour {
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
         now = transform.position;
-        Debug.Log(alarm.isOn);
         if (now != last)
         {
             currentDirection = (now - last) / Time.deltaTime;
@@ -111,10 +110,9 @@ public class PatrolingAI : MonoBehaviour {
 
     void chasing(float distance){
         setting.maxSpeed = 15.0f;
-        setting.slowdownDistance = 3.0f;
         checkLOS();
         setting.constrainInsideGraph = true;
-        if (!seePlayer && distance > 5.0f && alarm.isOn == false)
+        if (!seePlayer && distance > 10.0f && alarm.isOn == false)
         {
             state = AIState.confusing;
             temp.position = transform.position;
