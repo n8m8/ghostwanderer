@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4553,6 +4553,10 @@ Prefab:
         type: 2}
       propertyPath: fieldOfViewAngle
       value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345187643294630, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
@@ -23719,7 +23723,7 @@ GameObject:
   - component: {fileID: 1418315035}
   - component: {fileID: 1418315033}
   m_Layer: 0
-  m_Name: EnemyTVSpawn
+  m_Name: EnemySpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23737,7 +23741,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.9840703, y: 0.8427677}
+  m_Offset: {x: -4.760078, y: -0.17901194}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -23748,7 +23752,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.9681406, y: 2.4419088}
+  m_Size: {x: 3.9973898, y: 1.5660973}
   m_EdgeRadius: 0
 --- !u!4 &1418315034
 Transform:
@@ -23774,7 +23778,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849bf3e17d0574b9c9f585065fe1cba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1324420102}
+  enemy:
+  - {fileID: 1324420102}
+  - {fileID: 435480423}
 --- !u!1001 &1419816888
 Prefab:
   m_ObjectHideFlags: 0
