@@ -26,6 +26,7 @@ public class StationAI : MonoBehaviour
     enum AIState
     {
         chasing,
+        checking,
         sitting
     }
 
@@ -54,23 +55,19 @@ public class StationAI : MonoBehaviour
         last = transform.position;
         now.z = 0;
         transform.position = now;
-
-        if (state != AIState.chasing && triggerObject.GetComponent<InteractingObject>().isOn)
-        {
-            StartCoroutine(checking());
-        }
-        else
-        {
-            switch (state)
+        switch (state)
             {
-                case AIState.sitting:
-                    sitting();
-                    break;
-                case AIState.chasing:
-                    chasing(distance);
-                    break;
+            case AIState.sitting:
+                sitting();
+                break;
+            case AIState.chasing:
+                chasing(distance);
+                break;
+            case AIState.checking:
+                checking();
+                break;
             }
-        }
+
     }
 
     void sitting(){
@@ -80,15 +77,24 @@ public class StationAI : MonoBehaviour
             state = AIState.chasing;
             agent.target = playerPosition;
         }
+        else{
+            if(triggerObject.GetComponent<InteractingObject>().isOn){
+                state = AIState.checking;
+                agent.target = points[1];
+            }
+        }
     }
 
-    IEnumerator checking(){
+    void checking(){
+        setting.maxSpeed = 3.0f;
+        agent.target = points[1];
+        /*
         setting.maxSpeed = 3.0f;
         agent.target = points[1];
         yield return new WaitForSeconds(10.0f);
         state = AIState.sitting;
         agent.target = points[0];
-        triggerObject.GetComponent<InteractingObject>().isOn = false;
+        triggerObject.GetComponent<InteractingObject>().isOn = false;*/
     }
 
     void chasing(float distance)
