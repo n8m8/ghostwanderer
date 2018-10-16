@@ -8,7 +8,7 @@ public class Checkpoint : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		// print(gameObject.name);
+		levelController = GameObject.Find("Level Controller").GetComponent<LevelController>();
 	}
 	
 	// Update is called once per frame

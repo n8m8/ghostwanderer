@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Stairs
   - Ghost Cutscene
+  - ItemPickup
   layers:
   - Default
   - TransparentFX
