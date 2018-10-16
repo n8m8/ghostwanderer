@@ -45,6 +45,7 @@ public class TestPlayerMove : MonoBehaviour
         system.Stop();
         spawnPosition = gameObject.transform.position;
 		musicController = musicObject.GetComponent<MusicController> ();
+        GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
     }
 
@@ -53,7 +54,7 @@ public class TestPlayerMove : MonoBehaviour
     {
         //float x = Input.GetAxis("Horizontal") * Time.deltaTime * xSpeed;
         //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
-        transform.rotation = Quaternion.Euler(0,0,0);
+        //transform.rotation = Quaternion.Euler(0,0,0);
         //transform.Translate(x, y, 0.0f);
         if (Input.GetKeyDown("q") && ghostAvailable && (canGhost || isGhost))
         {

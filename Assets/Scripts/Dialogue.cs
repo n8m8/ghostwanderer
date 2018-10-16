@@ -90,6 +90,7 @@ public class Dialogue : MonoBehaviour {
 		continueButton.SetActive(false);
 		index = 0;
 		GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+		GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 		//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = true;
 		checkflag = true;
 	}
