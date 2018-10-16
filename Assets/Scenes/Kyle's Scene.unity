@@ -6347,9 +6347,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 431875570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2d1fc34310b0e4ca16ebf9aa18dbb0, type: 3}
+  m_Script: {fileID: 11500000, guid: 665afbbd61186c343ac114d8abbbc510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 679790581}
+  isLocked: 1
 --- !u!212 &431875573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13790,6 +13792,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4086028439907570, guid: ce14fefad5ec9c84cad53eb1bb33bbd3,
     type: 2}
   m_PrefabInternal: {fileID: 678603447}
+--- !u!1 &679790581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1843311101997786, guid: a897f0333664f9f41ad16bf31efff123,
+    type: 2}
+  m_PrefabInternal: {fileID: 1770015354}
 --- !u!4 &680899709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4674653353046830, guid: 7e24456a7f965414ba465bee36868884,
