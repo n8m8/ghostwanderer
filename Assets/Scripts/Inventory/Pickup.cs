@@ -12,6 +12,7 @@ public class Pickup : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+		textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
 	
 	IEnumerator OnTriggerEnter2D (Collider2D other) {

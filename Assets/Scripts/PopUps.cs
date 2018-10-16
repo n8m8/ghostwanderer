@@ -13,7 +13,6 @@ public class PopUps : MonoBehaviour {
 		}
 	}
 
-	//Reset the checkflag 
 	void OnTriggerExit2D(Collider2D collider){
 		textDisplay.text = "";
 	}
