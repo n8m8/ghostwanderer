@@ -25,7 +25,7 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        EdgeCollider2D PC = door.GetComponent<EdgeCollider2D>();
+        Collider2D PC = door.GetComponent<Collider2D>();
 
         if (isLocked)
         {
@@ -51,7 +51,7 @@ public class DoorTrigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         door.GetComponent<Renderer>().enabled = true;
-        EdgeCollider2D PC = door.GetComponent<EdgeCollider2D>();
+        Collider2D PC = door.GetComponent<Collider2D>();
         PC.isTrigger = false;
     }
 }
