@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-
     [SerializeField]
     public GameObject door;
     [SerializeField]
     public bool isLocked = false;
     private Inventory inventory;
     // Use this for initialization
+    private DoorController DC_script;
+
     void Start()
     {
+        this.DC_script = door.GetComponent<DoorController>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 
     }
@@ -25,7 +27,7 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collider2D PC = door.GetComponent<Collider2D>();
+        //Collider2D PC = door.GetComponent<Collider2D>();
 
         if (isLocked)
         {
@@ -34,24 +36,32 @@ public class DoorTrigger : MonoBehaviour
                 if (inventory.slots[i] == "key")
                 {
                     inventory.removeItem(i);
-                    door.GetComponent<Renderer>().enabled = false;
-                    PC.isTrigger = true;
+                    //door.GetComponent<Renderer>().enabled = false;
+                    //PC.isTrigger = true;
                     isLocked = false;
+                    DC_script.open_door();
                 }
             }
         }
         else
         {
-            door.GetComponent<Renderer>().enabled = false;
-            PC.isTrigger = true;
+            DC_script.open_door();
+            //door.GetComponent<Renderer>().enabled = false;
+            //PC.isTrigger = true;
         }
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        door.GetComponent<Renderer>().enabled = true;
-        Collider2D PC = door.GetComponent<Collider2D>();
-        PC.isTrigger = false;
+        if(!isLocked)
+        {
+            DC_script.close_door();
+        }
+        
+
+        //door.GetComponent<Renderer>().enabled = true;
+        //Collider2D PC = door.GetComponent<Collider2D>();
+        //PC.isTrigger = false;
     }
 }
