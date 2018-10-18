@@ -12,9 +12,15 @@ public class DoorTrigger : MonoBehaviour
     // Use this for initialization
     private DoorController DC_script;
 
+    private bool door_animated = true;
+
     void Start()
     {
         this.DC_script = door.GetComponent<DoorController>();
+        if(DC_script == null)
+        {
+            door_animated = false;
+        }
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 
     }
@@ -27,7 +33,7 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Collider2D PC = door.GetComponent<Collider2D>();
+        Collider2D PC = door.GetComponent<Collider2D>();
 
         if (isLocked)
         {
@@ -36,32 +42,35 @@ public class DoorTrigger : MonoBehaviour
                 if (inventory.slots[i] == "key")
                 {
                     inventory.removeItem(i);
-                    //door.GetComponent<Renderer>().enabled = false;
-                    //PC.isTrigger = true;
+                    PC.isTrigger = true;
                     isLocked = false;
-                    DC_script.open_door();
+                    if (door_animated) { DC_script.open_door(); }
+                    else { door.GetComponent<Renderer>().enabled = false; }
+                    
                 }
             }
         }
         else
         {
-            DC_script.open_door();
-            //door.GetComponent<Renderer>().enabled = false;
-            //PC.isTrigger = true;
+            PC.isTrigger = true;
+            if (door_animated) { DC_script.open_door(); }
+            else { door.GetComponent<Renderer>().enabled = false; }
         }
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!isLocked)
-        {
-            DC_script.close_door();
-        }
-        
+        Collider2D PC = door.GetComponent<Collider2D>();
+        PC.isTrigger = false;
 
-        //door.GetComponent<Renderer>().enabled = true;
-        //Collider2D PC = door.GetComponent<Collider2D>();
-        //PC.isTrigger = false;
+        if (door_animated)
+        {
+            if (!isLocked)
+            {
+                DC_script.close_door();
+            }
+        }
+        else { door.GetComponent<Renderer>().enabled = true; }
     }
 }
