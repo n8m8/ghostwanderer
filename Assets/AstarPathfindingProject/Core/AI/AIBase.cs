@@ -319,6 +319,9 @@ namespace Pathfinding {
 				Vector3 nextPosition;
 				Quaternion nextRotation;
 				MovementUpdate(Time.deltaTime, out nextPosition, out nextRotation);
+                Vector3 now = nextPosition;
+                now.z = 0;
+                nextPosition = now;
 				FinalizeMovement(nextPosition, nextRotation);
 			}
 		}
@@ -331,7 +334,10 @@ namespace Pathfinding {
 				Vector3 nextPosition;
 				Quaternion nextRotation;
 				MovementUpdate(Time.fixedDeltaTime, out nextPosition, out nextRotation);
-				FinalizeMovement(nextPosition, nextRotation);
+                Vector3 now = nextPosition;
+                now.z = 0;
+                nextPosition = now;
+                FinalizeMovement(nextPosition, nextRotation);
 			}
 		}
 

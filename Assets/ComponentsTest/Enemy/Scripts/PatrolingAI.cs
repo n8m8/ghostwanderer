@@ -7,7 +7,6 @@ public class PatrolingAI : MonoBehaviour {
     public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
     public GameObject enemyTrigger;
-
     private GameObject player;
     private bool seePlayer;
     private int desPoint = 0;
@@ -32,6 +31,9 @@ public class PatrolingAI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Vector3 now = transform.position;
+        now.z = 0;
+        transform.position = now;
         state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
@@ -64,8 +66,9 @@ public class PatrolingAI : MonoBehaviour {
         last = transform.position;
         now.z = 0;
         transform.position = now;
+        checkLOS();
 
-        switch(state){
+        switch (state){
             case AIState.patrolling:
                 patrolling(distance);
                 break;
@@ -81,7 +84,6 @@ public class PatrolingAI : MonoBehaviour {
 
     void checkLOS(){
         int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));
-
             if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle)
             {
                 seePlayer = true;
@@ -100,7 +102,6 @@ public class PatrolingAI : MonoBehaviour {
             GotoNextPoint();
             return;
         }
-        checkLOS();
         if ((seePlayer || alarm.isOn)&& playerControl.isGhost == false)
         {
             state = AIState.chasing;
@@ -109,8 +110,7 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     void chasing(float distance){
-        setting.maxSpeed = 12.0f;
-        checkLOS();
+        setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
         if (!seePlayer && distance > 5.0f && alarm.isOn == false)
         {
@@ -121,6 +121,8 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     IEnumerator confusing(){
+        now.z = 0;
+        transform.position = now;
         setting.maxSpeed = 3.0f;
         setting.constrainInsideGraph = false;
         float distance = Vector2.Distance(player.transform.position, transform.position);

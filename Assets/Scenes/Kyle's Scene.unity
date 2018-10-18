@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4628,7 +4628,7 @@ Prefab:
     - target: {fileID: 114427217885049438, guid: 52bd3e45b57e740f3acaa329f0269b54,
         type: 2}
       propertyPath: fieldOfViewAngle
-      value: 125
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1345187643294630, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
       propertyPath: m_IsActive
@@ -30973,6 +30973,11 @@ Prefab:
         type: 2}
       propertyPath: maxAcceleration
       value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252215701933124, guid: e035dd350745b452a9cf9fe22555f6c4,
+        type: 2}
+      propertyPath: fieldOfViewAngle
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e035dd350745b452a9cf9fe22555f6c4, type: 2}
