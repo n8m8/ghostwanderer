@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212148588408243456}
   - component: {fileID: 60472443375296150}
   - component: {fileID: 114458792547964506}
+  - component: {fileID: 114204775749026084}
   m_Layer: 0
   m_Name: Wall_right_3x3
   m_TagString: Untagged
@@ -70,6 +71,19 @@ PolygonCollider2D:
       - {x: 0.9126468, y: -1.2009203}
       - {x: -0.7261181, y: -0.36320817}
       - {x: -0.8777733, y: -0.43000007}
+--- !u!114 &114204775749026084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1252984919815374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320938898d3334d4285d074764a82f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HumanSprite: {fileID: 21300000, guid: fab7b98619ae39142abfb2f9d25c8739, type: 3}
+  GhostSprite: {fileID: 21300000, guid: a304f86c338cd4c4d8c400cf1214e8b1, type: 3}
 --- !u!114 &114458792547964506
 MonoBehaviour:
   m_ObjectHideFlags: 1

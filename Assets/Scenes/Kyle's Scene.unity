@@ -969,6 +969,11 @@ Prefab:
       propertyPath: textDisplay
       value: 
       objectReference: {fileID: 1399423408}
+    - target: {fileID: 114790135845859494, guid: d3dbb2544fec02b44a185b03a267473c,
+        type: 2}
+      propertyPath: TPM_script
+      value: 
+      objectReference: {fileID: 2093185530}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 60221558168552644, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
@@ -29361,6 +29366,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114790135845859494, guid: d3dbb2544fec02b44a185b03a267473c,
+        type: 2}
+      propertyPath: TPM_script
+      value: 
+      objectReference: {fileID: 2093185530}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
   m_IsPrefabAsset: 0
