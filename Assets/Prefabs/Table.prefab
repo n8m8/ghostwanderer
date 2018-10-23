@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212361634659203684}
   - component: {fileID: 60685492511403874}
   - component: {fileID: 68462251407884124}
+  - component: {fileID: 114024449692770794}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -200,6 +201,20 @@ EdgeCollider2D:
   - {x: 3.9243274, y: -0.21948971}
   - {x: 4.282585, y: -0.048016503}
   - {x: 1.5541633, y: 1.4619231}
+--- !u!114 &114024449692770794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145643909550362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseAutoSort: 1
+  SortingOffset: 0
+  SortingScale: 100
 --- !u!212 &212361634659203684
 SpriteRenderer:
   m_ObjectHideFlags: 1

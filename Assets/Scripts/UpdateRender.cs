@@ -23,8 +23,8 @@ public class UpdateRender : MonoBehaviour {
 
     private void Update()
     {
-        Debug.Log("TPM_script.ghostAvailable " + TPM_script.ghostAvailable);
-        Debug.Log("TPM_script.bodyAvailable " + TPM_script.bodyAvailable);
+        //Debug.Log("TPM_script.ghostAvailable " + TPM_script.ghostAvailable);
+        //Debug.Log("TPM_script.bodyAvailable " + TPM_script.bodyAvailable);
 
 
         if (Last_GA != TPM_script.ghostAvailable || Last_BA != TPM_script.bodyAvailable)

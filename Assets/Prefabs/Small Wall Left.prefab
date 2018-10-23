@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212095101076751288}
   - component: {fileID: 60408094880663570}
   - component: {fileID: 114393491590348794}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Small Wall Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146806052326690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.508, y: -10.905, z: -3.342}
+  m_LocalPosition: {x: 1.08, y: -10.925, z: -3.342}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,8 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortingOffset: 1000
-  SortingScale: 10
+  UseAutoSort: 1
+  SortingOffset: 0
+  SortingScale: 100
 --- !u!212 &212095101076751288
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,7 +118,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1574648179
   m_SortingLayer: -1
-  m_SortingOrder: 5
+  m_SortingOrder: 400
   m_Sprite: {fileID: 21300000, guid: 08d6a5970ce5bb4409dc249b670ee8cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

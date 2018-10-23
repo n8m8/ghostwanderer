@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4482865001722720}
   - component: {fileID: 212154788211377010}
   - component: {fileID: 60398916286997236}
-  - component: {fileID: 114851166956058834}
+  - component: {fileID: 114262756421319562}
   m_Layer: 1
   m_Name: Table_left
   m_TagString: Untagged
@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4411388108402296
 Transform:
   m_ObjectHideFlags: 1
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1096137001864036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6, y: -9.6, z: 0}
+  m_LocalPosition: {x: 1.85, y: -10.65, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.18}
   m_Children:
   - {fileID: 4411388108402296}
@@ -144,6 +144,20 @@ PolygonCollider2D:
       - {x: -4.306006, y: -0.0093830945}
       - {x: -1.3325558, y: 1.833677}
       - {x: 4.2466927, y: -1.3911192}
+--- !u!114 &114262756421319562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096137001864036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseAutoSort: 1
+  SortingOffset: 0
+  SortingScale: 100
 --- !u!114 &114786464122311188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,19 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84919d867ede69e4c82bf0ae4081d153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114851166956058834
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1096137001864036}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60f73e94f44755479d067ea2fdfa6b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sorting_scale: 100
-  StandIndicator: {fileID: 4411388108402296}
 --- !u!212 &212154788211377010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -202,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1574648179
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: f130c9c81c46473498a69fb63224bc95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

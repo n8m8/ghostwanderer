@@ -58,7 +58,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.64, y: 2.48}
+    oldSize: {x: 1.69, y: 2.49}
     newSize: {x: 1.64, y: 2.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -76,13 +76,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073718334197060}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortingOffset: -1000
-  SortingScale: 10
+  UseAutoSort: 1
+  SortingOffset: 0
+  SortingScale: 100
 --- !u!212 &212378798685203558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: -1574648179
   m_SortingLayer: -1
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: e5fbb5d60b2c0bf458769d7476c7c2e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fab7b98619ae39142abfb2f9d25c8739, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

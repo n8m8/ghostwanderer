@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4482865001722720}
   - component: {fileID: 212154788211377010}
   - component: {fileID: 60398916286997236}
-  - component: {fileID: 114851166956058834}
+  - component: {fileID: 114087816009993360}
   m_Layer: 1
   m_Name: Table_right
   m_TagString: Untagged
@@ -144,6 +144,20 @@ PolygonCollider2D:
       - {x: -4.450728, y: -1.5650913}
       - {x: 1.6341578, y: 1.5442443}
       - {x: 4.6446695, y: -0.016299881}
+--- !u!114 &114087816009993360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096137001864036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseAutoSort: 1
+  SortingOffset: 0
+  SortingScale: 100
 --- !u!114 &114786464122311188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,19 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84919d867ede69e4c82bf0ae4081d153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114851166956058834
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1096137001864036}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60f73e94f44755479d067ea2fdfa6b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sorting_scale: 100
-  StandIndicator: {fileID: 4411388108402296}
 --- !u!212 &212154788211377010
 SpriteRenderer:
   m_ObjectHideFlags: 1
