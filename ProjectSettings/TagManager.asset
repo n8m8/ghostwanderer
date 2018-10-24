@@ -13,6 +13,7 @@ TagManager:
   - Stairs
   - Ghost Cutscene
   - ItemPickup
+  - Possess
   layers:
   - Default
   - TransparentFX
