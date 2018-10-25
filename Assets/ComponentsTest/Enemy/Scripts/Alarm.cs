@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Alarm : MonoBehaviour
 {
-
+    public bool isTargetingGhost = false;
     private GameObject player;
     private TestPlayerMove playerControl;
     public bool isOn;
@@ -24,7 +24,7 @@ public class Alarm : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == false)
+        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
             isOn = true;
         }

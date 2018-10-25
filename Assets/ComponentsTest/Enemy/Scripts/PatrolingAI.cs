@@ -7,6 +7,7 @@ public class PatrolingAI : MonoBehaviour {
     public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
     public GameObject enemyTrigger;
+    public bool isTargetingGhost = false;
     private GameObject player;
     private bool seePlayer;
     private int desPoint = 0;
@@ -102,7 +103,8 @@ public class PatrolingAI : MonoBehaviour {
             GotoNextPoint();
             return;
         }
-        if ((seePlayer || alarm.isOn)&& playerControl.isGhost == false)
+
+        if ((seePlayer || alarm.isOn)&& playerControl.isGhost == isTargetingGhost)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
@@ -135,8 +137,9 @@ public class PatrolingAI : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(isTargetingGhost + " " + playerControl.isGhost);
         //Do something you want if you need to use checkpointetc
-        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == false)
+        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
             player.transform.position = startPosPlayer;
             state = AIState.confusing;

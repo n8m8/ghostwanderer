@@ -9,6 +9,7 @@ public class StationAI : MonoBehaviour
     public Transform playerPosition;
     public GameObject enemyTrigger;
     public GameObject triggerObject;
+    public bool isTargetingGhost;
 
     private GameObject player;
     private AIDestinationSetter agent;
@@ -114,7 +115,7 @@ public class StationAI : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Do something you want if you need to use checkpointetc
-        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == false)
+        if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
             player.transform.position = startPosPlayer;
             state = AIState.sitting;
