@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212771107000525846}
   - component: {fileID: 60682521575311128}
   - component: {fileID: 68942952451216926}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843311101997786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13, y: -1, z: -3.342}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 8.63, y: -1.06, z: 0}
+  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -218,11 +218,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.6064515, y: -1.6760507}
-  - {x: 0.18190134, y: -2.406896}
-  - {x: 1.9164904, y: -1.5883627}
-  - {x: 0.031032957, y: -0.8198562}
-  - {x: -1.6044486, y: -1.6760507}
+  - {x: -1.9655641, y: -1.6760509}
+  - {x: 0.11007627, y: -2.7657995}
+  - {x: 2.5150046, y: -1.6122903}
+  - {x: 0.22255899, y: -0.5566613}
+  - {x: -1.9875051, y: -1.6999778}
 --- !u!212 &212771107000525846
 SpriteRenderer:
   m_ObjectHideFlags: 1
