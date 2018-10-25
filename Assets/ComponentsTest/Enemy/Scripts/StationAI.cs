@@ -22,7 +22,6 @@ public class StationAI : MonoBehaviour
     private TestPlayerMove playerControl;
     private AIPath setting;
     private Alarm alarm;
-    private bool isChecking;
 
     enum AIState
     {
@@ -100,7 +99,7 @@ public class StationAI : MonoBehaviour
 
     void chasing(float distance)
     {
-        setting.maxSpeed = 15.0f;
+        setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
         if (alarm.isOn == false)
         {
