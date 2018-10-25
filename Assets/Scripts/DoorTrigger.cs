@@ -46,6 +46,8 @@ public class DoorTrigger : MonoBehaviour
                     isLocked = false;
                     if (door_animated) { DC_script.open_door(); }
                     else { door.GetComponent<Renderer>().enabled = false; }
+					AudioSource creak = door.GetComponent<AudioSource> ();
+					creak.Play ();
                     
                 }
             }
@@ -55,6 +57,8 @@ public class DoorTrigger : MonoBehaviour
             PC.isTrigger = true;
             if (door_animated) { DC_script.open_door(); }
             else { door.GetComponent<Renderer>().enabled = false; }
+			AudioSource creak = door.GetComponent<AudioSource> ();
+			creak.Play ();
         }
 
     }
