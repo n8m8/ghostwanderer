@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1367658839819754}
+  m_RootGameObject: {fileID: 1169312614942352}
   m_IsPrefabAsset: 1
---- !u!1 &1367658839819754
+--- !u!1 &1169312614942352
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4611437602812028}
-  - component: {fileID: 212899706330880474}
-  - component: {fileID: 50606870227477654}
-  - component: {fileID: 58868799716144678}
-  - component: {fileID: 114753113483866242}
-  - component: {fileID: 114932487276540398}
+  - component: {fileID: 4299648585295168}
+  - component: {fileID: 212375300044499036}
+  - component: {fileID: 50683773830958830}
+  - component: {fileID: 58051740601743592}
+  - component: {fileID: 114677986943349870}
+  - component: {fileID: 114203174446922928}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: TinyTim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4611437602812028
+--- !u!4 &4299648585295168
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
+  m_GameObject: {fileID: 1169312614942352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 102.5, y: -52.8, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50606870227477654
+--- !u!50 &50683773830958830
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
+  m_GameObject: {fileID: 1169312614942352}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -64,12 +64,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58868799716144678
+--- !u!58 &58051740601743592
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
+  m_GameObject: {fileID: 1169312614942352}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -79,12 +79,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4
---- !u!114 &114753113483866242
+--- !u!114 &114203174446922928
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
+  m_GameObject: {fileID: 1169312614942352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7679692bc8141124cb93275deb8cd385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114677986943349870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169312614942352}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17b6efbef80fb204d969566a78ac0d7b, type: 3}
@@ -92,32 +103,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 0}
   sentences:
-  - "Well, don\u2019t you look familiar. They got you already? Well, welcome to the
-    club."
-  - "They\u2019re tough buggers, I\u2019ll give\u2019m that."
-  - My boss sent me in here to teach them a lesson, but they took me down real fast.
-  - Now all I can do is bug them by screwing with their lights.
+  - "Hiya! M\u2019name\u2019s Tiny Tim! Being a Ghost is so much fun!"
+  - "I can go anywhere, do anything, and watch as much TV as I want when it doesn't
+    go all funny like this. But i do kinda miss playing with my friends\u2026"
+  - "Hey! You\u2019re weird, what with being able to un-deathamafy yourself, but i
+    think you could be fun."
+  - "ou wanna play hide and seek with me? You will? Awesome! I\u2019mma hide myself
+    places, and you can try to find me! ...or, maybe I will when this show is over.
+    Honest!"
   typingSpeed: 0.02
   continueButton: {fileID: 0}
-  name: '???: '
+  name: 'Tiny Boi: '
   image: {fileID: 0}
---- !u!114 &114932487276540398
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7679692bc8141124cb93275deb8cd385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &212899706330880474
+--- !u!212 &212375300044499036
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
+  m_GameObject: {fileID: 1169312614942352}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -147,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: -1574648179
   m_SortingLayer: -1
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: c9479d6abdb9ae24c81d294e81435098, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e48e3e2a010a49e43818f481b6308cce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
