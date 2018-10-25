@@ -39,6 +39,8 @@ public class PushController : MonoBehaviour {
             //Destroy(levelController.Vase);
             //Destroy(levelController.VaseObject);
             Destroy(Enemy);
+			AudioSource soundFX = PushableObject.GetComponent<AudioSource> ();
+			soundFX.Play ();
         }
         enemyInRange = false;
 
