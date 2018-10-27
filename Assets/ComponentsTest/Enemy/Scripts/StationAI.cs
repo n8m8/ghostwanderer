@@ -40,7 +40,7 @@ public class StationAI : MonoBehaviour
         alarm = enemyTrigger.GetComponent<Alarm>();
         startPosPlayer = player.transform.position;
         agent = GetComponent<AIDestinationSetter>();
-        isChecking = false;
+        //isChecking = false;
     }
 
     // Update is called once per frame

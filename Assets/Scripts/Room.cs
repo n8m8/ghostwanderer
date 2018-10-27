@@ -16,7 +16,7 @@ public class Room : MonoBehaviour {
     public WallParent WallParent2;
     public WallParent WallParent3;
     public WallParent WallParent4;
-    //public ObjectParent ObjectParent1;
+    public ObjectParent ObjectParent1;
     public CoverParent CoverParent1;
 
     //True if the room has been entered
@@ -43,7 +43,7 @@ public class Room : MonoBehaviour {
         WallParent2.turn_off_cwalls();
         WallParent3.turn_off_cwalls();
         WallParent4.turn_off_cwalls();
-        //ObjectParent1.turn_off_cobjs();
+        
     }
 
     public void turn_on_walls()
@@ -63,5 +63,15 @@ public class Room : MonoBehaviour {
     public void turn_off_cover()
     {
         CoverParent1.turn_off_ccover();
+    }
+
+    public void turn_on_objects()
+    {
+        ObjectParent1.turn_on_cobjs();
+    }
+
+    public void turn_off_objects()
+    {
+        ObjectParent1.turn_off_cobjs();
     }
 }

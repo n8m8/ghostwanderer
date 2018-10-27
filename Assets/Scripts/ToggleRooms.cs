@@ -33,10 +33,12 @@ public class ToggleRooms : MonoBehaviour {
             if (room_script.Floor == floor && room_script.RoomNumber == room_number)
             {
                 room_script.turn_on_walls();
+                room_script.turn_on_objects();
             }
             else
             {
                 room_script.turn_off_walls();
+                room_script.turn_off_objects();
             }
         }
     }
@@ -56,4 +58,5 @@ public class ToggleRooms : MonoBehaviour {
             }
         }
     }
+
 }

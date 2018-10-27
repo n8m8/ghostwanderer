@@ -308,6 +308,7 @@ MonoBehaviour:
   WallParent2: {fileID: 114972273488693296}
   WallParent3: {fileID: 114453832182229978}
   WallParent4: {fileID: 114258097878502468}
+  ObjectParent1: {fileID: 114398757683033774}
   CoverParent1: {fileID: 114631188829180294}
 --- !u!114 &114258097878502468
 MonoBehaviour:
