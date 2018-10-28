@@ -123,13 +123,11 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     IEnumerator confusing(){
-        now.z = 0;
         transform.position = now;
         setting.maxSpeed = 3.0f;
         setting.constrainInsideGraph = false;
         float distance = Vector2.Distance(player.transform.position, transform.position);
-        temp.position = transform.position;
-        agent.target = temp;
+        agent.target = null;
         yield return new WaitForSeconds(2.0f);
         state = AIState.patrolling;
         GotoNextPoint();
@@ -145,7 +143,7 @@ public class PatrolingAI : MonoBehaviour {
             state = AIState.confusing;
             temp.position = transform.position;
             alarm.isOn = false;
-            agent.target = null;
+            agent.target = points[0];
         }
     }
 
