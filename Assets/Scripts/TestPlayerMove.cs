@@ -33,6 +33,7 @@ public class TestPlayerMove : MonoBehaviour
     public bool bodyAvailable = false;
 
     private readonly float TAN27 = 1.96261050551f;
+    private float original;
 
 
     // Use this for initialization
@@ -46,7 +47,7 @@ public class TestPlayerMove : MonoBehaviour
         spawnPosition = gameObject.transform.position;
 		musicController = musicObject.GetComponent<MusicController> ();
         GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
+        original = abs_force;
     }
 
     // Update is called once per frame
@@ -200,5 +201,13 @@ public class TestPlayerMove : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
         isGhost = false;
         PC.isTrigger = false;
+    }
+
+    public void disableMovement(){
+        abs_force = 0f;
+    }
+
+    public void enableMovement(){
+        abs_force = original;
     }
 }
