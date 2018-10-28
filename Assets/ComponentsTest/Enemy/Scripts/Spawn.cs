@@ -18,10 +18,16 @@ public class Spawn : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player")){
-            for (int i = 0; i < enemy.Length; i++){
-                enemy[i].SetActive(true);
-            }
+            StartCoroutine(delaySpawn());
         }
         
+    }
+
+    IEnumerator delaySpawn(){
+        yield return new WaitForSeconds(3.0f);
+        for (int i = 0; i < enemy.Length; i++)
+        {
+            enemy[i].SetActive(true);
+        }
     }
 }
