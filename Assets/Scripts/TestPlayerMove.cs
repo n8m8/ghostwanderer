@@ -35,6 +35,8 @@ public class TestPlayerMove : MonoBehaviour
     private readonly float TAN27 = 1.96261050551f;
     private float original;
 
+    private GameObject hidingPlace = new GameObject();
+
 
     // Use this for initialization
     void Start()
@@ -94,6 +96,7 @@ public class TestPlayerMove : MonoBehaviour
         if (other.tag == "Ghost Portal")
         {
             canGhost = true;
+            hidingPlace = other.gameObject;
         }
         if (other.tag == "Map Trigger")
         {
@@ -147,28 +150,33 @@ public class TestPlayerMove : MonoBehaviour
         PC.isTrigger = true;
         if (isGhost && bodyAvailable)
         {
-            Destroy(GameObject.Find("TestPlayer(Clone)"));
+            //Destroy(GameObject.Find("TestPlayer(Clone)"));
             this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
             isGhost = false;
             PC.isTrigger = false;
-            //ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
-            //system.Stop();
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Play();
             gameObject.transform.position = ghostPosition;
+            hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
+
 
         }
         else if (!isGhost)
         {
-            GameObject copy = (GameObject)Instantiate(gameObject);
-            copy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            //GameObject copy = (GameObject)Instantiate(gameObject);
+           // copy.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             centerPt = transform.position;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = ghostSprite;
             ghostPosition = gameObject.transform.position;
             PC.isTrigger = true;
             isGhost = true;
-            //ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
-            //system.Play();
+
+            hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
+
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            system.Play();
         }
-		musicController.isGhost = isGhost;
+        musicController.isGhost = isGhost;
     }
 
     public void EnableGhostMode()

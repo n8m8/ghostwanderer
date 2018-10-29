@@ -28,7 +28,7 @@ public class PossessController : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
 
-        if (Input.GetKeyDown("f") && other.tag == "Player")
+        if (Input.GetKeyDown("r") && other.tag == "Player")
         {
             if (isPossessing)
             {
