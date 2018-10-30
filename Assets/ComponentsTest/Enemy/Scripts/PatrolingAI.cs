@@ -88,6 +88,9 @@ public class PatrolingAI : MonoBehaviour {
         }
         else{
             setting.maxSpeed = 0.0f;
+            state = AIState.confusing;
+            temp.position = transform.position;
+            agent.target = null;
         }
     }
 
