@@ -157,7 +157,7 @@ public class TestPlayerMove : MonoBehaviour
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
             system.Play();
             gameObject.transform.position = ghostPosition;
-            hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
+            //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
 
 
         }
@@ -171,7 +171,7 @@ public class TestPlayerMove : MonoBehaviour
             PC.isTrigger = true;
             isGhost = true;
 
-            hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
+            //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
 
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
             system.Play();

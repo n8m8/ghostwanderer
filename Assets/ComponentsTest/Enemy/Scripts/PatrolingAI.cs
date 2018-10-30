@@ -24,6 +24,8 @@ public class PatrolingAI : MonoBehaviour {
     private AIPath setting;
     private Alarm alarm;
 
+    public bool isStuned;
+
     enum AIState{
         chasing,
         confusing,
@@ -69,16 +71,23 @@ public class PatrolingAI : MonoBehaviour {
         transform.position = now;
         checkLOS();
 
-        switch (state){
-            case AIState.patrolling:
-                patrolling(distance);
-                break;
-            case AIState.chasing:
-                chasing(distance);
-                break;
-            case AIState.confusing:
-                StartCoroutine(confusing());
-                break;
+        if (isStuned == false)
+        {
+            switch (state)
+            {
+                case AIState.patrolling:
+                    patrolling(distance);
+                    break;
+                case AIState.chasing:
+                    chasing(distance);
+                    break;
+                case AIState.confusing:
+                    StartCoroutine(confusing());
+                    break;
+            }
+        }
+        else{
+            setting.maxSpeed = 0.0f;
         }
     }
 

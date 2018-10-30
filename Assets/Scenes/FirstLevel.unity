@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3955,11 +3955,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4334425286644426, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.96
+      value: -3.46
       objectReference: {fileID: 0}
     - target: {fileID: 4334425286644426, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.59
+      value: -2.55
       objectReference: {fileID: 0}
     - target: {fileID: 4334425286644426, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28140,8 +28140,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1418315033
-BoxCollider2D:
+--- !u!68 &1418315033
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -28152,19 +28152,14 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.760078, y: -0.17901194}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.9973898, y: 1.5660973}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.6290374, y: 0.21497154}
+  - {x: -2.272046, y: -0.43985516}
+  - {x: -3.6008, y: -1.1719668}
+  - {x: -5.016763, y: -0.4615882}
+  - {x: -3.5605812, y: 0.21497178}
 --- !u!4 &1418315034
 Transform:
   m_ObjectHideFlags: 0
