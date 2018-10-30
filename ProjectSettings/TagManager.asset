@@ -15,6 +15,7 @@ TagManager:
   - ItemPickup
   - Possess
   - EvidenceTrigger
+  - ItemZone
   layers:
   - Default
   - TransparentFX

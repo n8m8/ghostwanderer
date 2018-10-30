@@ -13,6 +13,9 @@ public class Dialogue : MonoBehaviour {
 	public string name; 
 	public GameObject image;
 	private bool checkflag = false;
+    //True if the player is in range to pick up and item 
+    private bool itemZone = false;
+    public bool inProgress = false;
 
 	void Start(){
 		continueButton.SetActive(false);
@@ -27,6 +30,8 @@ public class Dialogue : MonoBehaviour {
 			//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = false;
 			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 			checkflag = false;
+            inProgress = true;
+            SearchController.inProgress = true;
 		}
 
 		//load the continue dialogue button
@@ -46,8 +51,8 @@ public class Dialogue : MonoBehaviour {
 	}
 
 
-	//Load the text in one by one
-	IEnumerator Type(){
+    //Load the text in one by one
+    IEnumerator Type(){
 		image.SetActive(true);
 		//check for animation type here and execute it maybe enums?? 
 		textDisplay.text += name;
@@ -80,8 +85,12 @@ public class Dialogue : MonoBehaviour {
 
 	//Reset the checkflag 
 	void OnTriggerExit2D(Collider2D collider){
-		checkflag = false;
-	}
+        if(collider.name == "TestPlayer")
+        {
+            checkflag = false;
+        }
+
+    }
 
 	//reset the dialogue box 
 	public void resetDialogue(){
@@ -93,6 +102,8 @@ public class Dialogue : MonoBehaviour {
 		GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 		//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = true;
 		checkflag = true;
+        inProgress = false;
+        SearchController.inProgress = false;
 	}
 
 
