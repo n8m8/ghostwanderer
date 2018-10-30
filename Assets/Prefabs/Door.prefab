@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1223970488920960}
-  isLocked: 1
+  isLocked: 0
 --- !u!212 &212291931510096394
 SpriteRenderer:
   m_ObjectHideFlags: 1
