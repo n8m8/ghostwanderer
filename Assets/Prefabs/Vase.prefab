@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseAutoSort: 1
-  SortingOffset: 500
+  SortingOffset: 1000
   SortingScale: 100
 --- !u!114 &114638497453638974
 MonoBehaviour:
