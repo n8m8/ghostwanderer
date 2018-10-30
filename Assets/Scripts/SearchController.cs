@@ -19,11 +19,11 @@ public class SearchController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && itemZone && !inProgress)
+        if (Input.GetKeyDown(KeyCode.R) && itemZone && !inProgress)
         {
             StartCoroutine(briefMessage("Found something!", 2));
         }
-        else if (Input.GetKeyDown(KeyCode.E) && !itemZone && !inProgress)
+        else if (Input.GetKeyDown(KeyCode.R) && !itemZone && !inProgress)
         {
             StartCoroutine(briefMessage("Nothing", 1));
         }
