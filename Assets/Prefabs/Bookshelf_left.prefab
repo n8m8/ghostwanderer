@@ -9,45 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1530064318505150}
+  m_RootGameObject: {fileID: 1131530638181602}
   m_IsPrefabAsset: 1
---- !u!1 &1530064318505150
+--- !u!1 &1131530638181602
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4564587086156496}
-  - component: {fileID: 212892417373583184}
-  - component: {fileID: 60538629050016306}
-  - component: {fileID: 114838057611250718}
+  - component: {fileID: 4422640230944756}
+  - component: {fileID: 212491939130210466}
+  - component: {fileID: 60425430067299508}
+  - component: {fileID: 114660726355412796}
   m_Layer: 1
-  m_Name: Bookshelf
+  m_Name: Bookshelf_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4564587086156496
+--- !u!4 &4422640230944756
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530064318505150}
+  m_GameObject: {fileID: 1131530638181602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.16, y: -1.99, z: 0}
+  m_LocalPosition: {x: 5.09, y: -9.99, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60538629050016306
+--- !u!60 &60425430067299508
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530064318505150}
+  m_GameObject: {fileID: 1131530638181602}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -66,16 +66,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.895956, y: -2.2548776}
-      - {x: 1.0589409, y: -1.1306417}
-      - {x: -2.9325619, y: -3.2244692}
-      - {x: -0.8850002, y: -4.2315006}
---- !u!114 &114838057611250718
+    - - {x: 3.00206, y: -3.3181}
+      - {x: -0.8685608, y: -1.2251244}
+      - {x: -2.9514618, y: -2.317402}
+      - {x: 0.9360275, y: -4.3747597}
+--- !u!114 &114660726355412796
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530064318505150}
+  m_GameObject: {fileID: 1131530638181602}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
@@ -84,12 +84,12 @@ MonoBehaviour:
   UseAutoSort: 1
   SortingOffset: 0
   SortingScale: 100
---- !u!212 &212892417373583184
+--- !u!212 &212491939130210466
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530064318505150}
+  m_GameObject: {fileID: 1131530638181602}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 993399540a6847348989414b2a999551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.59, y: 8.43}
