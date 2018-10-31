@@ -4127,6 +4127,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 1.0285728
       objectReference: {fileID: 0}
+    - target: {fileID: 1532128356213456, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
   m_IsPrefabAsset: 0
@@ -4645,7 +4649,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &293630771
 MonoBehaviour:
@@ -6187,11 +6191,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e573e231e9f4af141990d04a8f472d5e, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &435480423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1345187643294630, guid: 52bd3e45b57e740f3acaa329f0269b54,
-    type: 2}
-  m_PrefabInternal: {fileID: 249479934}
 --- !u!4 &442823111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4716290658923726, guid: e573e231e9f4af141990d04a8f472d5e,
@@ -28445,7 +28444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 1324420102}
-  - {fileID: 435480423}
+  - {fileID: 0}
 --- !u!1001 &1419816888
 Prefab:
   m_ObjectHideFlags: 0
@@ -31222,7 +31221,7 @@ Transform:
   m_Children:
   - {fileID: 674360970}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1638737565
 Prefab:
@@ -38597,7 +38596,7 @@ Prefab:
         type: 2}
       propertyPath: Enemy
       value: 
-      objectReference: {fileID: 435480423}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25fe321b781c84c4e9459b9fdad84109, type: 2}
   m_IsPrefabAsset: 0
