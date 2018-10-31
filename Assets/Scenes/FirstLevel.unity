@@ -4131,9 +4131,39 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114974833576194666, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: points.Array.data[0]
+      value: 
+      objectReference: {fileID: 1581070856}
+    - target: {fileID: 114974833576194666, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 1914677805}
+    - target: {fileID: 114974833576194666, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: points.Array.data[2]
+      value: 
+      objectReference: {fileID: 127483861}
+    - target: {fileID: 114974833576194666, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: points.Array.data[3]
+      value: 
+      objectReference: {fileID: 2130105638}
+    - target: {fileID: 114974833576194666, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 402328124}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &249479935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532128356213456, guid: 52bd3e45b57e740f3acaa329f0269b54,
+    type: 2}
+  m_PrefabInternal: {fileID: 249479934}
 --- !u!1001 &251851000
 Prefab:
   m_ObjectHideFlags: 0
@@ -26730,6 +26760,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 118fb1cfe71344fcf942e23c94b21201, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1280808790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1308386761927900, guid: 118fb1cfe71344fcf942e23c94b21201,
+    type: 2}
+  m_PrefabInternal: {fileID: 1280808789}
 --- !u!1001 &1283834831
 Prefab:
   m_ObjectHideFlags: 0
@@ -28504,8 +28539,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 249479935}
+  - {fileID: 1280808790}
 --- !u!1001 &1419816888
 Prefab:
   m_ObjectHideFlags: 0
