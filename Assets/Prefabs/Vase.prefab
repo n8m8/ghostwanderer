@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114217488085339876}
   m_Layer: 0
   m_Name: Vase
-  m_TagString: Untagged
+  m_TagString: OnTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseAutoSort: 1
-  SortingOffset: 1000
-  SortingScale: 100
+  useAutoSort: 1
+  sortingOffset: -1000
+  sortingScale: 10
 --- !u!114 &114638497453638974
 MonoBehaviour:
   m_ObjectHideFlags: 1
