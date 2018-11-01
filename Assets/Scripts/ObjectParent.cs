@@ -18,7 +18,14 @@ public class ObjectParent : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
-            child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            if(child.tag == "SpawnByState")
+            {
+                child.gameObject.GetComponent<SpriteRenderer>().enabled = child.GetComponent<UpdateRender>().Sprite_on;
+            }
+            else
+            {
+                child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
     }
 

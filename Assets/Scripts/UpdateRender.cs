@@ -11,14 +11,17 @@ public class UpdateRender : MonoBehaviour {
     public bool Phase_changed { get; set; }
     public bool Last_GA { get; set; }
     public bool Last_BA { get; set; }
+    public bool Sprite_on { get; set; }
 
     private void Start()
     {
+        this.Sprite_on = false;
         update_render();
 
         this.Phase_changed = false;
         this.Last_GA = TPM_script.ghostAvailable;
         this.Last_BA = TPM_script.bodyAvailable;
+
     }
 
     private void Update()
@@ -51,11 +54,13 @@ public class UpdateRender : MonoBehaviour {
                     if (!Last_GA)
                     {
                         GetComponent<SpriteRenderer>().enabled = true;
+                        Sprite_on = true;
                         try { GetComponent<Collider2D>().enabled = true; } catch { }
                     }
                     else
                     {
                         GetComponent<SpriteRenderer>().enabled = false;
+                        Sprite_on = false;
                         try { GetComponent<Collider2D>().enabled = false; } catch { }
                     }
                     break;
@@ -65,11 +70,13 @@ public class UpdateRender : MonoBehaviour {
                     if (Last_GA)
                     { 
                         GetComponent<SpriteRenderer>().enabled = true;
+                        Sprite_on = true;
                         try { GetComponent<Collider2D>().enabled = true; } catch { }
                     }
                     else
                     {
                         GetComponent<SpriteRenderer>().enabled = false;
+                        Sprite_on = false;
                         try { GetComponent<Collider2D>().enabled = false; } catch { }
                     }
                     break;
@@ -79,11 +86,13 @@ public class UpdateRender : MonoBehaviour {
                     if (Last_GA && !Last_BA)
                     {
                         GetComponent<SpriteRenderer>().enabled = true;
+                        Sprite_on = true;
                         try { GetComponent<Collider2D>().enabled = true; } catch { }
                     }
                     else
                     {
                         GetComponent<SpriteRenderer>().enabled = false;
+                        Sprite_on = false;
                         try { GetComponent<Collider2D>().enabled = false; } catch { }
                     }
                     break;

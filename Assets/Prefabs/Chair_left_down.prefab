@@ -81,9 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7637063dafcb124ebd8f138f22f37be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseAutoSort: 1
-  SortingOffset: 0
-  SortingScale: 100
+  useAutoSort: 1
+  sortingOffset: 0
+  sortingScale: 100
 --- !u!212 &212603947808296208
 SpriteRenderer:
   m_ObjectHideFlags: 1

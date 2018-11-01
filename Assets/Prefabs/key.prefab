@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114790135845859494}
   m_Layer: 0
   m_Name: key
-  m_TagString: OnTable
+  m_TagString: SpawnByState
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useAutoSort: 1
-  sortingOffset: -1000
-  sortingScale: 10
+  sortingOffset: 500
+  sortingScale: 100
 --- !u!212 &212643944575166108
 SpriteRenderer:
   m_ObjectHideFlags: 1

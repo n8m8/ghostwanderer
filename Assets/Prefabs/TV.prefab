@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 82122033236483520}
   m_Layer: 1
   m_Name: TV
-  m_TagString: OnTable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useAutoSort: 1
-  sortingOffset: -1000
-  sortingScale: 10
+  sortingOffset: 500
+  sortingScale: 100
 --- !u!212 &212788106624496316
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -5,8 +5,8 @@ using UnityEngine;
 public class UpdateSortingWalls : MonoBehaviour {
 
     [SerializeField] private bool useAutoSort = true;
-    [SerializeField] private int sortingOffset = -1000;
-    [SerializeField] private float sortingScale = 10;
+    [SerializeField] private int sortingOffset = 0;
+    [SerializeField] private float sortingScale = 100;
 
 
 	// Use this for initialization
@@ -16,10 +16,10 @@ public class UpdateSortingWalls : MonoBehaviour {
             GetComponent<SpriteRenderer>().sortingOrder =
                 2 * (int)(-1 * transform.position.y * sortingScale) + sortingOffset;
         }
-        if (tag == "OnTable")
-        {
-            GetComponent<SpriteRenderer>().sortingOrder += 100;
-        }
+        //if (tag == "OnTable")
+        //{
+        //    GetComponent<SpriteRenderer>().sortingOrder += 100;
+        //}
 
     }
 }

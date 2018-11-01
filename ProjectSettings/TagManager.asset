@@ -16,7 +16,7 @@ TagManager:
   - Possess
   - EvidenceTrigger
   - ItemZone
-  - OnTable
+  - SpawnByState
   layers:
   - Default
   - TransparentFX
