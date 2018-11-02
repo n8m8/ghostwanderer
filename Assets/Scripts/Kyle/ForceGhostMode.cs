@@ -20,17 +20,20 @@ public class ForceGhostMode : MonoBehaviour {
         {
             scientist.SetActive(true);
             //disable input
-            ghostScript.disableMovement();
-            StartCoroutine(playAnimation());
+            ghostScript.DisableMovement();
+            StartCoroutine(PlayAnimation());
         }
     }
 
-    IEnumerator playAnimation(){
+    private IEnumerator PlayAnimation(){
         yield return new WaitForSeconds(5f);
-        ghostScript.enableMovement();
+        ghostScript.EnableMovement();
         ghostScript.EnableGhostMode();
         Destroy(GameObject.Find("TestPlayer(Clone)"));
         this.GetComponent<EdgeCollider2D>().enabled = false;
+        ghostScript.ChangeRadius(6f);
         //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
     }
+
+
 }

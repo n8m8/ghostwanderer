@@ -188,6 +188,7 @@ public class TestPlayerMove : MonoBehaviour
     public void FindBody()
     {
         bodyAvailable = true;
+        ChangeRadius(5f);
         StartCoroutine(FindBodyAnimation()); 
     }
 
@@ -211,11 +212,16 @@ public class TestPlayerMove : MonoBehaviour
         PC.isTrigger = false;
     }
 
-    public void disableMovement(){
+    public void DisableMovement(){
         abs_force = 0f;
     }
 
-    public void enableMovement(){
+    public void EnableMovement(){
         abs_force = original;
+    }
+
+    public void ChangeRadius(float newRadius)
+    {
+        radius = newRadius;
     }
 }
