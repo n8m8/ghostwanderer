@@ -18,8 +18,6 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private Sprite ghostSprite;
     [SerializeField] private Sprite humanSprite;
 
-    public bool isGhost = false;
-
     private Vector2 movement;
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
@@ -29,6 +27,7 @@ public class TestPlayerMove : MonoBehaviour
     private bool canMoveObject = false;
     private bool enemyInRange = false;
 
+    public bool isGhost = false;
     public bool ghostAvailable = false;
     public bool bodyAvailable = false;
 

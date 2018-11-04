@@ -20,7 +20,7 @@ public class LayerController : MonoBehaviour {
     private SpriteRenderer characterSpriteRenderer;
     private Bounds colliderBounds;
 
-    private float SKIN_WIDTH = 0.03f;
+    private float SKIN_WIDTH = -0.14f;
 
     private void Awake()
     {
@@ -101,8 +101,8 @@ public class LayerController : MonoBehaviour {
         //raycastOrigins.topRight = new Vector2(colliderBounds.max.x, colliderBounds.min.y + 5 * (colliderBounds.max.y - colliderBounds.min.y));
         raycastOrigins.topLeft = new Vector2(colliderBounds.min.x, colliderBounds.max.y);
         raycastOrigins.topRight = new Vector2(colliderBounds.max.x, colliderBounds.max.y);
-        raycastOrigins.bottomLeft = new Vector2(colliderBounds.min.x, colliderBounds.min.y);
-        raycastOrigins.bottomRight = new Vector2(colliderBounds.max.x, colliderBounds.min.y);
+        raycastOrigins.bottomLeft = new Vector2(colliderBounds.min.x, colliderBounds.min.y - SKIN_WIDTH);
+        raycastOrigins.bottomRight = new Vector2(colliderBounds.max.x, colliderBounds.min.y - SKIN_WIDTH);
     }
 
     private void CalculateRaySpacing()
@@ -120,7 +120,7 @@ public class LayerController : MonoBehaviour {
 
         for (int rayIndex = 0; rayIndex < numberOfRayVertical; rayIndex++)
         {
-            float distance = 0.40f;
+            float distance = 0.80f;
 
             Vector2 raycastOriginBottom = raycastBaseBottom + raySpacingVertical * rayIndex * Vector2.right;
 
@@ -131,12 +131,13 @@ public class LayerController : MonoBehaviour {
 
             foreach (RaycastHit2D hit in hitsBottom)
             {
-                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null)
+                if (!hit.collider.isTrigger && hit.transform.gameObject.GetComponent<SpriteRenderer>() != null
+                    && hit.transform.gameObject != touchInfo.topObject[rayIndex])
                 {
                     touchInfo.touchBottom[rayIndex] = true;
                     touchInfo.bottomObject[rayIndex] = hit.transform.gameObject;
                     UpdateSortingBottom(rayIndex);
-                    break;
+                    //break;
                 }
             }
             if (touchInfo.touchBottom[rayIndex] == false)
@@ -162,7 +163,7 @@ public class LayerController : MonoBehaviour {
                     touchInfo.touchTop[rayIndex] = true;
                     touchInfo.topObject[rayIndex] = hit.transform.gameObject;
                     UpdateSortingTop(rayIndex);
-                    break;
+                    //break;
                 }
             }
             if (touchInfo.touchTop[rayIndex] == false)
