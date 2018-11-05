@@ -5,7 +5,7 @@ using UnityEngine;
 // Kyle
 public class TestPlayerMove : MonoBehaviour
 {
-    [SerializeField] private float abs_force = 50.0f;
+    [SerializeField] public float abs_force = 50.0f;
     [SerializeField] private float topSpeed = 6.0f;
     [SerializeField] private float friction = -10.0f;
     [SerializeField] private LevelController levelController;

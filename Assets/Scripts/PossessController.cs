@@ -12,6 +12,7 @@ public class PossessController : MonoBehaviour
     private GameObject objectToPossess;
 
     public bool isPossessing = false;
+    private bool canPossess = false;
 
     // Use this for initialization
     void Start()
@@ -22,14 +23,7 @@ public class PossessController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-
-        if (Input.GetKeyDown("r") && other.tag == "Player")
-        {
+        if(Input.GetKeyDown("r") && canPossess){
             if (isPossessing)
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
@@ -38,6 +32,7 @@ public class PossessController : MonoBehaviour
                 system1.Stop();
                 Protag.gameObject.GetComponent<Renderer>().enabled = true;
                 isPossessing = false;
+                Protag.GetComponent<TestPlayerMove>().abs_force = 1000;
             }
             else
             {
@@ -49,8 +44,17 @@ public class PossessController : MonoBehaviour
                 //Destroy(levelController.Vase);
                 //Destroy(levelController.VaseObject);
                 isPossessing = true;
+                Protag.GetComponent<TestPlayerMove>().abs_force = 0;
             }
-            
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+
+        if (other.tag == "Player")
+        {
+            canPossess = true;
         }
 
     }
@@ -59,6 +63,7 @@ public class PossessController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            canPossess = false;
         }
 
     }
