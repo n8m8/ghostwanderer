@@ -8,4 +8,8 @@ public class LevelSelect : MonoBehaviour {
 	public void levelOne(){
 		SceneManager.LoadScene("FirstLevel");
 	}
+
+	public void levelThree(){
+		SceneManager.LoadScene("ThirdLevel");
+	}
 }
