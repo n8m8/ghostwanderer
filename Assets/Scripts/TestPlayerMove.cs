@@ -34,7 +34,7 @@ public class TestPlayerMove : MonoBehaviour
     private readonly float TAN27 = 1.96261050551f;
     private float original;
 
-    private GameObject hidingPlace = new GameObject();
+    private GameObject hidingPlace;
 
 
     // Use this for initialization

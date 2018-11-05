@@ -18,14 +18,23 @@ public class ObjectParent : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
-            if(child.tag == "SpawnByState")
+            try
             {
-                child.gameObject.GetComponent<SpriteRenderer>().enabled = child.GetComponent<UpdateRender>().Sprite_on;
+                if (child.tag == "SpawnByState")
+                {
+                    child.gameObject.GetComponent<SpriteRenderer>().enabled = 
+                                        child.GetComponent<UpdateRender>().Sprite_on;
+                }
+                else if (child.name == "Vase")
+                {
+                    child.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+                }
+                else
+                {
+                    child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                }
             }
-            else
-            {
-                child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            }
+            catch { Debug.Log("child sprite render on " + child.name); }
         }
     }
 
@@ -33,7 +42,19 @@ public class ObjectParent : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
-            child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            try
+            {
+                if(child.name == "Vase")
+                {
+                    child.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                else
+                {
+                    child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+            }
+            catch{ Debug.Log("child sprite render off" + child.name); }
+            
         }
     }
 }

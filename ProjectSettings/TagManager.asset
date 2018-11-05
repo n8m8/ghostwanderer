@@ -17,6 +17,7 @@ TagManager:
   - EvidenceTrigger
   - ItemZone
   - SpawnByState
+  - SwitchTrigger
   layers:
   - Default
   - TransparentFX

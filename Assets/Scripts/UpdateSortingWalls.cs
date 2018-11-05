@@ -11,15 +11,17 @@ public class UpdateSortingWalls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if(useAutoSort)
+
+        if (useAutoSort)
         {
             GetComponent<SpriteRenderer>().sortingOrder =
                 2 * (int)(-1 * transform.position.y * sortingScale) + sortingOffset;
         }
-        //if (tag == "OnTable")
-        //{
-        //    GetComponent<SpriteRenderer>().sortingOrder += 100;
-        //}
+    }
 
+    public void update_sorting(int offset)
+    {
+        GetComponent<SpriteRenderer>().sortingOrder =
+                2 * (int)(-1 * transform.position.y * sortingScale) + offset;
     }
 }

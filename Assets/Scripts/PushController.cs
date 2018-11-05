@@ -7,6 +7,7 @@ public class PushController : MonoBehaviour {
     [SerializeField] private GameObject PushableObject;
     [SerializeField] private GameObject Protag;
     [SerializeField] private GameObject Enemy;
+    [SerializeField] private Animator VaseAnimator;
 
     public bool canMoveObject = false;
     public bool enemyInRange = false;
@@ -25,8 +26,8 @@ public class PushController : MonoBehaviour {
 
         if (Input.GetKeyDown("f") && canMoveObject && enemyInRange && !destroyed)
         {
-
-            PushableObject.GetComponent<Renderer>().enabled = false;
+            VaseAnimator.SetTrigger("Fall");
+            //PushableObject.GetComponent<Renderer>().enabled = false;
             //Destroy(levelController.Vase);
             //Destroy(levelController.VaseObject);
             Destroy(Enemy);
@@ -38,6 +39,7 @@ public class PushController : MonoBehaviour {
         {
             destroyed = false;
             PushableObject.GetComponent<Renderer>().enabled = true;
+            //VaseAnimator.SetTrigger("Reverse");
         }
         enemyInRange = false;
     }
