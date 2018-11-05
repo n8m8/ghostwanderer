@@ -10,6 +10,7 @@ public class PushController : MonoBehaviour {
 
     public bool canMoveObject = false;
     public bool enemyInRange = false;
+    public bool destroyed = false;
     // Use this for initialization
     void Start () {
 		
@@ -17,8 +18,29 @@ public class PushController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Vector3.Distance(Enemy.transform.position, transform.position) < 4)
+        {
+            enemyInRange = true;
+        }
+
+        if (Input.GetKeyDown("f") && canMoveObject && enemyInRange && !destroyed)
+        {
+
+            PushableObject.GetComponent<Renderer>().enabled = false;
+            //Destroy(levelController.Vase);
+            //Destroy(levelController.VaseObject);
+            Destroy(Enemy);
+            AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
+            soundFX.Play();
+            destroyed = true;
+        }
+        else if (Input.GetKeyDown("f") && canMoveObject && !destroyed)
+        {
+            destroyed = false;
+            PushableObject.GetComponent<Renderer>().enabled = true;
+        }
+        enemyInRange = false;
+    }
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -26,24 +48,6 @@ public class PushController : MonoBehaviour {
         {
             canMoveObject = true;
         }
-
-        if (Vector3.Distance(Enemy.transform.position, transform.position) < 4)
-        {
-            enemyInRange = true;
-        }
-
-        if (Input.GetKeyDown("f") && canMoveObject && enemyInRange)
-        {
-
-            PushableObject.GetComponent<Renderer>().enabled = false;
-            //Destroy(levelController.Vase);
-            //Destroy(levelController.VaseObject);
-            Destroy(Enemy);
-			AudioSource soundFX = PushableObject.GetComponent<AudioSource> ();
-			soundFX.Play ();
-        }
-        enemyInRange = false;
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
