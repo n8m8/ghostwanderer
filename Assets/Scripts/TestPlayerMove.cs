@@ -34,7 +34,7 @@ public class TestPlayerMove : MonoBehaviour
     public bool bodyAvailable = false;
 
     private readonly float TAN27 = 1.96261050551f;
-    private readonly float TOLERANCE = .01f;
+    private readonly float TOLERANCE = .9f;
     private float original;
 
     private GameObject hidingPlace;
@@ -119,11 +119,30 @@ public class TestPlayerMove : MonoBehaviour
         }
         else    //playerRB.velocity.x == 0
         {
-            animator.SetBool("leftDown", false);
-            animator.SetBool("leftUp", false);
-            animator.SetBool("rightDown", false);
-            animator.SetBool("rightUp", false);
-            animator.SetBool("idle", true);
+            if (playerRB.velocity.y > TOLERANCE)
+            {
+                animator.SetBool("leftUp", true);
+                animator.SetBool("leftDown", false);
+                animator.SetBool("rightDown", false);
+                animator.SetBool("rightUp", false);
+                animator.SetBool("idle", false);
+            }
+            else if (playerRB.velocity.y < -TOLERANCE)
+            {
+                animator.SetBool("rightDown", true);
+                animator.SetBool("leftUp", false);
+                animator.SetBool("leftDown", false);
+                animator.SetBool("rightUp", false);
+                animator.SetBool("idle", false);
+            }
+            else
+            {
+                animator.SetBool("leftDown", false);
+                animator.SetBool("leftUp", false);
+                animator.SetBool("rightDown", false);
+                animator.SetBool("rightUp", false);
+                animator.SetBool("idle", true);
+            }
         }
     }
 
