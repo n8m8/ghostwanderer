@@ -85,9 +85,11 @@ public class TestPlayerMove : MonoBehaviour
 
     private void ToggleAnimations()
     {
-        if (playerRB.velocity.x > TOLERANCE)
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        if (h > 0)
         {
-            if (playerRB.velocity.y > TOLERANCE)
+            if (v > 0)
             {
                 animator.SetBool("rightUp", true);
                 animator.SetBool("rightDown", false);
@@ -101,9 +103,9 @@ public class TestPlayerMove : MonoBehaviour
             animator.SetBool("leftUp", false);
             animator.SetBool("idle", false);
         }
-        else if (playerRB.velocity.x < -TOLERANCE)
+        else if (h < 0)
         {
-            if (playerRB.velocity.y > TOLERANCE)
+            if (v > 0)
             {
                 animator.SetBool("leftUp", true);
                 animator.SetBool("leftDown", false);
@@ -119,7 +121,7 @@ public class TestPlayerMove : MonoBehaviour
         }
         else    //playerRB.velocity.x == 0
         {
-            if (playerRB.velocity.y > TOLERANCE)
+            if (v > 0)
             {
                 animator.SetBool("leftUp", true);
                 animator.SetBool("leftDown", false);
@@ -127,7 +129,7 @@ public class TestPlayerMove : MonoBehaviour
                 animator.SetBool("rightUp", false);
                 animator.SetBool("idle", false);
             }
-            else if (playerRB.velocity.y < -TOLERANCE)
+            else if (v < 0)
             {
                 animator.SetBool("rightDown", true);
                 animator.SetBool("leftUp", false);
@@ -145,6 +147,69 @@ public class TestPlayerMove : MonoBehaviour
             }
         }
     }
+
+    //private void ToggleAnimations()
+    //{
+    //    if (playerRB.velocity.x > TOLERANCE)
+    //    {
+    //        if (playerRB.velocity.y > TOLERANCE)
+    //        {
+    //            animator.SetBool("rightUp", true);
+    //            animator.SetBool("rightDown", false);
+    //        }
+    //        else
+    //        {
+    //            animator.SetBool("rightDown", true);
+    //            animator.SetBool("rightUp", false);
+    //        }
+    //        animator.SetBool("leftDown", false);
+    //        animator.SetBool("leftUp", false);
+    //        animator.SetBool("idle", false);
+    //    }
+    //    else if (playerRB.velocity.x < -TOLERANCE)
+    //    {
+    //        if (playerRB.velocity.y > TOLERANCE)
+    //        {
+    //            animator.SetBool("leftUp", true);
+    //            animator.SetBool("leftDown", false);
+    //        }
+    //        else
+    //        {
+    //            animator.SetBool("leftDown", true);
+    //            animator.SetBool("leftUp", false);
+    //        }
+    //        animator.SetBool("rightDown", false);
+    //        animator.SetBool("rightUp", false);
+    //        animator.SetBool("idle", false);
+    //    }
+    //    else    //playerRB.velocity.x == 0
+    //    {
+    //        if (playerRB.velocity.y > TOLERANCE)
+    //        {
+    //            animator.SetBool("leftUp", true);
+    //            animator.SetBool("leftDown", false);
+    //            animator.SetBool("rightDown", false);
+    //            animator.SetBool("rightUp", false);
+    //            animator.SetBool("idle", false);
+    //        }
+    //        else if (playerRB.velocity.y < -TOLERANCE)
+    //        {
+    //            animator.SetBool("rightDown", true);
+    //            animator.SetBool("leftUp", false);
+    //            animator.SetBool("leftDown", false);
+    //            animator.SetBool("rightUp", false);
+    //            animator.SetBool("idle", false);
+    //        }
+    //        else
+    //        {
+    //            animator.SetBool("leftDown", false);
+    //            animator.SetBool("leftUp", false);
+    //            animator.SetBool("rightDown", false);
+    //            animator.SetBool("rightUp", false);
+    //            animator.SetBool("idle", true);
+    //        }
+    //    }
+    //}
 
     bool canGhost = false;
 
