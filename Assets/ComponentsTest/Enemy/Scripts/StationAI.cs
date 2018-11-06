@@ -9,7 +9,9 @@ public class StationAI : MonoBehaviour
     public Transform playerPosition;
     public GameObject enemyTrigger;
     public GameObject triggerObject;
+
     public bool isTargetingGhost;
+    public bool distracted = false;
 
     private GameObject player;
     private AIDestinationSetter agent;
@@ -55,6 +57,7 @@ public class StationAI : MonoBehaviour
         last = transform.position;
         now.z = 0;
         transform.position = now;
+
         switch (state)
             {
             case AIState.sitting:
@@ -78,7 +81,7 @@ public class StationAI : MonoBehaviour
             agent.target = playerPosition;
         }
         else{
-            if(triggerObject.GetComponent<InteractingObject>().isOn){
+            if(distracted){
                 state = AIState.checking;
                 agent.target = points[1];
             }
@@ -101,10 +104,10 @@ public class StationAI : MonoBehaviour
     {
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if (alarm.isOn == false)
+        if (playerControl.isGhost || alarm.isOn == false)
         {
             state = AIState.sitting;
-            agent.target = points[0];
+            agent.target = points[0]; ;
         }
         else{
             agent.target = playerPosition;
