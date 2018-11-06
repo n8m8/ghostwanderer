@@ -4,21 +4,30 @@ using UnityEngine;
 public class PatrolingAI : MonoBehaviour {
     
     public Transform[] points;
-    public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
-    public GameObject enemyTrigger;
-    public bool isTargetingGhost = false;
-    private GameObject player;
-    private bool seePlayer;
-    private int desPoint = 0;
-    private AIDestinationSetter agent;
     private Transform target;
     private Transform temp;
+
+    public GameObject enemyTrigger;
+    private GameObject player;
+
+    private AIDestinationSetter agent;
+
+    public bool isTargetingGhost = false;
+    public bool distracted = false;
+
+    private bool seePlayer;
+
+
+    private int desPoint = 0;
+    public float fieldOfViewAngle = 30f;
+
     private Vector3 last;
     private Vector3 now;
     private Vector3 currentDirection;
     private Vector3 startPosPlayer;
     private AIState state;
+
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
     private TestPlayerMove playerControl;
     private AIPath setting;
@@ -29,7 +38,8 @@ public class PatrolingAI : MonoBehaviour {
     enum AIState{
         chasing,
         confusing,
-        patrolling
+        patrolling,
+        distracting
     }
 
     // Use this for initialization
@@ -71,6 +81,11 @@ public class PatrolingAI : MonoBehaviour {
         transform.position = now;
         checkLOS();
 
+        if (distracted){
+            state = AIState.distracting;
+            agent.target = points[points.Length - 1];
+        }
+
         if (isStuned == false)
         {
             switch (state)
@@ -83,6 +98,9 @@ public class PatrolingAI : MonoBehaviour {
                     break;
                 case AIState.confusing:
                     StartCoroutine(confusing());
+                    break;
+                case AIState.distracting:
+                    distracting();
                     break;
             }
         }
@@ -126,12 +144,16 @@ public class PatrolingAI : MonoBehaviour {
     void chasing(float distance){
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if (!seePlayer && distance > 5.0f && alarm.isOn == false)
+        if ((!seePlayer && distance > 5.0f && alarm.isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
         {
             state = AIState.confusing;
             temp.position = transform.position;
             agent.target = null;
         }
+    }
+
+    void distracting(){
+       //agent.target = points[points.Length - 1];
     }
 
     IEnumerator confusing(){
