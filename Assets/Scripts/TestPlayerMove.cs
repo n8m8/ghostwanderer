@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ public class TestPlayerMove : MonoBehaviour
     private Vector3 ghostPosition;
     private Vector3 spawnPosition;
 	private MusicController musicController;
+    private Animator animator;
     private bool canMoveObject = false;
     private bool enemyInRange = false;
 
@@ -32,6 +34,7 @@ public class TestPlayerMove : MonoBehaviour
     public bool bodyAvailable = false;
 
     private readonly float TAN27 = 1.96261050551f;
+    private readonly float TOLERANCE = .01f;
     private float original;
 
     private GameObject hidingPlace;
@@ -41,7 +44,6 @@ public class TestPlayerMove : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
-        //playerStatus = this.GetComponent<PlayerController>().playerStatus;
         ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
         system.Stop();
@@ -49,15 +51,12 @@ public class TestPlayerMove : MonoBehaviour
 		musicController = musicObject.GetComponent<MusicController> ();
         GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         original = abs_force;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //float x = Input.GetAxis("Horizontal") * Time.deltaTime * xSpeed;
-        //float y = Input.GetAxis("Vertical") * Time.deltaTime * ySpeed;
-        //transform.rotation = Quaternion.Euler(0,0,0);
-        //transform.Translate(x, y, 0.0f);
         if (Input.GetKeyDown("q") && ghostAvailable && (canGhost || isGhost))
         {
             toggleGhostMode();
@@ -79,11 +78,53 @@ public class TestPlayerMove : MonoBehaviour
             Vector3 offset = newPos - centerPt;
             transform.position = centerPt + Vector3.ClampMagnitude(offset, radius);
         }
-        //}
-        //else
-        //{
-        //   Debug.Log("move allowed not working");
-        //}
+
+        ToggleAnimations();
+
+    }
+
+    private void ToggleAnimations()
+    {
+        if (playerRB.velocity.x > TOLERANCE)
+        {
+            if (playerRB.velocity.y > TOLERANCE)
+            {
+                animator.SetBool("rightUp", true);
+                animator.SetBool("rightDown", false);
+            }
+            else
+            {
+                animator.SetBool("rightDown", true);
+                animator.SetBool("rightUp", false);
+            }
+            animator.SetBool("leftDown", false);
+            animator.SetBool("leftUp", false);
+            animator.SetBool("idle", false);
+        }
+        else if (playerRB.velocity.x < -TOLERANCE)
+        {
+            if (playerRB.velocity.y > TOLERANCE)
+            {
+                animator.SetBool("leftUp", true);
+                animator.SetBool("leftDown", false);
+            }
+            else
+            {
+                animator.SetBool("leftDown", true);
+                animator.SetBool("leftUp", false);
+            }
+            animator.SetBool("rightDown", false);
+            animator.SetBool("rightUp", false);
+            animator.SetBool("idle", false);
+        }
+        else    //playerRB.velocity.x == 0
+        {
+            animator.SetBool("leftDown", false);
+            animator.SetBool("leftUp", false);
+            animator.SetBool("rightDown", false);
+            animator.SetBool("rightUp", false);
+            animator.SetBool("idle", true);
+        }
     }
 
     bool canGhost = false;
@@ -157,8 +198,7 @@ public class TestPlayerMove : MonoBehaviour
             system.Play();
             gameObject.transform.position = ghostPosition;
             //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
-
-
+            animator.SetBool("isGhost", false);
         }
         else if (!isGhost)
         {
@@ -169,7 +209,7 @@ public class TestPlayerMove : MonoBehaviour
             ghostPosition = gameObject.transform.position;
             PC.isTrigger = true;
             isGhost = true;
-
+            animator.SetBool("isGhost", true);
             //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
 
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
