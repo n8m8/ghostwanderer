@@ -10,13 +10,13 @@ public class InteractingObject : MonoBehaviour
     public GameObject enemy;
 
     private StationAI enemyController;
-    private PatrolingAI enemyController2;
+    private PatrolingAIDistrac enemyController2;
 
     // Use this for initialization
     void Start()
     {
         enemyController = enemy.GetComponent<StationAI>();
-        enemyController2 = enemy.GetComponent<PatrolingAI>();
+        enemyController2 = enemy.GetComponent<PatrolingAIDistrac>();
     }
 
     // Update is called once per frame

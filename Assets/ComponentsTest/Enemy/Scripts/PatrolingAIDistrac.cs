@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using Pathfinding;
 using UnityEngine;
-public class PatrolingAI : MonoBehaviour {
-    
+public class PatrolingAIDistrac : MonoBehaviour
+{
+
     public Transform[] points;
+    public Transform distraction;
     public Transform playerPosition;
     private Transform target;
     private Transform temp;
@@ -14,7 +16,7 @@ public class PatrolingAI : MonoBehaviour {
     private AIDestinationSetter agent;
 
     public bool isTargetingGhost = false;
-
+    public bool distracted = false;
     private bool seePlayer;
 
 
@@ -31,17 +33,21 @@ public class PatrolingAI : MonoBehaviour {
     private TestPlayerMove playerControl;
     private AIPath setting;
     private Alarm alarm;
+    
 
     public bool isStuned;
 
-    enum AIState{
+    enum AIState
+    {
         chasing,
         confusing,
         patrolling,
+        distracted
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Vector3 now = transform.position;
         now.z = 0;
         transform.position = now;
@@ -55,9 +61,10 @@ public class PatrolingAI : MonoBehaviour {
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
         temp = Instantiate(new GameObject()).transform;
-	}
+    }
 
-    void GotoNextPoint(){
+    void GotoNextPoint()
+    {
         if (points.Length == 0)
             return;
         desPoint = (desPoint + 1) % points.Length;
@@ -79,6 +86,11 @@ public class PatrolingAI : MonoBehaviour {
         transform.position = now;
         checkLOS();
 
+        if(distracted){
+            state = AIState.distracted;
+            agent.target = distraction;
+        }
+
 
         if (isStuned == false)
         {
@@ -93,9 +105,12 @@ public class PatrolingAI : MonoBehaviour {
                 case AIState.confusing:
                     StartCoroutine(confusing());
                     break;
+                case AIState.distracted:
+                    break;
             }
         }
-        else{
+        else
+        {
             setting.maxSpeed = 0.0f;
             state = AIState.confusing;
             temp.position = transform.position;
@@ -104,20 +119,22 @@ public class PatrolingAI : MonoBehaviour {
     }
 
 
-    void checkLOS(){
+    void checkLOS()
+    {
         int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));
-            if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle)
-            {
-                seePlayer = true;
-            }
-            else
-            {
-                seePlayer = false;
-            }
+        if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle)
+        {
+            seePlayer = true;
+        }
+        else
+        {
+            seePlayer = false;
+        }
 
     }
 
-    void patrolling(float distance){
+    void patrolling(float distance)
+    {
         setting.maxSpeed = 1.0f;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
@@ -125,14 +142,15 @@ public class PatrolingAI : MonoBehaviour {
             return;
         }
 
-        if ((seePlayer || alarm.isOn)&& playerControl.isGhost == isTargetingGhost)
+        if ((seePlayer || alarm.isOn) && playerControl.isGhost == isTargetingGhost)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
         }
     }
 
-    void chasing(float distance){
+    void chasing(float distance)
+    {
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
         if ((!seePlayer && distance > 5.0f && alarm.isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
@@ -143,11 +161,13 @@ public class PatrolingAI : MonoBehaviour {
         }
     }
 
-    void distracting(){
-       //agent.target = points[points.Length - 1];
+    void distracting()
+    {
+        //agent.target = points[points.Length - 1];
     }
 
-    IEnumerator confusing(){
+    IEnumerator confusing()
+    {
         transform.position = now;
         setting.maxSpeed = 3.0f;
         setting.constrainInsideGraph = false;
