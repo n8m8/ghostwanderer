@@ -165,10 +165,11 @@ public class PatrolingAI : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
             player.transform.position = startPosPlayer;
-            state = AIState.confusing;
             temp.position = transform.position;
             alarm.isOn = false;
-            agent.target = points[0];
+            this.transform.position = points[0].position;
+            state = AIState.patrolling;
+            GotoNextPoint();
         }
     }
 
