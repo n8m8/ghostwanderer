@@ -31,7 +31,7 @@ public class Dialogue : MonoBehaviour {
 			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 			checkflag = false;
             inProgress = true;
-            SearchController.inProgress = true;
+            Pickup.inProgress = true;
 		}
 
 		//load the continue dialogue button
@@ -103,7 +103,7 @@ public class Dialogue : MonoBehaviour {
 		//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = true;
 		checkflag = true;
         inProgress = false;
-        SearchController.inProgress = false;
+        Pickup.inProgress = false;
 	}
 
 

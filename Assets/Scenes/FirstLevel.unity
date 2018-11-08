@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1098,6 +1098,15 @@ Prefab:
       propertyPath: TPM_script
       value: 
       objectReference: {fileID: 2093185530}
+    - target: {fileID: 1569888811244362, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
+      propertyPath: m_Name
+      value: key1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806143262160396, guid: d3dbb2544fec02b44a185b03a267473c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 60221558168552644, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
@@ -11813,6 +11822,11 @@ Prefab:
         type: 2}
       propertyPath: isLocked
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502725873848856, guid: 6c3083cec2cb60d45968d73b4f5b4c43,
+        type: 2}
+      propertyPath: lockName
+      value: key2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
@@ -26745,6 +26759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 763698961}
   isLocked: 1
+  lockName: key1
 --- !u!212 &1126785090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29932,6 +29947,16 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
       value: 3.0253158
       objectReference: {fileID: 0}
+    - target: {fileID: 114502725873848856, guid: 6c3083cec2cb60d45968d73b4f5b4c43,
+        type: 2}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502725873848856, guid: 6c3083cec2cb60d45968d73b4f5b4c43,
+        type: 2}
+      propertyPath: lockName
+      value: key3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
   m_IsPrefabAsset: 0
@@ -31187,6 +31212,15 @@ Prefab:
         type: 2}
       propertyPath: spawn_state
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569888811244362, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
+      propertyPath: m_Name
+      value: key3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806143262160396, guid: d3dbb2544fec02b44a185b03a267473c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
@@ -36397,6 +36431,15 @@ Prefab:
       propertyPath: TPM_script
       value: 
       objectReference: {fileID: 2093185530}
+    - target: {fileID: 1569888811244362, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
+      propertyPath: m_Name
+      value: key2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806143262160396, guid: d3dbb2544fec02b44a185b03a267473c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
   m_IsPrefabAsset: 0
@@ -40198,6 +40241,7 @@ GameObject:
   - component: {fileID: 2093185534}
   - component: {fileID: 2093185528}
   - component: {fileID: 2093185539}
+  - component: {fileID: 2093185541}
   - component: {fileID: 2093185529}
   - component: {fileID: 2093185535}
   - component: {fileID: 2093185536}
@@ -40438,12 +40482,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2093185527}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30ee58570d95d574cbfd1a81766321f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 1071134476}
+  textDisplay: {fileID: 1399423408}
 --- !u!95 &2093185540
 Animator:
   serializedVersion: 3
@@ -40462,6 +40506,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2093185541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093185527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4374d626ac9db2b40a19d12b95cc0124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  textDisplay: {fileID: 1399423408}
 --- !u!1 &2096391477
 GameObject:
   m_ObjectHideFlags: 0

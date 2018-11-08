@@ -21,11 +21,11 @@ public class SearchController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && itemZone && !inProgress)
         {
-            StartCoroutine(briefMessage("Found something!", 2));
+           //StartCoroutine(briefMessage("Found something!", 2));
         }
         else if (Input.GetKeyDown(KeyCode.R) && !itemZone && !inProgress)
         {
-            StartCoroutine(briefMessage("Nothing", 1));
+            //StartCoroutine(briefMessage("Nothing", 1));
         }
     }
 
