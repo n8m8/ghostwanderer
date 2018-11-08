@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 // Kyle
 public class TestPlayerMove : MonoBehaviour
@@ -39,6 +40,12 @@ public class TestPlayerMove : MonoBehaviour
 
     private GameObject hidingPlace;
 
+    // Postprocessing variables
+    private Grain grainPost;
+    private ChromaticAberration chromePost;
+    private ColorGrading gradingPost;
+    private PostProcessVolume postProcessVolume;
+
 
     // Use this for initialization
     void Start()
@@ -53,6 +60,12 @@ public class TestPlayerMove : MonoBehaviour
         GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         original = abs_force;
         animator = GetComponent<Animator>();
+
+        // Get post processing info
+        postProcessVolume = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PostProcessVolume>();
+        postProcessVolume.profile.TryGetSettings<Grain>(out grainPost);
+        postProcessVolume.profile.TryGetSettings<ChromaticAberration>(out chromePost);
+        postProcessVolume.profile.TryGetSettings<ColorGrading>(out gradingPost);
     }
 
     // Update is called once per frame
@@ -288,6 +301,7 @@ public class TestPlayerMove : MonoBehaviour
             isGhost = false;
             PC.isTrigger = false;
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            disablePostProcessing();
             system.Play();
             gameObject.transform.position = ghostPosition;
             //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
@@ -306,9 +320,27 @@ public class TestPlayerMove : MonoBehaviour
             //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
 
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            enablePostProcessing();
             system.Play();
         }
         musicController.isGhost = isGhost;
+    }
+
+
+    private void enablePostProcessing()
+    {
+        //grainPost.enabled.value = true;
+        //chromePost.enabled.value = true;
+        //gradingPost.enabled.value = true;
+        postProcessVolume.enabled = true;
+    }
+
+    private void disablePostProcessing()
+    {
+        //grainPost.enabled.value = false;
+        //chromePost.enabled.value = false;
+        //gradingPost.enabled.value = false;
+        postProcessVolume.enabled = false;
     }
 
     public void EnableGhostMode()

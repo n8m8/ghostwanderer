@@ -30,10 +30,7 @@ public class LevelController : MonoBehaviour {
     //The current checkpoint
     public GameObject currentCheckpoint;
 
-    // Postprocessing variables
-    private Grain grainPost;
-    private ChromaticAberration chromePost;
-    private ColorGrading gradingPost;
+    
 
     private PlayerController.PlayerStatus playerStatus;
 
@@ -41,12 +38,6 @@ public class LevelController : MonoBehaviour {
     void Start () {
         VaseObject = Vase;
         playerStatus = player.GetComponent<PlayerController>().playerStatus;
-        
-        // Get post processing info
-        var cameraPostProcessing = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PostProcessVolume>();
-        cameraPostProcessing.profile.TryGetSettings<Grain>(out grainPost);
-        cameraPostProcessing.profile.TryGetSettings<ChromaticAberration>(out chromePost);
-        cameraPostProcessing.profile.TryGetSettings<ColorGrading>(out gradingPost);
     }
 	
 	// Update is called once per frame
@@ -88,7 +79,6 @@ public class LevelController : MonoBehaviour {
         // TODO: Add some lighting / zoom camera animation
         yield return new WaitForSeconds(1.5f);
         playerIsGhost = true;
-        enablePostProcessing();
         yield return new WaitForSeconds(0.5f);
     }
 
@@ -104,7 +94,6 @@ public class LevelController : MonoBehaviour {
         // TODO: Add some lighting / zoom camera animation
         yield return new WaitForSeconds(1.5f);
         playerIsGhost = false;
-        disablePostProcessing();
         yield return new WaitForSeconds(0.5f);
     }
 
@@ -123,18 +112,7 @@ public class LevelController : MonoBehaviour {
     }
 
 
-    private void enablePostProcessing()
-    {
-        grainPost.enabled.value = false;
-        chromePost.enabled.value = false;
-        gradingPost.enabled.value = false;
-    }
 
-    private void disablePostProcessing()
-    {
-        grainPost.enabled.value = true;
-        chromePost.enabled.value = true;
-        gradingPost.enabled.value = true;
-    }
+    
 
 }
