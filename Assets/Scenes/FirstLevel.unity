@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27199,6 +27199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 763698961}
   isLocked: 1
+  lockName: 
 --- !u!212 &1126785090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37880,11 +37881,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -6.7317514, y: -0.49312276}
-  - {x: 0.7294918, y: 3.2209477}
-  - {x: 6.515969, y: 0.19026121}
-  - {x: -0.46166024, y: -3.2343094}
-  - {x: -6.665857, y: -0.4608099}
+  - {x: -4.5855484, y: -0.85815036}
+  - {x: 0.7343849, y: 1.8925549}
+  - {x: 4.40048, y: 0.19026121}
+  - {x: -0.8060416, y: -2.5460777}
+  - {x: -4.566405, y: -0.80737036}
 --- !u!114 &1878676120
 MonoBehaviour:
   m_ObjectHideFlags: 0

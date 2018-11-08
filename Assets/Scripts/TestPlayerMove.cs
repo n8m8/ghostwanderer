@@ -359,6 +359,7 @@ public class TestPlayerMove : MonoBehaviour
     private IEnumerator FindBodyAnimation()
     {
         Debug.Log("Body Found!!!");
+        animator.SetBool("isGhost", false);
         yield return new WaitForSeconds(1f);
         ReturnToHuman();
     }

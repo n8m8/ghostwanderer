@@ -27,11 +27,13 @@ public class ForceGhostMode : MonoBehaviour {
 
     private IEnumerator PlayAnimation(){
         yield return new WaitForSeconds(5f);
+        player.GetComponent<Animator>().SetBool("isGhost", true);
+        yield return new WaitForSeconds(0f);
         ghostScript.EnableMovement();
         ghostScript.EnableGhostMode();
         Destroy(GameObject.Find("TestPlayer(Clone)"));
         this.GetComponent<EdgeCollider2D>().enabled = false;
-        ghostScript.ChangeRadius(6f);
+        ghostScript.ChangeRadius(7f);
         //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
     }
 
