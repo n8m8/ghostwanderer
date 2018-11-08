@@ -16,26 +16,7 @@ public class Pickup : MonoBehaviour {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 		textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
-<<<<<<< HEAD
 	
-	void OnTriggerEnter2D (Collider2D other) {
-		if (other.CompareTag("Player")){
-			for (int i = 0; i < inventory.slots.Length; i++){
-				if (inventory.isFull[i] == false){
-					gameObject.GetComponent<SpriteRenderer>().enabled = false;
-					name = gameObject.name;
-					inventory.isFull[i] = true;
-					inventory.slots[i] = name;
-					int number = int.Parse(textDisplay.text.Split(' ')[1])+1;
-					Debug.Log(number);
-					textDisplay.text = "x " + number.ToString();
-					// yield return new WaitForSeconds(3);
-					// textDisplay.text = "";
-					//will be buggy if player goes back in 
-					Destroy(gameObject);
-					break;
-				}
-=======
 
     private void Update()
     {
@@ -58,13 +39,14 @@ public class Pickup : MonoBehaviour {
 				name = coll.gameObject.name;
 				inventory.isFull[i] = true;
 				inventory.slots[i] = name;
-				textDisplay.text = (name + " has been picked up");
-				yield return new WaitForSeconds(3);
-				textDisplay.text = "";
-				//will be buggy if player goes back in 
+                int number = int.Parse(textDisplay.text.Split(' ')[1])+1;
+                Debug.Log(number);
+                textDisplay.text = "x " + number.ToString();
+                yield return new WaitForSeconds(3);
+                // textDisplay.text = "";
+                //will be buggy if player goes back in 
 				Destroy(coll.gameObject);
 				break;
->>>>>>> 60d93880ed04ce1c48169f921237510e38567e24
 			}
 		}
 	}
