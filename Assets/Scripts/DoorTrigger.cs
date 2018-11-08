@@ -8,6 +8,8 @@ public class DoorTrigger : MonoBehaviour
     public GameObject door;
     [SerializeField]
     public bool isLocked = false;
+    [SerializeField]
+    public string lockName;
     private Inventory inventory;
     // Use this for initialization
     private DoorController DC_script;
@@ -39,7 +41,7 @@ public class DoorTrigger : MonoBehaviour
         {
             for (int i = 0; i < inventory.slots.Length; i++)
             {
-                if (inventory.slots[i] == "key")
+                if (inventory.slots[i] == lockName)
                 {
                     inventory.removeItem(i);
                     PC.isTrigger = true;
