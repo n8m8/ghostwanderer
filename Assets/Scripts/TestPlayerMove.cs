@@ -34,8 +34,8 @@ public class TestPlayerMove : MonoBehaviour
     public bool bodyAvailable = false;
 
     private readonly float TAN27 = 1.96261050551f;
-    private readonly float TOLERANCE = .9f;
     private float original;
+    private string prevAnimState = "";
 
     private GameObject hidingPlace;
 
@@ -43,6 +43,7 @@ public class TestPlayerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        prevAnimState = "rightDown";
         playerRB = GetComponent<Rigidbody2D>();
         ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
@@ -83,6 +84,42 @@ public class TestPlayerMove : MonoBehaviour
 
     }
 
+    private void SetAnimLeftUp()
+    {
+        animator.SetBool("leftDown", false);
+        animator.SetBool("leftUp", true);
+        animator.SetBool("rightDown", false);
+        animator.SetBool("rightUp", false);
+        prevAnimState = "leftUp";
+    }
+
+    private void SetAnimLeftDown()
+    {
+        animator.SetBool("leftDown", true);
+        animator.SetBool("leftUp", false);
+        animator.SetBool("rightDown", false);
+        animator.SetBool("rightUp", false);
+        prevAnimState = "leftDown";
+    }
+
+    private void SetAnimRightUp()
+    {
+        animator.SetBool("leftDown", false);
+        animator.SetBool("leftUp", false);
+        animator.SetBool("rightDown", false);
+        animator.SetBool("rightUp", true);
+        prevAnimState = "rightUp";
+    }
+
+    private void SetAnimRightDown()
+    {
+        animator.SetBool("leftDown", false);
+        animator.SetBool("leftUp", false);
+        animator.SetBool("rightDown", true);
+        animator.SetBool("rightUp", false);
+        prevAnimState = "rightDown";
+    }
+
     private void ToggleAnimations()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -91,125 +128,97 @@ public class TestPlayerMove : MonoBehaviour
         {
             if (v > 0)
             {
-                animator.SetBool("rightUp", true);
-                animator.SetBool("rightDown", false);
+                SetAnimRightUp();
+            }
+            else if (v < 0)
+            {
+                SetAnimRightDown();
             }
             else
             {
-                animator.SetBool("rightDown", true);
-                animator.SetBool("rightUp", false);
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("rightUp"))
+                {
+                    SetAnimRightUp();
+                }
+                else
+                {
+                    SetAnimRightDown();
+                }
             }
-            animator.SetBool("leftDown", false);
-            animator.SetBool("leftUp", false);
             animator.SetBool("idle", false);
         }
         else if (h < 0)
         {
             if (v > 0)
             {
-                animator.SetBool("leftUp", true);
-                animator.SetBool("leftDown", false);
+                SetAnimLeftUp();
+            }
+            else if (v < 0)
+            {
+                SetAnimLeftDown();
             }
             else
             {
-                animator.SetBool("leftDown", true);
-                animator.SetBool("leftUp", false);
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("rightUp"))
+                {
+                    SetAnimLeftUp();
+                }
+                else
+                {
+                    SetAnimLeftDown();
+                }
             }
-            animator.SetBool("rightDown", false);
-            animator.SetBool("rightUp", false);
             animator.SetBool("idle", false);
         }
         else    //playerRB.velocity.x == 0
         {
             if (v > 0)
             {
-                animator.SetBool("leftUp", true);
-                animator.SetBool("leftDown", false);
-                animator.SetBool("rightDown", false);
-                animator.SetBool("rightUp", false);
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("leftDown"))
+                {
+                    SetAnimLeftUp();
+                }
+                else
+                {
+                    SetAnimRightUp();
+                }
                 animator.SetBool("idle", false);
             }
             else if (v < 0)
             {
-                animator.SetBool("rightDown", true);
-                animator.SetBool("leftUp", false);
-                animator.SetBool("leftDown", false);
-                animator.SetBool("rightUp", false);
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("leftDown"))
+                {
+                    SetAnimLeftDown();
+                }
+                else
+                {
+                    SetAnimRightDown();
+                }
                 animator.SetBool("idle", false);
             }
             else
             {
-                animator.SetBool("leftDown", false);
-                animator.SetBool("leftUp", false);
-                animator.SetBool("rightDown", false);
-                animator.SetBool("rightUp", false);
+                switch (prevAnimState)
+                {
+                    case "leftUp":
+                        SetAnimLeftUp();
+                        break;
+                    case "leftDown":
+                        SetAnimLeftDown();
+                        break;
+                    case "rightUp":
+                        SetAnimRightUp();
+                        break;
+                    case "rightDown":
+                        SetAnimRightDown();
+                        break;
+                    default:
+                        break;
+                }
                 animator.SetBool("idle", true);
             }
         }
     }
-
-    //private void ToggleAnimations()
-    //{
-    //    if (playerRB.velocity.x > TOLERANCE)
-    //    {
-    //        if (playerRB.velocity.y > TOLERANCE)
-    //        {
-    //            animator.SetBool("rightUp", true);
-    //            animator.SetBool("rightDown", false);
-    //        }
-    //        else
-    //        {
-    //            animator.SetBool("rightDown", true);
-    //            animator.SetBool("rightUp", false);
-    //        }
-    //        animator.SetBool("leftDown", false);
-    //        animator.SetBool("leftUp", false);
-    //        animator.SetBool("idle", false);
-    //    }
-    //    else if (playerRB.velocity.x < -TOLERANCE)
-    //    {
-    //        if (playerRB.velocity.y > TOLERANCE)
-    //        {
-    //            animator.SetBool("leftUp", true);
-    //            animator.SetBool("leftDown", false);
-    //        }
-    //        else
-    //        {
-    //            animator.SetBool("leftDown", true);
-    //            animator.SetBool("leftUp", false);
-    //        }
-    //        animator.SetBool("rightDown", false);
-    //        animator.SetBool("rightUp", false);
-    //        animator.SetBool("idle", false);
-    //    }
-    //    else    //playerRB.velocity.x == 0
-    //    {
-    //        if (playerRB.velocity.y > TOLERANCE)
-    //        {
-    //            animator.SetBool("leftUp", true);
-    //            animator.SetBool("leftDown", false);
-    //            animator.SetBool("rightDown", false);
-    //            animator.SetBool("rightUp", false);
-    //            animator.SetBool("idle", false);
-    //        }
-    //        else if (playerRB.velocity.y < -TOLERANCE)
-    //        {
-    //            animator.SetBool("rightDown", true);
-    //            animator.SetBool("leftUp", false);
-    //            animator.SetBool("leftDown", false);
-    //            animator.SetBool("rightUp", false);
-    //            animator.SetBool("idle", false);
-    //        }
-    //        else
-    //        {
-    //            animator.SetBool("leftDown", false);
-    //            animator.SetBool("leftUp", false);
-    //            animator.SetBool("rightDown", false);
-    //            animator.SetBool("rightUp", false);
-    //            animator.SetBool("idle", true);
-    //        }
-    //    }
-    //}
 
     bool canGhost = false;
 
