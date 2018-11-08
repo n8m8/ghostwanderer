@@ -15,7 +15,7 @@ public class Pickup : MonoBehaviour {
 		textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
 	
-	IEnumerator OnTriggerEnter2D (Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag("Player")){
 			for (int i = 0; i < inventory.slots.Length; i++){
 				if (inventory.isFull[i] == false){
@@ -23,9 +23,11 @@ public class Pickup : MonoBehaviour {
 					name = gameObject.name;
 					inventory.isFull[i] = true;
 					inventory.slots[i] = name;
-					textDisplay.text = (name + " has been picked up");
-					yield return new WaitForSeconds(3);
-					textDisplay.text = "";
+					int number = int.Parse(textDisplay.text.Split(' ')[1])+1;
+					Debug.Log(number);
+					textDisplay.text = "x " + number.ToString();
+					// yield return new WaitForSeconds(3);
+					// textDisplay.text = "";
 					//will be buggy if player goes back in 
 					Destroy(gameObject);
 					break;
