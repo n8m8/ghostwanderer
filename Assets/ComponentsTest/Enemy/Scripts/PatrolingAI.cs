@@ -20,6 +20,7 @@ public class PatrolingAI : MonoBehaviour {
 
     private int desPoint = 0;
     public float fieldOfViewAngle = 30f;
+    private float distance;
 
     private Vector3 last;
     private Vector3 now;
@@ -68,7 +69,7 @@ public class PatrolingAI : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        distance = Vector2.Distance(player.transform.position, transform.position);
         now = transform.position;
         if (now != last)
         {
@@ -80,15 +81,16 @@ public class PatrolingAI : MonoBehaviour {
         checkLOS();
 
 
+
         if (isStuned == false)
         {
             switch (state)
             {
                 case AIState.patrolling:
-                    patrolling(distance);
+                    patrolling();
                     break;
                 case AIState.chasing:
-                    chasing(distance);
+                    chasing();
                     break;
                 case AIState.confusing:
                     StartCoroutine(confusing());
@@ -117,7 +119,7 @@ public class PatrolingAI : MonoBehaviour {
 
     }
 
-    void patrolling(float distance){
+    void patrolling(){
         setting.maxSpeed = 1.0f;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
@@ -132,7 +134,7 @@ public class PatrolingAI : MonoBehaviour {
         }
     }
 
-    void chasing(float distance){
+    void chasing(){
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
         if ((!seePlayer && distance > 5.0f && alarm.isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
@@ -151,7 +153,7 @@ public class PatrolingAI : MonoBehaviour {
         transform.position = now;
         setting.maxSpeed = 3.0f;
         setting.constrainInsideGraph = false;
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        distance = Vector2.Distance(player.transform.position, transform.position);
         agent.target = null;
         yield return new WaitForSeconds(2.0f);
         state = AIState.patrolling;
@@ -172,6 +174,12 @@ public class PatrolingAI : MonoBehaviour {
             GotoNextPoint();
         }
     }
+
+    public float getDistance(){
+        return distance;
+    }
+
+    
 
 
 
