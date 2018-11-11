@@ -18,6 +18,7 @@ TagManager:
   - ItemZone
   - SpawnByState
   - SwitchTrigger
+  - InventoryPickup
   layers:
   - Default
   - TransparentFX
