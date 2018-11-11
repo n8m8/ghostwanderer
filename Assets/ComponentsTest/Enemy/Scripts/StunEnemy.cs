@@ -6,6 +6,7 @@ public class StunEnemy : MonoBehaviour
     private PossessController possess;
     public GameObject targetEnemy; 
     public GameObject possessedObject;
+    public bool isForever = false;
     // Use this for initialization
     void Start()
     {
@@ -22,8 +23,15 @@ public class StunEnemy : MonoBehaviour
     }
 
     IEnumerator stunEnemy(){
-        targetEnemy.GetComponent<PatrolingAI>().isStuned = true;
-        yield return new WaitForSeconds(10f);
-        targetEnemy.GetComponent<PatrolingAI>().isStuned = false;
+        if (isForever)
+        {
+            targetEnemy.GetComponent<PatrolingAI>().isStuned = true;
+        }
+        else
+        {
+            targetEnemy.GetComponent<PatrolingAI>().isStuned = true;
+            yield return new WaitForSeconds(10f);
+            targetEnemy.GetComponent<PatrolingAI>().isStuned = false;
+        }
     }
 }
