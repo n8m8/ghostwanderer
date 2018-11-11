@@ -12,6 +12,7 @@ public class StationAI : MonoBehaviour
 
     public bool isTargetingGhost;
     public bool distracted = false;
+    public bool isStuned = false;
 
     private GameObject player;
     private AIDestinationSetter agent;
@@ -58,18 +59,26 @@ public class StationAI : MonoBehaviour
         now.z = 0;
         transform.position = now;
 
-        switch (state)
+        if (isStuned == false)
+        {
+            switch (state)
             {
-            case AIState.sitting:
-                sitting();
-                break;
-            case AIState.chasing:
-                chasing(distance);
-                break;
-            case AIState.checking:
-                checking();
-                break;
+                case AIState.sitting:
+                    sitting();
+                    break;
+                case AIState.chasing:
+                    chasing(distance);
+                    break;
+                case AIState.checking:
+                    checking();
+                    break;
             }
+        }
+        else{
+            setting.maxSpeed = 0f;
+            state = AIState.sitting;
+            agent.target = null;
+        }
 
     }
 
