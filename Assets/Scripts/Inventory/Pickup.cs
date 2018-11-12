@@ -11,24 +11,25 @@ public class Pickup : MonoBehaviour {
     public TextMeshProUGUI inventoryDisplay;
 
     private bool itemZone = false;
+    private bool muteText = false;
     public static bool inProgress = false;
     // Use this for initialization
     void Start () {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-		inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
-        textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
+		//inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
+        //textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
 	
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && itemZone && !inProgress)
+        if (Input.GetKeyDown(KeyCode.E) && itemZone && !inProgress)
         {
             StartCoroutine(briefMessage("Found something!", 2));
             StartCoroutine(addToInventory());
 
         }
-        else if (Input.GetKeyDown(KeyCode.R) && !itemZone && !inProgress)
+        else if (Input.GetKeyDown(KeyCode.E) && !itemZone && !inProgress && !muteText)
         {
             StartCoroutine(briefMessage("Nothing", 1));
         }
@@ -61,6 +62,10 @@ public class Pickup : MonoBehaviour {
             itemZone = true;
             coll = collider;
         }
+        if(collider.tag == "Possess")
+        {
+            muteText = true;
+        }
     }
 
     //Reset the checkflag 
@@ -69,6 +74,10 @@ public class Pickup : MonoBehaviour {
         if (collider.tag == "SpawnByState" || collider.tag == "EvidenceTrigger")
         {
             itemZone = false;
+        }
+        if (collider.tag == "Possess")
+        {
+            muteText = false;
         }
 
     }
