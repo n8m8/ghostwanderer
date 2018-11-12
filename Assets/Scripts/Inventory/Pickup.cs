@@ -23,13 +23,13 @@ public class Pickup : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && itemZone && !inProgress)
+        if (Input.GetKeyDown(KeyCode.E) && itemZone && !inProgress)
         {
             StartCoroutine(briefMessage("Found something!", 2));
             StartCoroutine(addToInventory());
 
         }
-        else if (Input.GetKeyDown(KeyCode.R) && !itemZone && !inProgress && !muteText)
+        else if (Input.GetKeyDown(KeyCode.E) && !itemZone && !inProgress && !muteText)
         {
             StartCoroutine(briefMessage("Nothing", 1));
         }
