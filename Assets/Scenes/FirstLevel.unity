@@ -22529,6 +22529,11 @@ Prefab:
       propertyPath: Enemy
       value: 
       objectReference: {fileID: 249479935}
+    - target: {fileID: 114005235835248636, guid: 8656f4c6b0f8e3941a9f3258a4bd6231,
+        type: 2}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1777557795}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8656f4c6b0f8e3941a9f3258a4bd6231, type: 2}
   m_IsPrefabAsset: 0
@@ -31298,6 +31303,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1777557795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1145643909550362, guid: e24793c7b5185ec43a29d275e2b5830a,
+    type: 2}
+  m_PrefabInternal: {fileID: 832491616}
 --- !u!1001 &1778850297
 Prefab:
   m_ObjectHideFlags: 0
