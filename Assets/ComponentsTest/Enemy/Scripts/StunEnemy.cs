@@ -18,9 +18,11 @@ public class StunEnemy : MonoBehaviour
     {
         for (int i = 0; i < targetEnemy.Length; i++)
         {
-            if (targetEnemy[i].GetComponent<PatrolingAI>().isStuned == false && possess.isPossessing && targetEnemy[i].GetComponent<PatrolingAI>().getDistance() < 5f)
-            {
-                StartCoroutine(stunEnemy(targetEnemy[i]));
+            if (targetEnemy[i] != null){
+                if(targetEnemy[i].GetComponent<PatrolingAI>().isStuned == false && possess.isPossessing && targetEnemy[i].GetComponent<PatrolingAI>().getDistance() < 5f)
+                {
+                    StartCoroutine(stunEnemy(targetEnemy[i]));
+                }
             }
         }
 
