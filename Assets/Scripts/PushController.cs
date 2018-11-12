@@ -45,8 +45,8 @@ public class PushController : MonoBehaviour {
             //Destroy(levelController.Vase);
             //Destroy(levelController.VaseObject);
             Destroy(Enemy);
-            AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
-            soundFX.Play();
+            //AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
+            //soundFX.Play();
             destroyed = true;
             enemy1Dead = true;
         }
@@ -57,8 +57,8 @@ public class PushController : MonoBehaviour {
             //Destroy(levelController.Vase);
             //Destroy(levelController.VaseObject);
             Destroy(Enemy2);
-            AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
-            soundFX.Play();
+            //AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
+            //soundFX.Play();
             destroyed = true;
             enemy2Dead = true;
         }
