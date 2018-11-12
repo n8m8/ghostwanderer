@@ -7,10 +7,13 @@ public class PushController : MonoBehaviour {
     [SerializeField] private GameObject PushableObject;
     [SerializeField] private GameObject Protag;
     [SerializeField] private GameObject Enemy;
+    [SerializeField]
+    private GameObject Enemy2;
     [SerializeField] private Animator VaseAnimator;
 
     public bool canMoveObject = false;
     public bool enemyInRange = false;
+    public bool enemyInRange2 = false;
     public bool destroyed = false;
     // Use this for initialization
     void Start () {
@@ -23,6 +26,10 @@ public class PushController : MonoBehaviour {
         {
             enemyInRange = true;
         }
+        if (Vector3.Distance(Enemy2.transform.position, transform.position) < 4)
+        {
+            enemyInRange2 = true;
+        }
 
         if (Input.GetKeyDown("f") && canMoveObject && enemyInRange && !destroyed)
         {
@@ -31,6 +38,17 @@ public class PushController : MonoBehaviour {
             //Destroy(levelController.Vase);
             //Destroy(levelController.VaseObject);
             Destroy(Enemy);
+            AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
+            soundFX.Play();
+            destroyed = true;
+        }
+        else if (Input.GetKeyDown("f") && canMoveObject && enemyInRange2 && !destroyed)
+        {
+            VaseAnimator.SetTrigger("Fall");
+            //PushableObject.GetComponent<Renderer>().enabled = false;
+            //Destroy(levelController.Vase);
+            //Destroy(levelController.VaseObject);
+            Destroy(Enemy2);
             AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
             soundFX.Play();
             destroyed = true;

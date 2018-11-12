@@ -15,8 +15,8 @@ public class Pickup : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-		inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
-        textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
+		//inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
+        //textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
 	
 

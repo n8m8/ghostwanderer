@@ -23,7 +23,7 @@ public class PossessController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("r") && canPossess){
+        if(Input.GetKeyDown("r") && canPossess && Protag.GetComponent<TestPlayerMove>().isGhost){
             if (isPossessing)
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
