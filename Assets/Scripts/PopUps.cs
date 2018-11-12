@@ -5,18 +5,17 @@ using TMPro;
 
 public class PopUps : MonoBehaviour {
 
-	public GameObject textUI;
+	public TextMeshProUGUI textUI;
 	void Start(){
-		textUI.GetComponent<SpriteRenderer>().enabled = false;
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
-			 textUI.GetComponent<SpriteRenderer>().enabled = true;
+			 textUI.enabled = true;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider){
-		 textUI.GetComponent<SpriteRenderer>().enabled = false;
+		 textUI.enabled = false;
 	}
 }

@@ -34,6 +34,7 @@ public class Pickup : MonoBehaviour {
             StartCoroutine(briefMessage("Nothing", 1));
         }
     }
+
     private Collider2D coll;
     IEnumerator addToInventory () {
 		for (int i = 0; i < inventory.slots.Length; i++){
@@ -42,7 +43,7 @@ public class Pickup : MonoBehaviour {
 				name = coll.gameObject.name;
 				inventory.isFull[i] = true;
 				inventory.slots[i] = name;
-                int number = int.Parse(textDisplay.text.Split(' ')[1])+1;
+                int number = int.Parse(inventoryDisplay.text.Split(' ')[1])+1;
                 Debug.Log(number);
                 inventoryDisplay.text = "x " + number.ToString();
                 yield return new WaitForSeconds(3);
