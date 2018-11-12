@@ -14,6 +14,8 @@ public class PushController : MonoBehaviour {
     public bool enemyInRange = false;
     public bool enemyInRange2 = false;
     public bool destroyed = false;
+    private bool enemy1Dead = false;
+    private bool enemy2Dead = false;
     // Use this for initialization
     void Start () {
 		
@@ -21,13 +23,19 @@ public class PushController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Vector3.Distance(Enemy.transform.position, transform.position) < 4)
+        if (Enemy != null)
         {
-            enemyInRange = true;
+            if (Vector3.Distance(Enemy.transform.position, transform.position) < 4)
+            {
+                enemyInRange = true;
+            }
         }
-        if (Vector3.Distance(Enemy2.transform.position, transform.position) < 4)
+        if (Enemy)
         {
-            enemyInRange2 = true;
+            if (Vector3.Distance(Enemy2.transform.position, transform.position) < 4)
+            {
+                enemyInRange2 = true;
+            }
         }
 
         if (Input.GetKeyDown("e") && canMoveObject && enemyInRange && !destroyed)
@@ -40,6 +48,7 @@ public class PushController : MonoBehaviour {
             AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
             soundFX.Play();
             destroyed = true;
+            enemy1Dead = true;
         }
         else if (Input.GetKeyDown("e") && canMoveObject && enemyInRange2 && !destroyed)
         {
@@ -51,6 +60,7 @@ public class PushController : MonoBehaviour {
             AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
             soundFX.Play();
             destroyed = true;
+            enemy2Dead = true;
         }
         else if (Input.GetKeyDown("e") && canMoveObject && destroyed)
         {
