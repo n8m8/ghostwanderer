@@ -7221,7 +7221,7 @@ Prefab:
         type: 2}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 93363537}
+      objectReference: {fileID: 0}
     - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
         type: 2}
       propertyPath: possessedObject
@@ -7242,6 +7242,11 @@ Prefab:
       propertyPath: isForever
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: targetEnemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 93363537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
@@ -35740,6 +35745,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1048947426}
     m_Modifications:
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: targetEnemy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4344246095924196, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
       propertyPath: m_LocalPosition.x
       value: 9.63
@@ -35786,7 +35796,7 @@ Prefab:
         type: 2}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 1591607914}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420224938916662, guid: b09b816d53cdc4501a22d24a8f4d6234,
         type: 2}
       propertyPath: Protag
@@ -35797,6 +35807,16 @@ Prefab:
       propertyPath: isForever
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: targetEnemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 151489749}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: targetEnemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 1591607914}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
