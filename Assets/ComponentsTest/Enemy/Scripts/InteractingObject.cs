@@ -6,7 +6,7 @@ public class InteractingObject : MonoBehaviour
 {
 
     public bool canMoveObject = false;
-
+	[SerializeField] private GameObject obj;
     public GameObject enemy;
 
     private StationAI enemyController;
@@ -43,6 +43,8 @@ public class InteractingObject : MonoBehaviour
             if(enemyController2 != null){
                 enemyController2.distracted = true;
             }
+			if (obj.GetComponent<AudioSource> () != null)
+				obj.GetComponent<AudioSource> ().Play ();
         }
     }
 

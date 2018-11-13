@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 212788106624496316}
   - component: {fileID: 61857074063578574}
   - component: {fileID: 114791124153587502}
-  - component: {fileID: 82122033236483520}
+  - component: {fileID: 82920484117416746}
   m_Layer: 1
   m_Name: TV
   m_TagString: Untagged
@@ -124,7 +124,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.322441, y: 1.3854637}
   m_EdgeRadius: 0
---- !u!82 &82122033236483520
+--- !u!82 &82920484117416746
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,10 +134,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d4a635cafb6fa354bb79e4989b25520a, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_PlayOnAwake: 0
+  m_Volume: 0.117
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -240,7 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMoveObject: 0
-  isOn: 1
+  obj: {fileID: 1732044087880262}
+  enemy: {fileID: 0}
 --- !u!114 &114791124153587502
 MonoBehaviour:
   m_ObjectHideFlags: 1
