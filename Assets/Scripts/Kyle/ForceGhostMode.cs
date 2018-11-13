@@ -5,6 +5,8 @@ public class ForceGhostMode : MonoBehaviour {
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject scientist;
+	[SerializeField] private GameObject soundController;
+	[SerializeField] private GameObject blackScreen;
 
     private TestPlayerMove ghostScript;
     private float originalSpeed;
@@ -28,7 +30,10 @@ public class ForceGhostMode : MonoBehaviour {
     private IEnumerator PlayAnimation(){
 		yield return new WaitForSeconds(1f);
 		GetComponent<AudioSource> ().Play ();
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1.45f);
+		soundController.SetActive (false);
+		blackScreen.SetActive (true);
+		yield return new WaitForSeconds(4f );
         player.GetComponent<Animator>().SetBool("isGhost", true);
         yield return new WaitForSeconds(0f);
         ghostScript.EnableMovement();
@@ -37,6 +42,8 @@ public class ForceGhostMode : MonoBehaviour {
         Destroy(GameObject.Find("TestPlayer(Clone)"));
         this.GetComponent<EdgeCollider2D>().enabled = false;
         ghostScript.ChangeRadius(7f);
+		blackScreen.SetActive (false);
+		soundController.SetActive (true);
         //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
     }
 

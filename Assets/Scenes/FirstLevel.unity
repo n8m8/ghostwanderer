@@ -2086,6 +2086,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &125684863
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143005241081752, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_RootOrder
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 212301701031482388, guid: c9e3bef1b2eba0040a90ae6235366878,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732586317156436, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9e3bef1b2eba0040a90ae6235366878, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &125684864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1732586317156436, guid: c9e3bef1b2eba0040a90ae6235366878,
+    type: 2}
+  m_PrefabInternal: {fileID: 125684863}
 --- !u!4 &127483861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac,
@@ -4563,6 +4619,10 @@ Prefab:
     - target: {fileID: 4355084308034592, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
       propertyPath: m_LocalPosition.y
       value: -3.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355084308034592, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
@@ -35373,18 +35433,19 @@ Prefab:
       objectReference: {fileID: 1633314979}
     - target: {fileID: 114552097310812138, guid: d030f0816a4cecb41a9637db16f4949b,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1643442636068424, guid: d030f0816a4cecb41a9637db16f4949b, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 68962624089982614, guid: d030f0816a4cecb41a9637db16f4949b,
+      propertyPath: soundController
+      value: 
+      objectReference: {fileID: 1210437849}
+    - target: {fileID: 114552097310812138, guid: d030f0816a4cecb41a9637db16f4949b,
         type: 2}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114552097310812138, guid: d030f0816a4cecb41a9637db16f4949b,
+        type: 2}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 125684864}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d030f0816a4cecb41a9637db16f4949b, type: 2}
   m_IsPrefabAsset: 0
