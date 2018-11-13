@@ -5,19 +5,20 @@ public class StunEnemy : MonoBehaviour
 {
     private PossessController possess;
     public GameObject[] targetEnemy; 
-    public GameObject possessedObject;
+    public GameObject possessedObjectTrigger;
     public bool isForever = false;
     private PatrolingAI target1;
     private StationAI target2;
     // Use this for initialization
     void Start()
     {
-        possess = possessedObject.GetComponent<PossessController>();
+        possess = possessedObjectTrigger.GetComponent<PossessController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         for (int i = 0; i < targetEnemy.Length; i++)
         {
             if (targetEnemy[i] != null){

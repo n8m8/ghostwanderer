@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1645,6 +1645,11 @@ Prefab:
       propertyPath: targetEnemy.Array.data[1]
       value: 
       objectReference: {fileID: 1591607914}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: possessedObjectTrigger
+      value: 
+      objectReference: {fileID: 81726199}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
@@ -3904,9 +3909,19 @@ Prefab:
       propertyPath: targetEnemy.Array.data[0]
       value: 
       objectReference: {fileID: 685094174}
+    - target: {fileID: 114153906663374722, guid: e4abcc9b15b45e742ad70440f7f6e325,
+        type: 2}
+      propertyPath: possessedObjectTrigger
+      value: 
+      objectReference: {fileID: 1711306184}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4abcc9b15b45e742ad70440f7f6e325, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &210775153 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4335383305565186, guid: e4abcc9b15b45e742ad70440f7f6e325,
+    type: 2}
+  m_PrefabInternal: {fileID: 210775152}
 --- !u!1001 &211006208
 Prefab:
   m_ObjectHideFlags: 0
@@ -7566,6 +7581,11 @@ Prefab:
       propertyPath: targetEnemy.Array.data[0]
       value: 
       objectReference: {fileID: 93363537}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: possessedObjectTrigger
+      value: 
+      objectReference: {fileID: 380796798}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
@@ -29381,6 +29401,11 @@ Prefab:
       propertyPath: targetEnemy.Array.data[0]
       value: 
       objectReference: {fileID: 1549880094}
+    - target: {fileID: 114537810366751512, guid: 7e0d7df2b57c9d547a07acb1f4b7fd31,
+        type: 2}
+      propertyPath: possessedObjectTrigger
+      value: 
+      objectReference: {fileID: 1605811587}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e0d7df2b57c9d547a07acb1f4b7fd31, type: 2}
   m_IsPrefabAsset: 0
@@ -31262,6 +31287,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f53bbbf06046e7545b9db39f224b7419, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1605811587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1716376866059622, guid: 7e0d7df2b57c9d547a07acb1f4b7fd31,
+    type: 2}
+  m_PrefabInternal: {fileID: 1506687023}
 --- !u!1001 &1613647894
 Prefab:
   m_ObjectHideFlags: 0
@@ -33713,6 +33743,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4734654293286300, guid: 7e24456a7f965414ba465bee36868884,
     type: 2}
   m_PrefabInternal: {fileID: 333578707}
+--- !u!1 &1711306184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1822948524867438, guid: e4abcc9b15b45e742ad70440f7f6e325,
+    type: 2}
+  m_PrefabInternal: {fileID: 210775152}
 --- !u!1 &1714041750
 GameObject:
   m_ObjectHideFlags: 0
@@ -34312,6 +34347,11 @@ Prefab:
       propertyPath: objectToPossess
       value: 
       objectReference: {fileID: 1861812554}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: possessedObjectTrigger
+      value: 
+      objectReference: {fileID: 1761356892}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
@@ -36190,6 +36230,11 @@ Prefab:
       propertyPath: targetEnemy.Array.data[1]
       value: 
       objectReference: {fileID: 1591607914}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: possessedObjectTrigger
+      value: 
+      objectReference: {fileID: 1874890371}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
@@ -37018,6 +37063,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c65b7e366c4561408139acb44fa91d0, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1930803730
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 210775153}
+    m_Modifications:
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272599103958846, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3c675e9a6b9df4e8bb2e55b13fa3ca6c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1931408960
 Prefab:
