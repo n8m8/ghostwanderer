@@ -25902,7 +25902,8 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114806143262160396, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1294802552
@@ -31179,6 +31180,7 @@ GameObject:
   - component: {fileID: 1615592566}
   - component: {fileID: 1615592565}
   - component: {fileID: 1615592564}
+  - component: {fileID: 1615592572}
   - component: {fileID: 1615592563}
   - component: {fileID: 1615592562}
   - component: {fileID: 1615592561}
@@ -31443,6 +31445,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1615592572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1615592558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4374d626ac9db2b40a19d12b95cc0124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  textDisplay: {fileID: 0}
+  inventoryDisplay: {fileID: 0}
 --- !u!1001 &1616520214
 Prefab:
   m_ObjectHideFlags: 0
