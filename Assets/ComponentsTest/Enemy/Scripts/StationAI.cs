@@ -84,7 +84,7 @@ public class StationAI : MonoBehaviour
     void sitting(){
         setting.maxSpeed = 2.0f;
         agent.target = points[0];
-        if(alarm.isOn){
+        if(alarm.isOn && playerControl.isGhost == isTargetingGhost){
             state = AIState.chasing;
             agent.target = playerPosition;
         }
@@ -112,7 +112,7 @@ public class StationAI : MonoBehaviour
     {
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if (playerControl.isGhost || alarm.isOn == false)
+        if (playerControl.isGhost && isTargetingGhost == false || alarm.isOn == false)
         {
             state = AIState.sitting;
             agent.target = points[0]; ;

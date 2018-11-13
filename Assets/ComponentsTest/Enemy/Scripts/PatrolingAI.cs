@@ -106,7 +106,7 @@ public class PatrolingAI : MonoBehaviour {
 
     void checkLOS(){
         int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));
-            if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle)
+        if (hit == 0 && Vector3.Angle(player.transform.position - transform.position, currentDirection) < fieldOfViewAngle && playerControl.isGhost == isTargetingGhost)
             {
                 seePlayer = true;
             }
