@@ -40,7 +40,6 @@ public class StationAI : MonoBehaviour
         playerControl = player.GetComponent<TestPlayerMove>();
         setting = this.GetComponent<AIPath>();
         alarm = enemyTrigger.GetComponent<Alarm>();
-        startPosPlayer = player.transform.position;
         agent = GetComponent<AIDestinationSetter>();
         //isChecking = false;
     }
@@ -127,7 +126,7 @@ public class StationAI : MonoBehaviour
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
-            player.transform.position = startPosPlayer;
+            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
             state = AIState.sitting;
             alarm.isOn = false;
             agent.target = points[0];

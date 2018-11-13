@@ -26,7 +26,6 @@ public class PatrolingAIDistrac : MonoBehaviour
     private Vector3 last;
     private Vector3 now;
     private Vector3 currentDirection;
-    private Vector3 startPosPlayer;
     private AIState state;
 
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
@@ -56,7 +55,6 @@ public class PatrolingAIDistrac : MonoBehaviour
         playerControl = player.GetComponent<TestPlayerMove>();
         setting = this.GetComponent<AIPath>();
         alarm = enemyTrigger.GetComponent<Alarm>();
-        startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
@@ -184,7 +182,7 @@ public class PatrolingAIDistrac : MonoBehaviour
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
-            player.transform.position = startPosPlayer;
+            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
             state = AIState.confusing;
             temp.position = transform.position;
             alarm.isOn = false;

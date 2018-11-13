@@ -49,7 +49,6 @@ public class PatrolingAI : MonoBehaviour {
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
         setting = this.GetComponent<AIPath>();
-        startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
@@ -165,7 +164,7 @@ public class PatrolingAI : MonoBehaviour {
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
-            player.transform.position = startPosPlayer;
+            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
             temp.position = transform.position;
             enemyTrigger.GetComponent<Alarm>().isOn = false;
             this.transform.position = points[0].position;
