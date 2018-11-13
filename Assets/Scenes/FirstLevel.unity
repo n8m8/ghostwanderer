@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5078,7 +5078,6 @@ GameObject:
   m_Component:
   - component: {fileID: 293630770}
   - component: {fileID: 293630769}
-  - component: {fileID: 293630768}
   - component: {fileID: 293630771}
   - component: {fileID: 293630773}
   - component: {fileID: 293630772}
@@ -5089,13 +5088,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &293630768
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 293630767}
-  m_Enabled: 1
 --- !u!20 &293630769
 Camera:
   m_ObjectHideFlags: 0
@@ -7055,7 +7047,7 @@ SpriteRenderer:
   m_Size: {x: 2.24, y: 3.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &445378481
@@ -35685,6 +35677,7 @@ GameObject:
   - component: {fileID: 2093185537}
   - component: {fileID: 2093185538}
   - component: {fileID: 2093185540}
+  - component: {fileID: 2093185542}
   m_Layer: 9
   m_Name: TestPlayer
   m_TagString: Player
@@ -35956,6 +35949,13 @@ MonoBehaviour:
   inventory: {fileID: 0}
   textDisplay: {fileID: 119210980}
   inventoryDisplay: {fileID: 1617534208}
+--- !u!81 &2093185542
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2093185527}
+  m_Enabled: 1
 --- !u!1 &2096391477
 GameObject:
   m_ObjectHideFlags: 0
