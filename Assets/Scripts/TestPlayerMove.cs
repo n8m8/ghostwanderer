@@ -12,8 +12,8 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private float friction = -10.0f;
     [SerializeField] private LevelController levelController;
 
-    [SerializeField] private Vector3 centerPt;
-    [SerializeField] private float radius = 5f;
+	[SerializeField] public Vector3 centerPt;
+    [SerializeField] public float radius = 5f;
 
 	[SerializeField] private GameObject musicObject;
 
