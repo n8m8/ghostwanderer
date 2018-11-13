@@ -388,4 +388,8 @@ public class TestPlayerMove : MonoBehaviour
     {
         radius = newRadius;
     }
+
+	public Vector2 getMovement() {
+		return movement;
+	}
 }
