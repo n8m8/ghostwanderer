@@ -30,7 +30,7 @@ public class PushController : MonoBehaviour {
                 enemyInRange = true;
             }
         }
-        if (Enemy)
+        if (Enemy2 != null)
         {
             if (Vector3.Distance(Enemy2.transform.position, transform.position) < 4)
             {

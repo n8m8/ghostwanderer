@@ -297,6 +297,11 @@ Prefab:
       propertyPath: Protag
       value: 
       objectReference: {fileID: 1615592558}
+    - target: {fileID: 114005235835248636, guid: 8656f4c6b0f8e3941a9f3258a4bd6231,
+        type: 2}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1380056297}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8656f4c6b0f8e3941a9f3258a4bd6231, type: 2}
   m_IsPrefabAsset: 0
@@ -3246,6 +3251,11 @@ Prefab:
       propertyPath: Protag
       value: 
       objectReference: {fileID: 1615592558}
+    - target: {fileID: 114005235835248636, guid: 8656f4c6b0f8e3941a9f3258a4bd6231,
+        type: 2}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1549880094}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8656f4c6b0f8e3941a9f3258a4bd6231, type: 2}
   m_IsPrefabAsset: 0
@@ -7404,7 +7414,7 @@ Prefab:
         type: 2}
       propertyPath: targetEnemy
       value: 
-      objectReference: {fileID: 685094174}
+      objectReference: {fileID: 0}
     - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
         type: 2}
       propertyPath: possessedObject
@@ -7415,6 +7425,11 @@ Prefab:
       propertyPath: isForever
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114508006225041590, guid: b09b816d53cdc4501a22d24a8f4d6234,
+        type: 2}
+      propertyPath: targetEnemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 685094174}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09b816d53cdc4501a22d24a8f4d6234, type: 2}
   m_IsPrefabAsset: 0
@@ -15985,6 +16000,11 @@ Prefab:
       propertyPath: Protag
       value: 
       objectReference: {fileID: 1615592558}
+    - target: {fileID: 114005235835248636, guid: 8656f4c6b0f8e3941a9f3258a4bd6231,
+        type: 2}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1574545536}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8656f4c6b0f8e3941a9f3258a4bd6231, type: 2}
   m_IsPrefabAsset: 0
@@ -17878,6 +17898,11 @@ Prefab:
       propertyPath: Protag
       value: 
       objectReference: {fileID: 1615592558}
+    - target: {fileID: 114005235835248636, guid: 8656f4c6b0f8e3941a9f3258a4bd6231,
+        type: 2}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 360402378}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8656f4c6b0f8e3941a9f3258a4bd6231, type: 2}
   m_IsPrefabAsset: 0
@@ -21465,6 +21490,11 @@ Prefab:
       propertyPath: Protag
       value: 
       objectReference: {fileID: 1615592558}
+    - target: {fileID: 114005235835248636, guid: 8656f4c6b0f8e3941a9f3258a4bd6231,
+        type: 2}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1615388569}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8656f4c6b0f8e3941a9f3258a4bd6231, type: 2}
   m_IsPrefabAsset: 0
