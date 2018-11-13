@@ -28,8 +28,8 @@ public class PossessController : MonoBehaviour
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
                 system.Stop();
-                ParticleSystem system1 = objectToPossess.gameObject.GetComponentInChildren<ParticleSystem>();
-                system1.Stop();
+                //ParticleSystem system1 = objectToPossess.gameObject.GetComponentInChildren<ParticleSystem>();
+                //system1.Stop();
                 Protag.gameObject.GetComponent<Renderer>().enabled = true;
                 isPossessing = false;
                 Protag.GetComponent<TestPlayerMove>().abs_force = 1000;
@@ -38,8 +38,9 @@ public class PossessController : MonoBehaviour
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
                 system.Play();
-                ParticleSystem system1 = objectToPossess.gameObject.GetComponentInChildren<ParticleSystem>();
-                system1.Play();
+                objectToPossess.GetComponent<Animator>().SetTrigger("Stun");
+                //ParticleSystem system1 = objectToPossess.gameObject.GetComponentInChildren<ParticleSystem>();
+                //system1.Play();
                 Protag.gameObject.GetComponent<Renderer>().enabled = false;
                 //Destroy(levelController.Vase);
                 //Destroy(levelController.VaseObject);
