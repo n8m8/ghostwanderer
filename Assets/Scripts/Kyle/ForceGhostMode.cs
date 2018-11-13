@@ -26,7 +26,9 @@ public class ForceGhostMode : MonoBehaviour {
     }
 
     private IEnumerator PlayAnimation(){
-        yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(1f);
+		GetComponent<AudioSource> ().Play ();
+        yield return new WaitForSeconds(4f);
         player.GetComponent<Animator>().SetBool("isGhost", true);
         yield return new WaitForSeconds(0f);
         ghostScript.EnableMovement();
