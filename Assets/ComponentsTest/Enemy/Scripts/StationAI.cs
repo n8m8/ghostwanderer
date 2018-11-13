@@ -8,7 +8,6 @@ public class StationAI : MonoBehaviour
     public float fieldOfViewAngle = 30f;
     public Transform playerPosition;
     public GameObject enemyTrigger;
-    public GameObject triggerObject;
 
     public bool isTargetingGhost;
     public bool distracted = false;
@@ -106,7 +105,7 @@ public class StationAI : MonoBehaviour
         yield return new WaitForSeconds(10.0f);
         state = AIState.sitting;
         agent.target = points[0];
-        triggerObject.GetComponent<InteractingObject>().isOn = false;*/
+        */
     }
 
     void chasing(float distance)
