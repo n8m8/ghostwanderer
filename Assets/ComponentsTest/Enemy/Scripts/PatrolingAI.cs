@@ -31,7 +31,6 @@ public class PatrolingAI : MonoBehaviour {
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
     private TestPlayerMove playerControl;
     private AIPath setting;
-    private Alarm alarm;
 
     public bool isStuned;
 
@@ -50,7 +49,6 @@ public class PatrolingAI : MonoBehaviour {
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
         setting = this.GetComponent<AIPath>();
-        alarm = enemyTrigger.GetComponent<Alarm>();
         startPosPlayer = player.transform.position;
         seePlayer = false;
         agent = GetComponent<AIDestinationSetter>();
@@ -127,7 +125,7 @@ public class PatrolingAI : MonoBehaviour {
             return;
         }
 
-        if ((seePlayer || alarm.isOn)&& playerControl.isGhost == isTargetingGhost)
+        if ((seePlayer || enemyTrigger.GetComponent<Alarm>().isOn)&& playerControl.isGhost == isTargetingGhost)
         {
             state = AIState.chasing;
             agent.target = playerPosition;
@@ -137,7 +135,7 @@ public class PatrolingAI : MonoBehaviour {
     void chasing(){
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if ((!seePlayer && distance > 5.0f && alarm.isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
+        if ((!seePlayer && distance > 5.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
         {
             state = AIState.confusing;
             temp.position = transform.position;
@@ -150,6 +148,7 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     IEnumerator confusing(){
+        enemyTrigger.GetComponent<Alarm>().isOn = false;
         transform.position = now;
         setting.maxSpeed = 3.0f;
         setting.constrainInsideGraph = false;
@@ -168,7 +167,7 @@ public class PatrolingAI : MonoBehaviour {
         {
             player.transform.position = startPosPlayer;
             temp.position = transform.position;
-            alarm.isOn = false;
+            enemyTrigger.GetComponent<Alarm>().isOn = false;
             this.transform.position = points[0].position;
             state = AIState.patrolling;
             GotoNextPoint();
