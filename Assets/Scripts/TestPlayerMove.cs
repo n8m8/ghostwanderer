@@ -343,25 +343,24 @@ public class TestPlayerMove : MonoBehaviour
         postProcessVolume.enabled = false;
     }
 
-    public void EnableGhostMode()
-    {
-        ghostAvailable = true;
-        toggleGhostMode();
-    }
+	public void EnableGhostMode()
+	{
+		ghostAvailable = true;
+		toggleGhostMode();
+	}
+
+	//enables ghost mode and sets body's location to body position upon exit
+	public void EnableGhostMode(Vector3 bodyPosition)
+	{
+		EnableGhostMode ();
+		this.ghostPosition = bodyPosition; 
+	}
 
     public void FindBody()
     {
+		Debug.Log("Body Found, returning to " + ghostPosition);
         bodyAvailable = true;
-        ChangeRadius(5f);
-        StartCoroutine(FindBodyAnimation()); 
-    }
-
-    private IEnumerator FindBodyAnimation()
-    {
-        Debug.Log("Body Found!!!");
-        animator.SetBool("isGhost", false);
-        yield return new WaitForSeconds(1f);
-        ReturnToHuman();
+		ReturnToHuman(); 
     }
 
     public bool GetBodyAvailable()
@@ -372,9 +371,9 @@ public class TestPlayerMove : MonoBehaviour
     private void ReturnToHuman()
     {
         BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
-        isGhost = false;
+		toggleGhostMode ();
         PC.isTrigger = false;
+		ChangeRadius(5f);
     }
 
     public void DisableMovement(){

@@ -30,7 +30,8 @@ public class ForceGhostMode : MonoBehaviour {
         player.GetComponent<Animator>().SetBool("isGhost", true);
         yield return new WaitForSeconds(0f);
         ghostScript.EnableMovement();
-        ghostScript.EnableGhostMode();
+		//sets player's location to chest
+		ghostScript.EnableGhostMode(new Vector3(3.208198f,-3.886554f,0f)); 
         Destroy(GameObject.Find("TestPlayer(Clone)"));
         this.GetComponent<EdgeCollider2D>().enabled = false;
         ghostScript.ChangeRadius(7f);
