@@ -9,6 +9,8 @@ public class PushController : MonoBehaviour {
     [SerializeField] private GameObject Enemy;
     [SerializeField] private GameObject Enemy2;
     [SerializeField] private Animator VaseAnimator;
+	[SerializeField] private AudioClip soundFX;
+	[SerializeField] private AudioClip reverse;
 
     public bool canMoveObject = false;
     public bool enemyInRange = false;
@@ -38,35 +40,37 @@ public class PushController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown("e") && canMoveObject && enemyInRange && !destroyed)
+		if (Input.GetKeyDown("e") && canMoveObject && !destroyed)
         {
-            VaseAnimator.SetTrigger("Fall");
-            //PushableObject.GetComponent<Renderer>().enabled = false;
-            //Destroy(levelController.Vase);
-            //Destroy(levelController.VaseObject);
-            Destroy(Enemy);
-            //AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
-            //soundFX.Play();
-            destroyed = true;
-            enemy1Dead = true;
-        }
-        else if (Input.GetKeyDown("e") && canMoveObject && enemyInRange2 && !destroyed)
-        {
-            VaseAnimator.SetTrigger("Fall");
-            //PushableObject.GetComponent<Renderer>().enabled = false;
-            //Destroy(levelController.Vase);
-            //Destroy(levelController.VaseObject);
-            Destroy(Enemy2);
-            //AudioSource soundFX = PushableObject.GetComponent<AudioSource>();
-            //soundFX.Play();
-            destroyed = true;
-            enemy2Dead = true;
+			VaseAnimator.SetTrigger ("Fall");
+			if (enemyInRange) {
+				Destroy (Enemy);
+				enemy1Dead = true;
+			} 
+			if(enemyInRange2){
+				Destroy (Enemy2);
+				enemy2Dead = true;
+			}
+
+			if (PushableObject.GetComponent<AudioSource> () != null && soundFX!=null) {
+				AudioSource source = PushableObject.GetComponent<AudioSource> ();
+				source.clip = soundFX;
+				PushableObject.GetComponent<AudioSource> ().Play ();
+			}
+				
+			destroyed = true;
         }
         else if (Input.GetKeyDown("e") && canMoveObject && destroyed)
         {
             destroyed = false;
             PushableObject.GetComponent<Renderer>().enabled = true;
             VaseAnimator.SetTrigger("Reverse");
+
+			if (PushableObject.GetComponent<AudioSource> () != null && reverse!=null) {
+				AudioSource source = PushableObject.GetComponent<AudioSource> ();
+				source.clip = reverse;
+				PushableObject.GetComponent<AudioSource> ().Play ();
+			}
         }
         enemyInRange = false;
     }
