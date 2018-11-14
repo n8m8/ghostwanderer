@@ -640,7 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetEnemy:
   - {fileID: 249479935}
-  possessedObject: {fileID: 28084175}
+  possessedObjectTrigger: {fileID: 28084175}
   isForever: 0
 --- !u!61 &28084179
 BoxCollider2D:
