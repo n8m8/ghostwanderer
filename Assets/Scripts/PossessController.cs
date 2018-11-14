@@ -38,7 +38,7 @@ public class PossessController : MonoBehaviour
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
                 system.Play();
-                objectToPossess.GetComponent<Animator>().SetTrigger("Stun");
+                //objectToPossess.GetComponent<Animator>().SetTrigger("Stun");
                 //ParticleSystem system1 = objectToPossess.gameObject.GetComponentInChildren<ParticleSystem>();
                 //system1.Play();
                 Protag.gameObject.GetComponent<Renderer>().enabled = false;
