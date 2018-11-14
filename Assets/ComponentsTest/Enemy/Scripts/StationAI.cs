@@ -25,6 +25,8 @@ public class StationAI : MonoBehaviour
     private AIPath setting;
     private Alarm alarm;
 
+    private float distance;
+
     enum AIState
     {
         chasing,
@@ -47,7 +49,7 @@ public class StationAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        distance = Vector2.Distance(player.transform.position, transform.position);
         now = transform.position;
         if (now != last)
         {
@@ -65,7 +67,7 @@ public class StationAI : MonoBehaviour
                     sitting();
                     break;
                 case AIState.chasing:
-                    chasing(distance);
+                    chasing();
                     break;
                 case AIState.checking:
                     checking();
@@ -107,7 +109,7 @@ public class StationAI : MonoBehaviour
         */
     }
 
-    void chasing(float distance)
+    void chasing()
     {
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
@@ -133,6 +135,10 @@ public class StationAI : MonoBehaviour
         }
     }
 
+    public float getDistance()
+    {
+        return distance;
+    }
 
 
 

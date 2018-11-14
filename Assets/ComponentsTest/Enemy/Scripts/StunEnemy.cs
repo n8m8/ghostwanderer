@@ -22,7 +22,7 @@ public class StunEnemy : MonoBehaviour
         for (int i = 0; i < targetEnemy.Length; i++)
         {
             if (targetEnemy[i] != null){
-                if(checkStunSetting(targetEnemy[i]) == false && possess.isPossessing && targetEnemy[i].GetComponent<PatrolingAI>().getDistance() < 5f)
+                if(checkStunSetting(targetEnemy[i]) == false && possess.isPossessing && checkDistance(targetEnemy[i]))
                 {
                     StartCoroutine(stunEnemy(targetEnemy[i]));
                 }
@@ -42,6 +42,20 @@ public class StunEnemy : MonoBehaviour
         }
     }
 
+    bool checkDistance(GameObject targetEnemy){
+        PatrolingAI target = targetEnemy.GetComponent<PatrolingAI>();
+        StationAI target2 = targetEnemy.GetComponent<StationAI>();
+        if (target == null)
+        {
+            return targetEnemy.GetComponent<StationAI>().getDistance() < 5f;
+        }
+        else
+        {
+            return targetEnemy.GetComponent<PatrolingAI>().getDistance() < 5f;
+        }
+
+    }
+
     IEnumerator stunEnemy(GameObject targetEnemy){
         PatrolingAI target = targetEnemy.GetComponent<PatrolingAI>();
 
@@ -49,7 +63,6 @@ public class StunEnemy : MonoBehaviour
         {
             if (isForever)
             {
-
                 targetEnemy.GetComponent<StationAI>().isStuned = true;
             }
             else
