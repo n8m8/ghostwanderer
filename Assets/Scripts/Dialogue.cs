@@ -12,6 +12,7 @@ public class Dialogue : MonoBehaviour {
 	public GameObject continueButton;
 	public string name; 
 	public GameObject image;
+	private GameObject dialogueBox;
 	private bool checkflag = false;
     //True if the player is in range to pick up and item 
     private bool itemZone = false;
@@ -20,6 +21,8 @@ public class Dialogue : MonoBehaviour {
 	void Start(){
 		continueButton.SetActive(false);
 		image.SetActive(false);
+		dialogueBox = GameObject.FindWithTag("DialogueBox");
+		dialogueBox.SetActive(false);
 	}
 
 	void Update(){
@@ -54,6 +57,7 @@ public class Dialogue : MonoBehaviour {
     //Load the text in one by one
     IEnumerator Type(){
 		image.SetActive(true);
+		dialogueBox.SetActive(true);
 		//check for animation type here and execute it maybe enums?? 
 		textDisplay.text += name;
 		foreach(char letter in sentences[index].ToCharArray()){
@@ -95,6 +99,7 @@ public class Dialogue : MonoBehaviour {
 	//reset the dialogue box 
 	public void resetDialogue(){
 		image.SetActive(false);
+		dialogueBox.SetActive(false);
 		textDisplay.text = "";
 		continueButton.SetActive(false);
 		index = 0;

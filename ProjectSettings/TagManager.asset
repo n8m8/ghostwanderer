@@ -19,6 +19,8 @@ TagManager:
   - SpawnByState
   - SwitchTrigger
   - InventoryPickup
+  - ContinueButton
+  - DialogueBox
   layers:
   - Default
   - TransparentFX
