@@ -182,7 +182,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!114 &114763729885294302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,10 +244,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fieldOfViewAngle: 90
   playerPosition: {fileID: 0}
   enemyTrigger: {fileID: 1221370667845368}
   isTargetingGhost: 0
+  fieldOfViewAngle: 90
   isStuned: 0
 --- !u!212 &212650218529110680
 SpriteRenderer:

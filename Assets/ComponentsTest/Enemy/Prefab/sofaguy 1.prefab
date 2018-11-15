@@ -165,8 +165,9 @@ MonoBehaviour:
   fieldOfViewAngle: 125
   playerPosition: {fileID: 0}
   enemyTrigger: {fileID: 1906058443197266}
-  triggerObject: {fileID: 0}
   isTargetingGhost: 0
+  distracted: 0
+  isStuned: 0
 --- !u!114 &114295303214552972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,7 +210,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!114 &114714053405755660
 MonoBehaviour:
   m_ObjectHideFlags: 1
