@@ -4742,6 +4742,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114741871872537508, guid: 52bd3e45b57e740f3acaa329f0269b54,
+        type: 2}
+      propertyPath: collisionMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
   m_IsPrefabAsset: 0
