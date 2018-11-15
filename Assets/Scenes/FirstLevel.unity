@@ -5979,6 +5979,23 @@ Prefab:
       propertyPath: image
       value: 
       objectReference: {fileID: 2024010009}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: That's weird though, you seem to still have a human presence...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: You should probably find that body of yours, who knows what would happen
+        if you left it for too long...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: Make sure you don't let any of those goons see you, they aren't playing
+        around!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
   m_IsPrefabAsset: 0
@@ -30709,6 +30726,17 @@ Prefab:
       propertyPath: image
       value: 
       objectReference: {fileID: 1901620447}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: "\u2019s Tiny Tim! Being a Ghost is so much fun!so much fun!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: "Hey! You\u2019re weird, what with being able to un-deathamafy yourself,
+        but I think you could be fun."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
   m_IsPrefabAsset: 0
