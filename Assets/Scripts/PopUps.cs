@@ -5,17 +5,18 @@ using TMPro;
 
 public class PopUps : MonoBehaviour {
 
-	public TextMeshProUGUI textUI;
-	void Start(){
+	private GameObject textUI;
+	void Start(){ 
+		textUI = GameObject.FindGameObjectWithTag("Interact");
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
 		if (collider.name == "TestPlayer"){
-			 textUI.enabled = true;
+			 textUI.SetActive(true);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider){
-		 textUI.enabled = false;
+		 textUI.SetActive(false);
 	}
 }

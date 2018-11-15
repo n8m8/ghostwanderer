@@ -12,7 +12,7 @@ public class Dialogue : MonoBehaviour {
 	public GameObject continueButton;
 	public string name; 
 	public GameObject image;
-	private GameObject dialogueBox;
+	public GameObject dialogueBox;
 	private bool checkflag = false;
     //True if the player is in range to pick up and item 
     private bool itemZone = false;
@@ -21,7 +21,6 @@ public class Dialogue : MonoBehaviour {
 	void Start(){
 		continueButton.SetActive(false);
 		image.SetActive(false);
-		dialogueBox = GameObject.FindWithTag("DialogueBox");
 		dialogueBox.SetActive(false);
 	}
 

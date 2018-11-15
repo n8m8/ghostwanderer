@@ -21,6 +21,7 @@ TagManager:
   - InventoryPickup
   - ContinueButton
   - DialogueBox
+  - Interact
   layers:
   - Default
   - TransparentFX
