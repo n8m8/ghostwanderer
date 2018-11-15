@@ -6,6 +6,8 @@ using TMPro;
 
 public class PopUps : MonoBehaviour {
 
+	public bool hidden = false;
+
 	private GameObject textUI;
 	void Start(){ 
 		textUI = GameObject.FindGameObjectWithTag("Interact");
@@ -13,7 +15,7 @@ public class PopUps : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
-		if (collider.name == "TestPlayer"){
+		if (collider.name == "TestPlayer" && !hidden){
 			 textUI.GetComponent<RawImage>().enabled= true;
 		}
 	}

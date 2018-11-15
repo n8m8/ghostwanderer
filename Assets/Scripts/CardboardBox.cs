@@ -16,8 +16,10 @@ public class CardboardBox : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.tag == "Player" && Input.GetKeyDown("e"))
-			GetComponent<Animator>().SetTrigger("Open");
+		if (other.tag == "Player" && Input.GetKeyDown ("e")) {
+			GetComponent<Animator> ().SetTrigger ("Open");
+			GetComponent<PopUps> ().hidden = true;
+		}
 	}
 
 }
