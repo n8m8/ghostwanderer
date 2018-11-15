@@ -117,6 +117,7 @@ public class PatrolingAI : MonoBehaviour {
     }
 
     void patrolling(){
+        setting.constrainInsideGraph = false;
         setting.maxSpeed = 1.0f;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
