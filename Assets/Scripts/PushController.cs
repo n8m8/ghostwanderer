@@ -40,7 +40,7 @@ public class PushController : MonoBehaviour {
             }
         }
 
-		if (Input.GetKeyDown("e") && canMoveObject && !destroyed)
+		if (Input.GetKeyDown("e") && canMoveObject && !destroyed && Protag.GetComponent<TestPlayerMove>().isGhost)
         {
 			VaseAnimator.SetTrigger ("Fall");
 			if (enemyInRange) {

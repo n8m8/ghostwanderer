@@ -23,7 +23,7 @@ public class PossessController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("r") && canPossess && Protag.GetComponent<TestPlayerMove>().isGhost){
+        if(Input.GetKeyDown("e") && canPossess && Protag.GetComponent<TestPlayerMove>().isGhost){
             if (isPossessing)
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
@@ -32,19 +32,21 @@ public class PossessController : MonoBehaviour
                 //system1.Stop();
                 Protag.gameObject.GetComponent<Renderer>().enabled = true;
                 isPossessing = false;
+                Protag.GetComponent<TestPlayerMove>().isPossessing = false;
                 Protag.GetComponent<TestPlayerMove>().abs_force = 1000;
             }
             else
             {
                 ParticleSystem system = Protag.gameObject.GetComponentInChildren<ParticleSystem>();
                 system.Play();
-                //objectToPossess.GetComponent<Animator>().SetTrigger("Stun");
+                objectToPossess.GetComponent<Animator>().SetTrigger("Stun");
                 //ParticleSystem system1 = objectToPossess.gameObject.GetComponentInChildren<ParticleSystem>();
                 //system1.Play();
                 Protag.gameObject.GetComponent<Renderer>().enabled = false;
                 //Destroy(levelController.Vase);
                 //Destroy(levelController.VaseObject);
                 isPossessing = true;
+                Protag.GetComponent<TestPlayerMove>().isPossessing = true;
                 Protag.GetComponent<TestPlayerMove>().abs_force = 0;
             }
         }
