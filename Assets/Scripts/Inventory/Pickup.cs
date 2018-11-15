@@ -23,7 +23,7 @@ public class Pickup : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && itemZone && !inProgress)
+        if (Input.GetKeyDown(KeyCode.E) && itemZone && !inProgress && !GameObject.FindGameObjectWithTag("Player").GetComponent<TestPlayerMove>().isGhost)
         {
             StartCoroutine(briefMessage("Found something!", 2));
             StartCoroutine(addToInventory());

@@ -45,6 +45,7 @@ public class TestPlayerMove : MonoBehaviour
     private ChromaticAberration chromePost;
     private ColorGrading gradingPost;
     private PostProcessVolume postProcessVolume;
+    public bool isPossessing = false;
 
 
     // Use this for initialization
@@ -71,7 +72,7 @@ public class TestPlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q") && ghostAvailable && (canGhost || isGhost))
+        if (Input.GetKeyDown("q") && ghostAvailable && (canGhost || isGhost) && !isPossessing)
         {
             toggleGhostMode();
         }
