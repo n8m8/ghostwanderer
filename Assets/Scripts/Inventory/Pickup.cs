@@ -7,8 +7,8 @@ public class Pickup : MonoBehaviour {
 
 	public Inventory inventory;
 	private string name;
-	public TextMeshProUGUI textDisplay;
-    public TextMeshProUGUI inventoryDisplay;
+	private TextMeshProUGUI textDisplay;
+    private TextMeshProUGUI inventoryDisplay;
 
     private bool itemZone = false;
     private bool muteText = false;
@@ -16,8 +16,8 @@ public class Pickup : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-		//inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
-        //textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
+		inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
+        textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
 	
 
@@ -44,7 +44,6 @@ public class Pickup : MonoBehaviour {
 				inventory.isFull[i] = true;
 				inventory.slots[i] = name;
                 int number = int.Parse(inventoryDisplay.text.Split(' ')[1])+1;
-                Debug.Log(number);
                 inventoryDisplay.text = "x " + number.ToString();
                 yield return new WaitForSeconds(3);
                 // textDisplay.text = "";
