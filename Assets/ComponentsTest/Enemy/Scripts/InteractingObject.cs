@@ -33,7 +33,7 @@ public class InteractingObject : MonoBehaviour
             canMoveObject = true;
         }
 
-        if (Input.GetKeyDown("f") && canMoveObject)
+        if (Input.GetKeyDown("e") && canMoveObject)
         {
             if (enemyController != null)
             {
