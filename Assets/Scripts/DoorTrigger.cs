@@ -27,7 +27,8 @@ public class DoorTrigger : MonoBehaviour
             door_animated = false;
         }
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-
+		if(!isLocked)
+			door.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -39,7 +40,6 @@ public class DoorTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Collider2D PC = door.GetComponent<Collider2D>();
-
         if (isLocked)
         {
             for (int i = 0; i < inventory.slots.Length; i++)
