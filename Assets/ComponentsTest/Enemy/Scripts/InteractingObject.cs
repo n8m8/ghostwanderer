@@ -45,6 +45,11 @@ public class InteractingObject : MonoBehaviour
             }
 			if (obj.GetComponent<AudioSource> () != null)
 				obj.GetComponent<AudioSource> ().Play ();
+            try
+            {
+                GetComponentInParent<Animator>().SetTrigger("Lure");
+            }
+            catch { Debug.Log("lure bug " + transform.name); }
         }
     }
 
