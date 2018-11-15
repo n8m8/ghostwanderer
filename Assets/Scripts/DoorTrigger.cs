@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DoorTrigger : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class DoorTrigger : MonoBehaviour
     private Inventory inventory;
     // Use this for initialization
     private DoorController DC_script;
+    private TextMeshProUGUI inventoryDisplay;
 
     private bool door_animated = true;
 
     void Start()
     {
+        inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
         this.DC_script = door.GetComponent<DoorController>();
         if(DC_script == null)
         {
@@ -44,6 +47,8 @@ public class DoorTrigger : MonoBehaviour
                 if (inventory.slots[i] == lockName)
                 {
                     inventory.removeItem(i);
+                    int number = int.Parse(inventoryDisplay.text.Split(' ')[1])-1;
+                    inventoryDisplay.text = "x " + number.ToString();
                     PC.isTrigger = true;
                     isLocked = false;
                     if (door_animated) { DC_script.open_door(); }
