@@ -18,8 +18,12 @@ public class WallParent : MonoBehaviour {
     {
         foreach(Transform child in transform)
         {
-            child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            child.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+            try
+            {
+                child.GetComponent<Wall>().turn_on_this_wall();
+            }
+            catch { Debug.Log("turn_off_cwalls " + gameObject.name); }
+
         }
     }
 
@@ -27,8 +31,11 @@ public class WallParent : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
-            child.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-            child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            try
+            {
+                child.GetComponent<Wall>().turn_off_this_wall();
+            }
+            catch { Debug.Log("turn_off_cwalls " + gameObject.name); }
         }
     }
 }

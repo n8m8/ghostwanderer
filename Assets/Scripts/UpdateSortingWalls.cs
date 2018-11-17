@@ -14,8 +14,21 @@ public class UpdateSortingWalls : MonoBehaviour {
 
         if (useAutoSort)
         {
-            GetComponent<SpriteRenderer>().sortingOrder =
-                2 * (int)(-1 * transform.position.y * sortingScale) + sortingOffset;
+            int new_order = 
+                        2 * (int)(-1 * transform.position.y * sortingScale) + sortingOffset;
+            GetComponent<SpriteRenderer>().sortingOrder = new_order;
+
+            if(gameObject.tag == "HighWall")
+            {
+                foreach (Transform child in transform)
+                {
+                    try
+                    {
+                        child.GetComponent<SpriteRenderer>().sortingOrder = new_order + 10;
+                    }
+                    catch { Debug.Log("auto sort " + gameObject.name); }
+                }
+            }
         }
     }
 

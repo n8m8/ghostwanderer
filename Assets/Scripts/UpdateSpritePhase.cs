@@ -43,10 +43,32 @@ public class UpdateSpritePhase : MonoBehaviour {
         if(current_is_sprite)
         {
             GetComponent<SpriteRenderer>().sprite = GhostSprite;
+            if(gameObject.tag == "HighWall")
+            {
+                foreach(Transform child in transform)
+                {
+                    try
+                    {
+                        child.GetComponent<TwoPhaseSprites>().to_ghost_sprite();
+                    }
+                    catch { Debug.Log("toggle_sprite " + gameObject.name); }
+                }
+            }
         }
         else
         {
             GetComponent<SpriteRenderer>().sprite = HumanSprite;
+            if (gameObject.tag == "HighWall")
+            {
+                foreach (Transform child in transform)
+                {
+                    try
+                    {
+                        child.GetComponent<TwoPhaseSprites>().to_human_sprite();
+                    }
+                    catch { Debug.Log("toggle_sprite " + gameObject.name); }
+                }
+            }
         }
     }
 }
