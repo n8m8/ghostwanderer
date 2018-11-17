@@ -23,6 +23,7 @@ TagManager:
   - DialogueBox
   - Interact
   - HighWall
+  - FloorParent
   layers:
   - Default
   - TransparentFX
