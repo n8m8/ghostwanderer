@@ -113,7 +113,6 @@ public class PatrolingAI : MonoBehaviour {
             {
                 seePlayer = false;
             }
-
     }
 
     void patrolling(){
