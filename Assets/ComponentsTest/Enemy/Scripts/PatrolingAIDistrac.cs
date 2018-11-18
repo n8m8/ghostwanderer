@@ -128,8 +128,7 @@ public class PatrolingAIDistrac : MonoBehaviour
         {
             seePlayer = false;
         }
-
-        Debug.Log(seePlayer + " " + hit + " " + Vector3.Angle(player.transform.position - transform.position, currentDirection));
+        //Debug.Log(seePlayer + " " + hit + " " + Vector3.Angle(player.transform.position - transform.position, currentDirection));
     }
 
     void patrolling(float distance)
