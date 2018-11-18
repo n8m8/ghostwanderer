@@ -328,6 +328,25 @@ public class TestPlayerMove : MonoBehaviour
         musicController.isGhost = isGhost;
     }
 
+    public void turnToHuman()
+    {
+        BoxCollider2D PC = gameObject.GetComponent<BoxCollider2D>();
+        PC.isTrigger = true;
+        if (isGhost)
+        {
+            //Destroy(GameObject.Find("TestPlayer(Clone)"));
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = humanSprite;
+            isGhost = false;
+            PC.isTrigger = false;
+            ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
+            disablePostProcessing();
+            system.Play();
+            //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
+            animator.SetBool("isGhost", false);
+        }
+        musicController.isGhost = isGhost;
+    }
+
 
     private void enablePostProcessing()
     {

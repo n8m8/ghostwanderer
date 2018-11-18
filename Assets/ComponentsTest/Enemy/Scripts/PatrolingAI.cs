@@ -100,6 +100,22 @@ public class PatrolingAI : MonoBehaviour {
             temp.position = transform.position;
             agent.target = null;
         }
+
+        killingGhost();
+    }
+
+    void killingGhost()
+    {
+            if (distance < 0.5f && isTargetingGhost && playerControl.isGhost == true)
+            {
+                player.gameObject.GetComponent<TestPlayerMove>().turnToHuman();
+                player.transform.position = player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+                temp.position = transform.position;
+                enemyTrigger.GetComponent<Alarm>().isOn = false;
+                this.transform.position = points[0].position;
+                state = AIState.patrolling;
+                GotoNextPoint();
+            }
     }
 
 
@@ -134,7 +150,7 @@ public class PatrolingAI : MonoBehaviour {
     void chasing(){
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if ((!seePlayer && distance > 5.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
+        if ((!seePlayer && distance > 3.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
         {
             state = AIState.confusing;
             temp.position = transform.position;
@@ -160,17 +176,21 @@ public class PatrolingAI : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(isTargetingGhost + " " + playerControl.isGhost);
+       
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
-            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
-            temp.position = transform.position;
-            enemyTrigger.GetComponent<Alarm>().isOn = false;
-            this.transform.position = points[0].position;
-            state = AIState.patrolling;
-            GotoNextPoint();
+            if (playerControl.isGhost == false)
+            {
+                player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+                temp.position = transform.position;
+                enemyTrigger.GetComponent<Alarm>().isOn = false;
+                this.transform.position = points[0].position;
+                state = AIState.patrolling;
+                GotoNextPoint();
+            }
         }
+
     }
 
     public float getDistance(){

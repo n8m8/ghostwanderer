@@ -80,6 +80,18 @@ public class StationAI : MonoBehaviour
             agent.target = null;
         }
 
+        killingGhost();
+    }
+
+    void killingGhost(){
+        if (distance < 0.5f && isTargetingGhost && playerControl.isGhost == true)
+        {
+            player.gameObject.GetComponent<TestPlayerMove>().turnToHuman();
+            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+            state = AIState.sitting;
+            alarm.isOn = false;
+            agent.target = points[0];
+        }
     }
 
     void sitting(){
@@ -128,10 +140,13 @@ public class StationAI : MonoBehaviour
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
-            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
-            state = AIState.sitting;
-            alarm.isOn = false;
-            agent.target = points[0];
+            if (playerControl.isGhost == false)
+            {
+                player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+                state = AIState.sitting;
+                alarm.isOn = false;
+                agent.target = points[0];
+            }
         }
     }
 
