@@ -129,10 +129,12 @@ public class PatrolingAIDistrac : MonoBehaviour
             seePlayer = false;
         }
 
+        Debug.Log(seePlayer + " " + hit + " " + Vector3.Angle(player.transform.position - transform.position, currentDirection));
     }
 
     void patrolling(float distance)
     {
+        setting.constrainInsideGraph = false;
         setting.maxSpeed = 1.0f;
         if (Vector2.Distance(transform.position, target.position) < 0.5f)
         {
