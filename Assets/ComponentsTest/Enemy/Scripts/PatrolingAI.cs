@@ -134,7 +134,7 @@ public class PatrolingAI : MonoBehaviour {
     void chasing(){
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if ((!seePlayer && distance > 5.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
+        if ((!seePlayer && distance > 3.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
         {
             state = AIState.confusing;
             temp.position = transform.position;
@@ -160,7 +160,7 @@ public class PatrolingAI : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(isTargetingGhost + " " + playerControl.isGhost);
+       
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
