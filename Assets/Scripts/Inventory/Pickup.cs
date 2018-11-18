@@ -25,13 +25,13 @@ public class Pickup : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E) && itemZone && !inProgress && !GameObject.FindGameObjectWithTag("Player").GetComponent<TestPlayerMove>().isGhost)
         {
-            StartCoroutine(briefMessage("Found something!", 2));
+            //StartCoroutine(briefMessage("Found something!", 2));
             StartCoroutine(addToInventory());
 
         }
         else if (Input.GetKeyDown(KeyCode.E) && !itemZone && !inProgress && !muteText)
         {
-            StartCoroutine(briefMessage("Nothing", 1));
+            //StartCoroutine(briefMessage("Nothing", 1));
         }
     }
 
