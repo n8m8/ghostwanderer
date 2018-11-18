@@ -152,7 +152,7 @@ public class PatrolingAIDistrac : MonoBehaviour
     {
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if ((!seePlayer && distance > 3.0f && alarm.isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
+        if ((!seePlayer && distance > 5.0f && alarm.isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false))
         {
             state = AIState.confusing;
             temp.position = transform.position;
