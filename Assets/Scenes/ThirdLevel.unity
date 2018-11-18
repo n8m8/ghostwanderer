@@ -2846,7 +2846,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1034837694697210, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_Layer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
@@ -9582,7 +9582,7 @@ GameObject:
   - component: {fileID: 463826081}
   - component: {fileID: 463826083}
   - component: {fileID: 463826082}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32731,7 +32731,7 @@ GameObject:
   - component: {fileID: 1615592569}
   - component: {fileID: 1615592571}
   - component: {fileID: 1615592574}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
