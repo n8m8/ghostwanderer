@@ -372,7 +372,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6a56c6b0852502044a8716779e7b25b7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
   m_sharedMaterial: {fileID: 21298943469023438, guid: 6a56c6b0852502044a8716779e7b25b7,
     type: 2}
   m_fontSharedMaterials: []
@@ -448,13 +448,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -529,7 +529,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: to pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6a56c6b0852502044a8716779e7b25b7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
   m_sharedMaterial: {fileID: 21298943469023438, guid: 6a56c6b0852502044a8716779e7b25b7,
     type: 2}
   m_fontSharedMaterials: []
@@ -604,13 +604,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -732,10 +732,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: quit
+  m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6a56c6b0852502044a8716779e7b25b7, type: 2}
-  m_sharedMaterial: {fileID: 21298943469023438, guid: 6a56c6b0852502044a8716779e7b25b7,
+  m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
+  m_sharedMaterial: {fileID: 21984594689325388, guid: 1913a70e95647374ba0f718d1bf22a81,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1375,10 +1375,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: play
+  m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6a56c6b0852502044a8716779e7b25b7, type: 2}
-  m_sharedMaterial: {fileID: 21298943469023438, guid: 6a56c6b0852502044a8716779e7b25b7,
+  m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
+  m_sharedMaterial: {fileID: 21984594689325388, guid: 1913a70e95647374ba0f718d1bf22a81,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2021,7 +2021,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: to interact
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6a56c6b0852502044a8716779e7b25b7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
   m_sharedMaterial: {fileID: 21298943469023438, guid: 6a56c6b0852502044a8716779e7b25b7,
     type: 2}
   m_fontSharedMaterials: []
@@ -2096,13 +2096,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -2300,8 +2300,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Controls
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6a56c6b0852502044a8716779e7b25b7, type: 2}
-  m_sharedMaterial: {fileID: 21298943469023438, guid: 6a56c6b0852502044a8716779e7b25b7,
+  m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
+  m_sharedMaterial: {fileID: 21984594689325388, guid: 1913a70e95647374ba0f718d1bf22a81,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
