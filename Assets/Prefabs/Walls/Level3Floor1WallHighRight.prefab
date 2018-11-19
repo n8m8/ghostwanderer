@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: 8058498f85fa3294da177e14cef09ddd, type: 3}
-  GhostSprite: {fileID: 21300000, guid: 0171a94261665864284bcbb5a3386021, type: 3}
+  GhostSprite: {fileID: 21300000, guid: 81f18711eb8326347b89b8af59004d73, type: 3}
 --- !u!114 &114267349939175262
 MonoBehaviour:
   m_ObjectHideFlags: 1
