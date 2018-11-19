@@ -100,6 +100,8 @@ public class PatrolingAI : MonoBehaviour {
             temp.position = transform.position;
             agent.target = null;
         }
+
+        killingGhost();
     }
 
 
@@ -146,6 +148,20 @@ public class PatrolingAI : MonoBehaviour {
        //agent.target = points[points.Length - 1];
     }
 
+    void killingGhost()
+    {
+        if (distance < 0.5f && isTargetingGhost && playerControl.isGhost == true)
+        {
+            player.gameObject.GetComponent<TestPlayerMove>().turnToHuman();
+            player.transform.position = player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+            temp.position = transform.position;
+            enemyTrigger.GetComponent<Alarm>().isOn = false;
+            this.transform.position = points[0].position;
+            state = AIState.patrolling;
+            GotoNextPoint();
+        }
+    }
+
     IEnumerator confusing(){
         enemyTrigger.GetComponent<Alarm>().isOn = false;
         transform.position = now;
@@ -164,12 +180,16 @@ public class PatrolingAI : MonoBehaviour {
         //Do something you want if you need to use checkpointetc
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
-            player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
-            temp.position = transform.position;
-            enemyTrigger.GetComponent<Alarm>().isOn = false;
-            this.transform.position = points[0].position;
-            state = AIState.patrolling;
-            GotoNextPoint();
+
+            if (playerControl.isGhost == false)
+            {
+                player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+                temp.position = transform.position;
+                enemyTrigger.GetComponent<Alarm>().isOn = false;
+                this.transform.position = points[0].position;
+                state = AIState.patrolling;
+                GotoNextPoint();
+            }
         }
     }
 
