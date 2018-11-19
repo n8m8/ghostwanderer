@@ -12,6 +12,7 @@ public class PushController : MonoBehaviour {
 	[SerializeField] private AudioClip soundFX;
 	[SerializeField] private AudioClip reverse;
 
+
     public bool canMoveObject = false;
     public bool enemyInRange = false;
     public bool enemyInRange2 = false;
@@ -27,16 +28,22 @@ public class PushController : MonoBehaviour {
 	void Update () {
         if (Enemy != null)
         {
-            if (Vector3.Distance(Enemy.transform.position, transform.position) < 4)
+            if (Vector3.Distance(Enemy.transform.position, transform.position) < 2)
             {
                 enemyInRange = true;
+            }
+            else{
+                enemyInRange = false;
             }
         }
         if (Enemy2 != null)
         {
-            if (Vector3.Distance(Enemy2.transform.position, transform.position) < 4)
+            if (Vector3.Distance(Enemy2.transform.position, transform.position) < 2)
             {
                 enemyInRange2 = true;
+            }
+            else{
+                enemyInRange2 = false;
             }
         }
 

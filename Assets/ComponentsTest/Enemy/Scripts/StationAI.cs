@@ -129,6 +129,7 @@ public class StationAI : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && playerControl.isGhost == isTargetingGhost)
         {
             player.transform.position = player.GetComponent<CheckPointManager>().checkPoint.transform.position;
+            this.transform.position = points[0].position;
             state = AIState.sitting;
             alarm.isOn = false;
             agent.target = points[0];
