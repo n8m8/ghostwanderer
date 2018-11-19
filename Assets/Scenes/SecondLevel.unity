@@ -29120,7 +29120,7 @@ Prefab:
     - target: {fileID: 114974833576194666, guid: 52bd3e45b57e740f3acaa329f0269b54,
         type: 2}
       propertyPath: fieldOfViewAngle
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd3e45b57e740f3acaa329f0269b54, type: 2}
