@@ -246,7 +246,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.53, y: 2.93}
+    oldSize: {x: 1.83, y: 2.68}
     newSize: {x: 1.64, y: 2.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320938898d3334d4285d074764a82f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HumanSprite: {fileID: 21300000, guid: 2f1ef84109fb8d7458af7c7699ce9399, type: 3}
+  HumanSprite: {fileID: 21300000, guid: 4adbe9f99b629f942b0ef295eb3fa913, type: 3}
   GhostSprite: {fileID: 21300000, guid: f01c6f889b521594682ad63215f1c146, type: 3}
 --- !u!114 &114282913790238096
 MonoBehaviour:
@@ -593,7 +593,7 @@ SpriteRenderer:
   m_SortingLayerID: -1574648179
   m_SortingLayer: -1
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 2f1ef84109fb8d7458af7c7699ce9399, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4adbe9f99b629f942b0ef295eb3fa913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
