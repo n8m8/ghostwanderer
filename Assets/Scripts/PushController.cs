@@ -53,10 +53,12 @@ public class PushController : MonoBehaviour {
 			if (enemyInRange) {
 				Destroy (Enemy);
 				enemy1Dead = true;
+                enemyInRange = false;
 			} 
-			if(enemyInRange2){
+			else if(enemyInRange2){
 				Destroy (Enemy2);
 				enemy2Dead = true;
+                enemyInRange2 = false;
 			}
 
 			if (PushableObject.GetComponent<AudioSource> () != null && soundFX!=null) {
