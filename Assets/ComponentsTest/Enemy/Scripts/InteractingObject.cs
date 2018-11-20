@@ -22,17 +22,6 @@ public class InteractingObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            canMoveObject = true;
-        }
-
         if (Input.GetKeyDown("e") && canMoveObject)
         {
             if (enemyController != null)
@@ -40,16 +29,25 @@ public class InteractingObject : MonoBehaviour
                 enemyController.distracted = true;
             }
 
-            if(enemyController2 != null){
+            if (enemyController2 != null)
+            {
                 enemyController2.distracted = true;
             }
-			if (obj.GetComponent<AudioSource> () != null)
-				obj.GetComponent<AudioSource> ().Play ();
+            if (obj.GetComponent<AudioSource>() != null)
+                obj.GetComponent<AudioSource>().Play();
             try
             {
                 GetComponentInParent<Animator>().SetTrigger("Lure");
             }
             catch { Debug.Log("lure bug " + transform.name); }
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            canMoveObject = true;
         }
     }
 
