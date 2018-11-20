@@ -741,6 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttomImage: {fileID: 0}
   hidden: 0
 --- !u!1 &55256845
 GameObject:
@@ -16319,6 +16320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
   hidden: 0
 --- !u!1001 &1031841227
 Prefab:
@@ -18950,74 +18953,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e02ef52296135c448117b3758a3ecde, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1242581228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1242581229}
-  - component: {fileID: 1242581231}
-  - component: {fileID: 1242581230}
-  m_Layer: 0
-  m_Name: Interact
-  m_TagString: Interact
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1242581229
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1242581228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1589851805}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -361.8, y: 90.1}
-  m_SizeDelta: {x: 46.57, y: 44.86}
-  m_Pivot: {x: 0.5303414, y: 0.5000001}
---- !u!114 &1242581230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1242581228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: be961f828309b1847b585bb5a1a94b46, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1242581231
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1242581228}
-  m_CullTransparentMesh: 0
 --- !u!4 &1247809807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531052649118608, guid: 7e02ef52296135c448117b3758a3ecde,
@@ -22960,7 +22895,6 @@ RectTransform:
   - {fileID: 274735880}
   - {fileID: 1846244932}
   - {fileID: 689603747}
-  - {fileID: 1242581229}
   - {fileID: 1214396976}
   m_Father: {fileID: 0}
   m_RootOrder: 24
@@ -24774,6 +24708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttomImage: {fileID: 0}
   hidden: 0
 --- !u!1001 &1727623604
 Prefab:

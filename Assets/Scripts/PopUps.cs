@@ -6,21 +6,22 @@ using TMPro;
 
 public class PopUps : MonoBehaviour {
 
+	public GameObject buttomImage;
+	private TestPlayerMove playerScript;
+	[SerializeField] bool ghostOnly;
 	public bool hidden = false;
+	private GameObject popup;
 
-	private GameObject textUI;
-	void Start(){ 
-		textUI = GameObject.FindGameObjectWithTag("Interact");
-		textUI.GetComponent<RawImage>().enabled= false;
+	void Start(){
+		playerScript = GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>();
 	}
-
 	void OnTriggerEnter2D(Collider2D collider){
-		if (collider.name == "TestPlayer" && !hidden){
-			 textUI.GetComponent<RawImage>().enabled= true;
-		}
+		if(!ghostOnly || playerScript.isGhost)
+			popup = (GameObject) Instantiate(buttomImage, transform.position+ new Vector3(0,1f,0), transform.rotation);
 	}
 
 	void OnTriggerExit2D(Collider2D collider){
-		 textUI.GetComponent<RawImage>().enabled= false;
+		 //buttomImage.GetComponent<RawImage>().enabled= false;
+		 Destroy(popup);
 	}
 }
