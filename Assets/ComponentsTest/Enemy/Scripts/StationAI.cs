@@ -114,7 +114,7 @@ public class StationAI : MonoBehaviour
     {
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if (playerControl.isGhost && isTargetingGhost == false || alarm.isOn == false)
+        if ((playerControl.isGhost && isTargetingGhost == false) || (playerControl.isGhost == false && isTargetingGhost == true) || alarm.isOn == false)
         {
             state = AIState.sitting;
             agent.target = points[0]; ;
