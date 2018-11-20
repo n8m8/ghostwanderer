@@ -725,24 +725,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cdaaabe9dfd0e84e9018c8dc3dbcd32, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &48664868 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1145643909550362, guid: e24793c7b5185ec43a29d275e2b5830a,
-    type: 2}
-  m_PrefabInternal: {fileID: 350113967}
---- !u!114 &48664873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 48664868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttomImage: {fileID: 0}
-  hidden: 0
 --- !u!1 &55256845
 GameObject:
   m_ObjectHideFlags: 0
@@ -4822,6 +4804,16 @@ Prefab:
     - target: {fileID: 1367658839819754, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
       propertyPath: m_Name
       value: Thrunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 58542814933287714, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: m_Radius
+      value: 14.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114463278298992598, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: ghostOnly
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
@@ -16229,10 +16221,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031516101}
-  - component: {fileID: 1031516104}
-  - component: {fileID: 1031516103}
   - component: {fileID: 1031516102}
   - component: {fileID: 1031516105}
+  - component: {fileID: 1031516103}
   m_Layer: 0
   m_Name: StartDialogue
   m_TagString: Untagged
@@ -16288,27 +16279,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
---- !u!50 &1031516104
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1031516100}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Radius: 2.04
 --- !u!114 &1031516105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16322,6 +16293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
     type: 2}
+  ghostOnly: 0
   hidden: 0
 --- !u!1001 &1031841227
 Prefab:
@@ -23959,7 +23931,7 @@ Prefab:
     - target: {fileID: 224629134223212088, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224629134223212088, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
@@ -24709,6 +24681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttomImage: {fileID: 0}
+  ghostOnly: 0
   hidden: 0
 --- !u!1001 &1727623604
 Prefab:
