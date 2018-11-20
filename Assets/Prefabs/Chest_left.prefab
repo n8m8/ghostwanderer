@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4670607724607900}
   - component: {fileID: 60134333370332364}
+  - component: {fileID: 114700869472548178}
   m_Layer: 0
   m_Name: Ghost Bound (2)
   m_TagString: Ghost Portal
@@ -156,6 +157,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NormalSprite: {fileID: 21300000, guid: 240c00254c6af15498552a62683a788b, type: 3}
   ContainBodySprite: {fileID: 21300000, guid: 0463466c24e199949a17e95c1a90a20c, type: 3}
+--- !u!114 &114700869472548178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721542615062482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1564801340873378, guid: 54d374edbb20c5c4aa307b662e1b4658,
+    type: 2}
+  ghostOnly: 0
+  humanOnly: 1
+  repeatable: 1
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: q
+  hidden: 0
 --- !u!212 &212330859930176222
 SpriteRenderer:
   m_ObjectHideFlags: 1

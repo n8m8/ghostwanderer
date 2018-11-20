@@ -16294,6 +16294,10 @@ MonoBehaviour:
   buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
     type: 2}
   ghostOnly: 0
+  humanOnly: 1
+  repeatable: 1
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: e
   hidden: 0
 --- !u!1001 &1031841227
 Prefab:
@@ -24682,6 +24686,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttomImage: {fileID: 0}
   ghostOnly: 0
+  humanOnly: 0
+  repeatable: 0
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: e
   hidden: 0
 --- !u!1001 &1727623604
 Prefab:

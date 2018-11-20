@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58051740601743592}
   - component: {fileID: 114677986943349870}
   - component: {fileID: 114203174446922928}
+  - component: {fileID: 114774958086129022}
   m_Layer: 0
   m_Name: TinyTim
   m_TagString: Untagged
@@ -115,6 +116,26 @@ MonoBehaviour:
   continueButton: {fileID: 0}
   name: 'Tiny Boi: '
   image: {fileID: 0}
+  inProgress: 0
+--- !u!114 &114774958086129022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169312614942352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  ghostOnly: 1
+  humanOnly: 0
+  repeatable: 1
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: e
+  hidden: 0
 --- !u!212 &212375300044499036
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -158,6 +179,6 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

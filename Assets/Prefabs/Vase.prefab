@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4768095515372914}
   - component: {fileID: 61350058778441478}
   - component: {fileID: 114005235835248636}
+  - component: {fileID: 114923485719968168}
   m_Layer: 0
   m_Name: Vase Trigger
   m_TagString: Untagged
@@ -299,6 +300,24 @@ MonoBehaviour:
   useAutoSort: 1
   sortingOffset: 1000
   sortingScale: 100
+--- !u!114 &114923485719968168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1839090128415518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  ghostOnly: 1
+  repeatable: 1
+  relativeLocation: {x: -0.56, y: 0.26, z: 0}
+  actionKey: 
+  hidden: 0
 --- !u!212 &212918343073027918
 SpriteRenderer:
   m_ObjectHideFlags: 1

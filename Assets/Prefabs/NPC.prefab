@@ -88,6 +88,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
     type: 2}
+  ghostOnly: 0
+  repeatable: 1
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: e
   hidden: 0
 --- !u!114 &114753113483866242
 MonoBehaviour:

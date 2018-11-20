@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4651247720414696}
   - component: {fileID: 61406934194156438}
   - component: {fileID: 114093139926166094}
+  - component: {fileID: 114401907390536434}
   m_Layer: 0
   m_Name: TV Trigger
   m_TagString: Untagged
@@ -261,6 +262,25 @@ MonoBehaviour:
   canMoveObject: 0
   obj: {fileID: 1732044087880262}
   enemy: {fileID: 0}
+--- !u!114 &114401907390536434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006138457154400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  ghostOnly: 0
+  humanOnly: 0
+  repeatable: 0
+  relativeLocation: {x: 0.78, y: 1.23, z: 0}
+  actionKey: e
+  hidden: 0
 --- !u!114 &114791124153587502
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4446581795301850}
   - component: {fileID: 60913200519106620}
+  - component: {fileID: 114403762292966764}
   m_Layer: 0
   m_Name: Ghost Bound (2)
   m_TagString: Ghost Portal
@@ -129,6 +130,25 @@ PolygonCollider2D:
       - {x: 0.3611708, y: 0.891649}
       - {x: -2.1429214, y: -0.485559}
       - {x: -0.35125828, y: -1.332715}
+--- !u!114 &114403762292966764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191741935568556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1564801340873378, guid: 54d374edbb20c5c4aa307b662e1b4658,
+    type: 2}
+  ghostOnly: 0
+  humanOnly: 1
+  repeatable: 1
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: q
+  hidden: 0
 --- !u!114 &114436234467947916
 MonoBehaviour:
   m_ObjectHideFlags: 1
