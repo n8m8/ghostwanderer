@@ -11491,7 +11491,25 @@ Prefab:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1280808790}
-    m_RemovedComponents: []
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: 6.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: -3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 61406934194156438, guid: bad895cf9c45a3148a336bb64a6cff87,
+        type: 2}
+      propertyPath: m_EdgeRadius
+      value: 0.03
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bad895cf9c45a3148a336bb64a6cff87, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &580071187
@@ -18642,6 +18660,11 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 7dd130ee1c058434bb67fda3cfcdd6fc, type: 3}
+    - target: {fileID: 82101618532129368, guid: 74f5d8384576ae9419192598cb29f14a,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f5d8384576ae9419192598cb29f14a, type: 2}
   m_IsPrefabAsset: 0

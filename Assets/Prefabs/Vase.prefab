@@ -153,7 +153,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.311
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -314,6 +314,7 @@ MonoBehaviour:
   buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
     type: 2}
   ghostOnly: 1
+  humanOnly: 0
   repeatable: 1
   relativeLocation: {x: -0.56, y: 0.26, z: 0}
   actionKey: 
