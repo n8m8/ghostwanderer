@@ -34,6 +34,8 @@ public class PossessController : MonoBehaviour
                 isPossessing = false;
                 Protag.GetComponent<TestPlayerMove>().isPossessing = false;
                 Protag.GetComponent<TestPlayerMove>().abs_force = 1000;
+				if(GetComponent<AudioSource> () != null)
+					GetComponent<AudioSource> ().Stop ();
             }
             else
             {
@@ -48,6 +50,8 @@ public class PossessController : MonoBehaviour
                 isPossessing = true;
                 Protag.GetComponent<TestPlayerMove>().isPossessing = true;
                 Protag.GetComponent<TestPlayerMove>().abs_force = 0;
+				if(GetComponent<AudioSource> () != null)
+					GetComponent<AudioSource> ().Play ();
             }
         }
     }
