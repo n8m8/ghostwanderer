@@ -132,6 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  hidden: 0
 --- !u!114 &114696053566576368
 MonoBehaviour:
   m_ObjectHideFlags: 1

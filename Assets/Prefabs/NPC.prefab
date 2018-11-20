@@ -20,10 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4611437602812028}
   - component: {fileID: 212899706330880474}
-  - component: {fileID: 50606870227477654}
   - component: {fileID: 58868799716144678}
   - component: {fileID: 114753113483866242}
   - component: {fileID: 114932487276540398}
+  - component: {fileID: 58542814933287714}
+  - component: {fileID: 114463278298992598}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -44,27 +45,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50606870227477654
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367658839819754}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &58868799716144678
+--- !u!58 &58542814933287714
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,7 +59,36 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
+  m_Radius: 1.9
+--- !u!58 &58868799716144678
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367658839819754}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
   m_Radius: 4
+--- !u!114 &114463278298992598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367658839819754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  hidden: 0
 --- !u!114 &114753113483866242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +111,7 @@ MonoBehaviour:
   continueButton: {fileID: 0}
   name: '???: '
   image: {fileID: 0}
+  inProgress: 0
 --- !u!114 &114932487276540398
 MonoBehaviour:
   m_ObjectHideFlags: 1
