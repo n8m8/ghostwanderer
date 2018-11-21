@@ -3777,8 +3777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82, y: -74.4}
-  m_SizeDelta: {x: 413.6, y: 85.4}
+  m_AnchoredPosition: {x: 81.55, y: -76.51}
+  m_SizeDelta: {x: 421.54, y: 96.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &274735881
 CanvasRenderer:
@@ -4953,7 +4953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280.8, y: 146.4}
+  m_AnchoredPosition: {x: -280.8, y: 139.52}
   m_SizeDelta: {x: 101.2, y: 35.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &357338195
@@ -22330,7 +22330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362.98, y: 151.24}
+  m_AnchoredPosition: {x: -362.98, y: 142.96}
   m_SizeDelta: {x: 48.73, y: 28.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1551511941
@@ -24221,6 +24221,26 @@ Prefab:
         type: 2}
       propertyPath: m_fontColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224725017429266050, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 336.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224725017429266050, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 224262630330061620, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 325
+      objectReference: {fileID: 0}
+    - target: {fileID: 224262630330061620, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 145
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6250ece518a854fa2b983e3a83e9b948, type: 2}
@@ -26517,7 +26537,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Space to Continue, E to Skip
+  m_text: E to Continue, Space to Skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
   m_sharedMaterial: {fileID: 21984594689325388, guid: 1913a70e95647374ba0f718d1bf22a81,

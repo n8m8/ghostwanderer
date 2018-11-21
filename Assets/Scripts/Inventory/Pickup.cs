@@ -39,13 +39,16 @@ public class Pickup : MonoBehaviour {
     IEnumerator addToInventory () {
 		for (int i = 0; i < inventory.slots.Length; i++){
 			if (inventory.isFull[i] == false){
+                int number = 0;
 				coll.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				name = coll.gameObject.name;
 				inventory.isFull[i] = true;
 				inventory.slots[i] = name;
-                int number = int.Parse(inventoryDisplay.text.Split(' ')[1])+1;
+                if (name.Contains("key")){
+                    number = int.Parse(inventoryDisplay.text.Split(' ')[1])+1;
+                }
                 inventoryDisplay.text = "x " + number.ToString();
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(0);
                 // textDisplay.text = "";
                 //will be buggy if player goes back in 
 				Destroy(coll.gameObject);

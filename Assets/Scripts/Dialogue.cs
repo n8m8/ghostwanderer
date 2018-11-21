@@ -44,12 +44,12 @@ public class Dialogue : MonoBehaviour {
 		}
 
 		//call next sentence method upon completely loaded sentence and key press
-		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (name + sentences[index]) && !checkflag){
+		if (Input.GetKeyDown(KeyCode.E) && textDisplay.text == (name + sentences[index]) && !checkflag){
 			NextSentence();
 		}
 
 		//skip the dialogue after keypress 
-		if (Input.GetKeyDown(KeyCode.E) && textDisplay.text == (name + sentences[index]) && !checkflag){
+		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (name + sentences[index]) && !checkflag){
 			resetDialogue();
 		}
 	}
