@@ -4725,6 +4725,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 275157212}
     m_Modifications:
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4611437602812028, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4814,6 +4819,39 @@ Prefab:
         type: 2}
       propertyPath: ghostOnly
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: "Well hello there! Pleased to meet you! ...well, not pleased, per se,
+        as I\u2019d rather you had lived, but preference matters little at this stage.
+        You\u2019re here now, and I\u2019m glad I was here to give you a proper afterlife
+        welcome."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: "Oh? Did I surprise you? Well, you wouldn't be the first. I\u2019ve been
+        around for a very, very long time, and so I\u2019ve picked up a few things.
+        If you ever need help with the afterlife, just look around for me"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: "I say\u2026 You ARE an odd one. There seems to some sort of\u2026 connection
+        to your body that prevents you from leaving. Maybe you should look for it?
+        You are a detective, are you not? Those chests looked to be the perfect size
+        for a body\u2026 try pressing Q on one"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: Now all I can do is bug them by screwing with their lights.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
+        type: 2}
+      propertyPath: name
+      value: 'Thrunk: '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
@@ -17009,8 +17047,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25403,6 +25441,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 275157212}
     m_Modifications:
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 102.5
@@ -25488,6 +25531,42 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: "Hiya! My name\u2019s Tiny Tim! Gosh, you\u2019re weird, stuffing yourself
+        in that box and stuff. But I live in a sock, so I guess we\u2019re even. Is
+        living in a box fun? Maybe I\u2019ll try it sometime. Seems kinda cramped
+        though."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: "Honestly, i\u2019m real bored. Like, real, REAL board. Even the TV is
+        boring now, even if it is kinda funny to mess with people by makin\u2019 it
+        fuzz out. But I don\u2019t do it often, cuz momma said not to sit too close.
+        \ "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: "I...I miss playing hide and seek with her and pa. It was so much fun!
+        Say, mister. You\u2019re kinda funny, but anyone who lives in a box must be
+        really good at hide and seek! You wanna play with me? You will? YAY! I\u2019ll
+        go hide! Well\u2026 Maybe after this episode\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: "ou wanna play hide and seek with me? You will? Awesome! I\u2019mma hide
+        myself places, and you can try to find me! ...or, maybe I will when this show
+        is over. Honest!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
+        type: 2}
+      propertyPath: name
+      value: 'Tiny Tim: '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
