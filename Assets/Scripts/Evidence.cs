@@ -6,7 +6,7 @@ public class Evidence : MonoBehaviour {
 
     public string evidence_text = "This is a evidence text";
 
-    //Level id + Room id + evidence id?
+    //Level id + Floor id + Room id + Evidence id?
     public int EvidenceCode;
 
 	// Use this for initialization

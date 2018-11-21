@@ -18,6 +18,8 @@ public class DoorTrigger : MonoBehaviour
 
     private bool door_animated = true;
 
+    public bool in_locked_trigger { get; set; }
+
     void Start()
     {
         inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
@@ -29,6 +31,8 @@ public class DoorTrigger : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 		if(!isLocked)
 			door.GetComponent<PolygonCollider2D>().enabled = false;
+
+        this.in_locked_trigger = false;
     }
 
     // Update is called once per frame
@@ -58,6 +62,7 @@ public class DoorTrigger : MonoBehaviour
                     
                 }
             }
+            in_locked_trigger = true;
         }
         else
         {
@@ -66,6 +71,7 @@ public class DoorTrigger : MonoBehaviour
             else { door.GetComponent<Renderer>().enabled = false; }
 			AudioSource creak = door.GetComponent<AudioSource> ();
 			creak.Play ();
+            in_locked_trigger = false;
         }
 
     }
@@ -83,5 +89,7 @@ public class DoorTrigger : MonoBehaviour
             }
         }
         else { door.GetComponent<Renderer>().enabled = true; }
+
+        in_locked_trigger = false;
     }
 }

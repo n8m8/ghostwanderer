@@ -12,35 +12,26 @@ public class UpdateSpritePhase : MonoBehaviour {
 
     private TestPlayerMove TPM_script;
 
-    private bool current_is_sprite;
+    private bool current_is_ghost;
 
 	// Use this for initialization
 	void Start () {
-        this.current_is_sprite = false;
-        //this.LC_script = GameObject.Find("Level Controller").GetComponent<LevelController>();
-        //this.PC_script = GameObject.Find("TestPlayer").GetComponent<PlayerController>();
+        this.current_is_ghost = false;
         this.TPM_script = GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-        //Debug.Log("PC_script.playerStatus.isSpirit " + PC_script.playerStatus.isSpirit);
-        //Debug.Log("LC_script.playerIsGhost " + LC_script.playerIsGhost);
-        //Debug.Log("TPM_script.isGhost " + TPM_script.isGhost);
-
-        if (TPM_script.isGhost != current_is_sprite)
+        if (TPM_script.isGhost != current_is_ghost)
         {
-            current_is_sprite = TPM_script.isGhost;
+            current_is_ghost = TPM_script.isGhost;
             toggle_sprite();
         }
-
-
     }
 
     private void toggle_sprite()
     {
-        if(current_is_sprite)
+        if(current_is_ghost)
         {
             if(gameObject.tag == "FloorParent")
             {
@@ -55,7 +46,11 @@ public class UpdateSpritePhase : MonoBehaviour {
             }
             else
             {
-                GetComponent<SpriteRenderer>().sprite = GhostSprite;
+                try
+                {
+                    GetComponent<SpriteRenderer>().sprite = GhostSprite;
+                }
+                catch { Debug.Log("toggle_sprite " + gameObject.name); }
             }
             if (gameObject.tag == "HighWall")
             {

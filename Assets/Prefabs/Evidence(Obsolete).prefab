@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114049362265106912}
   - component: {fileID: 114435640747956848}
   m_Layer: 0
-  m_Name: Evidence
+  m_Name: Evidence(Obsolete)
   m_TagString: EvidenceTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

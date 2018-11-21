@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212997995323404120}
   - component: {fileID: 114167929294446628}
   - component: {fileID: 95280309239717390}
+  - component: {fileID: 114435458671900466}
   m_Layer: 0
   m_Name: Light_Bulb
   m_TagString: Untagged
@@ -74,6 +75,19 @@ MonoBehaviour:
   useAutoSort: 1
   sortingOffset: 2000
   sortingScale: 100
+--- !u!114 &114435458671900466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1554010767284222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320938898d3334d4285d074764a82f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HumanSprite: {fileID: 21300000, guid: c716437b080d2cd44b29ecde5a0a65bf, type: 3}
+  GhostSprite: {fileID: 21300000, guid: a40fd02c8610e9e4fab93036fb5a5dc8, type: 3}
 --- !u!212 &212997995323404120
 SpriteRenderer:
   m_ObjectHideFlags: 1
