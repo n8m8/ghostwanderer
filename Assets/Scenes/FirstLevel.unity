@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20681,11 +20681,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.11
+      value: -2.33
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.64
+      value: -4.18
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23075,11 +23075,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.3999999
+      value: -1.62
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.92
+      value: -1.46
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23334,7 +23334,7 @@ GameObject:
   - component: {fileID: 1603851151}
   - component: {fileID: 1603851153}
   - component: {fileID: 1603851152}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Door Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26002,11 +26002,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.6799996
+      value: -3.8999996
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.6899998
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28225,11 +28225,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.5000002
+      value: 0.28000003
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.07
+      value: -2.6100001
       objectReference: {fileID: 0}
     - target: {fileID: 4212341021102034, guid: 856ffa7ddd9aa4ec5add4bdf399eafac, type: 2}
       propertyPath: m_LocalPosition.z
