@@ -18,6 +18,7 @@ public class UpdateSpritePhase : MonoBehaviour {
 	void Start () {
         this.current_is_ghost = false;
         this.TPM_script = GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>();
+        toggle_sprite();
     }
 	
 	// Update is called once per frame
