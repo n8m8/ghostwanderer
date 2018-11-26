@@ -28040,12 +28040,12 @@ Prefab:
     - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114434728129235312, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
@@ -28268,6 +28268,21 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_fontColor.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6250ece518a854fa2b983e3a83e9b948, type: 2}
