@@ -9,7 +9,7 @@ public class Dialogue : MonoBehaviour {
 	public TextMeshProUGUI textDisplay;
 	public string[] sentences;
 	private int index;
-	public float typingSpeed;
+	private float typingSpeed = .01f;
 	public GameObject continueButton;
 	public string name; 
 	public GameObject image;
