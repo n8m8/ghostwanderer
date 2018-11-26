@@ -18597,7 +18597,6 @@ MonoBehaviour:
   - 'Something''s fishy about this place. I gotta get to the bottom of this. '
   - They have all these locked doors hanging about...
   - For every lock, there surely has to be a key, right?
-  typingSpeed: 0.02
   continueButton: {fileID: 1846244931}
   name: '...: '
   image: {fileID: 139677502}
@@ -18633,7 +18632,7 @@ MonoBehaviour:
   - 'Something''s fishy about this place. I gotta get to the bottom of this. '
   - They have all these locked doors hanging about...
   - For every lock, there surely has to be a key, right?
-  typingSpeed: 0.02
+  typingSpeed: 0.01
   continueButton: {fileID: 1846244931}
   name: '...: '
   image: {fileID: 139677502}
