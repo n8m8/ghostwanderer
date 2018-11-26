@@ -18,11 +18,13 @@ public class Dialogue : MonoBehaviour {
     //True if the player is in range to pick up and item 
     private bool itemZone = false;
     public bool inProgress = false;
+	private TestPlayerMove playerScript;
 
 	void Start(){
 		continueButton.SetActive(false);
 		image.SetActive(false);
 		dialogueBox = GameObject.FindGameObjectWithTag("DialogueBox").GetComponent<RawImage>();
+		playerScript = GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>();
 		dialogueBox.enabled = false;
 	}
 
@@ -30,6 +32,7 @@ public class Dialogue : MonoBehaviour {
 
 		//start the dialogue
 		if (Input.GetKeyDown(KeyCode.E) && checkflag){
+			playerScript.ghostAvailable = false;
 			StartCoroutine(Type());
 			//GameObject.Find("TestPlayer").GetComponent<TestPlayerMove>().enabled = false;
 			GameObject.Find("TestPlayer").GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
@@ -99,6 +102,7 @@ public class Dialogue : MonoBehaviour {
 
 	//reset the dialogue box 
 	public void resetDialogue(){
+		playerScript.ghostAvailable = true;
 		image.SetActive(false);
 		dialogueBox.enabled = false;
 		textDisplay.text = "";
