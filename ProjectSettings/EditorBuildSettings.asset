@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondLevel.unity
     guid: dcb71a20f9b1fc140982b888310fe3fd
+  - enabled: 1
+    path: Assets/Scenes/FirstLevelTransition.unity
+    guid: 1adec1fb4a48bbc4a919c6ac9d69cfcd
   m_configObjects: {}
