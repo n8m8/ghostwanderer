@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class HideEnemy : MonoBehaviour {
     public GameObject[] enemy;
+    private GameObject player;
+    private TestPlayerMove control;
     private bool isIn;
 
 	// Use this for initialization
 	void Start () {
         isIn = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        control = player.gameObject.GetComponent<TestPlayerMove>();
 	}
 	
 	// Update is called once per frame
@@ -22,12 +26,15 @@ public class HideEnemy : MonoBehaviour {
                     enemy[i].GetComponent<SpriteRenderer>().enabled = true;
                 }
             }
-            else
+            else if(isIn == false && control.isPossessing == false)
             {
                 for (int i = 0; i < enemy.Length; i++)
                 {
                     enemy[i].GetComponent<SpriteRenderer>().enabled = false;
                 }
+            }
+            else{
+
             }
         }
 	}
