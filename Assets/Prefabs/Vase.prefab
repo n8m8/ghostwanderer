@@ -317,7 +317,7 @@ MonoBehaviour:
   humanOnly: 0
   repeatable: 1
   relativeLocation: {x: -0.56, y: 0.26, z: 0}
-  actionKey: 
+  actionKey: e
   hidden: 0
 --- !u!212 &212918343073027918
 SpriteRenderer:
