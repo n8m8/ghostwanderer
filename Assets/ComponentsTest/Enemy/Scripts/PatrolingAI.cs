@@ -136,7 +136,7 @@ public class PatrolingAI : MonoBehaviour {
     void chasing(){
         setting.maxSpeed = 6.0f;
         setting.constrainInsideGraph = true;
-        if ((!seePlayer && distance > 5.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false) || (playerControl.isGhost == false && isTargetingGhost == true))
+        if ((!seePlayer && distance > 3.0f && enemyTrigger.GetComponent<Alarm>().isOn == false) || (playerControl.isGhost == true && isTargetingGhost == false) || (playerControl.isGhost == false && isTargetingGhost == true))
         {
             state = AIState.confusing;
             temp.position = transform.position;

@@ -47,11 +47,11 @@ public class StunEnemy : MonoBehaviour
         StationAI target2 = targetEnemy.GetComponent<StationAI>();
         if (target == null)
         {
-            return targetEnemy.GetComponent<StationAI>().getDistance() < 5f;
+            return targetEnemy.GetComponent<StationAI>().getDistance() < 2f;
         }
         else
         {
-            return targetEnemy.GetComponent<PatrolingAI>().getDistance() < 5f;
+            return targetEnemy.GetComponent<PatrolingAI>().getDistance() < 2f;
         }
 
     }
