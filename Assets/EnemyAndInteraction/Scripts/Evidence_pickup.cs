@@ -14,26 +14,26 @@ public class Evidence_pickup : MonoBehaviour {
         evidenceInfo = this.GetComponent<Evidence>();
         evidenceMan = GameObject.FindWithTag("Evidences");
         isPickedup = false;
+        canPickUp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        if (Input.GetKeyDown("e") && canPickUp && !isPickedup)
+        {
+            evidenceMan.SendMessage("appendEvidence", evidenceInfo.EvidenceCode);
+            isPickedup = true;
+        }
 
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             canPickUp = true;
-        }
-
-        if (Input.GetKeyDown("e") && canPickUp && !isPickedup)
-        {
-            evidenceMan.SendMessage("appendEvidence",evidenceInfo.EvidenceCode);
-            isPickedup = true;
         }
     }
 
