@@ -30,7 +30,7 @@ public class DoorTrigger : MonoBehaviour
         }
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 		if(!isLocked)
-			door.GetComponent<PolygonCollider2D>().enabled = false;
+			//door.GetComponent<PolygonCollider2D>().enabled = false;
 
         this.in_locked_trigger = false;
     }

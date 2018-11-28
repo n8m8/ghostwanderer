@@ -21,6 +21,9 @@ public class ForceGhostMode : MonoBehaviour {
         if (collision.tag == player.tag && !ghostScript.isGhost)
         {
             scientist.SetActive(true);
+            GameObject.Find("Door_Exit").GetComponentInChildren<DoorTrigger>().isLocked = true;
+            GameObject.Find("Door_Exit_Real").GetComponentInChildren<DoorTrigger>().isLocked = false;
+
             //disable input
             ghostScript.DisableMovement();
             StartCoroutine(PlayAnimation());
