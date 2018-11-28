@@ -22,8 +22,16 @@ public class ObjectParent : MonoBehaviour {
             {
                 if (child.tag == "SpawnByState")
                 {
-                    child.gameObject.GetComponent<SpriteRenderer>().enabled = 
+                    try
+                    {
+                        child.gameObject.GetComponent<SpriteRenderer>().enabled =
                                         child.GetComponent<UpdateRender>().Sprite_on;
+                    }
+                    catch
+                    {
+                        child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    }
+
                 }
                 else if (child.name == "Vase")
                 {

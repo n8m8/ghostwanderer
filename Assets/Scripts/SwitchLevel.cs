@@ -5,12 +5,17 @@ using UnityEngine;
 public class SwitchLevel : MonoBehaviour {
 
     [SerializeField] private GameObject Target;
+    [SerializeField] private Sprite SwitchOnSprite;
+    [SerializeField] private Sprite SwitchOffSprite;
 
-    public bool switch_on;
+    private bool switch_on;
+    private bool target_destroied;
 
     // Use this for initialization
     void Start() {
         switch_on = false;
+        GetComponent<SpriteRenderer>().sprite = SwitchOffSprite;
+        this.target_destroied = false;
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class SwitchLevel : MonoBehaviour {
         {
             turn_off_switch();
         }
-        else
+        else if(!target_destroied)
         {
             turn_on_switch();
         }
@@ -34,11 +39,14 @@ public class SwitchLevel : MonoBehaviour {
     {
         //placeholder;
         switch_on = true;
+        GetComponent<SpriteRenderer>().sprite = SwitchOnSprite;
         Destroy(Target);
+        target_destroied = true;
     }
 
     private void turn_off_switch()
     {
         switch_on = false;
+        GetComponent<SpriteRenderer>().sprite = SwitchOffSprite;
     }
 }
