@@ -46,8 +46,8 @@ public class Pickup : MonoBehaviour {
 				inventory.slots[i] = name;
                 if (name.Contains("key")){
                     number = int.Parse(inventoryDisplay.text.Split(' ')[1])+1;
+                    inventoryDisplay.text = "x " + number.ToString();
                 }
-                inventoryDisplay.text = "x " + number.ToString();
                 yield return new WaitForSeconds(0);
                 // textDisplay.text = "";
                 //will be buggy if player goes back in 
