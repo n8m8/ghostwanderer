@@ -538,9 +538,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 886821754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199e85c057300bc4e9443ad15c76176d, type: 3}
+  m_Script: {fileID: 11500000, guid: d2b1ea934636b44ba87b89f61820270b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evi1: {fileID: 2140723820}
+  evi2: {fileID: 541955404}
+  evi3: {fileID: 1770436729}
+  evi4: {fileID: 512231107}
+  evi5: {fileID: 1821060589}
+  evi6: {fileID: 314460751}
+  evi7: {fileID: 172959838}
+  evi8: {fileID: 1024819941}
 --- !u!4 &886821756
 Transform:
   m_ObjectHideFlags: 0
