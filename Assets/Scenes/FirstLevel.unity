@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20287,8 +20287,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031516101}
-  - component: {fileID: 1031516102}
-  - component: {fileID: 1031516105}
   - component: {fileID: 1031516103}
   - component: {fileID: 1031516104}
   m_Layer: 0
@@ -20311,26 +20309,6 @@ Transform:
   m_Father: {fileID: 275157212}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1031516102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1031516100}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17b6efbef80fb204d969566a78ac0d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 1071134476}
-  sentences:
-  - 'Something''s fishy about this place. I gotta get to the bottom of this. '
-  - They have all these locked doors hanging about...
-  - For every lock, there surely has to be a key, right?
-  continueButton: {fileID: 1846244931}
-  name: '...: '
-  image: {fileID: 139677502}
-  inProgress: 0
 --- !u!58 &1031516103
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20367,25 +20345,6 @@ MonoBehaviour:
   name: '...: '
   image: {fileID: 139677502}
   inProgress: 0
---- !u!114 &1031516105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1031516100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
-    type: 2}
-  ghostOnly: 0
-  humanOnly: 1
-  repeatable: 1
-  relativeLocation: {x: 0, y: 1, z: 0}
-  actionKey: e
-  hidden: 0
 --- !u!1001 &1031841227
 Prefab:
   m_ObjectHideFlags: 0
