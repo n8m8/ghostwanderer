@@ -9,7 +9,7 @@ public class InteractingObject : MonoBehaviour
 	[SerializeField] private GameObject obj;
     public GameObject enemy;
 	[SerializeField] private float duration;
-
+	[SerializeField] private bool staysOnForever;
 	private float timeOn;
 	private bool tvOn;
 
@@ -30,7 +30,7 @@ public class InteractingObject : MonoBehaviour
     {
 		if (Input.GetKeyDown ("e") && canMoveObject && !tvOn)
 			turnOn ();
-		if (tvOn){
+		if (tvOn && !staysOnForever){
 			timeOn += Time.deltaTime;
 			if (timeOn > duration)
 				turnOff ();
