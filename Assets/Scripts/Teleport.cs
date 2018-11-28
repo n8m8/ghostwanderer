@@ -18,9 +18,19 @@ public class Teleport : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void 
+    //{
+    //    if(collision.tag == player.tag && !ghostScript.isGhost)
+    //    {
+    //        player.transform.position = destination.transform.position;
+    //        cameraController.SwitchFocusArea(destination.transform.position);
+    //        //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
+    //    }
+    //}
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == player.tag && !ghostScript.isGhost)
+        if (collision.tag == player.tag && !ghostScript.isGhost && Input.GetKeyDown(KeyCode.E))
         {
             player.transform.position = destination.transform.position;
             cameraController.SwitchFocusArea(destination.transform.position);
