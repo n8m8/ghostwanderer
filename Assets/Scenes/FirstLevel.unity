@@ -9008,6 +9008,10 @@ Prefab:
       propertyPath: sortingOffset
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1872965562099882, guid: fc344398e1d23e742b51b6b1aa97a75b, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc344398e1d23e742b51b6b1aa97a75b, type: 2}
   m_IsPrefabAsset: 0
