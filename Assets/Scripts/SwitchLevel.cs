@@ -42,6 +42,8 @@ public class SwitchLevel : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = SwitchOnSprite;
         Destroy(Target);
         target_destroied = true;
+		if(GetComponent<AudioSource> () != null)
+			GetComponent<AudioSource> ().Play ();
     }
 
     private void turn_off_switch()
