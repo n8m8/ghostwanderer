@@ -13,6 +13,7 @@ public class Pickup : MonoBehaviour {
     private bool itemZone = false;
     private bool muteText = false;
     public static bool inProgress = false;
+	[SerializeField] private GameObject pickupSFXPlayer;
     // Use this for initialization
     void Start () {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -51,6 +52,13 @@ public class Pickup : MonoBehaviour {
                 yield return new WaitForSeconds(0);
                 // textDisplay.text = "";
                 //will be buggy if player goes back in 
+				//pickups work weird so we have to use this convoluted way to play sounds... sorry this is confusing af
+				PickupSFX pickupSFXScript = coll.gameObject.GetComponent<PickupSFX> (); 
+				AudioSource pickupAudioSource = pickupSFXPlayer.GetComponent<AudioSource> ();
+				if (pickupSFXScript != null && pickupSFXScript.soundFX != null && pickupAudioSource != null) {
+					pickupAudioSource.clip = pickupSFXScript.soundFX;
+					pickupAudioSource.Play ();
+				}
 				Destroy(coll.gameObject);
 				break;
 			}

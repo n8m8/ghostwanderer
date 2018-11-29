@@ -23274,6 +23274,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1168636453465186, guid: 74f5d8384576ae9419192598cb29f14a,
     type: 2}
   m_PrefabInternal: {fileID: 1210437848}
+--- !u!1 &1210437850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1757041755801716, guid: 74f5d8384576ae9419192598cb29f14a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210437848}
 --- !u!1001 &1210520619
 Prefab:
   m_ObjectHideFlags: 0
@@ -39409,6 +39414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  pickupSFXPlayer: {fileID: 1210437850}
 --- !u!81 &2093185542
 AudioListener:
   m_ObjectHideFlags: 0
