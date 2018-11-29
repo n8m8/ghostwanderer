@@ -14,17 +14,17 @@ public class Spawn : MonoBehaviour {
 	void Update () {
 		
 	}
-
+	/*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player")){
             StartCoroutine(delaySpawn());
         }
         
-    }
+    }*/
 
-    IEnumerator delaySpawn(){
-        yield return new WaitForSeconds(3.0f);
+    public IEnumerator delaySpawn(){
+        yield return new WaitForSeconds(1.0f);
         for (int i = 0; i < enemy.Length; i++)
         {
             enemy[i].SetActive(true);

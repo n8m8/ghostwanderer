@@ -12,11 +12,13 @@ public class ForceGhostMode : MonoBehaviour {
     private TestPlayerMove ghostScript;
     private float originalSpeed;
 	private bool evidenceClosed;
+	public bool cutsceneStarted;
 
     // Use this for initialization
     void Start () {
         ghostScript = player.GetComponent<TestPlayerMove>();
 		evidenceClosed = false;
+		cutsceneStarted = false;
     }
 
 	void Update() {
@@ -24,10 +26,11 @@ public class ForceGhostMode : MonoBehaviour {
 			evidenceClosed = true;
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-		if (collision.tag == player.tag && !ghostScript.isGhost && evidenceClosed)
+		if (collision.tag == player.tag && !ghostScript.isGhost && evidenceClosed && !cutsceneStarted)
         {
+			cutsceneStarted = true;
             scientist.SetActive(true);
             GameObject.Find("Door_Exit").GetComponentInChildren<DoorTrigger>().isLocked = true;
             GameObject.Find("Door_Exit_Real").GetComponentInChildren<DoorTrigger>().isLocked = false;
@@ -53,6 +56,7 @@ public class ForceGhostMode : MonoBehaviour {
         Destroy(GameObject.Find("TestPlayer(Clone)"));
         this.GetComponent<EdgeCollider2D>().enabled = false;
         ghostScript.ChangeRadius(7f);
+		StartCoroutine (GetComponent<Spawn> ().delaySpawn ());
 		blackScreen.SetActive (false);
 		soundController.SetActive (true);
         //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
