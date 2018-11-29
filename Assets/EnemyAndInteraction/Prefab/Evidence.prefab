@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114812521940955756}
   - component: {fileID: 114295654290164026}
   - component: {fileID: 60546087954087404}
+  - component: {fileID: 114048765352143284}
   m_Layer: 0
   m_Name: Evidence
   m_TagString: EvidenceTrigger
@@ -101,6 +102,18 @@ PolygonCollider2D:
       - {x: -21.454124, y: -1.5225029}
       - {x: 15.7621, y: 14.593873}
       - {x: 36.956787, y: 3.2884264}
+--- !u!114 &114048765352143284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509536477750324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c781c9ef79826e419b74cf4a867be82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundFX: {fileID: 8300000, guid: 62835cb65d8d59a439d4e7b77a7bd8ba, type: 3}
 --- !u!114 &114228767986898366
 MonoBehaviour:
   m_ObjectHideFlags: 1
