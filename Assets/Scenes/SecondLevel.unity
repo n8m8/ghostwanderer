@@ -518,7 +518,7 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: sentences.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -575,8 +575,10 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: sentences.Array.data[1]
-      value: 'After some experimentation, I hypothesized that I could trigger the
-        bear''s facial muscles. '
+      value: "The man wandering around the next room over will be an issue. He dwarfs
+        me when I was in my prime, and\u2026 well, that's nothing short of horrifying.
+        Not quite as horrifying as that bear, mind- those things are just evil. Maybe
+        you could put that to use somehow... "
       objectReference: {fileID: 0}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
@@ -591,7 +593,10 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: sentences.Array.data[0]
-      value: 'I was inspecting the taxidermied bear in the room over there. '
+      value: "Ah, hello again! I see you\u2019re doing well...or as well as you can
+        be, given you spend half your time technically dead. Speaking of, if you don\u2019t
+        want that to be a more permanent issue, i\u2019d be careful. The people here
+        are truly brutish. "
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalScale.x
@@ -32974,11 +32979,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.2
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 20.4
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -33027,8 +33032,10 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: sentences.Array.data[1]
-      value: Looking through boxes and flipping switches usually does something (Lt.
-        Sarge's Gym taught me that)...
+      value: "The people here are pretty scary. Especially those mean science-guys-
+        they can see me and everything! I was so excited, but then they just tried
+        to grab me! But that's just silly. Nothing can catch Tiny Tim! Well, except
+        you, apparently. But you're nice, so it\u2019s ok."
       objectReference: {fileID: 0}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
@@ -33046,7 +33053,10 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: sentences.Array.data[0]
-      value: I used to play Pokemon all the time on my Gameboy.
+      value: "Aww mannnnnn, you found me again? You\u2019re really good at this! Is
+        finding things your job or somthin\u2019? ...wait, it is? Huh. I guess that\u2019d
+        do it. Well, hiding is still the most fun part, so i guess it\u2019s a good
+        thing your so good at findin\u2019 me!"
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalScale.x
