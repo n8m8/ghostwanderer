@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114552097310812138}
   - component: {fileID: 82743738185535332}
   - component: {fileID: 60933510350998062}
+  - component: {fileID: 60406977554205036}
+  - component: {fileID: 114404823692008814}
   m_Layer: 0
   m_Name: Trigger Ghost Mode
   m_TagString: Ghost Cutscene
@@ -44,6 +46,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60406977554205036
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643442636068424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.7688837, y: 5.9000373}
+    newSize: {x: 5.77, y: 2.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 10.575976, y: -0.060725596}
+      - {x: -0.9176975, y: -5.7516494}
+      - {x: -9.357968, y: -1.588087}
+      - {x: 2.1177964, y: 4.4624763}
 --- !u!60 &60933510350998062
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -79,7 +109,7 @@ EdgeCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643442636068424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -185,6 +215,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114404823692008814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643442636068424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849bf3e17d0574b9c9f585065fe1cba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114552097310812138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,6 +245,7 @@ MonoBehaviour:
   soundController: {fileID: 0}
   blackScreen: {fileID: 0}
   evidence: {fileID: 0}
+  cutsceneStarted: 0
 --- !u!212 &212696594063629502
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8754,11 +8754,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4778451039970474, guid: 4af9898e12c174db58cd8c8de0a4176b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -0.108
       objectReference: {fileID: 0}
     - target: {fileID: 4778451039970474, guid: 4af9898e12c174db58cd8c8de0a4176b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.19
+      value: 0.288
       objectReference: {fileID: 0}
     - target: {fileID: 4778451039970474, guid: 4af9898e12c174db58cd8c8de0a4176b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8797,7 +8797,7 @@ Prefab:
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -14.379863
+      value: -18.681652
       objectReference: {fileID: 0}
     - target: {fileID: 114295654290164026, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
@@ -8812,27 +8812,27 @@ Prefab:
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.4317236
+      value: -14.249593
       objectReference: {fileID: 0}
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -41.8835
+      value: -46.185295
       objectReference: {fileID: 0}
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -33.597187
+      value: -18.736464
       objectReference: {fileID: 0}
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 1.2013626
+      value: 1.7227936
       objectReference: {fileID: 0}
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 5.705788
+      value: -4.2013617
       objectReference: {fileID: 0}
     - target: {fileID: 60757367711238966, guid: 4af9898e12c174db58cd8c8de0a4176b,
         type: 2}
@@ -8843,6 +8843,11 @@ Prefab:
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
       value: -1.223427
+      objectReference: {fileID: 0}
+    - target: {fileID: 60546087954087404, guid: 4af9898e12c174db58cd8c8de0a4176b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af9898e12c174db58cd8c8de0a4176b, type: 2}
@@ -14530,7 +14535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &586473105 stripped
 Transform:
@@ -23422,7 +23427,7 @@ Transform:
   m_LocalScale: {x: 2.480949, y: 2.480949, z: 2.480949}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1224380602 stripped
 Transform:
@@ -25685,70 +25690,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4259786799512258, guid: 1cdaaabe9dfd0e84e9018c8dc3dbcd32,
     type: 2}
   m_PrefabInternal: {fileID: 1309920121}
---- !u!1 &1418315032
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1418315034}
-  - component: {fileID: 1418315035}
-  - component: {fileID: 1418315033}
-  m_Layer: 0
-  m_Name: EnemySpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!68 &1418315033
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1418315032}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -3.6290374, y: 0.21497154}
-  - {x: -2.272046, y: -0.43985516}
-  - {x: -3.6008, y: -1.1719668}
-  - {x: -5.016763, y: -0.4615882}
-  - {x: -3.5605812, y: 0.21497178}
---- !u!4 &1418315034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1418315032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.301835, y: 0.7165433, z: 11.685422}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 37
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1418315035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1418315032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 849bf3e17d0574b9c9f585065fe1cba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy:
-  - {fileID: 249479935}
-  - {fileID: 1280808790}
 --- !u!1 &1419906467
 GameObject:
   m_ObjectHideFlags: 0
@@ -26819,6 +26760,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1509536477750324, guid: 4af9898e12c174db58cd8c8de0a4176b,
     type: 2}
   m_PrefabInternal: {fileID: 926337015}
+--- !u!114 &1472071443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1472071435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  ghostOnly: 0
+  humanOnly: 1
+  repeatable: 0
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: e
+  hidden: 0
 --- !u!4 &1472457668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4404983405500238, guid: 940e31692aee5744ebcf89619e1ebfce,
@@ -32621,7 +32581,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1781893521
 MonoBehaviour:
@@ -34806,7 +34766,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4778451039970474, guid: 4af9898e12c174db58cd8c8de0a4176b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1509536477750324, guid: 4af9898e12c174db58cd8c8de0a4176b, type: 2}
       propertyPath: m_Name
@@ -37014,8 +36974,8 @@ Transform:
   - {fileID: 1650929207}
   - {fileID: 124200722}
   - {fileID: 726697934}
-  - {fileID: 827026948}
   - {fileID: 312470665}
+  - {fileID: 827026948}
   m_Father: {fileID: 1522689314}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38554,6 +38514,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114404823692008814, guid: d030f0816a4cecb41a9637db16f4949b,
+        type: 2}
+      propertyPath: enemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 249479935}
+    - target: {fileID: 114404823692008814, guid: d030f0816a4cecb41a9637db16f4949b,
+        type: 2}
+      propertyPath: enemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 1280808790}
     - target: {fileID: 114552097310812138, guid: d030f0816a4cecb41a9637db16f4949b,
         type: 2}
       propertyPath: player
