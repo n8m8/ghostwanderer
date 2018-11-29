@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 60878224441835840}
   - component: {fileID: 114537810366751512}
   - component: {fileID: 114503925882238552}
+  - component: {fileID: 114298727700976428}
   m_Layer: 0
   m_Name: possessTrigger
   m_TagString: Untagged
@@ -164,6 +165,25 @@ MonoBehaviour:
   useAutoSort: 1
   sortingOffset: 700
   sortingScale: 100
+--- !u!114 &114298727700976428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716376866059622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttomImage: {fileID: 1898253544112928, guid: b2e6d5cd3fd6abe458b468b7e20b73f9,
+    type: 2}
+  ghostOnly: 1
+  humanOnly: 0
+  repeatable: 1
+  relativeLocation: {x: 0, y: 1, z: 0}
+  actionKey: e
+  hidden: 0
 --- !u!114 &114503925882238552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetEnemy:
   - {fileID: 0}
-  possessedObject: {fileID: 1713945449962866}
+  possessedObjectTrigger: {fileID: 0}
   isForever: 1
 --- !u!212 &212899259202272510
 SpriteRenderer:
