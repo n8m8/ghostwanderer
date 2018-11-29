@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3049,6 +3049,7 @@ GameObject:
   - component: {fileID: 93363540}
   - component: {fileID: 93363539}
   - component: {fileID: 93363538}
+  - component: {fileID: 93363546}
   m_Layer: 0
   m_Name: station enemy1
   m_TagString: Enemy
@@ -3073,7 +3074,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &93363539
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3255,6 +3256,24 @@ Transform:
   m_Father: {fileID: 73066031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &93363546
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 93363537}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &96130924
 Prefab:
   m_ObjectHideFlags: 0
@@ -4642,6 +4661,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4355084308034592, guid: 52bd3e45b57e740f3acaa329f0269b54,
     type: 2}
   m_PrefabInternal: {fileID: 151489748}
+--- !u!95 &151489751
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151489749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &153320576
 Prefab:
   m_ObjectHideFlags: 0
@@ -6491,7 +6528,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &246164690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9617,6 +9654,7 @@ GameObject:
   - component: {fileID: 360402381}
   - component: {fileID: 360402380}
   - component: {fileID: 360402379}
+  - component: {fileID: 360402387}
   m_Layer: 0
   m_Name: patrolkey2
   m_TagString: Enemy
@@ -9641,7 +9679,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &360402380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9825,6 +9863,24 @@ Transform:
   m_Father: {fileID: 1208644339}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &360402387
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360402378}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &360818476
 Prefab:
   m_ObjectHideFlags: 0
@@ -11449,6 +11505,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1532128356213456, guid: 52bd3e45b57e740f3acaa329f0269b54,
     type: 2}
   m_PrefabInternal: {fileID: 401719483}
+--- !u!95 &401719486
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401719485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &419265778
 Transform:
   m_ObjectHideFlags: 0
@@ -22732,6 +22806,7 @@ GameObject:
   - component: {fileID: 685094177}
   - component: {fileID: 685094176}
   - component: {fileID: 685094175}
+  - component: {fileID: 685094183}
   m_Layer: 0
   m_Name: trophyroom1
   m_TagString: Enemy
@@ -22756,7 +22831,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &685094176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22938,6 +23013,24 @@ Transform:
   m_Father: {fileID: 1208644339}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &685094183
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685094174}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &687798673
 Transform:
   m_ObjectHideFlags: 0
@@ -42821,6 +42914,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4542477858942158, guid: 118fb1cfe71344fcf942e23c94b21201,
     type: 2}
   m_PrefabInternal: {fileID: 1549880093}
+--- !u!95 &1549880096
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1549880094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1550596913
 GameObject:
   m_ObjectHideFlags: 0
@@ -43398,6 +43509,7 @@ GameObject:
   - component: {fileID: 1574545539}
   - component: {fileID: 1574545538}
   - component: {fileID: 1574545537}
+  - component: {fileID: 1574545545}
   m_Layer: 0
   m_Name: YellowKeyguy
   m_TagString: Enemy
@@ -43422,7 +43534,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &1574545538
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43604,6 +43716,24 @@ Transform:
   m_Father: {fileID: 73066031}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1574545545
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574545536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1577276849
 Prefab:
   m_ObjectHideFlags: 0
@@ -44276,6 +44406,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4355084308034592, guid: 52bd3e45b57e740f3acaa329f0269b54,
     type: 2}
   m_PrefabInternal: {fileID: 1591607913}
+--- !u!95 &1591607916
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1591607914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1595954656
 Prefab:
   m_ObjectHideFlags: 0
@@ -45043,6 +45191,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4355084308034592, guid: 52bd3e45b57e740f3acaa329f0269b54,
     type: 2}
   m_PrefabInternal: {fileID: 1615388568}
+--- !u!95 &1615388571
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1615388569}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1615592558
 GameObject:
   m_ObjectHideFlags: 0
@@ -45335,6 +45501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+  pickupSFXPlayer: {fileID: 0}
 --- !u!114 &1615592573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47995,6 +48162,7 @@ GameObject:
   - component: {fileID: 1708372199}
   - component: {fileID: 1708372198}
   - component: {fileID: 1708372197}
+  - component: {fileID: 1708372205}
   m_Layer: 0
   m_Name: patriolling
   m_TagString: Enemy
@@ -48019,7 +48187,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &1708372198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48205,6 +48373,24 @@ Transform:
   m_Father: {fileID: 1208644339}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1708372205
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708372196}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1708611615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4734654293286300, guid: 7e24456a7f965414ba465bee36868884,
@@ -50721,7 +50907,7 @@ MonoBehaviour:
   height: 0.7
   collisionMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 4294967295
 --- !u!212 &1828632847
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class PatrolingAI : MonoBehaviour {
     public Transform playerPosition;
     private Transform target;
     private Transform temp;
+    private Animator animator;
 
     public GameObject enemyTrigger;
     private GameObject player;
@@ -31,6 +32,7 @@ public class PatrolingAI : MonoBehaviour {
     private RaycastHit2D[] raycastHits = new RaycastHit2D[1];
     private TestPlayerMove playerControl;
     private AIPath setting;
+    private string prevAnimState = "";
 
     public bool isStuned;
 
@@ -53,6 +55,7 @@ public class PatrolingAI : MonoBehaviour {
         agent = GetComponent<AIDestinationSetter>();
         target = agent.target;
         temp = Instantiate(new GameObject()).transform;
+        animator = GetComponent<Animator>();
 	}
 
     void GotoNextPoint(){
@@ -76,20 +79,23 @@ public class PatrolingAI : MonoBehaviour {
         now.z = 0;
         transform.position = now;
         checkLOS();
-
-
-
+        Debug.LogWarning(currentDirection.magnitude);
+        ToggleAnimations();
         if (isStuned == false)
         {
+            animator.SetBool("shocked", false);
             switch (state)
             {
                 case AIState.patrolling:
                     patrolling();
+                    animator.speed = Mathf.Log(getDirection().magnitude) * 35f;
                     break;
                 case AIState.chasing:
                     chasing();
+                    animator.speed = Mathf.Log(getDirection().magnitude) * .8f;
                     break;
                 case AIState.confusing:
+                    animator.speed = 1f;
                     StartCoroutine(confusing());
                     break;
             }
@@ -99,6 +105,7 @@ public class PatrolingAI : MonoBehaviour {
             state = AIState.confusing;
             temp.position = transform.position;
             agent.target = null;
+            animator.SetBool("shocked", true);
         }
 
         killingGhost();
@@ -201,10 +208,140 @@ public class PatrolingAI : MonoBehaviour {
         return distance;
     }
 
-    
+    private void ToggleAnimations()
+    {
+        float h = getDirection().x;
+        float v = getDirection().y;
+        if (h > 0)
+        {
+            if (v > 0)
+            {
+                SetAnimRightUp();
+            }
+            else if (v < 0)
+            {
+                SetAnimRightDown();
+            }
+            else
+            {
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("rightUp"))
+                {
+                    SetAnimRightUp();
+                }
+                else
+                {
+                    SetAnimRightDown();
+                }
+            }
+            animator.SetBool("idle", false);
+        }
+        else if (h < 0)
+        {
+            if (v > 0)
+            {
+                SetAnimLeftUp();
+            }
+            else if (v < 0)
+            {
+                SetAnimLeftDown();
+            }
+            else
+            {
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("rightUp"))
+                {
+                    SetAnimLeftUp();
+                }
+                else
+                {
+                    SetAnimLeftDown();
+                }
+            }
+            animator.SetBool("idle", false);
+        }
+        else    //playerRB.velocity.x == 0
+        {
+            if (v > 0)
+            {
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("leftDown"))
+                {
+                    SetAnimLeftUp();
+                }
+                else
+                {
+                    SetAnimRightUp();
+                }
+                animator.SetBool("idle", false);
+            }
+            else if (v < 0)
+            {
+                if (prevAnimState.Equals("leftUp") || prevAnimState.Equals("leftDown"))
+                {
+                    SetAnimLeftDown();
+                }
+                else
+                {
+                    SetAnimRightDown();
+                }
+                animator.SetBool("idle", false);
+            }
+            else
+            {
+                switch (prevAnimState)
+                {
+                    case "leftUp":
+                        SetAnimLeftUp();
+                        break;
+                    case "leftDown":
+                        SetAnimLeftDown();
+                        break;
+                    case "rightUp":
+                        SetAnimRightUp();
+                        break;
+                    case "rightDown":
+                        SetAnimRightDown();
+                        break;
+                    default:
+                        break;
+                }
+                animator.SetBool("idle", true);
+            }
+        }
+    }
 
+    private void SetAnimLeftUp()
+    {
+        animator.SetBool("leftDown", false);
+        animator.SetBool("leftUp", true);
+        animator.SetBool("rightDown", false);
+        animator.SetBool("rightUp", false);
+        prevAnimState = "leftUp";
+    }
 
+    private void SetAnimLeftDown()
+    {
+        animator.SetBool("leftDown", true);
+        animator.SetBool("leftUp", false);
+        animator.SetBool("rightDown", false);
+        animator.SetBool("rightUp", false);
+        prevAnimState = "leftDown";
+    }
 
+    private void SetAnimRightUp()
+    {
+        animator.SetBool("leftDown", false);
+        animator.SetBool("leftUp", false);
+        animator.SetBool("rightDown", false);
+        animator.SetBool("rightUp", true);
+        prevAnimState = "rightUp";
+    }
 
+    private void SetAnimRightDown()
+    {
+        animator.SetBool("leftDown", false);
+        animator.SetBool("leftUp", false);
+        animator.SetBool("rightDown", true);
+        animator.SetBool("rightUp", false);
+        prevAnimState = "rightDown";
+    }
 
 }
