@@ -46,6 +46,7 @@ public class DoorTrigger : MonoBehaviour
         Collider2D PC = door.GetComponent<Collider2D>();
         if (isLocked)
         {
+			bool hasKey = false;
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.slots[i] == lockName)
@@ -59,9 +60,11 @@ public class DoorTrigger : MonoBehaviour
                     else { door.GetComponent<Renderer>().enabled = false; }
 					AudioSource creak = door.GetComponent<AudioSource> ();
 					creak.Play ();
-                    
+					hasKey = true;
                 }
             }
+			if (!hasKey && GetComponent<AudioSource> () != null)
+				GetComponent<AudioSource> ().Play ();
             in_locked_trigger = true;
         }
         else
