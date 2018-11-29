@@ -7,18 +7,26 @@ public class ForceGhostMode : MonoBehaviour {
     [SerializeField] private GameObject scientist;
 	[SerializeField] private GameObject soundController;
 	[SerializeField] private GameObject blackScreen;
+	[SerializeField] private GameObject evidence;
 
     private TestPlayerMove ghostScript;
     private float originalSpeed;
+	private bool evidenceClosed;
 
     // Use this for initialization
     void Start () {
         ghostScript = player.GetComponent<TestPlayerMove>();
+		evidenceClosed = false;
     }
+
+	void Update() {
+		if (evidence == null && Input.GetKeyDown ("e"))
+			evidenceClosed = true;
+	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == player.tag && !ghostScript.isGhost)
+		if (collision.tag == player.tag && !ghostScript.isGhost && evidenceClosed)
         {
             scientist.SetActive(true);
             GameObject.Find("Door_Exit").GetComponentInChildren<DoorTrigger>().isLocked = true;
