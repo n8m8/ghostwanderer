@@ -22,6 +22,7 @@ public class PatrolingAI : MonoBehaviour {
     private int desPoint = 0;
     public float fieldOfViewAngle = 30f;
     private float distance;
+    private float t;
 
     private Vector3 last;
     private Vector3 now;
@@ -46,6 +47,7 @@ public class PatrolingAI : MonoBehaviour {
     void Start () {
         Vector3 now = transform.position;
         now.z = 0;
+        t = 0;
         transform.position = now;
         state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
@@ -70,14 +72,17 @@ public class PatrolingAI : MonoBehaviour {
     void Update()
     {
         distance = Vector2.Distance(player.transform.position, transform.position);
-        now = transform.position;
-        if (now != last)
+        if (t == 0f)
         {
-            currentDirection = (now - last) / Time.deltaTime;
+            last = transform.position;
         }
-        last = transform.position;
-        now.z = 0;
-        transform.position = now;
+        t = t + Time.deltaTime;
+        if (t >= 0.5f)
+        {
+            now = transform.position;
+            currentDirection = (now - last) / t;
+            t = 0f;
+        }
         checkLOS();
         Debug.LogWarning(currentDirection.magnitude);
         ToggleAnimations();

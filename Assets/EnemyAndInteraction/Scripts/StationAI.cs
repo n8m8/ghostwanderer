@@ -27,6 +27,7 @@ public class StationAI : MonoBehaviour
     private Animator animator;
 
     private float distance;
+    private float t;
     private string prevAnimState = "";
 
     enum AIState
@@ -39,6 +40,7 @@ public class StationAI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        t = 0;
         state = AIState.sitting;
         player = GameObject.FindWithTag("Player");
         playerControl = player.GetComponent<TestPlayerMove>();
@@ -53,14 +55,17 @@ public class StationAI : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(player.transform.position, transform.position);
-        now = transform.position;
-        if (now != last)
+        if (t == 0f)
         {
-            currentDirection = (now - last) / Time.deltaTime;
+            last = transform.position;
         }
-        last = transform.position;
-        now.z = 0;
-        transform.position = now;
+        t = t + Time.deltaTime;
+        if (t >= 0.5f)
+        {
+            now = transform.position;
+            currentDirection = (now - last) / t;
+            t = 0f;
+        }
         //Debug.LogWarning(currentDirection.magnitude);
         ToggleAnimations();
         if (isStuned == false)

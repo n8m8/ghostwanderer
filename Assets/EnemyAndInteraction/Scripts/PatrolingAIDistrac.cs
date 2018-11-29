@@ -22,6 +22,7 @@ public class PatrolingAIDistrac : MonoBehaviour
 
     private int desPoint = 0;
     public float fieldOfViewAngle = 30f;
+    private float t = 0;
 
     private Vector3 last;
     private Vector3 now;
@@ -49,6 +50,7 @@ public class PatrolingAIDistrac : MonoBehaviour
     {
         Vector3 now = transform.position;
         now.z = 0;
+        t = 0;
         transform.position = now;
         state = AIState.patrolling;
         player = GameObject.FindWithTag("Player");
@@ -74,14 +76,17 @@ public class PatrolingAIDistrac : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
-        now = transform.position;
-        if (now != last)
-        {
-            currentDirection = (now - last) / Time.deltaTime;
+        if(t == 0f){
+            last = transform.position;
         }
-        last = transform.position;
+        t = t + Time.deltaTime;
+        if (t >= 0.5f)
+        {
+            now = transform.position;
+            currentDirection = (now - last) /t;
+            t = 0f;
+        }
         now.z = 0;
-        transform.position = now;
         checkLOS();
 
         if(distracted){
