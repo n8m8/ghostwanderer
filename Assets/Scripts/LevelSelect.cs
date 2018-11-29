@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class LevelSelect : MonoBehaviour {
 
 	public void levelOne(){
-		SceneManager.LoadScene("FirstLevelTransition");
+        SceneManager.LoadScene("FirstLevel");
 	}
 
-	public void levelThree(){
+	public void levelTwo(){
 		SceneManager.LoadScene("SecondLevel");
 	}
 }

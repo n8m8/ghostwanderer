@@ -25,6 +25,7 @@ TagManager:
   - HighWall
   - FloorParent
   - Evidences
+  - Level1
   layers:
   - Default
   - TransparentFX
