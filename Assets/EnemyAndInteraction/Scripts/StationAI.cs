@@ -160,6 +160,12 @@ public class StationAI : MonoBehaviour
     }
 
 
+    public Vector3 getDirection()
+    {
+        return currentDirection;
+    }
+
+
 
 
 }
