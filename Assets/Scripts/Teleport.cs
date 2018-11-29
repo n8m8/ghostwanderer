@@ -7,7 +7,7 @@ public class Teleport : MonoBehaviour {
     [SerializeField] private CameraController cameraController;
 
     private TestPlayerMove ghostScript;
-
+    private bool canTeleport = false;
     // Use this for initialization
     void Start () {
         ghostScript = player.GetComponent<TestPlayerMove>();
@@ -16,6 +16,12 @@ public class Teleport : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+        if(Input.GetKeyDown(KeyCode.E) && canTeleport)
+        {
+            player.transform.position = destination.transform.position;
+            cameraController.SwitchFocusArea(destination.transform.position);
+        }
+
 	}
 
     //private void 
@@ -30,11 +36,17 @@ public class Teleport : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == player.tag && !ghostScript.isGhost && Input.GetKeyDown(KeyCode.E))
+        if (collision.tag == player.tag && !ghostScript.isGhost)
         {
-            player.transform.position = destination.transform.position;
-            cameraController.SwitchFocusArea(destination.transform.position);
+            canTeleport = true;
             //Camera.main.transform.position = destination.transform.position + new Vector3(0, 0, -20);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == player.tag)
+        {
+            canTeleport = false;
         }
     }
 
