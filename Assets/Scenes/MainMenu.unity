@@ -504,7 +504,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Inspectre is an isometric detective game, inspired by noir themes. '
+  m_text: InSpectre is an isometric puzzle-driven mystery adventure where your character
+    discovers they can separate from their body and enter the Spirit World. Use your
+    abilities and the environment to learn why you have these ghost powers, and discover
+    the intentions of the group behind it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
   m_sharedMaterial: {fileID: 21984594689325388, guid: 1913a70e95647374ba0f718d1bf22a81,
