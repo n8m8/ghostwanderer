@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EvidenceTracker : MonoBehaviour {
     private EvidenceManager manager;
+    private ProgressTracker progress;
+    private GameObject level2;
     public GameObject evi1;
     public GameObject evi2;
     public GameObject evi3;
@@ -15,6 +17,7 @@ public class EvidenceTracker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        level2 = GameObject.FindWithTag("Level2");
         evi1.SetActive(false);
         evi2.SetActive(false);
         evi3.SetActive(false);
@@ -29,6 +32,7 @@ public class EvidenceTracker : MonoBehaviour {
 	void Update () {
         if(manager != null){
             updateEvidences();
+            checkProgress();
         }
         else{
             if (GameObject.FindGameObjectWithTag("Evidences") == null)
@@ -38,6 +42,7 @@ public class EvidenceTracker : MonoBehaviour {
             else
             {
                 manager = GameObject.FindGameObjectWithTag("Evidences").gameObject.GetComponent<EvidenceManager>();
+                progress = GameObject.FindGameObjectWithTag("Evidences").gameObject.GetComponent<ProgressTracker>();
             }
         }
 		
@@ -102,6 +107,10 @@ public class EvidenceTracker : MonoBehaviour {
         else{
             evi8.SetActive(false);
         }
+    }
+
+    void checkProgress(){
+        level2.SetActive(progress.reachLevel2);
     }
 
     bool isInList(int code, List<int> list){

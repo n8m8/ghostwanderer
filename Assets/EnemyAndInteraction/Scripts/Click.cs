@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Click : MonoBehaviour {
-
+    public string levelname;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +17,11 @@ public class Click : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("FirstLevel");
+        SceneManager.LoadScene(levelname);
+    }
+
+    public void backToMenu(){
+        SceneManager.LoadScene("MainMenu");
     }
 
 

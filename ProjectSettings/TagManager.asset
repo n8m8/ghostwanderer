@@ -26,6 +26,7 @@ TagManager:
   - FloorParent
   - Evidences
   - Level1
+  - Level2
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,12 @@ public class LoadNext : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player")){
+            reportProgress();
             SceneManager.LoadScene(SceneNumber);
         }
+    }
+
+    private void reportProgress(){
+        GameObject.FindWithTag("Evidences").GetComponent<ProgressTracker>().reachLevel2 = true;
     }
 }
