@@ -13,6 +13,9 @@ public class EvidenceManager : MonoBehaviour {
 	}
 
     public void appendEvidence(int evidenceCode){
-        evidences.Add(evidenceCode);
+        if (evidences.IndexOf(evidenceCode) == -1)
+        {
+            evidences.Add(evidenceCode);
+        }
     }
 }
