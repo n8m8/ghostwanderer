@@ -104,6 +104,10 @@ public class PatrolingAI : MonoBehaviour {
         killingGhost();
     }
 
+    public Vector3 getDirection(){
+        return currentDirection;
+    }
+
 
     void checkLOS(){
         int hit = Physics2D.LinecastNonAlloc(transform.position, player.transform.position, raycastHits, 1 << LayerMask.NameToLayer("TransparentFX"));

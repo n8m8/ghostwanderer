@@ -192,6 +192,11 @@ public class PatrolingAIDistrac : MonoBehaviour
     }
 
 
+    public Vector3 getDirection()
+    {
+        return currentDirection;
+    }
+
 
 
 
