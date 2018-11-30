@@ -8430,7 +8430,7 @@ Prefab:
     - target: {fileID: 114792563810762454, guid: 3a47bcaaba9672743bd056bb46e8a094,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 60150484850461636, guid: 3a47bcaaba9672743bd056bb46e8a094,
         type: 2}
@@ -8482,6 +8482,18 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -0.90621185
       objectReference: {fileID: 0}
+    - target: {fileID: 114792563810762454, guid: 3a47bcaaba9672743bd056bb46e8a094,
+        type: 2}
+      propertyPath: HumanSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53cf5a4e67edd5843a62babdb2caf78d,
+        type: 3}
+    - target: {fileID: 114792563810762454, guid: 3a47bcaaba9672743bd056bb46e8a094,
+        type: 2}
+      propertyPath: GhostSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 19de2dde819d25b49a8ec558b33fede5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a47bcaaba9672743bd056bb46e8a094, type: 2}
   m_IsPrefabAsset: 0
@@ -26987,8 +26999,20 @@ Prefab:
     - target: {fileID: 114792563810762454, guid: 3a47bcaaba9672743bd056bb46e8a094,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114792563810762454, guid: 3a47bcaaba9672743bd056bb46e8a094,
+        type: 2}
+      propertyPath: HumanSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53cf5a4e67edd5843a62babdb2caf78d,
+        type: 3}
+    - target: {fileID: 114792563810762454, guid: 3a47bcaaba9672743bd056bb46e8a094,
+        type: 2}
+      propertyPath: GhostSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 19de2dde819d25b49a8ec558b33fede5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a47bcaaba9672743bd056bb46e8a094, type: 2}
   m_IsPrefabAsset: 0
