@@ -65,8 +65,11 @@ public class CheckEvidence : MonoBehaviour {
 
     private void open_evidence()
     {
-        EvidencePanel.SetActive(true);
+        EvidencePanel.GetComponentInChildren<Image>().sprite =
+                                evidence_TRANS.GetComponent<Evidence>().EvidenceSprite;
         EvidencePanelText.text = evidence_TRANS.GetComponent<Evidence>().evidence_text;
+        EvidencePanel.SetActive(true);
+        
     }
 
     private void close_evidence()
