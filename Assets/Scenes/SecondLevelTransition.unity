@@ -801,10 +801,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 793367715}
   sentences:
-  - Now we are arriving at the scene of the crime. Good Luck Detective!
+  - We've figured out a crucial part of the mystery. Let's finish this at their hideout!
+    Good Luck Detective!
   typingSpeed: 0.01
   continueButton: {fileID: 465765949}
-  scene: FirstLevel
+  scene: SecondLevel
 --- !u!1 &1832566188
 GameObject:
   m_ObjectHideFlags: 0
