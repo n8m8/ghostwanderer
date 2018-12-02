@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadNext : MonoBehaviour {
-    public int SceneNumber;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +18,7 @@ public class LoadNext : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Player")){
             reportProgress();
-            SceneManager.LoadScene(SceneNumber);
+            SceneManager.LoadScene("LevelSelect");
         }
     }
 
