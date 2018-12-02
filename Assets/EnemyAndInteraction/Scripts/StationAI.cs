@@ -67,10 +67,12 @@ public class StationAI : MonoBehaviour
             t = 0f;
         }
         //Debug.LogWarning(currentDirection.magnitude);
-        ToggleAnimations();
+        if (animator != null)
+            ToggleAnimations();
         if (isStuned == false)
         {
-            animator.SetBool("shocked", false);
+            if (animator != null)
+                animator.SetBool("shocked", false);
             switch (state)
             {
                 case AIState.sitting:
@@ -87,7 +89,8 @@ public class StationAI : MonoBehaviour
             }
         }
         else{
-            animator.SetBool("shocked", true);
+            if (animator != null)
+                animator.SetBool("shocked", true);
             setting.maxSpeed = 0f;
             state = AIState.sitting;
             agent.target = null;

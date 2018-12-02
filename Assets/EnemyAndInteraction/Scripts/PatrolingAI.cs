@@ -85,10 +85,12 @@ public class PatrolingAI : MonoBehaviour {
         }
         checkLOS();
         Debug.LogWarning(currentDirection.magnitude);
-        ToggleAnimations();
+        if (animator != null)
+            ToggleAnimations();
         if (isStuned == false)
         {
-            animator.SetBool("shocked", false);
+            if (animator != null)
+                animator.SetBool("shocked", false);
             switch (state)
             {
                 case AIState.patrolling:
@@ -110,7 +112,8 @@ public class PatrolingAI : MonoBehaviour {
             state = AIState.confusing;
             temp.position = transform.position;
             agent.target = null;
-            animator.SetBool("shocked", true);
+            if (animator != null)
+                animator.SetBool("shocked", true);
         }
 
         killingGhost();

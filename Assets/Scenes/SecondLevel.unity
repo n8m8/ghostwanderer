@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6617,6 +6617,7 @@ GameObject:
   - component: {fileID: 246164691}
   - component: {fileID: 246164690}
   - component: {fileID: 246164689}
+  - component: {fileID: 246164696}
   m_Layer: 0
   m_Name: scientist2
   m_TagString: Enemy
@@ -6808,6 +6809,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 913108303}
+--- !u!95 &246164696
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246164688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 622f2e50c51e3e74d8dbadf7fce38995, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &251759114
 Prefab:
   m_ObjectHideFlags: 0
@@ -39009,6 +39028,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1532128356213456, guid: 52bd3e45b57e740f3acaa329f0269b54,
     type: 2}
   m_PrefabInternal: {fileID: 1380056295}
+--- !u!95 &1380056298
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1380056297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 622f2e50c51e3e74d8dbadf7fce38995, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1382025683
 Transform:
   m_ObjectHideFlags: 0
@@ -51941,6 +51978,7 @@ GameObject:
   - component: {fileID: 1828632848}
   - component: {fileID: 1828632847}
   - component: {fileID: 1828632846}
+  - component: {fileID: 1828632853}
   m_Layer: 0
   m_Name: switchScientist
   m_TagString: Enemy
@@ -52147,6 +52185,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 1329702500}
+--- !u!95 &1828632853
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828632844}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 622f2e50c51e3e74d8dbadf7fce38995, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1835374403
 Prefab:
   m_ObjectHideFlags: 0
