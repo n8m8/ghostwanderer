@@ -18,7 +18,7 @@ public class Pickup : MonoBehaviour {
     void Start () {
 		inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 		inventoryDisplay = GameObject.FindGameObjectWithTag("InventoryPickup").GetComponent<TextMeshProUGUI>();
-        textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
+        // textDisplay = GameObject.FindGameObjectWithTag("ItemPickup").GetComponent<TextMeshProUGUI>();
 	}
 	
 
@@ -97,13 +97,13 @@ public class Pickup : MonoBehaviour {
 
     }
 
-    IEnumerator briefMessage(string message, int time)
-    {
-        if (!inProgress)
-        {
-            textDisplay.text = message;
-            yield return new WaitForSeconds(time);
-            textDisplay.text = "";
-        }
-    }
+    // IEnumerator briefMessage(string message, int time)
+    // {
+    //     if (!inProgress)
+    //     {
+    //         textDisplay.text = message;
+    //         yield return new WaitForSeconds(time);
+    //         textDisplay.text = "";
+    //     }
+    // }
 }
