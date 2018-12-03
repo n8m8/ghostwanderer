@@ -45412,6 +45412,10 @@ Prefab:
       propertyPath: possessedObjectTrigger
       value: 
       objectReference: {fileID: 1605811587}
+    - target: {fileID: 1874381721543008, guid: 7e0d7df2b57c9d547a07acb1f4b7fd31, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e0d7df2b57c9d547a07acb1f4b7fd31, type: 2}
   m_IsPrefabAsset: 0
