@@ -114,10 +114,10 @@ public class EvidenceTracker : MonoBehaviour {
         }
         if (isInList(7, evidences))
         {
-            evi8.SetActive(true);
+            evi8.SetActive(false);
         }
         else{
-            evi8.SetActive(false);
+            evi8.SetActive(true);
         }
     }
 
