@@ -41,6 +41,7 @@ public class EvidenceManager : MonoBehaviour {
         }
         else if (scene.name == "SecondLevel"){
             int count = evidences.Count - firstlevelcount;
+            Debug.Log(count);
             textDisplay.text = "Evidence Collected: " + count.ToString() + "/" + numEvidence.ToString();
         }
         
