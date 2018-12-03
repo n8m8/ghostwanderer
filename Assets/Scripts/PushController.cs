@@ -75,7 +75,7 @@ public class PushController : MonoBehaviour {
 				
 			destroyed = true;
         }
-        else if (Input.GetKeyDown("e") && canMoveObject && destroyed)
+        else if (Input.GetKeyDown("e") && canMoveObject && destroyed && Protag.GetComponent<TestPlayerMove>().isGhost)
         {
             destroyed = false;
             PushableObject.GetComponent<Renderer>().enabled = true;
