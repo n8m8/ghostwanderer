@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4829264963317688}
   - component: {fileID: 212684664842393260}
   - component: {fileID: 114403298525768152}
+  - component: {fileID: 114000238828370394}
   m_Layer: 0
   m_Name: Deco8
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4146278021134644}
   - component: {fileID: 212340091606113248}
   - component: {fileID: 114468811216607668}
+  - component: {fileID: 114378784954888794}
   m_Layer: 0
   m_Name: Deco4
   m_TagString: Untagged
@@ -75,6 +77,7 @@ GameObject:
   - component: {fileID: 4959468703094314}
   - component: {fileID: 212909412168374958}
   - component: {fileID: 114096447307248912}
+  - component: {fileID: 114211587825555298}
   m_Layer: 0
   m_Name: Deco5
   m_TagString: Untagged
@@ -92,6 +95,7 @@ GameObject:
   - component: {fileID: 4726184886987882}
   - component: {fileID: 212371781122027900}
   - component: {fileID: 114427339644956168}
+  - component: {fileID: 114588778325254480}
   m_Layer: 0
   m_Name: Deco6
   m_TagString: Untagged
@@ -109,6 +113,7 @@ GameObject:
   - component: {fileID: 4699094190902300}
   - component: {fileID: 212777232491492228}
   - component: {fileID: 114787979679417768}
+  - component: {fileID: 114077253958811990}
   m_Layer: 0
   m_Name: Deco3
   m_TagString: Untagged
@@ -126,6 +131,7 @@ GameObject:
   - component: {fileID: 4545024958651218}
   - component: {fileID: 212960651730474778}
   - component: {fileID: 114625915888554652}
+  - component: {fileID: 114881138700320690}
   m_Layer: 0
   m_Name: Deco7
   m_TagString: Untagged
@@ -143,6 +149,7 @@ GameObject:
   - component: {fileID: 4077764324479246}
   - component: {fileID: 212676939233785242}
   - component: {fileID: 114449759045938606}
+  - component: {fileID: 114208913330662444}
   m_Layer: 0
   m_Name: Deco2
   m_TagString: Untagged
@@ -160,6 +167,7 @@ GameObject:
   - component: {fileID: 4882895008303878}
   - component: {fileID: 212562682930973756}
   - component: {fileID: 114119998005407768}
+  - component: {fileID: 114937836822498332}
   m_Layer: 0
   m_Name: Deco1
   m_TagString: Untagged
@@ -320,6 +328,32 @@ PolygonCollider2D:
       - {x: 0.9126468, y: -1.2009203}
       - {x: -0.7261181, y: -0.36320817}
       - {x: -0.8777733, y: -0.43000007}
+--- !u!114 &114000238828370394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1016796141541038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114077253958811990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594627246899882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114096447307248912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -359,6 +393,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: fab7b98619ae39142abfb2f9d25c8739, type: 3}
   GhostSprite: {fileID: 21300000, guid: a304f86c338cd4c4d8c400cf1214e8b1, type: 3}
+--- !u!114 &114208913330662444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869971198930388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114211587825555298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1290921667188500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114378784954888794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154170414106136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114403298525768152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -425,6 +498,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: bee76e89ed1443f4f9d11df91af322ea, type: 3}
   GhostSprite: {fileID: 21300000, guid: 924366ae38bba5a42b95b748c8bfbe3b, type: 3}
+--- !u!114 &114588778325254480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383659338477462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114625915888554652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,6 +548,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56bf9450fa2e97c44bcdcc6d7efedc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114881138700320690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717151794269170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114937836822498332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1976192022286970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!212 &212148588408243456
 SpriteRenderer:
   m_ObjectHideFlags: 1

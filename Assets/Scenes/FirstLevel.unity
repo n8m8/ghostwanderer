@@ -28968,7 +28968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993c77fc07a4843fdabffe9a566b2cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNumber: 3
 --- !u!60 &1559423887
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31275,12 +31274,12 @@ Prefab:
     - target: {fileID: 224725017429266050, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224262630330061620, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114170230387317014, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
@@ -40015,6 +40014,8 @@ MonoBehaviour:
   IM_script: {fileID: 2093185528}
   EvidencePanel: {fileID: 689603746}
   EvidencePanelText: {fileID: 828157847}
+  ChildImage: {fileID: 1252995312}
+  GeneralHeight: 350
 --- !u!114 &2093185539
 MonoBehaviour:
   m_ObjectHideFlags: 0

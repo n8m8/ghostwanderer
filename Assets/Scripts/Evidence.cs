@@ -12,7 +12,7 @@ public class Evidence : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        Debug.Log("EvidenceSprite " + EvidenceSprite.rect);
     }
 	
 	// Update is called once per frame
