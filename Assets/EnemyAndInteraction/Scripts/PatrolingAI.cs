@@ -84,7 +84,7 @@ public class PatrolingAI : MonoBehaviour {
             t = 0f;
         }
         checkLOS();
-        Debug.LogWarning(currentDirection);
+
         if (animator != null)
             ToggleAnimations();
         if (isStuned == false)
@@ -96,12 +96,12 @@ public class PatrolingAI : MonoBehaviour {
                 case AIState.patrolling:
                     patrolling();
                     if (animator != null)
-                        animator.speed = getDirection().magnitude * 35f;
+                        animator.speed = getDirection().magnitude * .8f;
                     break;
                 case AIState.chasing:
                     chasing();
                     if (animator != null)
-                        animator.speed = getDirection().magnitude * .8f;
+                        animator.speed = getDirection().magnitude * 1f;
                     break;
                 case AIState.confusing:
                     if (animator != null)

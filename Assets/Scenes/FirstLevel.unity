@@ -6014,24 +6014,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4360329152824456, guid: 19754b88203d69342aad24152852d0fd,
     type: 2}
   m_PrefabInternal: {fileID: 1641883696}
---- !u!1 &262957995 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1509536477750324, guid: 4af9898e12c174db58cd8c8de0a4176b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1723928139}
---- !u!114 &262957997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 262957995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa177d3b3e39654f9815ee6f5186ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TPM_script: {fileID: 0}
-  spawn_state: 0
 --- !u!1 &267793206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6641,6 +6623,7 @@ MonoBehaviour:
   cameraSpeed: 12
   focusAreaWidth: 2
   focusAreaHeight: 1.3
+  teleportDistance: 20
 --- !u!114 &293630772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7304,7 +7287,7 @@ Prefab:
     - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
         type: 2}
       propertyPath: sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4611437602812028, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7422,7 +7405,8 @@ Prefab:
     - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
         type: 2}
       propertyPath: sentences.Array.data[3]
-      value: Now all I can do is bug them by screwing with their lights.
+      value: Anyhow, death isn't all bad. I think you'll find that when one door closes,
+        you may be able to open another....
       objectReference: {fileID: 0}
     - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
         type: 2}
@@ -24685,6 +24669,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1308386761927900, guid: 118fb1cfe71344fcf942e23c94b21201,
     type: 2}
   m_PrefabInternal: {fileID: 1280808789}
+--- !u!95 &1280808791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280808790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1281247845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4936571390988308, guid: f4fcab344cca9c0449b0cbe6d84ab985,
@@ -33135,6 +33137,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce14fefad5ec9c84cad53eb1bb33bbd3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1774461723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1191741935568556, guid: 0017a3c2fd3af854da407384e8908cb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1448134727}
 --- !u!1001 &1776594547
 Prefab:
   m_ObjectHideFlags: 0
@@ -40209,6 +40216,7 @@ MonoBehaviour:
   musicObject: {fileID: 1210437849}
   ghostSprite: {fileID: 21300000, guid: 737c5dfcef11f5c4aa2f118aaea0e946, type: 3}
   humanSprite: {fileID: 21300000, guid: 1dda7ae13297d1148a16da5b0e8cbc41, type: 3}
+  cutsceneHidingPlace: {fileID: 1774461723}
   isGhost: 0
   ghostAvailable: 0
   bodyAvailable: 0

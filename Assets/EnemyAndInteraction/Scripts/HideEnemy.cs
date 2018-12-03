@@ -12,7 +12,8 @@ public class HideEnemy : MonoBehaviour {
 	void Start () {
         isIn = false;
         player = GameObject.FindGameObjectWithTag("Player");
-        control = player.gameObject.GetComponent<TestPlayerMove>();
+        if (player != null)
+            control = player.gameObject.GetComponent<TestPlayerMove>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +27,7 @@ public class HideEnemy : MonoBehaviour {
                     enemy[i].GetComponent<SpriteRenderer>().enabled = true;
                 }
             }
-            else if(isIn == false && control.isPossessing == false)
+            else if(isIn == false && control != null && control.isPossessing == false)
             {
                 for (int i = 0; i < enemy.Length; i++)
                 {

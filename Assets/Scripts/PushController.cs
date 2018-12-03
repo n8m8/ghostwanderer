@@ -51,12 +51,18 @@ public class PushController : MonoBehaviour {
         {
 			VaseAnimator.SetTrigger ("Fall");
 			if (enemyInRange) {
-				Destroy (Enemy);
+                if (Enemy != null)
+                {
+                    Destroy(Enemy);
+                }
 				enemy1Dead = true;
                 enemyInRange = false;
 			} 
 			else if(enemyInRange2){
-				Destroy (Enemy2);
+                if (Enemy2 != null)
+                {
+                    Destroy(Enemy2);
+                }
 				enemy2Dead = true;
                 enemyInRange2 = false;
 			}
@@ -98,6 +104,5 @@ public class PushController : MonoBehaviour {
         {
             canMoveObject = false;
         }
-
     }
 }
