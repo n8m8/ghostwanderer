@@ -34565,7 +34565,7 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: sentences.Array.data[1]
-      value: "Honestly, i\u2019m real bored. Like, real, REAL board. Even the TV is
+      value: "Honestly, i\u2019m real bored. Like, real, REAL bored. Even the TV is
         boring now, even if it is kinda funny to mess with people by makin\u2019 it
         fuzz out. But I don\u2019t do it often, cuz momma said not to sit too close.
         \ "
