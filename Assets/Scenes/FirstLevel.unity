@@ -7305,7 +7305,7 @@ Prefab:
     - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
         type: 2}
       propertyPath: sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4611437602812028, guid: 3cbc89d077b267344a0b2c7158cccda5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7423,7 +7423,8 @@ Prefab:
     - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
         type: 2}
       propertyPath: sentences.Array.data[3]
-      value: Now all I can do is bug them by screwing with their lights.
+      value: Anyhow, death isn't all bad. I think you'll find that when one door closes,
+        you may be able to open another....
       objectReference: {fileID: 0}
     - target: {fileID: 114753113483866242, guid: 3cbc89d077b267344a0b2c7158cccda5,
         type: 2}
