@@ -58546,6 +58546,14 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -1.8262732
       objectReference: {fileID: 0}
+    - target: {fileID: 4900452930694670, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.8785594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900452930694670, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.8819501
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
   m_IsPrefabAsset: 0
