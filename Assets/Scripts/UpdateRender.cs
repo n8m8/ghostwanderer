@@ -72,12 +72,20 @@ public class UpdateRender : MonoBehaviour {
                         GetComponent<SpriteRenderer>().enabled = true;
                         Sprite_on = true;
                         try { GetComponent<Collider2D>().enabled = true; } catch { }
+                        if(gameObject.name == "EvidenceSprite")
+                        {
+                            try { transform.parent.GetComponent<Collider2D>().enabled = true; } catch { }
+                        }
                     }
                     else
                     {
                         GetComponent<SpriteRenderer>().enabled = false;
                         Sprite_on = false;
                         try { GetComponent<Collider2D>().enabled = false; } catch { }
+                        if (gameObject.name == "EvidenceSprite")
+                        {
+                            try { transform.parent.GetComponent<Collider2D>().enabled = false; } catch { }
+                        }
                     }
                     break;
                 }
