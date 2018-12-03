@@ -20,6 +20,8 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private Sprite ghostSprite;
     [SerializeField] private Sprite humanSprite;
 
+	[SerializeField] private GameObject cutsceneHidingPlace;
+
     private Vector2 movement;
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
@@ -369,6 +371,7 @@ public class TestPlayerMove : MonoBehaviour
 	{
 		ghostAvailable = true;
 		toggleGhostMode();
+		hidingPlace = cutsceneHidingPlace;
 	}
 
 	//enables ghost mode and sets body's location to body position upon exit

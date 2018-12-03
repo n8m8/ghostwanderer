@@ -33135,6 +33135,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce14fefad5ec9c84cad53eb1bb33bbd3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1774461723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1191741935568556, guid: 0017a3c2fd3af854da407384e8908cb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1448134727}
 --- !u!1001 &1776594547
 Prefab:
   m_ObjectHideFlags: 0
@@ -40209,6 +40214,7 @@ MonoBehaviour:
   musicObject: {fileID: 1210437849}
   ghostSprite: {fileID: 21300000, guid: 737c5dfcef11f5c4aa2f118aaea0e946, type: 3}
   humanSprite: {fileID: 21300000, guid: 1dda7ae13297d1148a16da5b0e8cbc41, type: 3}
+  cutsceneHidingPlace: {fileID: 1774461723}
   isGhost: 0
   ghostAvailable: 0
   bodyAvailable: 0
