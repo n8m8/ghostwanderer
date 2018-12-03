@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Click : MonoBehaviour {
     public string levelname;
+    public GameObject frame;
+    private Ray ray;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,7 +14,6 @@ public class Click : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
     }
 
     private void OnMouseDown()
@@ -23,6 +24,19 @@ public class Click : MonoBehaviour {
     public void backToMenu(){
         SceneManager.LoadScene("MainMenu");
     }
+
+    private void OnMouseEnter()
+    {
+        frame.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    private void OnMouseExit()
+    {
+        frame.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+
+
 
 
 }
