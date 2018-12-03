@@ -6025,7 +6025,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 262957995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fa177d3b3e39654f9815ee6f5186ef4, type: 3}
   m_Name: 
@@ -6641,6 +6641,7 @@ MonoBehaviour:
   cameraSpeed: 12
   focusAreaWidth: 2
   focusAreaHeight: 1.3
+  teleportDistance: 20
 --- !u!114 &293630772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24685,6 +24686,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1308386761927900, guid: 118fb1cfe71344fcf942e23c94b21201,
     type: 2}
   m_PrefabInternal: {fileID: 1280808789}
+--- !u!95 &1280808791
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280808790}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2eebfab651d4564da452569eed4908b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1281247845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4936571390988308, guid: f4fcab344cca9c0449b0cbe6d84ab985,
