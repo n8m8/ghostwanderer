@@ -28769,6 +28769,7 @@ GameObject:
   - component: {fileID: 1551511940}
   - component: {fileID: 1551511942}
   - component: {fileID: 1551511941}
+  - component: {fileID: 1551511943}
   m_Layer: 0
   m_Name: pause
   m_TagString: Untagged
@@ -28828,6 +28829,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1551511939}
   m_CullTransparentMesh: 0
+--- !u!114 &1551511943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551511939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e486d6387071d8d48a1473dbdbc433a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostPause: {fileID: 21300000, guid: f9954452e6279d54d8810249d5cf3f24, type: 3}
+  humanPause: {fileID: 21300000, guid: 497b1ecb42e494044944882b45edfdf9, type: 3}
 --- !u!1001 &1552391113
 Prefab:
   m_ObjectHideFlags: 0
@@ -31519,7 +31533,7 @@ Prefab:
     - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
       propertyPath: m_text
-      value: 'Evidence Collected: 0/6'
+      value: 'Evidence Collected: 0/5'
       objectReference: {fileID: 0}
     - target: {fileID: 114718227498522666, guid: 6250ece518a854fa2b983e3a83e9b948,
         type: 2}
@@ -31595,6 +31609,16 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9b73ebfc348fe14428bb381c104ff935,
         type: 3}
+    - target: {fileID: 224117838197773136, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224853098776717840, guid: 6250ece518a854fa2b983e3a83e9b948,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6250ece518a854fa2b983e3a83e9b948, type: 2}
   m_IsPrefabAsset: 0

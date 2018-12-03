@@ -26,10 +26,10 @@ public class EvidenceManager : MonoBehaviour {
             evidences.Add(evidenceCode);
         }
         if (scene.name == "FirstLevel"){
-            updateEvidence(6);
+            updateEvidence(5);
         }
         else if (scene.name == "SecondLevel"){
-            updateEvidence(4);
+            updateEvidence(3);
         }
     }
 

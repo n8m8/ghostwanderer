@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
@@ -8,6 +9,11 @@ public class PauseMenu : MonoBehaviour {
 	public static bool gameIsPaused = false;
 	public GameObject pauseMenu;
 	public GameObject pauseNotification;
+	private Image pauseImage;
+
+	void Start(){
+		pauseImage = pauseNotification.GetComponent<Image>();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -23,14 +29,14 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	public void Resume(){
-		pauseNotification.SetActive(true);
+		pauseImage.enabled = true;
 		pauseMenu.SetActive(false);
 		Time.timeScale = 1f;
 		gameIsPaused = false;
 	}
 
 	public void Pause(){
-		pauseNotification.SetActive(false);
+		pauseImage.enabled = false;
 		pauseMenu.SetActive(true);
 		Time.timeScale = 0f;
 		gameIsPaused = true;
