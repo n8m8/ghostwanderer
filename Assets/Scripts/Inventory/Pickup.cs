@@ -41,7 +41,11 @@ public class Pickup : MonoBehaviour {
 		for (int i = 0; i < inventory.slots.Length; i++){
 			if (inventory.isFull[i] == false){
                 int number = 0;
-				coll.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                try
+                {
+                    coll.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                catch { }
 				name = coll.gameObject.name;
 				inventory.isFull[i] = true;
 				inventory.slots[i] = name;

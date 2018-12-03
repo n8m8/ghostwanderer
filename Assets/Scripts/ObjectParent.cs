@@ -37,6 +37,18 @@ public class ObjectParent : MonoBehaviour {
                 {
                     child.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
                 }
+                else if(child.name == "Evidence")
+                {
+                    try
+                    {
+                        child.GetChild(0).GetComponent<SpriteRenderer>().enabled =
+                                        child.GetComponent<UpdateRender>().Sprite_on;
+                    }
+                    catch
+                    {
+                        child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    }
+                }
                 else
                 {
                     child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
