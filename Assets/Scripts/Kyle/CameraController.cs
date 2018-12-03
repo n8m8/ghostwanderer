@@ -12,12 +12,18 @@ public class CameraController : MonoBehaviour {
 	[SerializeField] private float cameraSpeed;
 	[SerializeField] private float focusAreaWidth;
 	[SerializeField] private float focusAreaHeight;
+	[SerializeField] private float teleportDistance = 20;
 
 	private bool trackingPlayer = false;
 
 	void LateUpdate () {
+		Vector2 playerOffsetVector = (target.transform.position - transform.position);
+		//if the distance is greater than teleportDistance, teleports camera to player
+		if (playerOffsetVector.magnitude > teleportDistance) {
+			transform.position = new Vector3 (target.transform.position.x, target.transform.position.y, this.transform.position.z);
+			trackingPlayer = false;
+		}
 		if (trackingPlayer) {
-			Vector2 playerOffsetVector = (target.transform.position - transform.position);
 			//proportional speed makes the camera move proportionally to the cameraSpeed value and to its distance from the player
 			float proportionalSpeed = Mathf.Clamp (cameraSpeed * Mathf.Clamp (playerOffsetVector.magnitude/4, 0f, 2f), 0.05f, cameraSpeed);
 			Vector3 cameraMovement = (Vector3) playerOffsetVector.normalized * proportionalSpeed * Time.deltaTime;

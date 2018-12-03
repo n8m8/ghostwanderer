@@ -95,7 +95,7 @@ public class TestPlayerMove : MonoBehaviour
             Vector3 offset = newPos - centerPt;
             transform.position = centerPt + Vector3.ClampMagnitude(offset, radius);
         }
-        animator.speed = playerRB.velocity.magnitude / 2f;
+        animator.speed = playerRB.velocity.magnitude / 6f;
         //Debug.Log(animator.speed);
         ToggleAnimations();
 
