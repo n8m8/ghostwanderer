@@ -76,15 +76,19 @@ public class StationAI : MonoBehaviour
             switch (state)
             {
                 case AIState.sitting:
+                    if (animator != null)
+                        animator.speed = 1f;
                     sitting();
                     break;
                 case AIState.chasing:
                     chasing();
-                    animator.speed = Mathf.Log(getDirection().magnitude) * .8f;
+                    if (animator != null)
+                        animator.speed = getDirection().magnitude * .8f;
                     break;
                 case AIState.checking:
                     checking();
-                    animator.speed = Mathf.Log(getDirection().magnitude) * 35f;
+                    if (animator != null)
+                        animator.speed = getDirection().magnitude * 35f;
                     break;
             }
         }

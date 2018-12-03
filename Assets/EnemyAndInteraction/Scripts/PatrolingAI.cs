@@ -96,12 +96,12 @@ public class PatrolingAI : MonoBehaviour {
                 case AIState.patrolling:
                     patrolling();
                     if (animator != null)
-                        animator.speed = Mathf.Log(getDirection().magnitude) * 35f;
+                        animator.speed = getDirection().magnitude * 35f;
                     break;
                 case AIState.chasing:
                     chasing();
                     if (animator != null)
-                        animator.speed = Mathf.Log(getDirection().magnitude) * .8f;
+                        animator.speed = getDirection().magnitude * .8f;
                     break;
                 case AIState.confusing:
                     if (animator != null)
