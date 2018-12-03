@@ -48,4 +48,6 @@ public class PopUps : MonoBehaviour {
 		if(collider.tag=="Player")
 			Destroy(popup);
 	}
+
+
 }
