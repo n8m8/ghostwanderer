@@ -308,8 +308,8 @@ public class TestPlayerMove : MonoBehaviour
             disablePostProcessing();
             system.Play();
             gameObject.transform.position = ghostPosition;
-			if(hidingPlace.GetComponentInParent<BodyHideObject>() != null)
-            	hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
+			//if(hidingPlace.GetComponentInParent<BodyHideObject>() != null)
+            	//hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
             animator.SetBool("isGhost", false);
         }
         else if (!isGhost)
@@ -322,8 +322,8 @@ public class TestPlayerMove : MonoBehaviour
             PC.isTrigger = true;
             isGhost = true;
             animator.SetBool("isGhost", true);
-			if(hidingPlace.GetComponentInParent<BodyHideObject>() != null)
-            	hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
+			//if(hidingPlace.GetComponentInParent<BodyHideObject>() != null)
+            	//hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
 
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
             enablePostProcessing();
