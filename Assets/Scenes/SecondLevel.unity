@@ -51474,6 +51474,7 @@ GameObject:
   - component: {fileID: 1747826581}
   - component: {fileID: 1747826583}
   - component: {fileID: 1747826582}
+  - component: {fileID: 1747826584}
   m_Layer: 0
   m_Name: pause
   m_TagString: Untagged
@@ -51533,6 +51534,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1747826580}
   m_CullTransparentMesh: 0
+--- !u!114 &1747826584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747826580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e486d6387071d8d48a1473dbdbc433a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostPause: {fileID: 21300000, guid: f9954452e6279d54d8810249d5cf3f24, type: 3}
+  humanPause: {fileID: 21300000, guid: 497b1ecb42e494044944882b45edfdf9, type: 3}
 --- !u!1 &1750104043
 GameObject:
   m_ObjectHideFlags: 0
