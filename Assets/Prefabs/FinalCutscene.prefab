@@ -335,9 +335,9 @@ MonoBehaviour:
   textDisplay: {fileID: 0}
   sentences:
   - 'Heh. You have been both an interesting little guinea pig to let roam, and a thorn
-    in my side that twists with every step you take. The next time, I will snip those
-    tenuous threads of life that tie you to that body. And oh, will you feel it. Every.
-    Cut. Heh. I guarantee it.  '
+    in my side that twists with every step you take. '
+  - 'The next time, I will snip those tenuous threads of life that tie you to that
+    body. And oh, will you feel it. Every. Cut. Heh. I guarantee it.  '
   - "With the information I have harvested from you and your pathetic bumblings, i
     can create something i\u2019ve been researching for years. So thank you for that.
     Take yourself and that dying sack of flesh you call a body and leave. I will deal
@@ -362,8 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f834339e235b140a44e7ad7817af6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intervalMin: 0
-  intervalMultiplier: 0
+  intervalMin: 0.1
+  intervalMultiplier: 0.5
 --- !u!212 &212244172921519812
 SpriteRenderer:
   m_ObjectHideFlags: 1
