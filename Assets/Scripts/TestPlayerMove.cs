@@ -20,6 +20,8 @@ public class TestPlayerMove : MonoBehaviour
     [SerializeField] private Sprite ghostSprite;
     [SerializeField] private Sprite humanSprite;
 
+	[SerializeField] private GameObject cutsceneHidingPlace;
+
     private Vector2 movement;
     private Rigidbody2D playerRB;
     private PlayerController.PlayerStatus playerStatus;
@@ -306,7 +308,8 @@ public class TestPlayerMove : MonoBehaviour
             disablePostProcessing();
             system.Play();
             gameObject.transform.position = ghostPosition;
-            //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
+			if(hidingPlace.GetComponentInParent<BodyHideObject>() != null)
+            	hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = false;
             animator.SetBool("isGhost", false);
         }
         else if (!isGhost)
@@ -319,7 +322,8 @@ public class TestPlayerMove : MonoBehaviour
             PC.isTrigger = true;
             isGhost = true;
             animator.SetBool("isGhost", true);
-            //hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
+			if(hidingPlace.GetComponentInParent<BodyHideObject>() != null)
+            	hidingPlace.GetComponentInParent<BodyHideObject>().ContainsBody = true;
 
             ParticleSystem system = gameObject.GetComponentInChildren<ParticleSystem>();
             enablePostProcessing();
@@ -367,6 +371,7 @@ public class TestPlayerMove : MonoBehaviour
 	{
 		ghostAvailable = true;
 		toggleGhostMode();
+		hidingPlace = cutsceneHidingPlace;
 	}
 
 	//enables ghost mode and sets body's location to body position upon exit
