@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 4645369278302326}
   - component: {fileID: 212681696887404012}
   - component: {fileID: 114201511685631398}
+  - component: {fileID: 114467526128274956}
   m_Layer: 0
   m_Name: walls_W3
   m_TagString: Untagged
@@ -58,6 +59,7 @@ GameObject:
   - component: {fileID: 4058238665343396}
   - component: {fileID: 212116861164390928}
   - component: {fileID: 114602765393925188}
+  - component: {fileID: 114642229603797072}
   m_Layer: 0
   m_Name: walls_W5
   m_TagString: Untagged
@@ -75,6 +77,7 @@ GameObject:
   - component: {fileID: 4636368188734518}
   - component: {fileID: 212854410366443238}
   - component: {fileID: 114726818440782556}
+  - component: {fileID: 114235242927459284}
   m_Layer: 0
   m_Name: walls_W1
   m_TagString: Untagged
@@ -92,6 +95,7 @@ GameObject:
   - component: {fileID: 4127342363962728}
   - component: {fileID: 212662674900392594}
   - component: {fileID: 114772562286523586}
+  - component: {fileID: 114063784939076484}
   m_Layer: 0
   m_Name: walls_W4
   m_TagString: Untagged
@@ -109,6 +113,7 @@ GameObject:
   - component: {fileID: 4013551030155934}
   - component: {fileID: 212498783472234394}
   - component: {fileID: 114944507828027566}
+  - component: {fileID: 114615133394423544}
   m_Layer: 0
   m_Name: walls_W2
   m_TagString: Untagged
@@ -227,6 +232,19 @@ PolygonCollider2D:
       - {x: 0.7612028, y: -0.35421395}
       - {x: -0.8844452, y: -1.2030308}
       - {x: -0.78828406, y: -1.2560554}
+--- !u!114 &114063784939076484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583182461974416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114201511685631398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +258,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: 728a20a6a3fa55743a6659091709019b, type: 3}
   GhostSprite: {fileID: 21300000, guid: df1ca7b37613994488a9575e92d573ed, type: 3}
+--- !u!114 &114235242927459284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491624272136366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114467526128274956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192486575716810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114549061026400336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,6 +310,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: ec906bc4581be4f4794ee7b89c2d9e73, type: 3}
   GhostSprite: {fileID: 21300000, guid: e9bf5c01a71655d469000d8b5948635a, type: 3}
+--- !u!114 &114615133394423544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920337770942660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114642229603797072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333533311672098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114654563703574082
 MonoBehaviour:
   m_ObjectHideFlags: 1

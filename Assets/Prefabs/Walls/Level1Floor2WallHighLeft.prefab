@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4064400742958902}
   - component: {fileID: 212411137869946286}
   - component: {fileID: 114617875499794866}
+  - component: {fileID: 114631918883798598}
   m_Layer: 0
   m_Name: Deco3
   m_TagString: Untagged
@@ -38,6 +39,7 @@ GameObject:
   - component: {fileID: 4073439103440316}
   - component: {fileID: 212347906264342288}
   - component: {fileID: 114123325629412782}
+  - component: {fileID: 114821248253586874}
   m_Layer: 0
   m_Name: Deco2
   m_TagString: Untagged
@@ -75,6 +77,7 @@ GameObject:
   - component: {fileID: 4596808667565514}
   - component: {fileID: 212914958450607268}
   - component: {fileID: 114674128076009138}
+  - component: {fileID: 114296616786094964}
   m_Layer: 0
   m_Name: Deco4
   m_TagString: Untagged
@@ -92,6 +95,7 @@ GameObject:
   - component: {fileID: 4554542663792136}
   - component: {fileID: 212086578874390628}
   - component: {fileID: 114116162811491544}
+  - component: {fileID: 114849586478800012}
   m_Layer: 0
   m_Name: Deco5
   m_TagString: Untagged
@@ -109,6 +113,7 @@ GameObject:
   - component: {fileID: 4829899661040208}
   - component: {fileID: 212112449074457352}
   - component: {fileID: 114967433810983378}
+  - component: {fileID: 114711217386264002}
   m_Layer: 0
   m_Name: Deco1
   m_TagString: Untagged
@@ -264,6 +269,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56bf9450fa2e97c44bcdcc6d7efedc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114296616786094964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1837921679787308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114525134313206492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -304,6 +322,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: 728a20a6a3fa55743a6659091709019b, type: 3}
   GhostSprite: {fileID: 21300000, guid: df1ca7b37613994488a9575e92d573ed, type: 3}
+--- !u!114 &114631918883798598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092216165005408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114674128076009138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,6 +348,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanSprite: {fileID: 21300000, guid: 96220840d64f1db469c1ab4efb7acfca, type: 3}
   GhostSprite: {fileID: 21300000, guid: 75ef8c9edc721b24dbeb345c2287afdd, type: 3}
+--- !u!114 &114711217386264002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956647727354092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114821248253586874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384054690760048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
+--- !u!114 &114849586478800012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927176073601400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8257d91a79230fb4cbef12fce36054a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useAutoSort: 1
+  off_set: 10
 --- !u!114 &114967433810983378
 MonoBehaviour:
   m_ObjectHideFlags: 1

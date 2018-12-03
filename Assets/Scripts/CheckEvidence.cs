@@ -7,7 +7,10 @@ public class CheckEvidence : MonoBehaviour {
 
     public InputManager IM_script;
     public GameObject EvidencePanel;
-    public Text EvidencePanelText; 
+    public Text EvidencePanelText;
+
+    [SerializeField] private GameObject ChildImage;
+    [SerializeField] private float GeneralHeight = 350.0f;
 
     private Transform evidence_TRANS;
     private bool evidence_open_flag;
@@ -65,8 +68,9 @@ public class CheckEvidence : MonoBehaviour {
 
     private void open_evidence()
     {
-        EvidencePanel.GetComponentInChildren<Image>().sprite =
+        ChildImage.GetComponent<Image>().sprite =
                                 evidence_TRANS.GetComponent<Evidence>().EvidenceSprite;
+        ChildImage.GetComponent<RectTransform>().sizeDelta = evidence_ratio_cal();
         EvidencePanelText.text = evidence_TRANS.GetComponent<Evidence>().evidence_text;
         EvidencePanel.SetActive(true);
         
@@ -75,6 +79,16 @@ public class CheckEvidence : MonoBehaviour {
     private void close_evidence()
     {
         EvidencePanel.SetActive(false);
+    }
+
+    private Vector2 evidence_ratio_cal()
+    {
+        Rect evi_rect = evidence_TRANS.GetComponent<Evidence>().EvidenceSprite.rect;
+
+        float ratio = evi_rect.height / GeneralHeight;
+
+        return new Vector2(evi_rect.width / ratio, GeneralHeight);
+
     }
 
 }
