@@ -27,6 +27,7 @@ TagManager:
   - Evidences
   - Level1
   - Level2
+  - EvidenceDisplay
   layers:
   - Default
   - TransparentFX

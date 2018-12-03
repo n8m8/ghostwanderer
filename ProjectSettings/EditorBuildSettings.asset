@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: de66d24742cc628458286c6e1df15dea
   - enabled: 1
+    path: Assets/Scenes/SecondLevelTransition.unity
+    guid: 7c0b626a33b6abd45b4cb876d755dd7d
+  - enabled: 1
     path: Assets/Scenes/SecondLevel.unity
     guid: dcb71a20f9b1fc140982b888310fe3fd
   - enabled: 1
