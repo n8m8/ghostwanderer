@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1382,10 +1382,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.9473019, y: -10.3386135}
+    - - {x: 1.361022, y: -8.161375}
       - {x: -1.8154215, y: -0.41860408}
       - {x: 0.7144342, y: 1.2421044}
-      - {x: 12.440891, y: -6.122377}
+      - {x: 8.397436, y: -4.567201}
 --- !u!4 &73831903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4531052649118608, guid: 7e02ef52296135c448117b3758a3ecde,
