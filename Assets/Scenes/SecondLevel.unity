@@ -26187,7 +26187,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 759040679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4d09f7d78728444dbbf2364bd2e3947, type: 3}
   m_Name: 
@@ -36007,6 +36007,11 @@ Prefab:
         type: 2}
       propertyPath: sortingOffset
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114418707816723170, guid: ecd9e359188ddbc44a09430b79f7240b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd9e359188ddbc44a09430b79f7240b, type: 2}
