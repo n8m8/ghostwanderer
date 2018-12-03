@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour {
 	private Image pauseImage;
 	private TextMeshProUGUI inventoryDisplay;
 	private TextMeshProUGUI evidenceDisplay;
+	public GameObject ControlsMenu;
 
 	void Start(){
 		pauseImage = pauseNotification.GetComponent<Image>();
@@ -36,6 +37,7 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	public void Resume(){
+		ControlsMenu.SetActive(false);
 		keyCounter.text = "";
 		evidenceCounter.text = "";
 		pauseImage.enabled = true;
