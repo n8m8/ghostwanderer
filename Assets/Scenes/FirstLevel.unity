@@ -35374,6 +35374,11 @@ Prefab:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: -2.1074028
       objectReference: {fileID: 0}
+    - target: {fileID: 114988048579053520, guid: d3dbb2544fec02b44a185b03a267473c,
+        type: 2}
+      propertyPath: sortingOffset
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114806143262160396, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: d3dbb2544fec02b44a185b03a267473c, type: 2}
