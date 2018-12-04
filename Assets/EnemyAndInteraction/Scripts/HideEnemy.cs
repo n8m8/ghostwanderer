@@ -18,27 +18,36 @@ public class HideEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (enemy[0].activeSelf)
-        {
             if (isIn)
             {
                 for (int i = 0; i < enemy.Length; i++)
                 {
-                    enemy[i].GetComponent<SpriteRenderer>().enabled = true;
+                    if (enemy[i] != null)
+                    {
+                        if (enemy[i].activeSelf)
+                        {
+                            enemy[i].GetComponent<SpriteRenderer>().enabled = true;
+                        }
+                    }
                 }
             }
             else if(isIn == false && control != null && control.isPossessing == false)
             {
                 for (int i = 0; i < enemy.Length; i++)
                 {
-                    enemy[i].GetComponent<SpriteRenderer>().enabled = false;
+                    if (enemy[i] != null)
+                    {
+                        if (enemy[i].activeSelf)
+                        {
+                            enemy[i].GetComponent<SpriteRenderer>().enabled = false;
+                        }
+                    }
                 }
             }
             else{
 
             }
-        }
-	}
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

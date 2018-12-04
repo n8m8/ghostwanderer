@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b1ea934636b44ba87b89f61820270b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prototype: {fileID: 1412618605230764, guid: ec51898bfd21644e4ae5010d859f47fc, type: 2}
   level2: {fileID: 1840616980}
   evi1: {fileID: 2140723820}
   evi2: {fileID: 541955404}
