@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6626,6 +6626,11 @@ Prefab:
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: -1.9543839
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502725873848856, guid: 6c3083cec2cb60d45968d73b4f5b4c43,
+        type: 2}
+      propertyPath: lockName
+      value: iloveinspectregadget
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
@@ -20522,6 +20527,7 @@ RectTransform:
   - {fileID: 1616520223}
   - {fileID: 2029445191}
   - {fileID: 1841115077}
+  - {fileID: 778670926}
   m_Father: {fileID: 1616520218}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26448,6 +26454,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5cdd43757ae314f8cd0f69479c50bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &778670925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778670926}
+  - component: {fileID: 778670928}
+  - component: {fileID: 778670927}
+  m_Layer: 0
+  m_Name: npc-gal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &778670926
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778670925}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -37.4}
+  m_LocalScale: {x: 17, y: 17, z: 1.0165185}
+  m_Children: []
+  m_Father: {fileID: 566643529}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -233.29999, y: -69.399994}
+  m_SizeDelta: {x: 2.81, y: 6.03}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &778670927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778670925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: c9479d6abdb9ae24c81d294e81435098, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &778670928
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778670925}
+  m_CullTransparentMesh: 0
 --- !u!1 &780986786
 GameObject:
   m_ObjectHideFlags: 0
@@ -34795,7 +34870,7 @@ Prefab:
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: name
-      value: 'Tiny Tim:'
+      value: 'Tiny Tim: '
       objectReference: {fileID: 0}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
@@ -35411,7 +35486,7 @@ Prefab:
     - target: {fileID: 224254486885275978, guid: 9329f06f821f19b46b1a693fd1df3c34,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1.7000374
+      value: 1.7000502
       objectReference: {fileID: 0}
     - target: {fileID: 224254486885275978, guid: 9329f06f821f19b46b1a693fd1df3c34,
         type: 2}
@@ -41175,11 +41250,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4986575722460378, guid: 69239321dbf924855b5623e4f3ed41a3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 144
+      value: 145.95988
       objectReference: {fileID: 0}
     - target: {fileID: 4986575722460378, guid: 69239321dbf924855b5623e4f3ed41a3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -18
+      value: -20.92553
       objectReference: {fileID: 0}
     - target: {fileID: 4986575722460378, guid: 69239321dbf924855b5623e4f3ed41a3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -47409,11 +47484,11 @@ Prefab:
         type: 2}
       propertyPath: image
       value: 
-      objectReference: {fileID: 2029445190}
+      objectReference: {fileID: 778670925}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: name
-      value: 'Tiny Tim:'
+      value: 'Denora: '
       objectReference: {fileID: 0}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
@@ -48093,8 +48168,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -57163,6 +57238,11 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 2.8819501
       objectReference: {fileID: 0}
+    - target: {fileID: 114502725873848856, guid: 6c3083cec2cb60d45968d73b4f5b4c43,
+        type: 2}
+      propertyPath: lockName
+      value: iloveinspectregadget
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c3083cec2cb60d45968d73b4f5b4c43, type: 2}
   m_IsPrefabAsset: 0
@@ -58708,11 +58788,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -627.5
+      value: -608.3
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 27.9
+      value: 42.9
       objectReference: {fileID: 0}
     - target: {fileID: 4299648585295168, guid: 23a689ca67c2a1f46b75ad6021a516e1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -58752,11 +58832,11 @@ Prefab:
         type: 2}
       propertyPath: image
       value: 
-      objectReference: {fileID: 2029445190}
+      objectReference: {fileID: 778670925}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
       propertyPath: name
-      value: 'Tiny Tim:'
+      value: 'Denora: '
       objectReference: {fileID: 0}
     - target: {fileID: 114677986943349870, guid: 23a689ca67c2a1f46b75ad6021a516e1,
         type: 2}
