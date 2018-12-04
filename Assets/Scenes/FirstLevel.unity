@@ -1345,7 +1345,7 @@ Prefab:
     - target: {fileID: 114988048579053520, guid: d3dbb2544fec02b44a185b03a267473c,
         type: 2}
       propertyPath: sortingOffset
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

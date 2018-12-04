@@ -20,7 +20,7 @@ public class LayerController : MonoBehaviour {
     private SpriteRenderer characterSpriteRenderer;
     private Bounds colliderBounds;
 
-    private float SKIN_WIDTH = -0.14f;
+    private float SKIN_WIDTH = -0.20f;
 
     private void Awake()
     {
@@ -120,7 +120,7 @@ public class LayerController : MonoBehaviour {
 
         for (int rayIndex = 0; rayIndex < numberOfRayVertical; rayIndex++)
         {
-            float distance = 0.80f;
+            float distance = 1.1f;
 
             Vector2 raycastOriginBottom = raycastBaseBottom + raySpacingVertical * rayIndex * Vector2.right;
 
@@ -139,6 +139,16 @@ public class LayerController : MonoBehaviour {
                     UpdateSortingBottom(rayIndex);
                     //break;
                 }
+                //else if (hit.collider.isTrigger 
+                //    && hit.transform.gameObject.GetComponent<SpriteRenderer>() == null 
+                //    && hit.transform.GetComponentInParent<SpriteRenderer>() != null 
+                //    && hit.transform.parent.gameObject != touchInfo.topObject[rayIndex]
+                //    && (hit.transform.GetComponentInParent<Collider2D>() == null || !hit.transform.GetComponentInParent<Collider2D>().enabled || hit.transform.GetComponentInParent<Collider2D>().isTrigger))
+                //{
+                //    touchInfo.touchBottom[rayIndex] = true;
+                //    touchInfo.bottomObject[rayIndex] = hit.transform.parent.gameObject;
+                //    UpdateSortingBottom(rayIndex);
+                //}
             }
             if (touchInfo.touchBottom[rayIndex] == false)
             {
@@ -165,6 +175,16 @@ public class LayerController : MonoBehaviour {
                     UpdateSortingTop(rayIndex);
                     //break;
                 }
+                //else if (hit.collider.isTrigger 
+                //    && hit.transform.gameObject.GetComponent<SpriteRenderer>() == null
+                //    && hit.transform.GetComponentInParent<SpriteRenderer>() != null 
+                //    && hit.transform.parent.gameObject != touchInfo.bottomObject[rayIndex]
+                //    && (hit.transform.GetComponentInParent<Collider2D>() == null || !hit.transform.GetComponentInParent<Collider2D>().enabled || hit.transform.GetComponentInParent<Collider2D>().isTrigger))
+                //{
+                //    touchInfo.touchTop[rayIndex] = true;
+                //    touchInfo.topObject[rayIndex] = hit.transform.parent.gameObject;
+                //    UpdateSortingTop(rayIndex);
+                //}
             }
             if (touchInfo.touchTop[rayIndex] == false)
             {
