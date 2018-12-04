@@ -101,7 +101,7 @@ public class PatrolingAI : MonoBehaviour {
                 case AIState.chasing:
                     chasing();
                     if (animator != null)
-                        animator.speed = getDirection().magnitude * 1f;
+                        animator.speed = getDirection().magnitude * .7f;
                     break;
                 case AIState.confusing:
                     if (animator != null)

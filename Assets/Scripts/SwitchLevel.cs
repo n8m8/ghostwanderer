@@ -40,15 +40,32 @@ public class SwitchLevel : MonoBehaviour {
         //placeholder;
         switch_on = true;
         GetComponent<SpriteRenderer>().sprite = SwitchOnSprite;
-        Destroy(Target);
+        StartCoroutine(KillEnemy(Target));
         target_destroied = true;
 		if(GetComponent<AudioSource> () != null)
-			GetComponent<AudioSource> ().Play ();
+			GetComponent<AudioSource>().Play ();
     }
 
     private void turn_off_switch()
     {
         switch_on = false;
         GetComponent<SpriteRenderer>().sprite = SwitchOffSprite;
+    }
+
+    private IEnumerator KillEnemy(GameObject enemy)
+    {
+        if (enemy.GetComponent<PatrolingAI>() != null)
+            enemy.GetComponent<PatrolingAI>().isStuned = true;
+        else if (enemy.GetComponent<PatrolingAIDistrac>() != null)
+            enemy.GetComponent<PatrolingAIDistrac>().isStuned = true;
+        else if (enemy.GetComponent<StationAI>() != null)
+            enemy.GetComponent<StationAI>().isStuned = true;
+
+        Animator animator = enemy.GetComponent<Animator>();
+        if (animator != null)
+            animator.SetBool("die", true);
+
+        yield return new WaitForSeconds(3f);
+        Destroy(enemy);
     }
 }

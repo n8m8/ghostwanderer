@@ -53,7 +53,7 @@ public class PushController : MonoBehaviour {
 			if (enemyInRange) {
                 if (Enemy != null)
                 {
-                    Destroy(Enemy);
+                    StartCoroutine(KillEnemy(Enemy));
                 }
 				enemy1Dead = true;
                 enemyInRange = false;
@@ -61,7 +61,7 @@ public class PushController : MonoBehaviour {
 			else if(enemyInRange2){
                 if (Enemy2 != null)
                 {
-                    Destroy(Enemy2);
+                    StartCoroutine(KillEnemy(Enemy2));
                 }
 				enemy2Dead = true;
                 enemyInRange2 = false;
@@ -104,5 +104,22 @@ public class PushController : MonoBehaviour {
         {
             canMoveObject = false;
         }
+    }
+
+    private IEnumerator KillEnemy(GameObject enemy)
+    {
+        if (enemy.GetComponent<PatrolingAI>() != null)
+            enemy.GetComponent<PatrolingAI>().isStuned = true;
+        else if (enemy.GetComponent<PatrolingAIDistrac>() != null)
+            enemy.GetComponent<PatrolingAIDistrac>().isStuned = true;
+        else if (enemy.GetComponent<StationAI>() != null)
+            enemy.GetComponent<StationAI>().isStuned = true;
+
+        Animator animator = enemy.GetComponent<Animator>();
+        if (animator != null)
+            animator.SetBool("die", true);
+
+        yield return new WaitForSeconds(3f);
+        Destroy(enemy);
     }
 }

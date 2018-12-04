@@ -83,7 +83,7 @@ public class StationAI : MonoBehaviour
                 case AIState.chasing:
                     chasing();
                     if (animator != null)
-                        animator.speed = getDirection().magnitude * 1f;
+                        animator.speed = getDirection().magnitude * .7f;
                     break;
                 case AIState.checking:
                     checking();
