@@ -18,7 +18,8 @@ public class EvidenceManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	}
+        scene = SceneManager.GetActiveScene();
+    }
 
     public void appendEvidence(int evidenceCode){
         if (evidences.IndexOf(evidenceCode) == -1)

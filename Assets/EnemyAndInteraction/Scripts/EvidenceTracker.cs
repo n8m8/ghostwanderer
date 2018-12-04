@@ -5,7 +5,6 @@ using UnityEngine;
 public class EvidenceTracker : MonoBehaviour {
     private EvidenceManager manager;
     private ProgressTracker progress;
-    public GameObject prototype;
     public GameObject level2;
     public GameObject evi1;
     public GameObject evi2;
@@ -18,9 +17,6 @@ public class EvidenceTracker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if(GameObject.FindGameObjectWithTag("Evidences") == null){
-            Instantiate(prototype);
-        }
         evi1.SetActive(false);
         evi2.SetActive(false);
         evi3.SetActive(false);
