@@ -49217,7 +49217,7 @@ MonoBehaviour:
   cameraSpeed: 6
   focusAreaWidth: 2
   focusAreaHeight: 1.3
-  teleportDistance: 20
+  teleportDistance: 10
 --- !u!114 &1650484282
 MonoBehaviour:
   m_ObjectHideFlags: 0
