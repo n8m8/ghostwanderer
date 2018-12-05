@@ -20,6 +20,9 @@ public class Evidence_pickup : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if(evidenceMan == null){
+            evidenceMan = GameObject.FindWithTag("Evidences");
+        }
 
         if (Input.GetKeyDown("e") && canPickUp && !isPickedup)
         {
