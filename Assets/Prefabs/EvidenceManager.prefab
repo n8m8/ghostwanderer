@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4800362435922608}
   - component: {fileID: 114698085049591448}
   - component: {fileID: 114984672725233060}
+  - component: {fileID: 114304721760779774}
   m_Layer: 0
   m_Name: EvidenceManager
   m_TagString: Evidences
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114304721760779774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412618605230764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469a3ce4936f64c12b40b733454509ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reachLevel2: 0
 --- !u!114 &114698085049591448
 MonoBehaviour:
   m_ObjectHideFlags: 1
