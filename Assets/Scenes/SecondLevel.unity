@@ -48118,7 +48118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
-  pickupSFXPlayer: {fileID: 0}
+  pickupSFXPlayer: {fileID: 1973991919}
 --- !u!114 &1615592573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57347,6 +57347,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3df9530bde201846be4b951fe381603, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1973991919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1757041755801716, guid: 74f5d8384576ae9419192598cb29f14a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1497218321}
 --- !u!1001 &1975936871
 Prefab:
   m_ObjectHideFlags: 0
