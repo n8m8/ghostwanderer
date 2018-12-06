@@ -40608,7 +40608,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Evidence Collected: 0/3'
+  m_text: 'Evidence Collected: 0/2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1913a70e95647374ba0f718d1bf22a81, type: 2}
   m_sharedMaterial: {fileID: 21984594689325388, guid: 1913a70e95647374ba0f718d1bf22a81,
@@ -56006,6 +56006,26 @@ Prefab:
     - target: {fileID: 1778338079219260, guid: 0017a3c2fd3af854da407384e8908cb6, type: 2}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 60913200519106620, guid: 0017a3c2fd3af854da407384e8908cb6,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -0.19238245
+      objectReference: {fileID: 0}
+    - target: {fileID: 60913200519106620, guid: 0017a3c2fd3af854da407384e8908cb6,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 0.5773096
+      objectReference: {fileID: 0}
+    - target: {fileID: 60913200519106620, guid: 0017a3c2fd3af854da407384e8908cb6,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 1.574879
+      objectReference: {fileID: 0}
+    - target: {fileID: 60913200519106620, guid: 0017a3c2fd3af854da407384e8908cb6,
+        type: 2}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: -0.2957554
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0017a3c2fd3af854da407384e8908cb6, type: 2}
