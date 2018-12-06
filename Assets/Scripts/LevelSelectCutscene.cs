@@ -12,9 +12,11 @@ public class LevelSelectCutscene : MonoBehaviour {
 	private int index;
 	public float typingSpeed;
 	public GameObject continueButton;
+	public GameObject skipButton;
 	public string scene;
 
 	void Start(){
+		skipButton.SetActive(true);
 		continueButton.SetActive(false);
 		StartCoroutine(Type());
 	}
@@ -24,10 +26,11 @@ public class LevelSelectCutscene : MonoBehaviour {
 		//load the continue dialogue button
 		if (textDisplay.text == (sentences[index])){
 			continueButton.SetActive(true);
+			skipButton.SetActive(false);
 		}
 
 		//skip the dialogue after keypress 
-		if (Input.GetKeyDown(KeyCode.Space) && textDisplay.text == (sentences[index])){
+		if (Input.GetKeyDown(KeyCode.Space)){
 			SceneManager.LoadScene(scene);
 		}
 	}
