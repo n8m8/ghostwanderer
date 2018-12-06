@@ -8,16 +8,17 @@ public class EvidenceManager : MonoBehaviour {
     public List<int> evidences;
     private TextMeshProUGUI textDisplay;
     private Scene scene;
+    private bool switched;
 
 	// Use this for initialization
     void Start () {
+        switched = false;
         textDisplay = GameObject.FindGameObjectWithTag("EvidenceDisplay").GetComponent<TextMeshProUGUI>();
         scene = SceneManager.GetActiveScene();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        scene = SceneManager.GetActiveScene();
     }
 
     public void appendEvidence(int evidenceCode){
@@ -25,16 +26,12 @@ public class EvidenceManager : MonoBehaviour {
         {
             evidences.Add(evidenceCode);
         }
-        if (scene.name == "FirstLevel"){
-            updateEvidence();
-        }
-        else if (scene.name == "SecondLevel"){
-            updateEvidence();
-        }
+        updateEvidence();
     }
 
     public void updateEvidence(){
         int count = 0;
+        scene = SceneManager.GetActiveScene();
         if (scene.name == "FirstLevel"){
             int numEvidence = 5;
             if (evidences.Contains(0)){
@@ -55,6 +52,11 @@ public class EvidenceManager : MonoBehaviour {
             textDisplay.text = "Evidence Collected: " + evidences.Count.ToString() + "/" + numEvidence.ToString();
         }
         else if (scene.name == "SecondLevel"){
+            if (switched == false)
+            {
+                textDisplay = GameObject.FindGameObjectWithTag("EvidenceDisplay").GetComponent<TextMeshProUGUI>();
+                switched = true;
+            }
             int numEvidence = 2;
             if (evidences.Contains(2)){
                 count++;
@@ -64,6 +66,7 @@ public class EvidenceManager : MonoBehaviour {
             }
             textDisplay.text = "Evidence Collected: " + count.ToString() + "/" + numEvidence.ToString();
         }
+
         
     }
 }
