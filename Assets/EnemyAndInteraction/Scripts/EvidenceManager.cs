@@ -8,7 +8,6 @@ public class EvidenceManager : MonoBehaviour {
     public List<int> evidences;
     private TextMeshProUGUI textDisplay;
     private Scene scene;
-    private int firstlevelcount = 0;
 
 	// Use this for initialization
     void Start () {
@@ -27,22 +26,42 @@ public class EvidenceManager : MonoBehaviour {
             evidences.Add(evidenceCode);
         }
         if (scene.name == "FirstLevel"){
-            updateEvidence(5);
+            updateEvidence();
         }
         else if (scene.name == "SecondLevel"){
-            updateEvidence(3);
+            updateEvidence();
         }
     }
 
-    public void updateEvidence(int numEvidence){
-        Debug.Log("lmaozedeong");
+    public void updateEvidence(){
+        int count = 0;
         if (scene.name == "FirstLevel"){
+            int numEvidence = 5;
+            if (evidences.Contains(0)){
+                count++;
+            }
+            if (evidences.Contains(1)){
+                count++;
+            }
+            if (evidences.Contains(4)){
+                count++;
+            }
+            if (evidences.Contains(5)){
+                count++;
+            }
+            if (evidences.Contains(6)){
+                count++;
+            }
             textDisplay.text = "Evidence Collected: " + evidences.Count.ToString() + "/" + numEvidence.ToString();
-            firstlevelcount++;
         }
         else if (scene.name == "SecondLevel"){
-            int count = evidences.Count - firstlevelcount;
-            Debug.Log(count);
+            int numEvidence = 2;
+            if (evidences.Contains(2)){
+                count++;
+            }
+            if (evidences.Contains(3)){
+                count++;
+            }
             textDisplay.text = "Evidence Collected: " + count.ToString() + "/" + numEvidence.ToString();
         }
         
