@@ -78,6 +78,26 @@ public class TestPlayerMove : MonoBehaviour
         {
             toggleGhostMode();
         }
+
+        if (Input.GetKeyDown("y"))
+        {
+            Vector2 newPos = new Vector2(1.67f, -.87f);
+            this.transform.position = newPos;
+        } else if (Input.GetKeyDown("u"))
+        {
+            // 93.66, -13.73
+            Vector2 newPos = new Vector2(93.66f, -13.73f);
+            this.transform.position = newPos;
+        } else if (Input.GetKeyDown("i"))
+        {
+            // 143.58, -17.59
+            Vector2 newPos = new Vector2(143.58f, -17.59f);
+            this.transform.position = newPos;
+        }
+        //else if (Input.GetKeyDown("o"))
+        //{
+
+        //}
     }
 
 
